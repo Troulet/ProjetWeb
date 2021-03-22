@@ -6,6 +6,10 @@ h1{font-family: Verdana, "DejaVu Sans", "Bitstream Vera Sans", Geneva, sans-seri
     text-align: center; 
     color: #5C88DA;} 
 
+.subtitle{font-size: 75%; 
+    color: #808080; 
+    text-transform: none;}
+
 h2{font-family: 'Trebuchet MS'; 
     text_align : center;
     color: #5C88DA; 
