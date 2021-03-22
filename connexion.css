@@ -15,9 +15,18 @@ h2{font-family: 'Trebuchet MS';
     color: #5C88DA; 
     padding: 15px 0; }
 
-.id_4, .id_3{text-align: left;}
+.id_4, .id_3{text-align: left;
+    border : 2px solid #5C88DA;
+    margin-bottom : 12px;
+    width: 70%;
+    }
+
+.subtitle{font-size: 75%; color: #808080; text-transform: none;}
 
 p, ul, label{font-family: Verdana, "DejaVu Sans"; margin-bottom: 0;}
 ul, ol{margin-top: 5px;}
 
-.image_stage {float: left;}
+.image_stage {float: right;
+    width : 310px;}
+
+.logo{width: 60px;}
