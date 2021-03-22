@@ -19,28 +19,33 @@
         <div id="2">
             <img class="image_stage" src="D:\CESI\2020-2021\WEB\Projet\ProjetWeb-main\stage.jpg">
         </div>
-        <div id="3" class="id_3">
-            <label for="login">Login :</label><br>
-            <input type="text" name="Login" id="login" required><br><br>
+        <form method="POST" name="connexion" action="connexion.php">
+            <div id="3" class="id_3">
+                <label for="login">Login :</label><br>
+                <input type="text" name="Login" id="login" required><br><br>
 
-            <label for="mdp">Mot de passe :</label><br>
-            <input type="text" name="Mdp" id="mdp" required><br><br>
-            <input type="submit" value="Valider" /> <br><br>
-        </div>
-        
-        <div id="4">
-            <fieldset>
-                <p>Cookies !</p>
-                <p>Nous permettez vous d'utiliser les cookies ? Ils nous permettent de vous offrir la meilleure expérience possible sur notre site.</p>
-                <form class="id_4">
-                    <input type="radio" id="oui" name="cookie" value="oui" checked>
-                    <label for="oui">Oui</label>
+                <label for="mdp">Mot de passe :</label><br>
+                <input type="text" name="Mdp" id="mdp" required><br><br>
+                <input type="submit" value="Valider" /> <br><br>
+            </div>
 
-                    <input type="radio" id="non" name="cookie" value="non">
-                    <label for="non">Non</label><br><br><br><br><br><br>
-                </form>
-            </fieldset>
-        </div>
+            <div id="4">
+                <fieldset>
+                    <p>Cookies !</p>
+                    <p>Nous permettez vous d'utiliser les cookies ? Ils nous permettent de vous offrir la meilleure expérience possible sur notre site.</p>
+                    <form class="id_4">
+                        <input type="radio" id="oui" name="cookie" value="oui" checked>
+                        <label for="oui">Oui</label>
+
+                        <input type="radio" id="non" name="cookie" value="non">
+                        <label for="non">Non</label><br><br>
+                    </form>
+                </fieldset>
+            </div>
+            <div id="5">
+                <input type="submit" id="connection" name="connection" value="Se connecter"><br><br><br><br><br><br>
+            </div>
+        </form>
         <footer>
             <img class="logo2" src="D:\CESI\2020-2021\WEB\Projet\ProjetWeb-main\logo_cesi2.0.png">
             <ul>
