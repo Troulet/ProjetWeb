@@ -1,0 +1,18 @@
+h1{font-family: Verdana, "DejaVu Sans", "Bitstream Vera Sans", Geneva, sans-serif; 
+    text-transform: uppercase; 
+    padding: 15px 0; 
+    border-bottom: 3px solid #5C88DA; 
+    margin-bottom: 50px; 
+    text-align: center; 
+    color: #5C88DA;} 
+
+h2{font-family: 'Trebuchet MS'; 
+    color: #5C88DA; 
+    padding: 15px 0; }
+
+.id_4, .id_3{text-align: left;}
+
+p, ul, label{font-family: Verdana, "DejaVu Sans"; margin-bottom: 0;}
+ul, ol{margin-top: 5px;}
+
+.image_stage {float: left;}
