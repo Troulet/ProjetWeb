@@ -7,30 +7,35 @@
     </head>
     <body>
         <div id="1">
-            <img class="logo" src="C:\xampp\htdocs\Projet\img\logo_cesi.png">
+            <img class="logo" src="img\logo_cesi.png">
             <h1>Authentification</h1>
             <p><h2>Bienvenue</h2></p>
         </div>
         <div id="2">
             <img class="image_stage" src="img/stage.jpg">
         </div>
-        <div id="3">
-            <label for="login">Login :</label><br>
-            <input type="text" name="Login" id="login" required><br><br>
+        <form method="POST" name="connexion" action="oui.php">
+            <div id="3">
+                <label for="login">Login :</label><br>
+                <input type="text" name="Login" id="login" required><br><br>
 
-            <label for="mdp">Mot de passe :</label><br>
-            <input type="text" name="Mdp" id="mdp" required><br><br>
-        </div>
-        <div id="4">
-            <p>Cookies !</p>
-            <p>Nous permettez vous d'utiliser les cookies ? Ils nous permettent de vous offrir la meilleure expéreience possible sur notre site.</p>
+                <label for="mdp">Mot de passe :</label><br>
+                <input type="text" name="Mdp" id="mdp" required><br><br>
+            </div>
+            <div id="4">
+                <p>Cookies !</p>
+                <p>Nous permettez vous d'utiliser les cookies ? Ils nous permettent de vous offrir la meilleure expéreience possible sur notre site.</p>
 
-            <input type="radio" id="oui" name="oui">
-            <label for="oui">Oui</label>
+                <input type="radio" id="oui" name="oui">
+                <label for="oui">Oui</label>
 
-            <input type="radio" id="non" name="non">
-            <label for="non">Non</label><br><br>
-        </div>
+                <input type="radio" id="non" name="non">
+                <label for="non">Non</label><br><br>
+            </div>
+            <div id="5">
+                <input type="submit" id="connection" name="connection" value="Se connecter"><br><br>
+            </div>
+        </form>
     </body>
     <footer>
         <img class="logo2" src="img/logo_cesi2.0.png">
