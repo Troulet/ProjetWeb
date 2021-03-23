@@ -20,7 +20,7 @@ $data[
     'promotion' => $promotion, //string
     'delegue' => $delegue, //bool
     'droits' => $droits, //string
-    'fiche' => $fiche, //fichier .pdf ici
+    'fiche' => $fiche, //fichier .pdf ici de base null
 ];
 
 if(!$stmt->execute($data)){
