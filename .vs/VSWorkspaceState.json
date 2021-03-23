@@ -1,8 +1,11 @@
 {
   "ExpandedNodes": [
     "",
-    "\\MODEL"
+    "\\Connexion",
+    "\\CONTROLLER",
+    "\\MODEL",
+    "\\VIEW"
   ],
-  "SelectedNode": "\\MODEL\\Model_User.js",
+  "SelectedNode": "\\CONTROLLER\\Controller.js",
   "PreviewInSolutionExplorer": false
 }
