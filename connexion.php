@@ -23,13 +23,6 @@ else{
         echo "Vous n'êtes pas connectés. Veuillez réessayer.<br/>";
     }
 }
-?>
 
-<html>
-    <head>
-    </head>
-    <body>
-    </body>
-    <footer>
-    </footer>
-</html>
+$stmt->closecursor();
+?>
