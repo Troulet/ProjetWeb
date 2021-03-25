@@ -1,36 +1,21 @@
 <?php
+session_start();
+require "../MODEL/Model_User.php";
 
-include "../MODEL/Model_User.php";
-
-class Controller
+function connection($mail, $password)
 {
-	private $User;
-	private $Enterprise;
-	private $Offer;
-	private $Candidate;
-
-	public function CONNECTION($Login, $Mdp)
-	{
-		$this->User[] = new Model_User;
-		$this->User[0]->SET_Mail($Login);
-		$this->User[0]->SET_Password($Mdp);
-		if ($this->User[0]->VERIFY_ACCOUNT())
-		{
-			return true;
-		}
-		else 
-		{
-			return false;
-		}
-	}
+	User = new Model_User
+	User->SET_Mail($mail)
+	User->SET_
 }
+
 
 $Controller = new Controller();
 
 switch ($_POST['function_mode'])
 {
 	case 'connection' :
-		$state = $Controller->CONNECTION($_POST['Login'], $_POST['Mdp']);
+		$state = connection($_POST['login'], $_POST['password']);
 		if($state)
 		{
 

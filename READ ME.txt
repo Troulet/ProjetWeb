@@ -8,3 +8,28 @@ DOSSIER MODEL : contient l'entiereté des model + classes model
 DOSSIER VIEW : content l'entiereté des templates à afficher
 
 DOSSIER SRC : contient l'ensemble des ressources visuelles du site (images, logo etc).
+
+
+Logique du Programme :
+le routeur dirige l'Utilisateur sur une page auquel on lit un fichier .js qui gère les évenements.
+Il existe 2 types d'évenement : 
+	les évenements qui ne nécéssite pas d'actualiser la page (asynchrone)
+	les évenements qui nécéssite de charger une nouvelle page (synchrone)
+
+Pour un évenement asynchrone : lorsque l'évenement se déclenche, le script java lance une requête au Controller via un POST 
+contenant une variable 'Function_mode'. Le controller exécute les bonnes fonctions en rapport avec la fonction demandée,
+puis retourne les variables à afficher par la vue (traitée dans la réponse par le script java)
+
+Pour un évenement synchrone : lorsque l'évenement se déclenche, le script java lance une requête au Controller via un POST 
+contenant une variable 'Function_mode'. Le controller exécute les bonnes fonctions en rapport avec la fonction demandée,
+puis retourne le résultat qui sera traité dans la réponse par le script java. Le script en recevant cette réponse lancera
+une requête GET au routeur avec une variable 'Page' pour que le routeur affiche la bonne page à l'utilisateur.
+
+En résumé :
+Pour asynchrone :
+Page->Evenement->Controller(POST)->Model->BDD->Model->Controller(ANSWER)->Page
+
+Pour synchrone :
+Page->Evenement->Controller(POST)->Model->BDD->Model->Controller(ANSWER)->Page->Routeur(GET)->NewPage
+
+Si la page nécéssite des données pour l'affichage, une requete asynchrone récupèrera les données dès le chargement de la page.
