@@ -6,3 +6,5 @@ DOSSIER CONTROLLER : contient Controller.php (Controller backend)
 DOSSIER MODEL : contient l'entiereté des model + classes model
 
 DOSSIER VIEW : content l'entiereté des templates à afficher
+
+DOSSIER SRC : contient l'ensemble des ressources visuelles du site (images, logo etc).
