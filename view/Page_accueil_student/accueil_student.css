@@ -91,7 +91,7 @@ button:hover {
 .navbar {
     display: flex;
     justify-content: right;
-    align-items: right;
+    align-items: center;
 }
 
 
