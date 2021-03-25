@@ -7,11 +7,11 @@ $("#btn_connection" ).click(function()
 	
 	$.ajax({
 		type: "POST",
-		url: "../CONTROLLER/Controller.php",
+		url: "../CONTROLLER/Controller.php", //contient la classe Controller
 		data: {
 			Login: $("#login").val(),
 			Mdp: $("#mdp").val(),
-			function_mode: "connection"
+			function_mode: "connection" 
 		},
 		success: function(response, textStatus, xhr)
 			{

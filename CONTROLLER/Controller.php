@@ -43,6 +43,10 @@ $Controller = new Controller();
 if ($_POST['function_mode'] = 'connection')
 {
 	$state = $Controller->CONNECTION($_POST['Login'], $_POST['Mdp']);
+	if($state)
+	{
+
+	}
 	echo json_encode($state);
 }
 ?>
