@@ -1,6 +1,6 @@
 <?php
 
-class Model_User
+class Model_User implements Interface_Abstract_BDD
 {
 	private $id;
 	private $Mail;
@@ -12,9 +12,10 @@ class Model_User
 	private $Delegue;
 	private $Right;
 
-	public function VERIFY_ACCOUNT($bdd)
+	public function VERIFY_ACCOUNT()
 	{
-		$query = $bdd->prepare("SELECT mail, Mot_de_passe FROM user WHERE Mail = :mail AND Mot_de_passe = :mdp;");
+		INITIALIZE();
+		$query = $this->bdd->prepare("SELECT mail, Mot_de_passe FROM user WHERE Mail = :mail AND Mot_de_passe = :mdp;");
 
 		$query->bindParam(':mail', $this->Mail, PDO::PARAM_STR);
 		$query->bindParam(':mdp', $this->Password, PDO::PARAM_STR);

@@ -15,16 +15,13 @@ $("#btn_connection" ).click(function()
 		},
 		success: function(response, textStatus, xhr)
 			{
-				var html = ''; 
 				if( xhr.status == 200 )
 				{
-					html = xhr.response;
-					console.log(xhr.response);
+					
 				}
 				else
 					html = 'Error! Status: ' + xhr.status;
 	
-				$('#jquery_result').html(html);
 			},
 		error: function (xhr, ajaxOptions, thrownError)
 			{

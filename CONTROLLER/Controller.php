@@ -8,27 +8,13 @@ class Controller
 	private $Enterprise;
 	private $Offer;
 	private $Candidate;
-	private $bdd;
-
-	private function INITIALIZE()
-	{
-		try
-		{
-			$this->bdd = new PDO('mysql:host=localhost;dbname=projet web', 'root', '', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
-		}
-		catch(Exception $e)
-		{
-			die("Erreur".$e->getMessage());
-		}
-	}
 
 	public function CONNECTION($Login, $Mdp)
 	{
-		$this->INITIALIZE();
 		$this->User[] = new Model_User;
 		$this->User[0]->SET_Mail($Login);
 		$this->User[0]->SET_Password($Mdp);
-		if ($this->User[0]->VERIFY_ACCOUNT($this->bdd))
+		if ($this->User[0]->VERIFY_ACCOUNT())
 		{
 			return true;
 		}
@@ -40,13 +26,16 @@ class Controller
 }
 
 $Controller = new Controller();
-if ($_POST['function_mode'] = 'connection')
-{
-	$state = $Controller->CONNECTION($_POST['Login'], $_POST['Mdp']);
-	if($state)
-	{
 
-	}
-	echo json_encode($state);
+switch ($_POST['function_mode'])
+{
+	case 'connection' :
+		$state = $Controller->CONNECTION($_POST['Login'], $_POST['Mdp']);
+		if($state)
+		{
+
+		}
+		echo json_encode($state);
+		break
 }
-?>
+
