@@ -22,6 +22,12 @@ h3 {
     border-bottom: 3px solid #5C88DA;
 }
 
+.navbar {
+    display: flex;
+    justify-content: right;
+    align-items: center;
+}
+
 .container {
     margin-top: 1%;
     padding: 1%;
@@ -88,11 +94,7 @@ button:hover {
     background-color: #c9c3c3;
 }
 
-.navbar {
-    display: flex;
-    justify-content: right;
-    align-items: center;
-}
+
 
 
 
