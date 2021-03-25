@@ -2,7 +2,10 @@
   "ExpandedNodes": [
     "",
     "\\CONTROLLER",
-    "\\MODEL"
+    "\\MODEL",
+    "\\view",
+    "\\view\\Page_accueil_student"
   ],
+  "SelectedNode": "\\view\\Page_accueil_student\\accueil_student.css",
   "PreviewInSolutionExplorer": false
 }
