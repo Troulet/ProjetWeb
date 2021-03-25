@@ -4,11 +4,19 @@ require ('../CONTROLLER/Controller.js')
 
 //ajout d'un switch case avec $_GET['action'] = Offre par exemple
 
-if (isset($_SESSION['page']))
+if (isset($_GET['page']))
 {
-	switch ($_SESSION['page'])
+	switch ($_GET['page'])
 	{
-		case 'Home' :
+		case 'admin-home' :
+			break;
+
+		case 'student-home' :
+			break;
+
+		case 'pilot-home' :
+			break;
+
 
 	}
 }

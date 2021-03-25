@@ -4,9 +4,17 @@ require "../MODEL/Model_User.php";
 
 function connection($mail, $password)
 {
-	User = new Model_User
-	User->SET_Mail($mail)
-	User->SET_
+	$User = new Model_User;
+	$User->SET_Mail($mail);
+	$User->SET_Password($password);
+	if ($User->VERIFY_ACCOUNT())
+	{
+		return $User->GET_USER_TABLE;
+	}
+	else 
+	{
+		return 'access denied';
+	}
 }
 
 
@@ -16,11 +24,14 @@ switch ($_POST['function_mode'])
 {
 	case 'connection' :
 		$state = connection($_POST['login'], $_POST['password']);
-		if($state)
+		if($state == 'acess denied')
 		{
-
+			//thrown an USER_WARNING and get back to Connection.php
 		}
-		echo json_encode($state);
-		break
+		else 
+		{
+			return $state;
+        }
+		break;
 }
 

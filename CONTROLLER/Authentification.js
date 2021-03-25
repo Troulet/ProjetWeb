@@ -10,14 +10,19 @@ $("#btn_connection" ).click(function()
 		url: "../CONTROLLER/Controller.php", //contient la classe Controller
 		data: {
 			Login: $("#login").val(),
-			Mdp: $("#mdp").val(),
+			Mdp: $("#password").val(),
+            Cookie: $("#COOKIE").val(),
 			function_mode: "connection" 
 		},
 		success: function(response, textStatus, xhr)
 			{
 				if( xhr.status == 200 )
 				{
-					
+					$table = xhr.response
+					$.ajax({
+						type: "GET"
+						url: "../Public/index.php?page=" + $table + "_Home.php"
+					})
 				}
 				else
 					html = 'Error! Status: ' + xhr.status;

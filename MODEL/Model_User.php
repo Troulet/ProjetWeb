@@ -41,14 +41,16 @@ class Model_User implements Interface_Abstract_BDD
 		$query->closecursor();
 	}
 
-	public function GET_USER_TABLE($bdd)
+	public function GET_USER_TABLE()
 	{
-
-		$query = $bdd->prepare("SELECT id FROM user WHERE Mail = :mail AND Mot_de_passe = :mdp;");
+		//First we get back the id_User
+		INITIALIZE();
+		$query = $this->bdd->prepare("SELECT id FROM user WHERE Mail = :mail AND Mot_de_passe = :mdp;");
 
 		$query->bindParam(':mail', $this->Mail, PDO::PARAM_STR);
 		$query->bindParam(':mdp', $this->Password, PDO::PARAM_STR);
 
+		//Then we try to find the id in each table
 		if(!$query->execute())
 		{
 			echo 'erreur de requête';
@@ -60,13 +62,13 @@ class Model_User implements Interface_Abstract_BDD
 			if($result)
 			{
 				$this->id = $result;
-
-				$query->closecursor();
 				$table = ['administrateur', 'pilote', 'eleve'];
-				$query = $bdd->prepare("SELECT id FROM :table WHERE id_User = :id");
-				$query->bindParam(':id', $this->id, PDO::PARAM_STR);
+
 				for (i=0; $table[i]; i++)
 				{
+					$query->closecursor();
+					$query = $this->bdd->prepare("SELECT id FROM :table WHERE id_User = :id");
+					$query->bindParam(':id', $this->id, PDO::PARAM_STR);
 					$query->bindParam(':table', $table[i], PDO::PARAM_STR);
 					$query->execute()
 					$result2 = $query->fetch(PDO::FETCH_LAZY);
