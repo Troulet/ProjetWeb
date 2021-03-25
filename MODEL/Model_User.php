@@ -40,6 +40,54 @@ class Model_User
 		$query->closecursor();
 	}
 
+	public function GET_USER_TABLE($bdd)
+	{
+
+		$query = $bdd->prepare("SELECT id FROM user WHERE Mail = :mail AND Mot_de_passe = :mdp;");
+
+		$query->bindParam(':mail', $this->Mail, PDO::PARAM_STR);
+		$query->bindParam(':mdp', $this->Password, PDO::PARAM_STR);
+
+		if(!$query->execute())
+		{
+			echo 'erreur de requête';
+		}
+		else
+		{
+			$result = $query->fetch(PDO::FETCH_LAZY);
+
+			if($result)
+			{
+				$this->id = $result;
+
+				$query->closecursor();
+				$table = ['administrateur', 'pilote', 'eleve'];
+				$query = $bdd->prepare("SELECT id FROM :table WHERE id_User = :id");
+				$query->bindParam(':id', $this->id, PDO::PARAM_STR);
+				for (i=0; $table[i]; i++)
+				{
+					$query->bindParam(':table', $table[i], PDO::PARAM_STR);
+					$query->execute()
+					$result2 = $query->fetch(PDO::FETCH_LAZY);
+					if($result2)
+					{
+						$query->closecursor();
+						return $table[i]
+					}
+					else 
+					{
+						$query->closecursor();
+					}
+				}
+			}
+			else
+			{
+				echo 'Aucun utilisateur ne correspond à l\'email ou le mot de passe renseigné' ;
+			}
+		}
+		$query->closecursor();
+	}
+
 	public function GET_id()
 	{
 		return $this->id;
