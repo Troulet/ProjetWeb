@@ -1,18 +1,18 @@
 <?php
-$stmt = $bdd->prepare("INSERT INTO localite(Localite) SELECT :localite FROM DUAL WHERE NOT EXISTS (SELECT * FROM localite WHERE Localite = :localite) AND utilisateur(Mail, Mot_de_passe, Nom_User, Prenom_User, id_Localite) SELECT :mail, :mdp, :nom, :prenom, (SELECT id FROM localite WHERE Localite = :localite) FROM DUAL WHERE NOT EXISTS (SELECT * FROM utilisateur WHERE Mail = :mail) AND administrateur(id_Utilisateur, Mail, Mot_de_passe, Nom_User, Prenom_User, id_Localite) SELECT (SELECT id FROM utilisateur WHERE Mot_de_passe = :mdp AND Mail = :mail AND Nom_user = :nom AND Prenom_user = :prenom), :mail, :mdp, :nom, :prenom, (SELECT id FROM localite WHERE Localite = :localite) FROM DUAL WHERE NOT EXISTS (SELECT * FROM administrateur WHERE Mail = :mail)");
+$stmt = $bdd->prepare("INSERT INTO localisation(Localisation) SELECT :localisation FROM DUAL WHERE NOT EXISTS (SELECT * FROM localisation WHERE Localisation = :localisation) AND user(Mail, Password, First_Name_User, Last_Name_User, id_Localisation) SELECT :mail, :passw, :fname, :lname, (SELECT id FROM localisation WHERE Localisation = :localisation) FROM DUAL WHERE NOT EXISTS (SELECT * FROM user WHERE Mail = :mail) AND administrator(id, Mail, Password, First_Name_User, Last_Name_User, id_Localisation) SELECT (SELECT id FROM user WHERE Mail = :mail), :mail, :passw, :fname, :lname, (SELECT id FROM Localisation WHERE Localisation = :localisation) FROM DUAL WHERE NOT EXISTS (SELECT * FROM administrator WHERE Mail = :mail)");
 
-$localite = htmlspecialchars($_POST["Localite"]);
+$Localisation = htmlspecialchars($_POST["Localisation"]);
 $mail = htmlspecialchars($_POST["Mail"]);
-$mdp = htmlspecialchars($_POST["Mdp"]);
-$nom = htmlspecialchars($_POST["Nom"]);
-$prenom = htmlspecialchars($_POST["Prenom"]);
+$passw = htmlspecialchars($_POST["Password"]);
+$lname = htmlspecialchars($_POST["Last_Name"]);
+$fname = htmlspecialchars($_POST["First_Name"]);
 
-$data[
-    'localite' => $localite, //string
+$data = [
+    'Localisation' => $Localisation, //string
     'mail' => $mail, //string
-    'mdp' => $mdp, //string
-    'nom' => $nom, //string
-    'prenom' => $prenom, //string
+    'passw' => $passw, //string
+    'lname' => $lname, //string
+    'fname' => $fname, //string
 ];
 
 if(!$stmt->execute($data)){
