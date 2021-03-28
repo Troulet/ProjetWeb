@@ -1,22 +1,9 @@
 {
   "ExpandedNodes": [
     "",
-    "\\CONTROLLER",
-    "\\MODEL",
-<<<<<<< HEAD
-    "\\view",
-    "\\view\\Page_accueil_student"
+    "\\resources",
+    "\\resources\\views"
   ],
-  "SelectedNode": "\\view\\Page_accueil_student\\accueil_student.html",
-=======
-    "\\Public",
-    "\\VIEW",
-    "\\VIEW\\Authentification",
-    "\\VIEW\\Page_acceuil_admin",
-    "\\VIEW\\Page_acceuil_pilote",
-    "\\VIEW\\Page_accueil_student"
-  ],
-  "SelectedNode": "\\Public\\index.php",
->>>>>>> abba6b627b49f5dc9907a61e90b8da831f2d73e1
+  "SelectedNode": "\\.env.example",
   "PreviewInSolutionExplorer": false
 }
