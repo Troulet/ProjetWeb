@@ -14,7 +14,7 @@
     
 </body>
 <footer>
-    <img class="logo" src="C:\xampp\htdocs\Projet\img\logo_cesi.png">
+    <img class="logo" src="../img/logo_cesi.png">
     <ul>
         <li>
             <a href="https://ent.cesi.fr/?RH=&ksession=9e43032b-00b8-446a-8782-5768fbf6406f" title="ENT" target="blank">ENT</a>

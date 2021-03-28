@@ -12,29 +12,66 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     </head>
     <body>
+        <?php 
+          include("header.blade.php"); 
+        ?>
         <div id="1">
             <h2>Statistiques</h2>
-            <label for="post_nbre"> :</label><br>
-                <input type="text" name="Password" id="password" required><br><br>
+            <label for="post_nbre"> Candidatures déposées:</label><br>
+            <input type="int" name="post_nbre" id="post_nbre" required><br><br>
+
+            <label for="date"> Date de la dernière candidature postée:</label><br>
+            <input type="Date" name="date" id="date" required><br><br>
         </div>
-
-
-
-
-
+        <div id="2">
+            <button class="buton" type="button">CANDIDATURE AVEC RÉPONSE</button>
+            <button class="buton" type="button">CANDIDATURE SANS RÉPONSE</button>
+            <button class="buton" type="button">TOUT</button>
+        </div>
+        <table class="table">
+              <thead>
+                <tr>
+                  <th scope="col">#</th>
+                  <th scope="col">Numéro de candidature</th>
+                  <th scope="col">Entreprise</th>
+                  <th scope="col">Intitulé du poste</th>
+                  <th scope="col">Curriculum vitae</th>       <!--Réponse = oui/non uniquement-->
+                  <th scope="col">Lettre de motivation</th>   <!--Réponse = oui/non uniquement-->
+                  <th scope="col">Réponse</th>                <!--Réponse = oui/non uniquement-->
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">1</th>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <th scope="row">2</th>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <th scope="row">3</th>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
+        <div class="wishlist">
+        <div class="list-group">
+            <h3>Wish-List</h3>
+            <a href="#" class="list-group-item list-group-item-action">Choix 1</a>
+            <a href="#" class="list-group-item list-group-item-action">Choix 2</a>
+            <a href="#" class="list-group-item list-group-item-action">Choix 3</a>
+            <a href="#" class="list-group-item list-group-item-action">Choix 4</a>
+        </div>
+    </div>
     </body>
-    <footer>
-        <img class="logo2" src="../img/logo_cesi2.0.png">
-        <ul>
-            <li>
-                <a href="https://ent.cesi.fr/?RH=&ksession=9e43032b-00b8-446a-8782-5768fbf6406f" target="blank">ENT</a>
-            </li>
-            <li>
-                <a href="https://www.linkedin.com/school/cesiecoledingenieurs/?trk=public_profile_topcard-school" target="blank">Linkedin</a>
-            </li>
-        </ul>
-        <button class="bouton" type="button">Support</button>
-        <script src="../jquery/jquery-3.5.1.min.js"></script>
-        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-        <script src="../bootstrap/js/bootstrap.bundle.min.js"></script>
-    </footer>
+
+    <?php 
+          include("footer.blade.php"); 
+    ?>
