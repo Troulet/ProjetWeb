@@ -3,9 +3,13 @@
     "",
     "\\CONTROLLER",
     "\\MODEL",
-    "\\view",
-    "\\view\\Page_accueil_student"
+    "\\Public",
+    "\\VIEW",
+    "\\VIEW\\Authentification",
+    "\\VIEW\\Page_acceuil_admin",
+    "\\VIEW\\Page_acceuil_pilote",
+    "\\VIEW\\Page_accueil_student"
   ],
-  "SelectedNode": "\\view\\Page_accueil_student\\accueil_student.css",
+  "SelectedNode": "\\Public\\index.php",
   "PreviewInSolutionExplorer": false
 }
