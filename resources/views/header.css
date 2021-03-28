@@ -1,0 +1,68 @@
+h1{font-family: Verdana, "DejaVu Sans", "Bitstream Vera Sans", Geneva, sans-serif; 
+    text-transform: uppercase; 
+    padding: 10px 0; 
+    margin-bottom: 10px; 
+    text-align: center; 
+    color: #5C88DA;} 
+
+h2{font-family: 'Trebuchet MS';
+    text-align: center; 
+    color: #5C88DA; 
+    padding: 10px 0;
+     
+}
+
+div {
+    border-bottom: 3px solid #5C88DA;
+}
+
+
+.id_4, .id_3{text-align: left;
+    border : 2px solid #5C88DA;
+    margin-bottom : 12px;
+    max-width: 70%;
+    padding: 8px;
+    }
+
+.subtitle{font-size: 75%; color: #808080; text-transform: none;}
+
+p, ul, label, body{font-family: Verdana, "DejaVu Sans"; 
+    margin-bottom: 0;}
+
+
+.image_stage {float: right;
+    width : 333px;}
+
+.logo{width: 60px;}
+
+
+a[title]{
+    color : white;
+}
+
+.bouton {
+    display: inline-block;
+    background-color:  #808080;
+    border-radius: 10px;
+    border: 4px double #cccccc;
+    color: #eeeeee;
+    text-align: center;
+    font-size: 20px;
+    padding: 10px;
+    width: 100px;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin-left: 90%;
+}
+button:hover {
+    background-color: #c9c3c3;
+    }
+
+.navbar {
+    display: flex;
+    justify-content: right;
+    align-items: right;
+}
