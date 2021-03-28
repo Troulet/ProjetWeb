@@ -35,10 +35,6 @@ p, ul, label, body{font-family: Verdana, "DejaVu Sans";
 
 .logo{width: 60px;}
 
-footer {
-    background-color: #5C88DA;
-    color : white;
-}
 
 a[title]{
     color : white;
