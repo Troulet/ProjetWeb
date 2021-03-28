@@ -1,26 +1,24 @@
 <?php
-$stmt = $bdd->prepare("INSERT INTO localite(Localite) SELECT :localite FROM DUAL WHERE NOT EXISTS (SELECT * FROM localite WHERE Localite = :localite) AND utilisateur(Mail, Mot_de_passe, Nom_User, Prenom_User, id_Localite) SELECT :mail, :mdp, :nom, :prenom, (SELECT id FROM localite WHERE Localite = :localite) FROM DUAL WHERE NOT EXISTS (SELECT * FROM utilisateur WHERE Mail = :mail) AND eleve(id_Utilisateur, Promotion, Delegue, Droits_Delegue, Fiche_Validation, Mail, Mot_de_passe, Nom_User, Prenom_user, id_Utilisateur_Pilote, id_Pilote, id_Localite) SELECT (SELECT id FROM utilisateur WHERE Mot_de_passe = :mdp AND Mail = :mail AND Nom_user = :nom AND Prenom_user = :prenom), :promotion, :delegue, :droits, :fiche, :mail, :mdp, :nom, :prenom, (SELECT id_Utilisateur FROM pilote WHERE Promotion = :promotion), (SELECT id FROM pilote WHERE Promotion = :promotion), (SELECT id FROM Localite WHERE Localite = :localite) FROM DUAL WHERE NOT EXISTS (SELECT * FROM eleve WHERE Mail = :mail)");
+$stmt = $bdd->prepare("INSERT INTO localisation(Localisation) SELECT :localisation FROM DUAL WHERE NOT EXISTS (SELECT * FROM localisation WHERE Localisation = :localisation) AND user(Mail, Password, First_Name_User, Last_Name_User, id_Localisation) SELECT :mail, :passw, :fname, :lname, (SELECT id FROM localisation WHERE Localisation = :localisation) FROM DUAL WHERE NOT EXISTS (SELECT * FROM user WHERE Mail = :mail) AND student(id, Promotion, Representative, Representative_right, Mail, Password, Last_Name_User, First_Name_User, id_Localisation) SELECT (SELECT id FROM user WHERE Mail = :mail), :promotion, :representative, :rrights, :mail, :passw, :lname, :fname, (SELECT id FROM Localisation WHERE Localisation = :localisation) FROM DUAL WHERE NOT EXISTS (SELECT * FROM student WHERE Mail = :mail)");
 
-$localite = htmlspecialchars($_POST["Localite"]);
+$localisation = htmlspecialchars($_POST["Localisation"]);
 $mail = htmlspecialchars($_POST["Mail"]);
-$mdp = htmlspecialchars($_POST["Mdp"]);
-$nom = htmlspecialchars($_POST["Nom"]);
-$prenom = htmlspecialchars($_POST["Prenom"]);
+$passw = htmlspecialchars($_POST["Password"]);
+$lname = htmlspecialchars($_POST["Last_Name"]);
+$fname = htmlspecialchars($_POST["First_Name"]);
 $promotion = htmlspecialchars($_POST["Promotion"]);
-$delegue = htmlspecialchars($_POST["Delegue"]);
-$droits = htmlspecialchars($_POST["Droits"]);
-$fiche = htmlspecialchars($_POST["Fiche"]);
+$representative = htmlspecialchars($_POST["Representative"]);
+$rrights = htmlspecialchars($_POST["Representative_Rights"]);
 
-$data[
-    'localite' => $localite, //string
+$data = [
+    'localisation' => $localisation, //string
     'mail' => $mail, //string
-    'mdp' => $mdp, //string
-    'nom' => $nom, //string
-    'prenom' => $prenom, //string
+    'passw' => $passw, //string
+    'lname' => $lname, //string
+    'fname' => $fname, //string
     'promotion' => $promotion, //string
-    'delegue' => $delegue, //bool
-    'droits' => $droits, //string
-    'fiche' => $fiche, //fichier .pdf ici de base null
+    'representative' => $representative, //bool
+    'rrights' => $rrights, //string
 ];
 
 if(!$stmt->execute($data)){

@@ -1,28 +1,28 @@
 <?php
-$stmt = $bdd->prepare("INSERT INTO localite(Localite) SELECT :localite FROM DUAL WHERE NOT EXISTS (SELECT * FROM localite WHERE Localite = :localite) AND stage(Description, Competences_Recherchees, Promotion, Duree_Stage, Gratification, Date_Offre, Nombre_Place_Offre, Contact, id_Entreprise, id_Localite) SELECT :description, :competences, :promotion, :duree, :gratification, :date, :places, :contact, (SELECT id FROM Entreprise WHERE Nom_Entreprise = :entreprise), (SELECT id FROM localite WHERE Localite = :localite) FROM DUAL WHERE NOT EXISTS (SELECT * FROM stage where Description = :description)");
+$stmt = $bdd->prepare("INSERT INTO localisation(Localisation) SELECT :localisation FROM DUAL WHERE NOT EXISTS (SELECT * FROM localisation WHERE Localisation = :localisation) AND internship(Description, Skills_researched, Promotion_researched, Duree_Stage, Salary, Offer_date, Number_of_places, Contact, id_Enterprise, id_Localisation) SELECT :description, :skills, :promotion, :duree, :salary, :date, :places, :contact, (SELECT id FROM Entreprise WHERE Nom_Entreprise = :enterprise), (SELECT id FROM localisation WHERE Localisation = :localisation) FROM DUAL WHERE NOT EXISTS (SELECT * FROM internship where Description = :description)");
 
-$localite = htmlspecialchars($_POST["Localite"]);
+$localisation = htmlspecialchars($_POST["Localisation"]);
 $description = htmlspecialchars($_POST["Description"]);
-$competences = htmlspecialchars($_POST["Competences"]);
+$skills = htmlspecialchars($_POST["Skills"]);
 $duree = htmlspecialchars($_POST["Duree"]);
-$gratification = htmlspecialchars($_POST["Gratification"]);
+$salary = htmlspecialchars($_POST["Salary"]);
 $promotion = htmlspecialchars($_POST["Promotion"]);
 $date = htmlspecialchars($_POST["Date"]);
 $places = htmlspecialchars($_POST["Places"]);
 $contact = htmlspecialchars($_POST["Contact"]);
-$entreprise = htmlspecialchars($_POST["Entreprise"]);
+$enterprise = htmlspecialchars($_POST["Enterprise"]);
 
-$data[
-    'localite' => $localite, //string
+$data = [
+    'localisation' => $localisation, //string
     'description' => $description, //string
-    'competences' => $competences, //string
+    'skills' => $skills, //string
     'duree' => $duree, //string
-    'gratification' => $gratification, //int
+    'salary' => $salary, //int
     'promotion' => $promotion, //string
     'date' => $date, //date
     'places' => $places, //int
     'contact' => $contact, //string
-    'entreprise' => $entreprise, //string
+    'enterprise' => $enterprise, //string
 ];
 
 if(!$stmt->execute($data)){
