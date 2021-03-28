@@ -1,0 +1,48 @@
+h1 {
+    font-family: Verdana, "DejaVu Sans", "Bitstream Vera Sans", Geneva, sans-serif;
+    text-transform: uppercase;
+    padding: 15px 0;
+    border-bottom: 3px solid #5C88DA;
+    margin-bottom: 50px;
+    text-align: center;
+    color: #5C88DA;
+}
+
+h2 {
+    font-family: 'Trebuchet MS';
+    text-align: center;
+    color: #5C88DA;
+    padding: 15px 0;
+}
+
+.id_4, .id_3 {
+    text-align: left;
+    border: 2px solid #5C88DA;
+    margin-bottom: 12px;
+    max-width: 70%;
+    padding: 8px;
+}
+
+.subtitle {
+    font-size: 75%;
+    color: #808080;
+    text-transform: none;
+}
+
+p, ul, label {
+    font-family: Verdana, "DejaVu Sans";
+    margin-bottom: 0;
+}
+
+ul, ol {
+    margin-top: 5px;
+}
+
+.image_stage {
+    float: right;
+    width: 333px;
+}
+
+.logo {
+    width: 60px;
+}

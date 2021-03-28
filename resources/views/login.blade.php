@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta charsert="utf-8" />
-        <link rel= "stylesheet" href="connexion.css"/>
+        <link rel= "stylesheet" href="login.css"/>
         <title>LES P'TITES ANNONCES</title>
         <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
         <link rel="stylesheet" href="./fontawesome/css/all.min.css">
@@ -12,14 +12,13 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     </head>
     <body>
-
         <div id="1">
-            <img class="logo2" src="img/logo_cesi2.0.png">
+            <img class="logo2" src="../img/logo_cesi2.0.png">
             <h1>Authentification</h1>
             <p><h2>Bienvenue</h2></p>
         </div>
         <div id="2">
-            <img class="image_stage" src="img/stage.jpg">
+            <img class="image_stage" src="../img/stage.jpg">
         </div>
         <div id="3">
             <label for="login">Login :</label><br>
@@ -40,7 +39,7 @@
         </div>
     </body>
     <footer>
-        <img class="logo" src="C:\xampp\htdocs\Projet\img\logo_cesi.png">
+        <img class="logo" src="../img/logo_cesi.png">
         <ul>
             <li>
                 <a href="https://ent.cesi.fr/?RH=&ksession=9e43032b-00b8-446a-8782-5768fbf6406f" title="ENT" target="blank">ENT</a>
@@ -51,6 +50,6 @@
         </ul>
     </footer>
 
-    <?php require '../CONTROLLER/Authentification.js'; ?>
+   
 
 </html>

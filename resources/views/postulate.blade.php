@@ -4,9 +4,7 @@
         <meta charsert="utf-8" />
         <link rel= "stylesheet" href="connexion.css"/>
         <title>LES P'TITES ANNONCES</title>
-        <?php 
-          include("head_global.blade.php"); 
-        ?>
+        
     <body>
         <?php 
           include("header.blade.php"); 
