@@ -1,9 +1,8 @@
 {
   "ExpandedNodes": [
     "",
-    "\\resources",
-    "\\resources\\views"
+    "\\OLD\\assets\\vendors"
   ],
-  "SelectedNode": "\\.env.example",
+  "SelectedNode": "\\resources",
   "PreviewInSolutionExplorer": false
 }
