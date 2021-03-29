@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta charsert="utf-8" />
-        <link rel= "stylesheet" href="connexion.css"/>
+        <link rel= "stylesheet" href="internship_student.css"/>
         <title>LES P'TITES ANNONCES</title>
         <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
         <link rel="stylesheet" href="./fontawesome/css/all.min.css">
@@ -13,20 +13,9 @@
 
     </head>
     <body>
-        <div id="1">
-        <img class="logo" src="C:\xampp\htdocs\Projet\img\logo_cesi.png">
-        <h1>LES P'TITES ANNONCES.</h1>
-        <h2>Les offres qui font plaisir !</h2>
-        <div>
-            <ul>
-                <li>
-                    <a href="" target="blank">Offre</a>
-                    <a href="" target="blank">Contact</a>
-                    <a href="" target="blank">Candidature</a>
-                    <a href="" target="blank">Aide</a>
-                </li>
-            </ul>
-        </div>
+        <?php 
+          include("header.blade.php"); 
+        ?>
         <div class="filtre">
         <h3>Filtrer les résultats</h3>
         <form class="d-flex">
@@ -281,19 +270,8 @@ data-mdb-ride="carousel"
     <button class="suppr" type="button">SUPPRIMER LE PROFIL</button><br>
     <button class="modif" type="button">MODIFIER LE PROFIL</button><br>
     <button class="contacter" type="button">CONTACTER L'ENTREPRISE</button>
-  <footer>
-    <img class="logo2" src="../img/logo_cesi2.0.png">
-    <ul>
-        <li>
-            <a href="https://ent.cesi.fr/?RH=&ksession=9e43032b-00b8-446a-8782-5768fbf6406f" target="blank">ENT</a>
-        </li>
-        <li>
-            <a href="https://www.linkedin.com/school/cesiecoledingenieurs/?trk=public_profile_topcard-school" target="blank">Linkedin</a>
-        </li>
-    </ul>
-    <button class="bouton" type="button">Support</button>
-    <script src="../jquery/jquery-3.5.1.min.js"></script>
-    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-    <script src="../bootstrap/js/bootstrap.bundle.min.js"></script>
-</footer>
+  </body>
+      <?php 
+              include("footer.blade.php"); 
+        ?>
 </html>
