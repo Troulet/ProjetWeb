@@ -28,7 +28,7 @@ h3 {
     align-items: center;
 }
 
-.container, .candidature, .table-borderless  {
+.container, .candidature, .table {
     margin-top: 1%;
     padding: 1%;
     border: 3px solid #5C88DA;
