@@ -13,20 +13,9 @@
 
     </head>
     <body>
-        <div id="1">
-            <img class="logo" src="C:\xampp\htdocs\Projet\img\logo_cesi.png">
-            <h1>LES P'TITES ANNONCES.</h1>
-            <h2>Les offres qui font plaisir !</h2>
-            <div>
-                <ul>
-                    <li>
-                        <a href="" target="blank">Offre</a>
-                        <a href="" target="blank">Contact</a>
-                        <a href="" target="blank">Élève</a>
-                        <a href="" target="blank">Aide</a>
-                    </li>
-                </ul>
-            </div>
+        <?php 
+          include("header.blade.php"); 
+        ?>
             <div class="filtre">
             <h3>Filtrer les résultats</h3>
             <form class="d-flex">
@@ -225,19 +214,7 @@ data-mdb-ride="carousel"
         <button class="modif" type="button">MODIFIER LE PROFIL</button>
     </div>
     </body>
-    <footer>
-        <img class="logo2" src="../img/logo_cesi2.0.png">
-        <ul>
-            <li>
-                <a href="https://ent.cesi.fr/?RH=&ksession=9e43032b-00b8-446a-8782-5768fbf6406f" target="blank">ENT</a>
-            </li>
-            <li>
-                <a href="https://www.linkedin.com/school/cesiecoledingenieurs/?trk=public_profile_topcard-school" target="blank">Linkedin</a>
-            </li>
-        </ul>
-        <button class="bouton" type="button">Support</button>
-        <script src="../jquery/jquery-3.5.1.min.js"></script>
-        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-        <script src="../bootstrap/js/bootstrap.bundle.min.js"></script>
-    </footer>
+    <?php 
+          include("footer.blade.php"); 
+    ?>
 </html>
