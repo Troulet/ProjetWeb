@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta charsert="utf-8" />
-        <link rel= "stylesheet" href="accueil_admin.css"/>
+        <link rel= "stylesheet" href="welcome_admin.css"/>
         <title>LES P'TITES ANNONCES</title>
         <link rel="stylesheet" href="./assets/vendors/bootstrap/css/bootstrap.min.css">
         <link rel="stylesheet" href="./assets/vendors/fontawesome/css/all.min.css">
@@ -14,6 +14,7 @@
         <?php 
           include("header.blade.php"); 
         ?>
+    </br>
     <div class="informer">
         <div class="list-group">
             <h3>Informer étape 4</h3>
