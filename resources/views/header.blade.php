@@ -13,10 +13,12 @@
 </head>
 <body>
     <div id="1">
-        <img class="logo2" src="../img/logo_cesi2.0.png">
-        <div class="header">
+       <div id="header">
+        <div class="titre">
+            <img class="logo2" src="../img/logo_cesi2.0.png">
             <h1>LES P'TITES ANNONCES</h1>
             <h2>Cherche et trouve le stage qui te correspond !</h2>
+        </div>
             if(ID==ID_student) {
 	<nav class="navbar navbar-expand-lg navbar-light bg-light">
                 <div class="container-fluid">
@@ -58,7 +60,7 @@
                             <a class="nav-link" href="#">Contact</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Elève</a>
+                            <a class="nav-link" href="#">ElÃ¨ve</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#">Aide</a>
@@ -80,7 +82,7 @@
                                     <a class="nav-link active" aria-current="page" href="#">Offre</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="#">Elève</a>
+                                    <a class="nav-link" href="#">ElÃ¨ve</a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" href="#">Contact</a>
