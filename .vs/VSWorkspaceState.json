@@ -1,8 +1,13 @@
 {
   "ExpandedNodes": [
     "",
-    "\\OLD\\assets\\vendors"
+    "\\OLD",
+    "\\OLD\\src",
+    "\\OLD\\VIEW",
+    "\\OLD\\VIEW\\Authentification",
+    "\\resources",
+    "\\resources\\views"
   ],
-  "SelectedNode": "\\resources",
+  "SelectedNode": "\\resources\\views\\welcome_student.css",
   "PreviewInSolutionExplorer": false
 }
