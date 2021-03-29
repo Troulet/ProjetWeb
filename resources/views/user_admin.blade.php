@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta charsert="utf-8" />
-        <link rel= "stylesheet" href="user_admin.css"/>
+        <meta charsert="utf-8">
+        <link rel= "stylesheet" href="user_admin.css">
         <title>LES P'TITES ANNONCES</title>
         <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
         <link rel="stylesheet" href="./fontawesome/css/all.min.css">
@@ -16,26 +16,26 @@
           include("header.blade.php"); 
         ?>
             <div class="filtre">
-                <h3>Filtrer les rÈsultats</h3>
+                <h3>Filtrer les r√©sultats</h3>
                 <form class="d-flex">
                     <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
                     <button class="btn btn-outline-success" type="submit">Search</button>
                 </form>
                 <div>
-                    <h3>CatÈgories</h3>
+                    <h3>Cat√©gories</h3>
                         <div>
                             <input type="checkbox" id="student" name="student">
-                            <label for="student">…tudiant</label>
+                            <label for="student">√âtudiant</label>
                         </div>
                         <div>
                             <input type="checkbox" id="representative" name="representative">
-                            <label for="representative">DÈlÈguÈ</label>
+                            <label for="representative">D√©l√©gu√©</label>
                         </div>
                         <div>
                             <input type="checkbox" id="pilot" name="pilot">
                             <label for="pilot">Pilote</label>
                         </div>
-                    <h3>LocalitÈ</h3>
+                    <h3>Localit√©</h3>
                         <div>
                             <input type="checkbox" id="paris" name="paris">
                             <label for="paris">Paris</label>
@@ -46,7 +46,7 @@
                         </div>
                         <div>
                             <input type="checkbox" id="merignac" name="merignac">
-                            <label for="merignac">MÈrignac</label>
+                            <label for="merignac">M√©rignac</label>
                         </div>
                         <div>
                             <input type="checkbox" id="lyon" name="lyon">
@@ -63,7 +63,7 @@
                         </div>
                         <div>
                             <input type="checkbox" id="generaliste" name="generaliste">
-                            <label for="generaliste">A2 GÈnÈraliste</label>
+                            <label for="generaliste">A2 G√©n√©raliste</label>
                         </div>
                         <div>
                             <input type="checkbox" id="btp" name="btp">
@@ -79,24 +79,34 @@
                 <h2>Profil Utilisateur</h2>
                 <div class="card">
                     <div class="card-body">
-                        This is some text within a card body.
+                        Info pilote
+                    </div>
+                    <div>
+                        <button type="button" class="btn">SUPPRIMER</button>
+                        <button type="button" class="btn">MODIFIER</button>
                     </div>
                 </div>
                 <div class="card">
                     <div class="card-body">
-                        This is some text within a card body.
+                        Info √©l√®ve
+                    </div>
+                    <div>
+                        <button type="button" class="btn">SUPPRIMER</button>
+                        <button type="button" class="btn">MODIFIER</button>
                     </div>
                 </div>
                 <div class="card">
                     <div class="card-body">
-                        This is some text within a card body.
+                        Info d√©l√©gu√©
+                    </div>
+                    <div>
+                        <button type="button" class="btn">SUPPRIMER</button>
+                        <button type="button" class="btn">MODIFIER</button>
                     </div>
                 </div>
             </div>
         <div>
-            <input class="creation_E"
-           type="button"
-           value="CR…ER UN PROFIL UTILISATEUR">
+            <button type="button" class="btn">CR√âER UN PROFIL UTILISATEUR</button>
         </div>
     </body>
 
