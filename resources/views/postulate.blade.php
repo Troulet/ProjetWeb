@@ -2,22 +2,21 @@
 <html>
     <head>
         <meta charsert="utf-8" />
-        <link rel= "stylesheet" href="connexion.css"/>
+        <link rel= "stylesheet" href="postulate.css"/>
         <title>LES P'TITES ANNONCES</title>
         
     <body>
         <?php 
           include("header.blade.php"); 
         ?>
-        <div id="1">
+        <div id="id_candidature" class="candidature">
             <h2>Statistiques</h2>
             <label for="post_nbre"> Candidatures déposées:</label><br>
             <input type="int" name="post_nbre" id="post_nbre" required><br><br>
 
             <label for="date"> Date de la dernière candidature postée:</label><br>
             <input type="Date" name="date" id="date" required><br><br>
-        </div>
-        <div id="2">
+            
             <button class="buton" type="button">CANDIDATURE AVEC RÉPONSE</button>
             <button class="buton" type="button">CANDIDATURE SANS RÉPONSE</button>
             <button class="buton" type="button">TOUT</button>
@@ -40,15 +39,24 @@
                   <td></td>
                   <td></td>
                   <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
                 </tr>
                 <tr>
                   <th scope="row">2</th>
                   <td></td>
                   <td></td>
                   <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
                 </tr>
                 <tr>
                   <th scope="row">3</th>
+                  <td></td>
+                  <td></td>
+                  <td></td>
                   <td></td>
                   <td></td>
                   <td></td>
