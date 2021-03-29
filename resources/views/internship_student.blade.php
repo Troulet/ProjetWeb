@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta charsert="utf-8" />
-        <link rel= "stylesheet" href="test.css"/>
+        <link rel= "stylesheet" href="internship_student.css"/>
         <title>LES P'TITES ANNONCES</title>
         <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
         <link rel="stylesheet" href="./fontawesome/css/all.min.css">
