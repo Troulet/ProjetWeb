@@ -29,3 +29,7 @@
     <script src="./assets/vendors/bootstrap/js/bootstrap.bundle.min.js"></script>
 </footer>
 </html>
+
+<?php 
+   // include("footer.blade.php"); 
+?>

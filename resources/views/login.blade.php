@@ -36,6 +36,7 @@
             <input type="radio" id="COOKIE" name="COOKIE" value="no">
             <label for="no">Non</label><br><br>
         </div>
+            <button type="submit" class="btn">CONNEXION</button>
     </body>
     <footer>
         <img class="logo" src="../resources/img/logo_cesi.png">
