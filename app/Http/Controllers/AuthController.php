@@ -58,7 +58,7 @@ class AuthController extends Controller
         }
         else
         {
-            //Chemin d'erreur + message
+            echo 'error';
         }
 
     }
@@ -87,17 +87,16 @@ class AuthController extends Controller
     public function Validation(Request $request)
     {
         $validator = Validator::make($request->all(), [
-            'Login' => 'required|email|exists:users,Mail',
-            'Pasword' => 'required|alpha_num|exists:users,Password',
-            'Cookie'=> 'boolean',
+            '_token' => 'required',
+            'Login' => 'required|exists:users,Mail',
+            'password' => 'required|exists:users,Password',
+            'COOKIE'=> 'required',
         ]);
 
         //if the inputs are not validated, we came back on the previous page.
         if ($validator->fails())
         {
-            return back()
-                        ->withErrors($validator)
-                        ->withInput();
+            return false;
         }
         else
         {

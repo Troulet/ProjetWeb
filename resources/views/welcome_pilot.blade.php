@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta charsert="utf-8" />
-        <link rel= "stylesheet" href="connexion.css"/>
+        <link rel= "stylesheet" href="../resources/views/welcome_pilot.css"/>
         <title>LES P'TITES ANNONCES</title>
         <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
         <link rel="stylesheet" href="./fontawesome/css/all.min.css">
@@ -14,7 +14,7 @@
     </head>
     <body>
         <?php 
-          include("header.blade.php"); 
+          include("../resources/views/header.blade.php"); 
         ?>
         <div class="container">
             <div class="carousel slide" data-ride="carousel" id="multi_item" data-intervale="2000">
@@ -64,6 +64,6 @@
         </div>
     </body>
     <?php 
-          include("footer.blade.php"); 
+          include("../resources/views/footer.blade.php"); 
     ?>
 </html>

@@ -23,16 +23,12 @@ class UsersController extends Controller
       $table = [$this->student, $this->pilot, $this->administrator];
       for ($i=0; isset($table[$i]); $i++)
       {
-        try
+        if($table[$i]->GetById($id) !== null)
         {
-            $table[$i]->GetById($id);
-            return $i;
-        }
-        catch(Exception $e)
-        {
+            $reponse = $i;
         }
       }
-      return 'error';
+      return $reponse;
   }
 
   function __construct()
