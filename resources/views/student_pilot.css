@@ -1,4 +1,4 @@
-h1 {
+﻿h1 {
     font-family: Verdana, "DejaVu Sans", "Bitstream Vera Sans", Geneva, sans-serif;
     text-transform: uppercase;
     padding: 10px 0;
@@ -15,7 +15,8 @@ h2 {
 }
 
 h3 {
-    text-align: left;
+    text-align: left;  
+    border-top: 1px solid #5C88DA;
 }
 
 .header, body {
@@ -28,11 +29,18 @@ h3 {
     align-items: center;
 }
 
-.container, .candidature, .table-borderless {
+.profil_card, .create_user {
+    margin-top: 1%;
+    padding: 1%;
+    border: 3px solid white;
+}
+
+.container, .filtre {
     margin-top: 1%;
     padding: 1%;
     border: 3px solid #5C88DA;
 }
+
 
 .subtitle {
     font-size: 75%;
@@ -86,14 +94,3 @@ button:hover {
     background-color: #c9c3c3;
 }
 
-
-.wishlist {
-    padding: 0 20px 6px;
-    margin: 2%;
-    vertical-align: top;
-    border-bottom: 2px solid #5C88DA;
-    border: 60px;
-    font-weight: bold;
-    font-size: 1em;
-    text-align: center;
-}
