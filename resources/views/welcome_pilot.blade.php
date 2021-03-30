@@ -21,7 +21,8 @@
                     <div class="carousel-item active">
                         <div class="row">
                             <div class="col-sm">
-                                <img class="d-block w-100" src="https://mdbootstrap.com/img/new/standard/nature/181.jpg" alt="1 slide">
+                                <img class="d-block w-100 desk-img" src="https://mdbootstrap.com/img/new/standard/nature/181.jpg" alt="1 slide">
+                                <img class=" w-100  mobile-img" src="https://mdbootstrap.com/img/new/standard/nature/181.jpg" alt="1 slide">
                                 <div class="card-body">
                                     <h5 class="card-title">Elève</h5>
                                     <p class="card-text">
@@ -31,7 +32,8 @@
                                 </div>
                             </div>
                             <div class="col-sm">
-                                <img class="d-block w-100" src="https://mdbootstrap.com/img/new/standard/nature/181.jpg" alt="2 slide">
+                                <img class="d-block w-100 desk-img" src="https://mdbootstrap.com/img/new/standard/nature/181.jpg" alt="2 slide">
+                                <img class=" w-100  mobile-img" src="https://mdbootstrap.com/img/new/standard/nature/181.jpg" alt="2 slide">
                                 <div class="card-body">
                                     <h5 class="card-title">Elève</h5>
                                     <p class="card-text">
@@ -40,7 +42,17 @@
                                     <a href="#" class="btn btn-primary">Aller voir</a>
                                 </div>
                             </div>
-                            <div class="col-sm"><img class="d-block w-100" src="https://mdbootstrap.com/img/new/standard/nature/181.jpg" alt="3 slide"></div>
+                            <div class="col-sm">
+                            <img class="d-block w-100 desk-img" src="https://mdbootstrap.com/img/new/standard/nature/181.jpg" alt="3 slide"
+                            <img class=" w-100  mobile-img" src="https://mdbootstrap.com/img/new/standard/nature/181.jpg" alt="3 slide">
+                                <div class="card-body">
+                                    <h5 class="card-title">Elève</h5>
+                                    <p class="card-text">
+                                        Statistique de cet élève
+                                    </p>
+                                    <a href="#" class="btn btn-primary">Aller voir</a>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <div class="carousel-item">
