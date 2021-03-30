@@ -221,7 +221,7 @@
           Concevoir de nouveaux systèmes en accord avec l'équipe Créative et notamment le directeur UX
           Réaliser des documents design clairs et détaillés à destination des équipes du projet et leurs mises à jour
         </p>
-        <a href="#!" class="btn btn-primary">Voir</a>
+        <a href="#!" class="btn btn-primary">Aller voir</a>
       </div>
 
       <!--bouton du pop-up-->
