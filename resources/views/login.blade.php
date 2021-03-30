@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta charsert="utf-8" />
-        <link rel= "stylesheet" href="../resources/views/login.css">
+        <link rel= "stylesheet" href="login.css">
         <title>LES P'TITES ANNONCES</title>
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <link href="https://fonts.googleapis.com/css2?family=Happy+Monkey&display=swap" rel="stylesheet">
@@ -12,12 +12,12 @@
     <body>
     {!! Form::open(['url' => '/user', 'method' => 'post']) !!}
         <div id="1">
-            <img class="logo2" src="../resources/img/logo_cesi2.0.png">
+            <img class="logo2" src="../img/logo_cesi2.0.png">
             <h1>Authentification</h1>
             <p><h2>Bienvenue</h2></p>
         </div>
         <div id="2">
-            <img class="image_stage" src="../resources/img/stage.jpg">
+            <img class="image_stage" src="../img/stage.jpg">
         </div>
         <div id="3">
             <label for="login">Login :</label><br>
@@ -25,11 +25,15 @@
 
          <div>
             <label for="pass">Mot de passe :</label><br>
+
+    
+
             <input type="password" id="Password" name="password" minlength="8" required>
          </div>
+
         <div id="4">
             <p>Cookies !</p>
-            <p>Nous permettez vous d'utiliser les cookies ? Ils nous permettent de vous offrir la meilleure expéreience possible sur notre site.</p>
+            <p>Nous permettez vous d'utiliser les cookies ? Ils nous permettent de vous offrir la meilleure expérience possible sur notre site.</p>
 
             <input type="radio" id="COOKIE" name="COOKIE" value="yes">
             <label for="yes">Oui</label>
@@ -41,7 +45,7 @@
     {!! Form::close() !!}
     </body>
     <footer>
-        <img class="logo" src="../resources/img/logo_cesi.png">
+        <img class="logo" src="../img/logo_cesi.png">
         <ul>
             <li>
                 <a href="https://ent.cesi.fr/?RH=&ksession=9e43032b-00b8-446a-8782-5768fbf6406f" title="ENT" target="blank">ENT</a>

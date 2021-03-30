@@ -2,7 +2,8 @@
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
     <meta charsert="utf-8" />
-    <link rel="stylesheet" href="../resources/views/welcome_student.css" />
+    <link rel="stylesheet" href="welcome_student.css" />
+    <link rel="stylesheet" href="header_footer.css" />
     <title>LES P'TITES ANNONCES</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link href="https://fonts.googleapis.com/css2?family=Happy+Monkey&display=swap" rel="stylesheet">
@@ -11,7 +12,7 @@
 </head>
 <body>
     <?php 
-          include("../resources/views/header.blade.php"); 
+          include("header.blade.php"); 
     ?>
     <!--Caroussel-->
     <div class="container">
@@ -20,7 +21,8 @@
                 <div class="carousel-item active">
                     <div class="row">
                         <div id="banner-one" class="col-sm">
-                            <img class="d-block w-100" src="https://mdbootstrap.com/img/new/standard/nature/181.jpg" alt="1 slide">
+                            <img class="d-block w-100 desk-img" src="https://mdbootstrap.com/img/new/standard/nature/181.jpg" alt="1 slide">
+                            <img class=" w-100  mobile-img" src="https://mdbootstrap.com/img/new/standard/nature/181.jpg" alt="1 slide">
                             <div class="card-body">
                                 <h5 class="card-title">Stage</h5>
                                 <p class="card-text">
@@ -30,7 +32,8 @@
                             </div>
                         </div>
                         <div id="banner-two" class="col-sm">
-                            <img class="d-block w-100" src="https://mdbootstrap.com/img/new/standard/nature/181.jpg" alt="2 slide">
+                            <img class="d-block w-100 desk-img" src="https://mdbootstrap.com/img/new/standard/nature/181.jpg" alt="2 slide">
+                            <img class=" w-100  mobile-img" src="https://mdbootstrap.com/img/new/standard/nature/181.jpg" alt="2 slide">
                             <div class="card-body">
                                 <h5 class="card-title">Stage</h5>
                                 <p class="card-text">
@@ -72,6 +75,6 @@
 </body>
 
 <?php 
-          include("../resources/views/footer.blade.php"); 
+          include("footer.blade.php"); 
 ?>
 </html>

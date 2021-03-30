@@ -2,17 +2,16 @@
 <html>
     <head>
         <meta charsert="utf-8" />
-        <link rel= "stylesheet" href="../resources/views/welcome_admin.css"/>
+        <link rel= "stylesheet" href="welcome_admin.css"/>
+        <link rel= "stylesheet" href="header_footer.css"/>
         <title>LES P'TITES ANNONCES</title>
-        <link rel="stylesheet" href="./assets/vendors/bootstrap/css/bootstrap.min.css">
-        <link rel="stylesheet" href="./assets/vendors/fontawesome/css/all.min.css">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <link href="https://fonts.googleapis.com/css2?family=Happy+Monkey&display=swap" rel="stylesheet">
         <link rel="preconnect" href="https://fonts.gstatic.com">
     </head>
     <body>
         <?php 
-          include("../resources/views/header.blade.php"); 
+          include("header.blade.php"); 
         ?>
     </br>
     <div class="informer">
@@ -26,6 +25,6 @@
     </div>
 </body>
 <?php 
-          include("../resources/views/footer.blade.php"); 
+          include("footer.blade.php"); 
 ?>
 </html>
