@@ -10,7 +10,7 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     </head>
     <body>
-    <form>
+    {!! Form::open(['url' => '/user', 'method' => 'post']) !!}
         <div id="1">
             <img class="logo2" src="../img/logo_cesi2.0.png">
             <h1>Authentification</h1>
@@ -25,8 +25,13 @@
 
          <div>
             <label for="pass">Mot de passe :</label><br>
+<<<<<<< HEAD
             <input type="password" id="pass" name="password" minlength="8" required>
          </div><br>
+=======
+            <input type="password" id="Password" name="password" minlength="8" required>
+         </div>
+>>>>>>> 256287db6e96884ad96ffb585ee8a76fa39390c2
         <div id="4">
             <p>Cookies !</p>
             <p>Nous permettez vous d'utiliser les cookies ? Ils nous permettent de vous offrir la meilleure expéreience possible sur notre site.</p>
@@ -38,7 +43,7 @@
             <label for="no">Non</label><br><br>
         </div>
             <button type="submit" class="btn">CONNEXION</button>
-    </form>
+    {!! Form::close() !!}
     </body>
     <footer>
         <img class="logo" src="../img/logo_cesi.png">

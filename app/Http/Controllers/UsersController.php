@@ -2,22 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Database\Eloquent;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
 class UsersController extends Controller 
 {
-
-  /**
-   * Display a listing of the resource.
-   *
-   * @return Response
-   */
-  public function index()
-  {
-    
-  }
-
   /**
    * Show the form for creating a new resource.
    *
@@ -49,16 +39,6 @@ class UsersController extends Controller
     
   }
 
-  /**
-   * Show the form for editing the specified resource.
-   *
-   * @param  int  $id
-   * @return Response
-   */
-  public function edit($id)
-  {
-    
-  }
 
   /**
    * Update the specified resource in storage.
@@ -77,23 +57,30 @@ class UsersController extends Controller
    * @param  int  $id
    * @return Response
    */
-  public function destroy($id)
+  public function destroy(Request $request)
   {
     
   }
 
-  public function Get_Table($mail, $password)
+  public function Get_Table($mail)
   {
-      $table = ['student', 'pilot', 'administrator'];
+      $table = [$student, $pilot, $administrator];
       for ($i=0; isset($table[$i]); $i++)
       {
-        if(DB::table($table[$i])->where('Mail', '=', $mail)->where('Password', '=', $password)->get() !== null)
+        if( $table[$i]->GetId($mail) !== null)
         {
             return $table[$i];
         }
       }
       return 'student';
       //Ajouter une route d'erreur
+  }
+
+  public function __construct()
+  {
+      $student = new StudentController
+      $pilot = new PilotController
+      $administrator = new Administrator
   }
   
 }

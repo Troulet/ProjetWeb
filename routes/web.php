@@ -17,7 +17,7 @@ use Illuminate\Http\RedirectResponse;
 */
 
 Route::get('/', function () {
-    return view('TESTADMIN');
+    return view('login');
 });
 
 Route::get('/admin', function () {
