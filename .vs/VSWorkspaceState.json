@@ -1,13 +1,10 @@
 {
   "ExpandedNodes": [
     "",
-    "\\OLD",
     "\\OLD\\src",
-    "\\OLD\\VIEW",
-    "\\OLD\\VIEW\\Authentification",
     "\\resources",
     "\\resources\\views"
   ],
-  "SelectedNode": "\\resources\\views\\welcome_student.css",
+  "SelectedNode": "\\resources\\views\\stats_student.blade.php",
   "PreviewInSolutionExplorer": false
 }
