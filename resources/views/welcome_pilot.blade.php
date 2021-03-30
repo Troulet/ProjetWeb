@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta charsert="utf-8" />
-        <link rel= "stylesheet" href="welcome_pilot.css"/>
+        <link rel= "stylesheet" href="welcome_student.css"/>
         <link rel= "stylesheet" href="header_footer.css"/>
         <title>LES P'TITES ANNONCES</title>
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -25,7 +25,7 @@
                                 <div class="card-body">
                                     <h5 class="card-title">Elève</h5>
                                     <p class="card-text">
-                                        Statistique de cet élève
+                                        Statistiques de cet élève
                                     </p>
                                     <a href="#" class="btn btn-primary">Aller voir</a>
                                 </div>
