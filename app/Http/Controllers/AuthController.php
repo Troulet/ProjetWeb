@@ -38,15 +38,15 @@ class AuthController extends Controller
             switch ($User->Get_Table($Id))
             {
                 case 2 :
-                    return View::make('welcome_admin');
+                    return View::make('welcome_admin')->with('user_type', 2);
                     break;
 
                 case 0 :
-                    return View::make('welcome_student');
+                    return View::make('welcome_student')->with('user_type', 0);
                     break;
 
                 case 1 :
-                    return View::make('welcome_pilot');
+                    return View::make('welcome_pilot')->with('user_type', 1);
                     break;
 
                 case 'error' :

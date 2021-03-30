@@ -41,37 +41,6 @@ class Pilot extends Model
         return $this->hasMany('Inform_Step6');
     }
 
-    public function Create($userid, $mail, $password, $promo, $fname, $lname, $locid){
-        DB::table('pilot')->insertOrIgnore([
-            'Users_id' => $userid,
-            'Mail' => $mail,
-            'Password' => $password,
-            'Promotion' => $promo,
-            'First_Name' => $fname,
-            'Last_Name' => $lname,
-            'Localisation_id' => $locid,
-            'created_at' => date("F j, Y, g:i a")
-        ]);
-    }
-
-    /*public function Update($userid, $mail, $password, $promo, $fname, $lname, $locid){    
-        DB::table('pilot')->updateOrInsert(['Users_id' => $userid],
-            [
-            'Mail' => $mail,
-            'Password' => $password,
-            'Promotion' => $promo,
-            'First_Name' => $fname,
-            'Last_Name' => $lname,
-            'Localisation_id' => $locid,
-            'updated_at' => date("F j, Y, g:i a")
-            ]
-        );
-    }
-
-    public function delete($id){
-        DB::table('pilot')->where('Users_id', '=', $id)->delete();
-    }*/
-
     public function GetById($id){
         return $pilot = DB::table('pilot')->where('Users_id', '=', $id)->first();
     }

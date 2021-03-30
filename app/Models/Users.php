@@ -26,28 +26,6 @@ class Users extends Model
         return $this->hasMany('Administrator');
     }
 
-    public function Create($mail, $password){
-        DB::table('users')->insertOrIgnore([
-            'Mail' => $mail,
-            'Password' => $password,
-            'created_at' => date("F j, Y, g:i a")
-        ]);
-    }
-
-    /*public function Update($id, $mail, $password){
-        DB::table('users')->updateOrInsert(['id' => $id],
-            [
-            'Mail' => $mail,
-            'Password' => $password,
-            'updated_at' => date("F j, Y, g:i a")
-            ]
-        );
-    }
-
-    public function delete($id){
-        DB::table('users')->where('id', '=', $id)->delete();
-    }*/
-
     public function GetById($id){
         return $user = DB::table('users')->whereId($id)->first();
     }

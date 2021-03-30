@@ -31,35 +31,6 @@ class Localisation extends Model
         return $this->hasMany('Pilot');
     }
 
-    public function Create(){
-        $localisation = $_POST('localisation');
-        
-        DB::table('localisation')->insertOrIgnore([
-            'Localisation' => $localisation,
-            'created_at' => date("F j, Y, g:i a")
-        ]);
-        
-    }
-
-    public function Update(){
-        $id = $_POST('id');
-        $localisation = $_POST('localisation');
-        
-        DB::table('localisation')->updateOrInsert(['id' => $id],
-            [
-                'Localisation' => $localisation,
-                'updated_at' => date("F j, Y, g:i a")
-            ]
-        );
-
-    }
-
-    public function delete(){
-        $id = $_POST('id');
-
-        DB::table('localisation')->where('id', '=', $id)->delete();
-    }
-
     public function GetById(){
         $id = $_POST('id');
 
@@ -70,9 +41,7 @@ class Localisation extends Model
         return $places = DB::table('localisation')->get();
     }
 
-    public function GetId(){
-        $localisation = $_POST('localisation');
-
+    public function GetId($localisation){
         return $id = DB::table('localisation')->where('Localisation', '=', $localisation)->pluck('id');
     }
 

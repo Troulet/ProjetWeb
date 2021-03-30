@@ -4,10 +4,11 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Enterprise extends Model 
 {
-
+    use SoftDeletes;
     protected $table = 'Enterprise';
     public $timestamps = true;
 
@@ -38,29 +39,6 @@ class Enterprise extends Model
             'created_at' => date("F j, Y, g:i a")
         ]);
         
-    }
-
-    public function Update(){
-        $id = $_POST('id');
-        $ename = $_POST('enterprise_name');
-        $actsect = $_POST('activity_sector');
-        $cesistudtaken = $_POST('cesi_student_taken');
-        
-        DB::table('enterprise')->updateOrInsert(['id' => $id],
-            [
-                'Enterprise_Name' => $ename,
-                'Activity_Sector' => $actsect,
-                'Cesi_Student_Taken' => $cesistudtaken,
-                'updated_at' => date("F j, Y, g:i a")
-            ]
-        );
-
-    }
-
-    public function delete(){
-        $id = $_POST('id');
-
-        DB::table('enterprise')->where('id', '=', $id)->delete();
     }
 
     public function GetById(){

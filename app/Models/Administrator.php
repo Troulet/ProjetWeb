@@ -31,37 +31,6 @@ class Administrator extends Model
         return $this->belongsTo('Users');
     }
 
-    public function Create($userid, $mail, $password, $fname, $lname, $locid){
-        DB::table('administrator')->insertOrIgnore([
-            'Users_id' => $userid,
-            'Mail' => $mail,
-            'Password' => $password,
-            'First_Name' => $fname,
-            'Last_Name' => $lname,
-            'Localisation_id' => $locid,
-            'created_at' => date("F j, Y, g:i a")
-        ]);
-    }
-
-    /*public function Update($userid, $mail, $password, $fname, $lname, $locid){
-        
-        DB::table('administrator')->updateOrInsert(['Users_id' => $userid],
-            [
-            'Mail' => $mail,
-            'Password' => $password,
-            'First_Name' => $fname,
-            'Last_Name' => $lname,
-            'Localisation_id' => $locid,
-            'updated_at' => date("F j, Y, g:i a")
-            ]
-        );
-
-    }
-
-    public function delete($id){
-        DB::table('administrator')->where('Users_id', '=', $id)->delete();
-    }*/
-
     public function GetById($id){
         return $admin = DB::table('administrator')->where('Users_id', '=', $id)->first();
     }

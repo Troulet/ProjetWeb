@@ -38,7 +38,14 @@ class UsersController extends Controller
       $this->pilot = new PilotController;
       $this->administrator = new AdministratorController;
   }
-  
+
+  public function Delete($id)
+  {
+
+  //We delete the line on User's table.
+    $this->user->find($id);
+    $this->user->delete();
+  }
 }
 
 ?>
