@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta charsert="utf-8" />
-        <link rel= "stylesheet" href="welcome_admin.css"/>
+        <link rel= "stylesheet" href="../resources/views/welcome_admin.css"/>
         <title>LES P'TITES ANNONCES</title>
         <link rel="stylesheet" href="./assets/vendors/bootstrap/css/bootstrap.min.css">
         <link rel="stylesheet" href="./assets/vendors/fontawesome/css/all.min.css">
@@ -12,7 +12,7 @@
     </head>
     <body>
         <?php 
-          include("header.blade.php"); 
+          include("../resources/views/header.blade.php"); 
         ?>
     </br>
     <div class="informer">
@@ -26,6 +26,6 @@
     </div>
 </body>
 <?php 
-          include("footer.blade.php"); 
+          include("../resources/views/footer.blade.php"); 
 ?>
 </html>

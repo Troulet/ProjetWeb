@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class UsersController extends Controller 
 {
@@ -79,6 +80,20 @@ class UsersController extends Controller
   public function destroy($id)
   {
     
+  }
+
+  public function Get_Table($mail, $password)
+  {
+      $table = ['administrator', 'pilot', 'student'];
+      for ($i=0; isset($table[$i]); $i++)
+      {
+        if(DB::table($table[$i])->where('Mail', '=', $mail)->where('Password', '=', $password)->get() !== null)
+        {
+            return $table[$i];
+        }
+      }
+      return 'administrator';
+      //Ajouter une route d'erreur
   }
   
 }

@@ -5,13 +5,16 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\View;
+use Illuminate\Support\Facades\Crypt;
 
 class AuthController extends Controller 
 {
     public function Login(Request $request)
     {
+        /*We securize the password by encrypting it.
+        We also need it encrypted to be compared on the database*/
         Crypt::encryptString($request->input('Password'));
-        if ($this->Validate($request))
+        if ($this->Validation($request))
         {
             if ($request->input('Cookie') == true)
             {
@@ -28,8 +31,8 @@ class AuthController extends Controller
                 $Password = $_SESSION['Password'];
             }
 
-            User = new Users_Controller;
-            switch (User->Get_Table($Login, $Password))
+            $User = new UsersController;
+            switch ($User->Get_Table($Login, $Password))
             {
                 case 'administrator' :
                     return View::make('welcome_admin');
@@ -67,7 +70,7 @@ class AuthController extends Controller
 
     }
 
-    public function Validate(Request $request)
+    public function Validation(Request $request)
     {
         $validator = Validator::make($request->all(), [
             'Login' => 'required|email|exists:users,Mail',
@@ -75,6 +78,7 @@ class AuthController extends Controller
             'Cookie'=> 'boolean',
         ]);
 
+        //if the inputs are not validated, we came back on the previous page.
         if ($validator->fails()) {
             return back()
                         ->withErrors($validator)
