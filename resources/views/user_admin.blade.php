@@ -86,6 +86,7 @@
                         <button type="button" class="btn">MODIFIER</button>
                     </div>
                 </div>
+                <br/>
                 <div class="card">
                     <div class="card-body">
                         Info élève
@@ -95,6 +96,7 @@
                         <button type="button" class="btn">MODIFIER</button>
                     </div>
                 </div>
+                <br/>
                 <div class="card">
                     <div class="card-body">
                         Info délégué
