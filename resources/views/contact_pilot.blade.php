@@ -29,17 +29,17 @@
 
         <div class="card">
             <div class="card-body">
-                <h5 class="card-title">Contact pilotes</h5>
+                <h5 class="card-title">Contact élève</h5>
                 <p class="card-text">
-                Mail pilote 1 :
+                Mail élève 1 :
                 </p>
                 <button type="button" class="btn btn-primary">Contacter</button>
                 <p class="card-text">
-                Mail pilote 2 :
+                Mail élève 2 :
                 </p>
                 <button type="button" class="btn btn-primary">Contacter</button>
                 <p class="card-text">
-                Mail pilote 3 :
+                Mail élève 3 :
                 </p>
                 <button type="button" class="btn btn-primary">Contacter</button>
             </div>
@@ -59,12 +59,12 @@
             <div class="list-group">
                 <h3>Messagerie</h3>
 
-                <a href="#" class="list-group-item list-group-item-action"><h5>Nom du pilote</h5>Message</a>
-                <a href="#" class="list-group-item list-group-item-action"><h5>Nom du pilote</h5>Message</a>
-                <a href="#" class="list-group-item list-group-item-action"><h5>Nom du pilote</h5>Message</a>
-                <a href="#" class="list-group-item list-group-item-action"><h5>Nom du pilote</h5>Message</a>
-                <a href="#" class="list-group-item list-group-item-action"><h5>Nom du pilote</h5>Message</a>
-                <a href="#" class="list-group-item list-group-item-action"><h5>Nom du pilote</h5>Message</a>
+                <a href="#" class="list-group-item list-group-item-action"><h5>Nom d'élève</h5>Message</a>
+                <a href="#" class="list-group-item list-group-item-action"><h5>Nom d'élève/délégué</h5>Message</a>
+                <a href="#" class="list-group-item list-group-item-action"><h5>Nom d'élève</h5>Message</a>
+                <a href="#" class="list-group-item list-group-item-action"><h5>Nom d'élève/délégué</h5>Message</a>
+                <a href="#" class="list-group-item list-group-item-action"><h5>Nom d'élève</h5>Message</a>
+                <a href="#" class="list-group-item list-group-item-action"><h5>Nom d'élève/délégué</h5>Message</a>
             </div>
         </div>
     </body>
