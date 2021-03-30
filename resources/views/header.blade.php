@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html>
+<link rel= "stylesheet" href="../resources/views/header_footer.css"/>
 <body>
     <div id="1">
        <div id="header">
         <div class="titre">
-            <img class="logo2" src="../img/logo_cesi2.0.png">
+            <img class="logo2" src="../resources/img/logo_cesi2.0.png">
             <h1>LES P'TITES ANNONCES</h1>
             <h2>Cherche et trouve le stage qui te correspond !</h2>
         </div>
