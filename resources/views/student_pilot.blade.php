@@ -21,7 +21,7 @@
                     <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
                     <button class="btn btn-outline-success" type="submit">Search</button>
                 </form>
-                <div>
+                <div class="titres">
                     <h3>Catégories</h3>
                         <div>
                             <input type="checkbox" id="student" name="student">
@@ -63,6 +63,7 @@
                         <button type="button" class="btn">MODIFIER</button>
                     </div>
                 </div>
+                <br/>
                 <div class="card">
                     <div class="card-body">
                         Info élève
@@ -72,6 +73,7 @@
                         <button type="button" class="btn">MODIFIER</button>
                     </div>
                 </div>
+                <br/>
                 <div class="card">
                     <div class="card-body">
                         Info délégué
@@ -82,7 +84,7 @@
                     </div>
                 </div>
             </div>
-        <div>
+        <div class="create_user">
             <button type="button" class="btn">CRÉER UN PROFIL UTILISATEUR</button>
         </div>
     </body>
