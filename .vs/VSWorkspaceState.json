@@ -1,9 +1,10 @@
 {
   "ExpandedNodes": [
     "",
+    "\\Public",
     "\\resources",
     "\\resources\\views"
   ],
-  "SelectedNode": "\\resources\\views\\postulate.blade.php",
+  "SelectedNode": "\\resources\\views\\login.blade.php",
   "PreviewInSolutionExplorer": false
 }
