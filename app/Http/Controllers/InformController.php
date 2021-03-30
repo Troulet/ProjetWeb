@@ -8,3 +8,5 @@ class InformController extends Controller
 {
 
 }
+
+?>

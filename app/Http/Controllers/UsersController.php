@@ -2,85 +2,45 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Database\Eloquent;
+use App\Models\Users;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
 
 class UsersController extends Controller 
 {
-  /**
-   * Show the form for creating a new resource.
-   *
-   * @return Response
-   */
-  public function create()
+
+  protected $user;
+  protected $student;
+  protected $administrator;
+  protected $pilot;
+
+  public function GetId($Login)
   {
-    
+    return $this->user->GetId($Login);
   }
 
-  /**
-   * Store a newly created resource in storage.
-   *
-   * @return Response
-   */
-  public function store(Request $request)
+  public function Get_Table($id)
   {
-    
-  }
-
-  /**
-   * Display the specified resource.
-   *
-   * @param  int  $id
-   * @return Response
-   */
-  public function show($id)
-  {
-    
-  }
-
-
-  /**
-   * Update the specified resource in storage.
-   *
-   * @param  int  $id
-   * @return Response
-   */
-  public function update($id)
-  {
-    
-  }
-
-  /**
-   * Remove the specified resource from storage.
-   *
-   * @param  int  $id
-   * @return Response
-   */
-  public function destroy(Request $request)
-  {
-    
-  }
-
-  public function Get_Table($mail)
-  {
-      $table = [$student, $pilot, $administrator];
+      $table = [$this->student, $this->pilot, $this->administrator];
       for ($i=0; isset($table[$i]); $i++)
       {
-        if( $table[$i]->GetId($mail) !== null)
+        try
         {
-            return $table[$i];
+            $table[$i]->GetById($id);
+            return $i;
+        }
+        catch(Exception $e)
+        {
         }
       }
-      return 'student';
-      //Ajouter une route d'erreur
+      return 'error';
   }
 
-  public function __construct()
+  function __construct()
   {
-      $student = new StudentController
-      $pilot = new PilotController
-      $administrator = new Administrator
+      $this->user = new Users;
+      $this->student = new StudentController;
+      $this->pilot = new PilotController;
+      $this->administrator = new AdministratorController;
   }
   
 }

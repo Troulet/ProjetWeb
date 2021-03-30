@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\DB;
 
 class Pilot extends Model 
 {
@@ -40,15 +41,7 @@ class Pilot extends Model
         return $this->hasMany('Inform_Step6');
     }
 
-    public function Create(){
-        $userid = $_POST('user_id');
-        $mail = $_POST('mail');
-        $password = $_POST('password');
-        $promo = $_POST('promotion');
-        $fname = $_POST('first_name');
-        $lname = $_POST('last_name');
-        $locid = $_POST('localisation_id');
-
+    public function Create($userid, $mail, $password, $promo, $fname, $lname, $locid){
         DB::table('pilot')->insertOrIgnore([
             'Users_id' => $userid,
             'Mail' => $mail,
@@ -61,15 +54,7 @@ class Pilot extends Model
         ]);
     }
 
-    public function Update(){
-        $userid = $_POST('user_id');
-        $mail = $_POST('mail');
-        $password = $_POST('password');
-        $promo = $_POST('promotion');
-        $fname = $_POST('first_name');
-        $lname = $_POST('last_name');
-        $locid = $_POST('localisation_id');
-        
+    /*public function Update($userid, $mail, $password, $promo, $fname, $lname, $locid){    
         DB::table('pilot')->updateOrInsert(['Users_id' => $userid],
             [
             'Mail' => $mail,
@@ -83,15 +68,11 @@ class Pilot extends Model
         );
     }
 
-    public function delete(){
-        $id = $_POST('users_id');
-
+    public function delete($id){
         DB::table('pilot')->where('Users_id', '=', $id)->delete();
-    }
+    }*/
 
-    public function GetById(){
-        $id = $_POST('users_id');
-
+    public function GetById($id){
         return $pilot = DB::table('pilot')->where('Users_id', '=', $id)->first();
     }
 
@@ -99,9 +80,7 @@ class Pilot extends Model
         return $pilots = DB::table('pilot')->get();
     }
 
-    public function GetId(){
-        $mail = $_POST('mail');
-
+    public function GetId($mail){
         return $id = DB::table('pilot')->where('Mail', '=', $mail)->pluck('Users_id');
     }
 

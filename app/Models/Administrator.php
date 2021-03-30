@@ -1,8 +1,9 @@
 <?php
 
-namespace App\Models;  
+namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\DB;
 
 class Administrator extends Model 
 {
@@ -30,14 +31,7 @@ class Administrator extends Model
         return $this->belongsTo('Users');
     }
 
-    public function Create(){
-        $userid = $_POST('user_id');
-        $mail = $_POST('mail');
-        $password = $_POST('password');
-        $fname = $_POST('first_name');
-        $lname = $_POST('last_name');
-        $locid = $_POST('localisation_id');
-
+    public function Create($userid, $mail, $password, $fname, $lname, $locid){
         DB::table('administrator')->insertOrIgnore([
             'Users_id' => $userid,
             'Mail' => $mail,
@@ -49,13 +43,7 @@ class Administrator extends Model
         ]);
     }
 
-    public function Update(){
-        $userid = $_POST('user_id');
-        $mail = $_POST('mail');
-        $password = $_POST('password');
-        $fname = $_POST('first_name');
-        $lname = $_POST('last_name');
-        $locid = $_POST('localisation_id');
+    /*public function Update($userid, $mail, $password, $fname, $lname, $locid){
         
         DB::table('administrator')->updateOrInsert(['Users_id' => $userid],
             [
@@ -70,15 +58,11 @@ class Administrator extends Model
 
     }
 
-    public function delete(){
-        $id = $_POST('user_id');
-
+    public function delete($id){
         DB::table('administrator')->where('Users_id', '=', $id)->delete();
-    }
+    }*/
 
-    public function GetById(){
-        $id = $_POST('user_id');
-
+    public function GetById($id){
         return $admin = DB::table('administrator')->where('Users_id', '=', $id)->first();
     }
 
@@ -86,9 +70,7 @@ class Administrator extends Model
         return $admins = DB::table('administrator')->get();
     }
 
-    public function GetId(){
-        $mail = $_POST('mail');
-
+    public function GetId($mail){
         return $id = DB::table('administrator')->where('Mail', '=', $mail)->pluck('Users_id');
     }
 }

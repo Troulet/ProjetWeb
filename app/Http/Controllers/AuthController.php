@@ -34,23 +34,33 @@ class AuthController extends Controller
 
             /*We redirect the user on the correct page*/
             $User = new UsersController;
-            switch ($User->Get_Table($Login))
+            $Id = $User->GetId($Login);
+            switch ($User->Get_Table($Id))
             {
-                case 'administrator' :
+                case 2 :
                     return View::make('welcome_admin');
                     break;
 
-                case 'student' :
+                case 0 :
                     return View::make('welcome_student');
                     break;
 
-                case 'pilot' :
+                case 1 :
                     return View::make('welcome_pilot');
+                    break;
+
+                case 'error' :
+                    echo "Erreur de Connexion";
                     break;
             }
 
             //Renvoyer une vue si l'utilisateur n'appartient à aucune des tables
         }
+        else
+        {
+            //Chemin d'erreur + message
+        }
+
     }
 
     public function Logout()
@@ -83,7 +93,8 @@ class AuthController extends Controller
         ]);
 
         //if the inputs are not validated, we came back on the previous page.
-        if ($validator->fails()) {
+        if ($validator->fails())
+        {
             return back()
                         ->withErrors($validator)
                         ->withInput();
