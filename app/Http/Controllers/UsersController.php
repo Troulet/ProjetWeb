@@ -84,7 +84,7 @@ class UsersController extends Controller
 
   public function Get_Table($mail, $password)
   {
-      $table = ['administrator', 'pilot', 'student'];
+      $table = ['student', 'pilot', 'administrator'];
       for ($i=0; isset($table[$i]); $i++)
       {
         if(DB::table($table[$i])->where('Mail', '=', $mail)->where('Password', '=', $password)->get() !== null)
@@ -92,7 +92,7 @@ class UsersController extends Controller
             return $table[$i];
         }
       }
-      return 'administrator';
+      return 'student';
       //Ajouter une route d'erreur
   }
   

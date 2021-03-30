@@ -14,6 +14,7 @@ class AuthController extends Controller
         /*We securize the password by encrypting it.
         We also need it encrypted to be compared on the database*/
         Crypt::encryptString($request->input('Password'));
+
         if ($this->Validation($request))
         {
             if ($request->input('Cookie') == true)
@@ -31,6 +32,7 @@ class AuthController extends Controller
                 $Password = $_SESSION['Password'];
             }
 
+            /*We redirect the user on the correct page*/
             $User = new UsersController;
             switch ($User->Get_Table($Login, $Password))
             {
@@ -46,6 +48,8 @@ class AuthController extends Controller
                     return View::make('welcome_pilot');
                     break;
             }
+
+            //Renvoyer une vue si l'utilisateur n'appartient à aucune des tables
         }
     }
 
