@@ -17,9 +17,8 @@
         include("header.blade.php"); 
         ?>
     </br>
-    <form>
 
-    </form>
+
     </body>
     <?php 
     include("footer.blade.php"); 
