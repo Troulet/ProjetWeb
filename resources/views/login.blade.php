@@ -11,6 +11,7 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     </head>
     <body>
+    <form>
         <div id="1">
             <img class="logo2" src="../resources/img/logo_cesi2.0.png">
             <h1>Authentification</h1>
@@ -23,9 +24,10 @@
             <label for="login">Login :</label><br>
             <input type="text" name="Login" id="login" required><br><br>
 
-            <label for="mdp">Mot de passe :</label><br>
-            <input type="text" name="Password" id="password" required><br><br>
-        </div>
+         <div>
+            <label for="pass">Mot de passe :</label><br>
+            <input type="password" id="pass" name="password" minlength="8" required>
+         </div>
         <div id="4">
             <p>Cookies !</p>
             <p>Nous permettez vous d'utiliser les cookies ? Ils nous permettent de vous offrir la meilleure expéreience possible sur notre site.</p>
@@ -36,6 +38,8 @@
             <input type="radio" id="COOKIE" name="COOKIE" value="no">
             <label for="no">Non</label><br><br>
         </div>
+            <button type="submit" class="btn">CONNEXION</button>
+    </form>
     </body>
     <footer>
         <img class="logo" src="../resources/img/logo_cesi.png">
@@ -48,7 +52,4 @@
             </li>
         </ul>
     </footer>
-
-   
-
 </html>

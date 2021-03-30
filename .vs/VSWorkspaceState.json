@@ -1,13 +1,9 @@
 {
   "ExpandedNodes": [
     "",
-    "\\OLD",
-    "\\OLD\\src",
-    "\\OLD\\VIEW",
-    "\\OLD\\VIEW\\Authentification",
     "\\resources",
     "\\resources\\views"
   ],
-  "SelectedNode": "\\resources\\views\\welcome_student.css",
+  "SelectedNode": "\\resources\\views\\postulate.blade.php",
   "PreviewInSolutionExplorer": false
 }

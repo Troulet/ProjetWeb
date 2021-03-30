@@ -53,10 +53,10 @@
                 </div>
             </div>
             <div class="profil_card">
-                <h2>Profil Utilisateur</h2>
+                <h2>Profil Élève</h2>
                 <div class="card">
                     <div class="card-body">
-                        Info pilote
+                       Données de l'élève (login, promo, centre, nbre de candidature, email etc)
                     </div>
                     <div>
                         <button type="button" class="btn">SUPPRIMER</button>
@@ -66,7 +66,7 @@
                 <br/>
                 <div class="card">
                     <div class="card-body">
-                        Info élève
+                       Données de l'élève (login, promo, centre, nbre de candidature, email etc)
                     </div>
                     <div>
                         <button type="button" class="btn">SUPPRIMER</button>
@@ -76,7 +76,7 @@
                 <br/>
                 <div class="card">
                     <div class="card-body">
-                        Info délégué
+                       Données de l'élève (login, promo, centre, nbre de candidature, email etc)
                     </div>
                     <div>
                         <button type="button" class="btn">SUPPRIMER</button>
