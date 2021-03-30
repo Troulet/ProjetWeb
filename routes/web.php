@@ -1,5 +1,7 @@
 <?php
 
+use Illuminate\Http\Request;
+use App\Http\Controllers\AuthController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,5 +16,14 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('TESTADMIN');
+});
+
+Route::get('/admin', function () {
+    return view('welcome_admin');
+});
+
+Route::post('/user', function (Request $request) {
+    return redirect()->route('/admin');
+    return redirect()->action([AuthController::class, 'Login'], [$request]);
 });

@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta charsert="utf-8" />
-        <link rel= "stylesheet" href="connexion.css"/>
+        <link rel= "stylesheet" href="internship_pilot.css"/>
         <title>LES P'TITES ANNONCES</title>
         <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
         <link rel="stylesheet" href="./fontawesome/css/all.min.css">
@@ -16,13 +16,14 @@
         <?php 
           include("header.blade.php"); 
         ?>
+    </br>
             <div class="filtre">
             <h3>Filtrer les résultats</h3>
             <form class="d-flex">
                 <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
                 <button class="btn btn-outline-success" type="submit">Search</button>
             </form>
-            <div>
+            <section class="categories">
                 <h3>Catégories</h3>
                 <div>
                     <input type="checkbox" id="offre" name="offre"
@@ -81,7 +82,7 @@
                            >
                     <label for="s3e">A2 S3E</label>
                 </div>
-            </div>
+              </section>
         </div>
         <div>
             <input class="creation_E"
@@ -101,69 +102,60 @@ id="carousel"
 class="carousel slide"
 data-mdb-ride="carousel"
 >
-<!-- Controls -->
-<div class="d-flex justify-content-center mb-4">
-  <button
-    class="carousel-control-prev position-relative"
-    type="button"
-    data-mdb-target="#carousel"
-    data-mdb-slide="prev"
-  >
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Previous</span>
-  </button>
-  <button
-    class="carousel-control-next position-relative"
-    type="button"
-    data-mdb-target="#carousel"
-    data-mdb-slide="next"
-  >
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Next</span>
-  </button>
-</div>
-<!-- Inner -->
-<div class="carousel-inner py-4">
-  <!-- Single item -->
-  <div class="carousel-item active">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-4">
-          <div class="card">
-            <img
-              src="../img/safran.jpg"
-              class="card-img-top"
-              alt="..."
-            />
-            <div class="card-body">
-                <button type="button" class="btn btn-primary btn-floating"><i class="fas fa-heart"></i></button>
-              <h5 class="card-title">Stage informatique chez Safran</h5>
-              <p class="card-text">
-                Votre mission si vous l'acceptez sera de vous occuper du suivi informatique d'une de nos chaîne de production.
-              </p>
-              <a href="#!" class="btn btn-primary">Voir</a>
-            </div>
+<!--Caroussel-->
+<section class="carousel_1">
+  <div class="container">
+  <h2>Offres :</h2>
+      <div class="carousel slide" data-ride="carousel" id="multi_item1" data-intervale="2000">
+          <div class="carousel-inner">
+              <div class="carousel-item active">
+                  <div class="row">
+                      <div class="col-sm">
+                          <img class="d-block w-100" src="https://mdbootstrap.com/img/new/standard/nature/181.jpg" alt="1 slide">
+                          <div class="card-body">
+                              <h5 class="card-title">Stage</h5>
+                              <p class="card-text">
+                                  Thales recrute un stagiaire en informatique pour du développement.
+                              </p>
+                              <a href="#" class="btn btn-primary">Aller voir</a>
+                          </div>
+                      </div>
+                      <div class="col-sm">
+                          <img class="d-block w-100" src="https://mdbootstrap.com/img/new/standard/nature/181.jpg" alt="2 slide">
+                          <div class="card-body">
+                              <h5 class="card-title">Stage</h5>
+                              <p class="card-text">
+                                  Thales recrute un stagiaire en informatique pour du développement.
+                              </p>
+                              <a href="#" class="btn btn-primary">Aller voir</a>
+                          </div>
+                      </div>
+                      <div class="col-sm"><img class="d-block w-100" src="https://mdbootstrap.com/img/new/standard/nature/181.jpg" alt="3 slide"></div>
+                  </div>
+              </div>
+              <div class="carousel-item">
+                  <div class="row">
+                      <div class="col-sm"><img class="d-block w-100" src="https://mdbootstrap.com/img/new/standard/nature/181.jpg" alt="4 slide"></div>
+                      <div class="col-sm"><img class="d-block w-100" src="https://mdbootstrap.com/img/new/standard/nature/181.jpg" alt="5 slide"></div>
+                      <div class="col-sm"><img class="d-block w-100" src="https://mdbootstrap.com/img/new/standard/nature/181.jpg" alt="6 slide"></div>
+                  </div>
+              </div>
           </div>
-        </div>
 
-        <div class="col-lg-4 d-none d-lg-block">
-          <div class="card">
-            <img
-              src="../img/ironMan.jpg"
-              class="card-img-top"
-              alt="..."
-            />
-            <div class="card-body">
-                <button type="button" class="btn btn-primary btn-floating"><i class="fas fa-heart"></i></button>
-              <h5 class="card-title">Stage pour la Tony Stark Industrie</h5>
-              <p class="card-text">
-                Depuis que Spider Man à perdu notre dernière armure lors d'un corps à corps avec les forces du mal, nous avons du mal à reconstituer notre base de données. Nous songeons donc à une refonte de notre IA pour la nouvelle armure.
-              </p>
-              <a href="#!" class="btn btn-primary">Voir</a>
-            </div>
-          </div>
-        </div>
+          <a class="carousel-control-prev" href="#multi_item1" role="button" data-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="sr-only">Previous</span>
+          </a>
+          <a class="carousel-control-next" href="#multi_item1" role="button" data-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="sr-only">Next</span>
+          </a>
+      </div>
+  </div>
+</section>
 
+    <!--pop-up consulter une entreprise-->
+    <section class="offre_selec">
         <div class="col-lg-4 d-none d-lg-block">
           <div class="card">
             <img
@@ -171,32 +163,6 @@ data-mdb-ride="carousel"
               class="card-img-top"
               alt="..."
             />
-            <div class="card-body">
-              <h5 class="card-title">Game Designer</h5>
-              <p class="card-text">
-                Participer à la mise en place de feature du jeu en tenant compte des aspects UX
-                Concevoir de nouveaux systèmes en accord avec l'équipe Créative et notamment le directeur UX
-                Réaliser des documents design clairs et détaillés à destination des équipes du projet et leurs mises à jour
-              </p>
-              <a href="#!" class="btn btn-primary">Voir</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-    <!--pop-up consulter une entreprise-->
-    <div>
-        <div class="carousel-item active">
-            <div class="container">
-              <div class="row">
-                <div class="col-lg-4">
-                  <div class="card">
-                    <img
-                      src="../img/safran.jpg"
-                      class="card-img-top"
-                      alt="..."
-                    />
                     <div class="card-body">
                         <button type="button" class="btn btn-primary btn-floating"><i class="fas fa-heart"></i></button>
                       <h5 class="card-title">Stage informatique chez Safran</h5>
@@ -206,13 +172,11 @@ data-mdb-ride="carousel"
                     </div>
                   </div>
                 </div>
-            </div>
-        </div>
         <!--bouton du pop-up-->
         <button class="suppr" type="button">SUPPRIMER LE PROFIL</button><br>
         <button class="contacter" type="button">CACHER LE PROFIL</button><br>
         <button class="modif" type="button">MODIFIER LE PROFIL</button>
-    </div>
+    </section>
     </body>
     <?php 
           include("footer.blade.php"); 
