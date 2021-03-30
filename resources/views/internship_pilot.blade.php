@@ -170,7 +170,7 @@ data-mdb-ride="carousel"
         <div class="col-lg-4 d-none d-lg-block">
           <div class="card">
             <img
-              src="../img/ubi.jpg"
+              src="../resources/img/ubi.jpg"
               class="card-img-top"
               alt="..."
             />
