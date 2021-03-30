@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta charsert="utf-8" />
-        <link rel= "stylesheet" href="internship_student.css"/>
+        <link rel= "stylesheet" href="stats_student.css"/>
         <title>LES P'TITES ANNONCES</title>
         <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
         <link rel="stylesheet" href="./fontawesome/css/all.min.css">
@@ -16,8 +16,48 @@
         <?php 
         include("header.blade.php"); 
         ?>
-    </br>
-
+        <h2>Stat Nom Prénom Promo Centre de l'élève</h2>
+        <table class="table">
+              <thead>
+                <tr>
+                  <th scope="col">#</th>
+                  <th scope="col">Entreprise</th>
+                  <th scope="col">Intitulé du poste</th>
+                  <th scope="col">Curriculum vitae</th>       <!--Réponse = oui/non uniquement-->
+                  <th scope="col">Lettre de motivation</th>   <!--Réponse = oui/non uniquement-->
+                  <th scope="col">Réponse</th>                <!--Réponse = oui/non uniquement-->
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">1</th>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <th scope="row">2</th>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <th scope="row">3</th>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
 
     </body>
     <?php 

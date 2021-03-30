@@ -32,7 +32,6 @@
               <thead>
                 <tr>
                   <th scope="col">#</th>
-                  <th scope="col">Numéro de candidature</th>
                   <th scope="col">Entreprise</th>
                   <th scope="col">Intitulé du poste</th>
                   <th scope="col">Curriculum vitae</th>       <!--Réponse = oui/non uniquement-->

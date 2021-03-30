@@ -1,10 +1,9 @@
 {
   "ExpandedNodes": [
     "",
-    "\\OLD\\src",
     "\\resources",
     "\\resources\\views"
   ],
-  "SelectedNode": "\\resources\\views\\stats_student.blade.php",
+  "SelectedNode": "\\resources\\views\\postulate.blade.php",
   "PreviewInSolutionExplorer": false
 }
