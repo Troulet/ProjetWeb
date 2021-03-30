@@ -2,8 +2,8 @@
 <html>
     <head>
         <meta charsert="utf-8" />
-        <link rel= "stylesheet" href="welcome_student.css"/>
-        <link rel= "stylesheet" href="header_footer.css"/>
+        <link rel= "stylesheet" href="../resources/views/welcome_student.css"/>
+        <link rel= "stylesheet" href="../resources/views/header_footer.css"/>
         <title>LES P'TITES ANNONCES</title>
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <link href="https://fonts.googleapis.com/css2?family=Happy+Monkey&display=swap" rel="stylesheet">
@@ -13,7 +13,7 @@
     </head>
     <body>
         <?php 
-          include("header.blade.php"); 
+          include("../resources/views/header.blade.php"); 
         ?>
         <div class="container">
             <div class="carousel slide" data-ride="carousel" id="multi_item" data-intervale="2000">
@@ -75,6 +75,6 @@
         </div>
     </body>
     <?php 
-          include("footer.blade.php"); 
+          include("../resources/views/footer.blade.php"); 
     ?>
 </html>
