@@ -2,8 +2,8 @@
 <html>
     <head>
         <meta charsert="utf-8" />
-        <link rel= "stylesheet" href="stats_student.css"/>
-        <link rel= "stylesheet" href="header_footer.css"/>
+        <link rel= "stylesheet" href="../resources/views/stats_student.css"/>
+        <link rel= "stylesheet" href="../resources/views/header_footer.css"/>
         <title>LES P'TITES ANNONCES</title>
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <link href="https://fonts.googleapis.com/css2?family=Happy+Monkey&display=swap" rel="stylesheet">
@@ -12,15 +12,11 @@
 
     </head>
     <body>
-        <header>
-            <div id="1">
-                <div id="header">
-                    <div class="titre">
-                        <h2>Statistiques élèves</h2>
-                    </div>
-                </div>
-            </div>
-        </header>
+        <?php 
+        include("../resources/views/header.blade.php"); 
+        ?>
+        <h2>Statistiques élèves</h2>
+                    
         <table class="table">
               <thead>
                 <tr>
@@ -77,6 +73,6 @@
 
     </body>
     <?php 
-    include("footer.blade.php"); 
+    include("../resources/views/footer.blade.php"); 
     ?>
 </html>
