@@ -1,14 +1,22 @@
 {
   "ExpandedNodes": [
     "",
+<<<<<<< HEAD
+    "\\Public",
+=======
     "\\app",
     "\\app\\Http",
     "\\app\\Http\\Controllers",
     "\\app\\Models",
+>>>>>>> 6b2372ec98da81a2cd11fc1751981d11154f48c3
     "\\resources",
     "\\resources\\views",
     "\\routes"
   ],
+<<<<<<< HEAD
+  "SelectedNode": "\\resources\\views\\login.blade.php",
+=======
   "SelectedNode": "\\app\\Http\\Controllers\\StudentController.php",
+>>>>>>> 6b2372ec98da81a2cd11fc1751981d11154f48c3
   "PreviewInSolutionExplorer": false
 }
