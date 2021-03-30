@@ -40,16 +40,6 @@ p, ul, label, body {
 }
 
 
-.image_stage {
-    float: right;
-    width: 333px;
-}
-
-.logo {
-    width: 60px;
-}
-
-
 .wishlist {
     padding: 0 20px 6px;
     margin: 2%;
@@ -59,4 +49,21 @@ p, ul, label, body {
     font-weight: bold;
     font-size: 1em;
     text-align: center;
+}
+
+.desk-img {
+    display: block;
+}
+  
+.mobile-img {
+    display: none;
+}
+  
+@media (max-width: 700px) {
+    .desk-img {
+      display: none !important;
+    }
+    .mobile-img {
+      display: block;
+    }
 }
