@@ -25,16 +25,15 @@
 
          <div>
             <label for="pass">Mot de passe :</label><br>
-<<<<<<< HEAD
-            <input type="password" id="pass" name="password" minlength="8" required>
-         </div><br>
-=======
+
+    
+
             <input type="password" id="Password" name="password" minlength="8" required>
          </div>
->>>>>>> 256287db6e96884ad96ffb585ee8a76fa39390c2
+
         <div id="4">
             <p>Cookies !</p>
-            <p>Nous permettez vous d'utiliser les cookies ? Ils nous permettent de vous offrir la meilleure expéreience possible sur notre site.</p>
+            <p>Nous permettez vous d'utiliser les cookies ? Ils nous permettent de vous offrir la meilleure expérience possible sur notre site.</p>
 
             <input type="radio" id="COOKIE" name="COOKIE" value="yes">
             <label for="yes">Oui</label>
