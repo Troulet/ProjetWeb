@@ -3,9 +3,8 @@
     <head>
         <meta charsert="utf-8" />
         <link rel= "stylesheet" href="stats_student.css"/>
+        <link rel= "stylesheet" href="header_footer.css"/>
         <title>LES P'TITES ANNONCES</title>
-        <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
-        <link rel="stylesheet" href="./fontawesome/css/all.min.css">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <link href="https://fonts.googleapis.com/css2?family=Happy+Monkey&display=swap" rel="stylesheet">
         <link rel="preconnect" href="https://fonts.gstatic.com">
