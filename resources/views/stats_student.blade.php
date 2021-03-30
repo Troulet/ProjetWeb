@@ -16,7 +16,6 @@
         <?php 
         include("header.blade.php"); 
         ?>
-        <h2>Stat Nom Prénom Promo Centre de l'élève</h2>
         <table class="table">
               <thead>
                 <tr>
@@ -58,6 +57,8 @@
                 </tr>
               </tbody>
             </table>
+
+    <div data-role="stepper"></div>
 
     </body>
     <?php 
