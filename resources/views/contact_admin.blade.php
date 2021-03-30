@@ -12,7 +12,7 @@
         
     <body>
         <?php 
-          include("header.blade.php"); 
+          include("../resources/views/header.blade.php"); 
         ?>
 
         <div class="card">
@@ -75,5 +75,5 @@
         </div>
     </body>
     <?php 
-        include("footer.blade.php"); 
+        include("../resources/views/footer.blade.php"); 
     ?>
