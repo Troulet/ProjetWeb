@@ -1,5 +1,5 @@
-{!! Form::open(['url' => '/user', 'method' => 'post', 'class' => 'form-horizontal panel']) !!}
-{!! Form::email('Mail', null, ['class' => 'form-control', 'placeholder' => 'Mail']) !!}
-{!! Form::password('Password', ['class' => 'form-control', 'placeholder' => 'Mot de passe']) !!}
+{!! Form::open(['url' => '/user', 'method' => 'post']) !!}
+{!! Form::email('Mail', null, ['placeholder' => 'Mail']) !!}
+{!! Form::password('Password', ['placeholder' => 'Mot de passe']) !!}
 {!! Form::submit('Connexion') !!}
 {!! Form::close() !!}

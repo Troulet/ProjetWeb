@@ -34,7 +34,7 @@ class AuthController extends Controller
 
             /*We redirect the user on the correct page*/
             $User = new UsersController;
-            switch ($User->Get_Table($Login, $Password))
+            switch ($User->Get_Table($Login))
             {
                 case 'administrator' :
                     return View::make('welcome_admin');
