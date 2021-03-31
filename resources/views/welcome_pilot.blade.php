@@ -20,7 +20,7 @@
                 <div class="carousel-inner">
                     <div class="carousel-item active">
                         <div class="row">
-                            <div class="col-sm">
+                            <div id="banner-one" class="col-sm">
                                 <img class="d-block w-100 desk-img" src="https://mdbootstrap.com/img/new/standard/nature/181.jpg" alt="1 slide">
                                 <img class=" w-100  mobile-img" src="https://mdbootstrap.com/img/new/standard/nature/181.jpg" alt="1 slide">
                                 <div class="card-body">
@@ -31,7 +31,7 @@
                                     <a href="#" class="btn btn-primary">Aller voir</a>
                                 </div>
                             </div>
-                            <div class="col-sm">
+                            <div id="banner-two" class="col-sm">
                                 <img class="d-block w-100 desk-img" src="https://mdbootstrap.com/img/new/standard/nature/181.jpg" alt="2 slide">
                                 <img class=" w-100  mobile-img" src="https://mdbootstrap.com/img/new/standard/nature/181.jpg" alt="2 slide">
                                 <div class="card-body">
@@ -42,16 +42,16 @@
                                     <a href="#" class="btn btn-primary">Aller voir</a>
                                 </div>
                             </div>
-                            <div class="col-sm">
-                            <img class="d-block w-100 desk-img" src="https://mdbootstrap.com/img/new/standard/nature/181.jpg" alt="3 slide"
-                            <img class=" w-100  mobile-img" src="https://mdbootstrap.com/img/new/standard/nature/181.jpg" alt="3 slide">
-                                <div class="card-body">
-                                    <h5 class="card-title">Elève</h5>
-                                    <p class="card-text">
-                                        Statistique de cet élève
-                                    </p>
-                                    <a href="#" class="btn btn-primary">Aller voir</a>
-                                </div>
+                            <div id="banner-three" class="col-sm">
+                                <img class="d-block w-100 desk-img" src="https://mdbootstrap.com/img/new/standard/nature/181.jpg" alt="3 slide"
+                                <img class=" w-100  mobile-img" src="https://mdbootstrap.com/img/new/standard/nature/181.jpg" alt="3 slide">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Elève</h5>
+                                        <p class="card-text">
+                                            Statistique de cet élève
+                                        </p>
+                                        <a href="#" class="btn btn-primary">Aller voir</a>
+                                    </div>
                             </div>
                         </div>
                     </div>
@@ -63,11 +63,11 @@
                         </div>
                     </div>
                 </div>
-                <a class="carousel-control-prev" href="#multi_item" role="button" data-slide="prev">
+                <a id="go_previous" class="carousel-control-prev" href="#multi_item" role="button" data-slide="prev">
                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                     <span class="sr-only">Previous</span>
                 </a>
-                <a class="carousel-control-next" href="#multi_item" role="button" data-slide="next">
+                <a id="go_next" class="carousel-control-next" href="#multi_item" role="button" data-slide="next">
                     <span class="carousel-control-next-icon" aria-hidden="true"></span>
                     <span class="sr-only">Next</span>
                 </a>
