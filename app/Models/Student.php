@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\DB;
 
 class Student extends Model 
 {
@@ -40,66 +41,7 @@ class Student extends Model
         return $this->belongsTo('Users');
     }
 
-    public function Create(){
-        $userid = $_POST('user_id');
-        $mail = $_POST('mail');
-        $password = $_POST('password');
-        $promo = $_POST('promotion');
-        $fname = $_POST('first_name');
-        $lname = $_POST('last_name');
-        $rep = $_POST('representative');
-        $reprights = $_POST('representative_rights');
-        $locid = $_POST('localisation_id');
-
-        DB::table('student')->insertOrIgnore([
-            'Users_id' => $userid,
-            'Mail' => $mail,
-            'Password' => $password,
-            'Promotion' => $promo,
-            'First_Name' => $fname,
-            'Last_Name' => $lname,
-            'Representative' => $rep,
-            'Representative_Rights' => $reprights,
-            'Localisation_id' => $locid,
-            'created_at' => date("F j, Y, g:i a")
-        ]);
-    }
-
-    public function Update(){
-        $userid = $_POST('user_id');
-        $mail = $_POST('mail');
-        $password = $_POST('password');
-        $promo = $_POST('promotion');
-        $fname = $_POST('first_name');
-        $lname = $_POST('last_name');
-        $rep = $_POST('representative');
-        $reprights = $_POST('representative_rights');
-        $locid = $_POST('localisation_id');
-        
-        DB::table('student')->updateOrInsert(['Users_id' => $userid],
-            [
-            'Mail' => $mail,
-            'Password' => $password,
-            'Promotion' => $promo,
-            'First_Name' => $fname,
-            'Last_Name' => $lname,
-            'Representative' => $rep,
-            'Representative_Rights' => $reprights,
-            'Localisation_id' => $locid,
-            'updated_at' => date("F j, Y, g:i a")
-            ]
-        );
-    }
-
-    public function delete(){
-        $id = $_POST('users_id');
-
-        DB::table('student')->where('Users_id', '=', $id)->delete();
-    }
-
-    public function GetById(){
-        $id = $_POST('id');
-
+    public function GetById($id){
         return $student = DB::table('student')->where('Users_id', '=', $id)->first();
     }
 
@@ -107,9 +49,7 @@ class Student extends Model
         return $students = DB::table('student')->get();
     }
 
-    public function GetId(){
-        $mail = $_POST('mail');
-
+    public function GetId($mail){
         return $id = DB::table('student')->where('Mail', '=', $mail)->pluck('Users_id');
     }
 

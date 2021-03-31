@@ -2,87 +2,163 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Database\Eloquent;
+use App\Models\Users;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\View;
 
 class UsersController extends Controller 
 {
-  /**
-   * Show the form for creating a new resource.
-   *
-   * @return Response
-   */
-  public function create()
+
+  protected $user;
+  protected $student;
+  protected $administrator;
+  protected $pilot;
+
+  public function GetId($Login)
   {
-    
+    return $this->user->GetId($Login);
   }
 
-  /**
-   * Store a newly created resource in storage.
-   *
-   * @return Response
-   */
-  public function store(Request $request)
+  public function Get_Table($id)
   {
-    
-  }
-
-  /**
-   * Display the specified resource.
-   *
-   * @param  int  $id
-   * @return Response
-   */
-  public function show($id)
-  {
-    
-  }
-
-
-  /**
-   * Update the specified resource in storage.
-   *
-   * @param  int  $id
-   * @return Response
-   */
-  public function update($id)
-  {
-    
-  }
-
-  /**
-   * Remove the specified resource from storage.
-   *
-   * @param  int  $id
-   * @return Response
-   */
-  public function destroy(Request $request)
-  {
-    
-  }
-
-  public function Get_Table($mail)
-  {
-      $table = [$student, $pilot, $administrator];
+      $table = [$this->student, $this->pilot, $this->administrator];
       for ($i=0; isset($table[$i]); $i++)
       {
-        if( $table[$i]->GetId($mail) !== null)
+        if($table[$i]->GetById($id) !== null)
         {
-            return $table[$i];
+            $reponse = $i;
         }
       }
-      return 'student';
-      //Ajouter une route d'erreur
+      return $reponse;
   }
 
-  public function __construct()
+  function __construct()
   {
-      $student = new StudentController
-      $pilot = new PilotController
-      $administrator = new Administrator
+      $this->user = new Users;
+      $this->student = new StudentController;
+      $this->pilot = new PilotController;
+      $this->administrator = new AdministratorController;
+  }
+
+  public function Delete($id)
+  {
+
+  //We delete the line on User's table.
+    $this->user->find($id);
+    $this->user->delete();
+  }
+
+  public function GetOfferPage(Request $request)
+  {
+      if(isset($_COOKIE['Login']))
+      {
+        $User_id = $this->GetId($_COOKIE['Login']);
+      }
+      else
+      {
+        $User_id = $this->GetId($request->session()->get('Login'));
+      }
+
+      switch ($this->Get_Table($User_id))
+            {
+                case 2 :
+                    return View::make('internship_pilot')->with('user_type', 2);
+                    break;
+
+                case 0 :
+                    return View::make('internship_student')->with('user_type', 0);
+                    break;
+
+                case 1 :
+                    return View::make('internship_pilot')->with('user_type', 1);
+                    break;
+
+            }
+
+  }
+
+  public function VerifPage(Request $request)
+  {
+    if(isset($_COOKIE['Login']))
+     {
+        return $this->GetId($_COOKIE['Login']);
+     }
+     else
+     {
+       return $this->GetId($request->session()->get('Login'));
+     }
   }
   
+  public function GetHomePage(Request $request)
+  {
+     
+     $User_id = $this->VerifPage($request);
+     switch ($this->Get_Table($User_id))
+     {
+                case 2 :
+                    return View::make('welcome_admin')->with('user_type', 2);
+                    break;
+
+                case 0 :
+                    return View::make('welcome_student')->with('user_type', 0);
+                    break;
+
+                case 1 :
+                    return View::make('welcome_pilot')->with('user_type', 1);
+                    break;
+
+     }
+
+  }
+
+  public function GetUsersPage(Request $request)
+  {
+    $User_id = $this->VerifPage($request);
+      switch ($this->Get_Table($User_id))
+            {
+                case 2 :
+                    return View::make('user_admin')->with('user_type', 2);
+                    break;
+
+                case 1 :
+                    return View::make('student_pilot')->with('user_type', 1);
+                    break;
+
+            }
+  }
+
+  public function GetPostulatePage(Request $request)
+    {
+      $User_id = $this->VerifPage($request);
+      switch ($this->Get_Table($User_id))
+            {
+                case 0 :
+                    return View::make('postulate')->with('user_type', 0);
+                    break;
+            }
+
+  }
+
+  public function GetContactPage(Request $request)
+    {
+      $User_id = $this->VerifPage($request);
+      switch ($this->Get_Table($User_id))
+            {
+                case 2 :
+                    return View::make('contact_admin')->with('user_type', 2);
+                    break;
+
+                case 0 :
+                    return View::make('contact_student')->with('user_type', 0);
+                    break;
+
+                case 1 :
+                    return View::make('contact_pilot')->with('user_type', 1);
+                    break;
+
+            }
+
+  }
 }
 
 ?>

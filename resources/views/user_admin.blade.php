@@ -2,10 +2,9 @@
 <html>
     <head>
         <meta charsert="utf-8">
-        <link rel= "stylesheet" href="user_admin.css">
+        <link rel= "stylesheet" href="../resources/views/user_admin.css">
+        <link rel= "stylesheet" href="../resources/views/header_footer.css"/>
         <title>LES P'TITES ANNONCES</title>
-        <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
-        <link rel="stylesheet" href="./fontawesome/css/all.min.css">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <link href="https://fonts.googleapis.com/css2?family=Happy+Monkey&display=swap" rel="stylesheet">
         <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -13,7 +12,7 @@
     </head>
     <body>
         <?php 
-          include("header.blade.php"); 
+          include("../resources/views/header.blade.php"); 
         ?>
             <div class="filtre">
                 <h3>Filtrer les résultats</h3>
@@ -35,7 +34,8 @@
                             <input type="checkbox" id="pilot" name="pilot">
                             <label for="pilot">Pilote</label>
                         </div>
-                    <h3>Localité</h3>
+                        
+                        <h3>Localité</h3>
                         <div>
                             <input type="checkbox" id="paris" name="paris">
                             <label for="paris">Paris</label>
@@ -56,7 +56,8 @@
                             <input type="checkbox" id="olympe" name="olympe">
                             <label for="olympe">Mont Olympe</label> 
                         </div>
-                    <h3>Promotion</h3>
+                        
+                        <h3>Promotion</h3>
                         <div>
                             <input type="checkbox" id="info" name="info">
                             <label for="info">A2 Informatique</label>
@@ -75,7 +76,9 @@
                         </div>
                 </div>
             </div>
+            
             <div class="profil_card">
+            
                 <h2>Profil Utilisateur</h2>
                 <div class="card">
                     <div class="card-body">
@@ -86,7 +89,9 @@
                         <button type="button" class="btn">MODIFIER</button>
                     </div>
                 </div>
+                
                 <br/>
+                
                 <div class="card">
                     <div class="card-body">
                         Info élève
@@ -96,7 +101,9 @@
                         <button type="button" class="btn">MODIFIER</button>
                     </div>
                 </div>
+                
                 <br/>
+                
                 <div class="card">
                     <div class="card-body">
                         Info délégué
@@ -106,6 +113,7 @@
                         <button type="button" class="btn">MODIFIER</button>
                     </div>
                 </div>
+                
             </div>
         <div>
             <button type="button" class="btn">CRÉER UN PROFIL UTILISATEUR</button>
@@ -113,6 +121,6 @@
     </body>
 
     <?php 
-          include("footer.blade.php"); 
+          include("../resources/views/footer.blade.php"); 
     ?>
 </html>

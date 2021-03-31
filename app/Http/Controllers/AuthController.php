@@ -1,6 +1,8 @@
 <?php 
 
+
 namespace App\Http\Controllers;
+session_start();
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
@@ -26,31 +28,38 @@ class AuthController extends Controller
             }
             else
             {
-                $_SESSION['Login'] = $request->input('Login');
-                $Login = $_SESSION['Login'];
-                $_SESSION['Password'] = $request->input('Password');
-                $Password = $_SESSION['Password'];
+                $request->session()->put('Login', $request->input('Login'));
+                $Login = $request->session()->get('Login');
+                $request->session()->put('Password', $request->input('Password'));
+                $Password = $request->session()->get('Password');
             }
 
             /*We redirect the user on the correct page*/
             $User = new UsersController;
-            switch ($User->Get_Table($Login))
+            $Id = $User->GetId($Login);
+            switch ($User->Get_Table($Id))
             {
-                case 'administrator' :
-                    return View::make('welcome_admin');
+                case 2 :
+                    return View::make('welcome_admin')->with('user_type', 2);
                     break;
 
-                case 'student' :
-                    return View::make('welcome_student');
+                case 0 :
+                    return View::make('welcome_student')->with('user_type', 0);
                     break;
 
-                case 'pilot' :
-                    return View::make('welcome_pilot');
+                case 1 :
+                    return View::make('welcome_pilot')->with('user_type', 1);
                     break;
+
             }
 
             //Renvoyer une vue si l'utilisateur n'appartient à aucune des tables
         }
+        else
+        {
+            echo 'error';
+        }
+
     }
 
     public function Logout()
@@ -77,16 +86,16 @@ class AuthController extends Controller
     public function Validation(Request $request)
     {
         $validator = Validator::make($request->all(), [
-            'Login' => 'required|email|exists:users,Mail',
-            'Pasword' => 'required|alpha_num|exists:users,Password',
-            'Cookie'=> 'boolean',
+            '_token' => 'required',
+            'Login' => 'required|exists:users,Mail',
+            'password' => 'required|exists:users,Password',
+            'COOKIE'=> 'required',
         ]);
 
         //if the inputs are not validated, we came back on the previous page.
-        if ($validator->fails()) {
-            return back()
-                        ->withErrors($validator)
-                        ->withInput();
+        if ($validator->fails())
+        {
+            return false;
         }
         else
         {

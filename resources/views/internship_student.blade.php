@@ -2,10 +2,9 @@
 <html>
     <head>
         <meta charsert="utf-8" />
-        <link rel= "stylesheet" href="internship_student.css"/>
+        <link rel= "stylesheet" href="../resources/views/internship_student.css"/>
+        <link rel= "stylesheet" href="../resources/views/header_footer.css"/>
         <title>LES P'TITES ANNONCES</title>
-        <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
-        <link rel="stylesheet" href="./fontawesome/css/all.min.css">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <link href="https://fonts.googleapis.com/css2?family=Happy+Monkey&display=swap" rel="stylesheet">
         <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -14,7 +13,7 @@
     </head>
     <body>
         <?php 
-        include("header.blade.php"); 
+        include("../resources/views/header.blade.php"); 
         ?>
     </br>
         <div class="filtre">
@@ -109,8 +108,9 @@
             <div class="carousel-inner">
                 <div class="carousel-item active">
                     <div class="row">
-                        <div class="col-sm">
-                            <img class="d-block w-100" src="https://mdbootstrap.com/img/new/standard/nature/181.jpg" alt="1 slide">
+                        <div id="banner-one" class="col-sm">
+                            <img class="d-block w-100 desk-img" src="https://mdbootstrap.com/img/new/standard/nature/181.jpg" alt="1 slide">
+                            <img class=" w-100  mobile-img" src="https://mdbootstrap.com/img/new/standard/nature/181.jpg" alt="1 slide">
                             <div class="card-body">
                                 <h5 class="card-title">Stage</h5>
                                 <p class="card-text">
@@ -119,8 +119,9 @@
                                 <a href="#" class="btn btn-primary">Aller voir</a>
                             </div>
                         </div>
-                        <div class="col-sm">
-                            <img class="d-block w-100" src="https://mdbootstrap.com/img/new/standard/nature/181.jpg" alt="2 slide">
+                        <div id="banner-two" class="col-sm">
+                            <img class="d-block w-100 desk-img" src="https://mdbootstrap.com/img/new/standard/nature/181.jpg" alt="2 slide">
+                            <img class=" w-100  mobile-img" src="https://mdbootstrap.com/img/new/standard/nature/181.jpg" alt="2 slide">
                             <div class="card-body">
                                 <h5 class="card-title">Stage</h5>
                                 <p class="card-text">
@@ -129,7 +130,17 @@
                                 <a href="#" class="btn btn-primary">Aller voir</a>
                             </div>
                         </div>
-                        <div class="col-sm"><img class="d-block w-100" src="https://mdbootstrap.com/img/new/standard/nature/181.jpg" alt="3 slide"></div>
+                        <div id="banner-three" class="col-sm">
+                            <img class="d-block w-100 desk-img" src="https://mdbootstrap.com/img/new/standard/nature/181.jpg" alt="3 slide">
+                            <img class=" w-100  mobile-img" src="https://mdbootstrap.com/img/new/standard/nature/181.jpg" alt="3 slide">
+                            <div class="card-body">
+                                <h5 class="card-title">Stage</h5>
+                                <p class="card-text">
+                                    Thales recrute un stagiaire en informatique pour du développement.
+                                </p>
+                                <a href="#" class="btn btn-primary">Aller voir</a>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div class="carousel-item">
@@ -162,7 +173,8 @@
                 <div class="carousel-item active">
                     <div class="row">
                         <div class="col-sm">
-                            <img class="d-block w-100" src="https://mdbootstrap.com/img/new/standard/nature/181.jpg" alt="1 slide">
+                            <img class="d-block w-100 desk-img" src="https://mdbootstrap.com/img/new/standard/nature/181.jpg" alt="1 slide">
+                            <img class=" w-100  mobile-img" src="https://mdbootstrap.com/img/new/standard/nature/181.jpg" alt="1slide">
                             <div class="card-body">
                                 <h5 class="card-title">Stage</h5>
                                 <p class="card-text">
@@ -172,7 +184,8 @@
                             </div>
                         </div>
                         <div class="col-sm">
-                            <img class="d-block w-100" src="https://mdbootstrap.com/img/new/standard/nature/181.jpg" alt="2 slide">
+                            <img class="d-block w-100 desk-img" src="https://mdbootstrap.com/img/new/standard/nature/181.jpg" alt="2 slide">
+                            <img class=" w-100  mobile-img" src="https://mdbootstrap.com/img/new/standard/nature/181.jpg" alt="2 slide">
                             <div class="card-body">
                                 <h5 class="card-title">Stage</h5>
                                 <p class="card-text">
@@ -181,7 +194,17 @@
                                 <a href="#" class="btn btn-primary">Aller voir</a>
                             </div>
                         </div>
-                        <div class="col-sm"><img class="d-block w-100" src="https://mdbootstrap.com/img/new/standard/nature/181.jpg" alt="3 slide"></div>
+                        <div class="col-sm">
+                        <img class="d-block w-100 desk-img" src="https://mdbootstrap.com/img/new/standard/nature/181.jpg" alt="3 slide">
+                        <img class=" w-100  mobile-img" src="https://mdbootstrap.com/img/new/standard/nature/181.jpg" alt=3 slide">
+                            <div class="card-body">
+                                <h5 class="card-title">Stage</h5>
+                                <p class="card-text">
+                                    Thales recrute un stagiaire en informatique pour du développement.
+                                </p>
+                                <a href="#" class="btn btn-primary">Aller voir</a>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div class="carousel-item">
@@ -210,7 +233,7 @@
       <div class="col-lg-4 d-none d-lg-block">
         <div class="card">
           <img
-            src="../img/ubi.jpg"
+            src="../resources/img/ubi.jpg"
             class="card-img-top"
             alt="..."
           />
@@ -236,6 +259,6 @@
 
 </body>
     <?php 
-    include("footer.blade.php"); 
+    include("../resources/views/footer.blade.php"); 
     ?>
 </html>

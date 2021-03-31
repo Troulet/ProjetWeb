@@ -3,10 +3,12 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Enterprise extends Model 
 {
-
+    use SoftDeletes;
     protected $table = 'Enterprise';
     public $timestamps = true;
 
@@ -25,46 +27,7 @@ class Enterprise extends Model
         return $this->hasOne('Pilot_Commentary');
     }
 
-    public function Create(){
-        $ename = $_POST('enterprise_name');
-        $actsect = $_POST('activity_sector');
-        $cesistudtaken = $_POST('cesi_student_taken');
-        
-        DB::table('enterprise')->insertOrIgnore([
-            'Enterprise_Name' => $ename,
-            'Activity_Sector' => $actsect,
-            'Cesi_Student_Taken' => $cesistudtaken,
-            'created_at' => date("F j, Y, g:i a")
-        ]);
-        
-    }
-
-    public function Update(){
-        $id = $_POST('id');
-        $ename = $_POST('enterprise_name');
-        $actsect = $_POST('activity_sector');
-        $cesistudtaken = $_POST('cesi_student_taken');
-        
-        DB::table('enterprise')->updateOrInsert(['id' => $id],
-            [
-                'Enterprise_Name' => $ename,
-                'Activity_Sector' => $actsect,
-                'Cesi_Student_Taken' => $cesistudtaken,
-                'updated_at' => date("F j, Y, g:i a")
-            ]
-        );
-
-    }
-
-    public function delete(){
-        $id = $_POST('id');
-
-        DB::table('enterprise')->where('id', '=', $id)->delete();
-    }
-
-    public function GetById(){
-        $id = $_POST('id');
-
+    public function GetById($id){
         return $firm = DB::table('enterprise')->whereId($id)->first();
     }
 
@@ -72,9 +35,7 @@ class Enterprise extends Model
         return $firms = DB::table('enterprise')->get();
     }
 
-    public function GetId(){
-        $ename = $_POST('enterprise_name');
-
+    public function GetId($ename){
         return $id = DB::table('enterprise')->where('Enterprise_Name', '=', $ename)->pluck('id');
     }
 

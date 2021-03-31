@@ -3,84 +3,80 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Internship;
+use App\Models\Enterprise;
 
 class InternshipController extends Controller 
 {
+    protected $Offer;
+    function __construct()
+    {
+        $this->Offer = new Internship;
+    }
 
-  /**
-   * Display a listing of the resource.
-   *
-   * @return Response
-   */
-  public function index()
-  {
-    
-  }
+    public function Hide($id)
+    {
+        $this->Offer->find($id);
+        $this->Offer->delete();
+    }
 
-  /**
-   * Show the form for creating a new resource.
-   *
-   * @return Response
-   */
-  public function create()
-  {
-    
-  }
+    punblic function Delete($id)
+    {
+        $this->Offer->find($id);
+        $this->Offer->forceDelete();
+    }
 
-  /**
-   * Store a newly created resource in storage.
-   *
-   * @return Response
-   */
-  public function store(Request $request)
-  {
-    
-  }
+    public function Create(Request $request)
+    {
+        $this->Offer->Description = $request->Description;
+        $this->Offer->Skills_researched = $request->Skills_researched;
+        $this->Offer->Promotion_researched = $request->Promotion_researched;
+        $this->Offer->Internship_Duration = $request->Internship_Duration;
+        $this->Offer->Salary = $request->Salary;
+        $this->Offer->Offer_Date = date("F j, Y, g:i a")
+        $this->Offer->Number_Of_Places = $request->Number_Of_Places;
+        $this->Offer->Contact = $request->Contact;
 
-  /**
-   * Display the specified resource.
-   *
-   * @param  int  $id
-   * @return Response
-   */
-  public function show($id)
-  {
-    
-  }
 
-  /**
-   * Show the form for editing the specified resource.
-   *
-   * @param  int  $id
-   * @return Response
-   */
-  public function edit($id)
-  {
-    
-  }
+        //We update the localisation table, in case we created a new place.
+         $EntryLocal = Localisation::updateOrCreate(
+        ['Localisation' => $request->Localisation_Name ]);
+        
+        $NewLocal = new Localisation;
+        $this->Offer->Localisation_id = $NewLocal->GetId($request->Localisation_Name);
+        $NewEnter = new Enterprise;
+        $this->Offer->Enterprise_id = $NewEnter->GetId($request->Enterprise_Name);
+        $this->Offer->save();
+    }
 
-  /**
-   * Update the specified resource in storage.
-   *
-   * @param  int  $id
-   * @return Response
-   */
-  public function update($id)
-  {
-    
-  }
+    public function Update(Request $request)
+    {
+        $this->Offer = Internship::find($request->Internship_id);
+        $this->Offer->Description = $request->Description;
+        $this->Offer->Skills_researched = $request->Skills_researched;
+        $this->Offer->Promotion_researched = $request->Promotion_researched;
+        $this->Offer->Internship_Duration = $request->Internship_Duration;
+        $this->Offer->Salary = $request->Salary;
+        $this->Offer->Offer_Date = date("F j, Y, g:i a")
+        $this->Offer->Number_Of_Places = $request->Number_Of_Places;
+        $this->Offer->Contact = $request->Contact;
 
-  /**
-   * Remove the specified resource from storage.
-   *
-   * @param  int  $id
-   * @return Response
-   */
-  public function destroy($id)
-  {
-    
-  }
-  
+
+        //We update the localisation table, in case we created a new place.
+         $EntryLocal = Localisation::updateOrCreate(
+        ['Localisation' => $request->Localisation_Name ]);
+        
+        $NewLocal = new Localisation;
+        $this->Offer->Localisation_id = $NewLocal->GetId($request->Localisation_Name);
+        $NewEnter = new Enterprise;
+        $this->Offer->Enterprise_id = $NewEnter->GetId($request->Enterprise_Name);
+        $this->Offer->save();
+    }
+
+    public function Show($id)
+    {
+        return $this->Offer->GetById(id);
+    }
 }
 
 ?>

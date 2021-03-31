@@ -19,7 +19,7 @@ class CreateForeignKeys extends Migration {
 						->onUpdate('restrict');
 		});
 		Schema::table('Student', function(Blueprint $table) {
-			$table->foreign('Users_id')->references('id')->on('Internship')
+			$table->foreign('Users_id')->references('id')->on('Users')
 						->onDelete('restrict')
 						->onUpdate('restrict');
 		});
@@ -108,6 +108,11 @@ class CreateForeignKeys extends Migration {
 						->onDelete('restrict')
 						->onUpdate('restrict');
 		});
+		Schema::table('Enterprise', function(Blueprint $table){
+			$table->foreign('Localisation_id')->references('id')->on('Localisation')
+						->onDelete('restrict')
+						->onUpdate('restrict');
+		});
 	}
 
 	public function down()
@@ -171,6 +176,9 @@ class CreateForeignKeys extends Migration {
 		});
 		Schema::table('Inform_Step6', function(Blueprint $table) {
 			$table->dropForeign('Inform_Step6_Administrator_id_foreign');
+		});
+		Schema::table('Enterprise', function(Blueprint $table) {
+			$table->dropForeign('Enterprise_Localisation_id_foreign');
 		});
 	}
 }

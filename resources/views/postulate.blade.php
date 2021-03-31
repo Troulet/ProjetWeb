@@ -2,10 +2,9 @@
 <html>
     <head>
         <meta charsert="utf-8" />
-        <link rel= "stylesheet" href="postulate.css"/>
+        <link rel= "stylesheet" href="../resources/views/postulate.css"/>
+        <link rel= "stylesheet" href="../resources/views/header_footer.css"/>
         <title>LES P'TITES ANNONCES</title>
-        <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
-        <link rel="stylesheet" href="./fontawesome/css/all.min.css">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <link href="https://fonts.googleapis.com/css2?family=Happy+Monkey&display=swap" rel="stylesheet">
         <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -14,7 +13,7 @@
         
     <body>
         <?php 
-          include("header.blade.php"); 
+          include("../resources/views/header.blade.php"); 
         ?>
         <div id="id_candidature" class="candidature">
             <h2>Statistiques</h2>
@@ -81,6 +80,6 @@
     </body>
 
     <?php 
-          include("footer.blade.php"); 
+          include("../resources/views/footer.blade.php"); 
     ?>
 </html>
