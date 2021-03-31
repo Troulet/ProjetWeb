@@ -19,14 +19,7 @@ class AuthController extends Controller
 
         if ($this->Validation($request))
         {
-            if ($request->input('Cookie') == true)
-            {
-                $_COOKIE['Login'] = $request->input('Username');
-                $Login = $_COOKIE['Login'];
-                $_COOKIE['Password'] = $request->input('Password');
-                $Password = $_COOKIE['Password'];
-            }
-            else
+            if($request->input('cookie') == true)
             {
                 $request->session()->put('Login', $request->input('Username'));
                 $Login = $request->session()->get('Login');
@@ -57,27 +50,21 @@ class AuthController extends Controller
         }
         else
         {
-            echo 'error';
+            echo 'erreur de champs de connexion.';
         }
 
     }
 
     public function Logout(Request $request)
     {
-        if (isset($_COOKIE['Login']) OR isset($_COOKIE['Password']))
-        {
-            unset($_COOKIE['Login']);
-            unset($_COOKIE['Password']);
-            return View::make('login');
-        }
-        elseif ($request->session()->get('Login') !== null OR $request->session()->get('Password') !== null)
+        if ($request->session()->get('Login') !== null OR $request->session()->get('Password') !== null)
         {
             $request->session()->invalidate();
             return View::make('login');
         }
         else
         {
-            //return View::make('login');
+            return View::make('login');
         }
 
     }
@@ -88,7 +75,7 @@ class AuthController extends Controller
             '_token' => 'required',
             'Username' => 'required|exists:users,Mail',
             'Password' => 'required|exists:users,Password',
-            'cookie'=> 'required',
+            'cookie' => 'required|boolean|accepted',
         ]);
 
         //if the inputs are not validated, we came back on the previous page.
