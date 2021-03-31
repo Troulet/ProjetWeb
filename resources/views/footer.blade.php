@@ -12,8 +12,5 @@
         </li>
     </ul>
     <button class="bouton" type="button">Support</button>
-    <script src="./assets/vendors/jquery/jquery-3.5.1.min.js"></script>
-    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-    <script src="./assets/vendors/bootstrap/js/bootstrap.bundle.min.js"></script>
 </footer>
 </html>

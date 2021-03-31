@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <html>
-<link rel= "stylesheet" href="../resources/views/header_footer.css"/>
-
-<body onload="print_page()">
+<body>
     <div id="1">
        <div id="header">
         <div class="titre">
@@ -12,18 +10,10 @@
         </div>
         </div>
     </div>
-    
-    <div id="page_loaded"></div>
-    
-    <script type="javascript">
-    
-        function print_page() {
-            var html='';
-            
+    <div id="page_loaded">
+        <?php
             if($user_type==0)  {
-            
-                html= '<div id="student">
-                    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                echo '<div id="student"> <nav class="navbar navbar-expand-lg navbar-light bg-light">
                         <div class="container-fluid">
                             <a class="navbar-brand">Menu</a>
                             <!--<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -48,11 +38,10 @@
                         </div>
                     </nav>
                 </div>';
+
             }
-            
-            else if($user_state==1) {
-            
-                html='<div id="pilot">
+            else if($user_type==1){
+                echo '<div id="pilot">
                     <nav class="navbar navbar-expand-lg navbar-light bg-light">
                             <div class="container-fluid">
                                 <a class="navbar-brand">Menu</a>
@@ -79,9 +68,8 @@
                         </nav>
                     </div>';
             }
-            else {
-            
-                html='<div id="admin">
+            else if($user_type==2) {
+                echo '<div id="admin">
                         <nav class="navbar navbar-expand-lg navbar-light bg-light">
                                <div class="container-fluid">
                                         <a class="navbar-brand">Menu</a>
@@ -111,8 +99,6 @@
                                 </nav>
                             </div>';
                 }
-            document.getElementById("page_loaded").innerHTML = html;
-        }
-    </script>
-    <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+        ?>
+    </div>
 </body>
