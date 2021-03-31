@@ -16,16 +16,16 @@
           include("../resources/views/header.blade.php"); 
         ?>
     </br>
-    <div class="informer">
-        <div class="list-group">
-            <h3>Informer étape 4</h3>
-            <a href="#" class="list-group-item list-group-item-action">Message</a>
-            <a href="#" class="list-group-item list-group-item-action">Message</a>
-            <a href="#" class="list-group-item list-group-item-action">Message</a>
-            <a href="#" class="list-group-item list-group-item-action">Message</a>
+        <div id="information_step4" class="informer">
+            <div class="list-group">
+                <h3>Informer étape 4</h3>
+                <a href="#" class="list-group-item list-group-item-action">Message</a>
+                <a href="#" class="list-group-item list-group-item-action">Message</a>
+                <a href="#" class="list-group-item list-group-item-action">Message</a>
+                <a href="#" class="list-group-item list-group-item-action">Message</a>
+            </div>
         </div>
-    </div>
-</body>
+    </body>
 <?php 
           include("../resources/views/footer.blade.php"); 
 ?>
