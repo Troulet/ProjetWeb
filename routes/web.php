@@ -63,9 +63,17 @@ use App\Http\Controllers\PilotController;
 
     Route::post('/admin/student', [StudentController::class, 'Update']);
 
+    Route::post('/Postulate', [PostulateController::class, 'Create']);
 
+    Route::post('/Stats', [PostulateController::class, 'Update']);
 
+    Route::post('/Stats', [InformController::class, 'Create3']);
 
+    Route::post('/Stats', [InformController::class, 'Create4']);
+
+    Route::post('/Stats', [InformController::class, 'Create5']);
+
+    Route::post('/Stats', [InformController::class, 'Create6']);
 
 Route::fallback( function () {
         return view('login');
