@@ -13,11 +13,11 @@
     </div>
     <div>
         {!! Form::open(['url' => '/Stats', 'method' => 'post']) !!}
-        <fieldset>
-            <legend>Information étape 2 </legend>
+        <fieldset enctype="multipart/form-data">
+            <legend>Information étape 3 </legend>
      
-            <label for="Response_State">Réponse de l'entreprise : </label>
-            <input type="text" name="Response_State" id="Response_State" />
+            <label for="Validation_Sheet">Réponse de l'entreprise : </label>
+            <input type="file" name="Validation_Sheet" id="Validation_Sheet" />
      
 
         </fieldset>
