@@ -21,14 +21,14 @@ class AuthController extends Controller
         {
             if ($request->input('Cookie') == true)
             {
-                $_COOKIE['Login'] = $request->input('Login');
+                $_COOKIE['Login'] = $request->input('Username');
                 $Login = $_COOKIE['Login'];
                 $_COOKIE['Password'] = $request->input('Password');
                 $Password = $_COOKIE['Password'];
             }
             else
             {
-                $request->session()->put('Login', $request->input('Login'));
+                $request->session()->put('Login', $request->input('Username'));
                 $Login = $request->session()->get('Login');
                 $request->session()->put('Password', $request->input('Password'));
                 $Password = $request->session()->get('Password');
@@ -87,7 +87,7 @@ class AuthController extends Controller
     {
         $validator = Validator::make($request->all(), [
             '_token' => 'required',
-            'Login' => 'required|exists:users,Mail',
+            'Username' => 'required|exists:users,Mail',
             'Password' => 'required|exists:users,Password',
             'cookie'=> 'required',
         ]);
