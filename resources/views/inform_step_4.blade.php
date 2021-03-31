@@ -13,11 +13,11 @@
     </div>
     <div>
         {!! Form::open(['url' => '/Stats', 'method' => 'post']) !!}
-        <fieldset>
+        <fieldset enctype="multipart/form-data">
             <legend>Information étape 4 </legend>
      
             <label for="Validation_Sheet">Fiche de validation : </label>
-            <input type="text" name="Validation_Sheet" id="Validation_Sheet" />
+            <input type="file" name="Validation_Sheet" id="Validation_Sheet" />
      
 
         </fieldset>
