@@ -1,0 +1,7 @@
+{
+    "name": "CesiJob",
+    "short_name": "CesiJob",
+    "start_url": "/Public/index.php",
+    "display": "standalone",
+    "orientation": "portrait-primary"
+}

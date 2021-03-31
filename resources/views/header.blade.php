@@ -3,7 +3,11 @@
             <img class="logo2" src="../resources/img/logo_cesi2.0.png">
             <h1>LES P'TITES ANNONCES</h1>
             <h2>Cherche et trouve le stage qui te correspond !</h2>
+<<<<<<< HEAD
             <button class="bouton_header" type="btn" href="http://localhost/Public/Logout">Déconnexion</button>
+=======
+            <a class="nav-link" href="http://localhost/Public/Logout">Déconnexion</button>
+>>>>>>> f4199183d679bee8bf8326fd5b5b7fa89c5b4169
         </div>
     </div>
     <div id="page_loaded">

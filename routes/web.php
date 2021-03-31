@@ -16,33 +16,30 @@ use Illuminate\Http\RedirectResponse;
 | contains the "web" middleware group. Now create something great!
 |
 */
+    Route::get('/', function () {
+        return view('login');
+    });
+    
 
-Route::get('/', function () {
-    return view('login');
-});
+    Route::get('/Logout', [AuthController::class, 'Logout']);
 
-Route::get('/Logout', [UsersController::class, 'Logout']);
+    Route::get('/Offer', [UsersController::class, 'GetOfferPage']);
 
-Route::get('/Offer', [UsersController::class, 'GetOfferPage']);
+    Route::get('/Contact', [UsersController::class, 'GetContactPage']);
 
-Route::get('/Contact', [UsersController::class, 'GetContactPage']);
+    Route::get('/Postulate', [UsersController::class, 'GetPostulatePage']);
 
-Route::get('/Postulate', [UsersController::class, 'GetPostulatePage']);
+    Route::get('/Help', function() {
+        return view('Help');
+    });
 
-Route::get('/Help', function() {
-    return view('Help');
-});
+    Route::get('/Users', [UsersController::class, 'GetUsersPage']);
 
-Route::get('/Users', [UsersController::class, 'GetUsersPage']);
+    Route::post('/Home', [AuthController::class, 'Login']);
 
-Route::get('/admin', function () {
-    return view('welcome_admin');
-});
+    Route::get('/Home', [UsersController::class, 'GetHomePage']);
 
-Route::post('/admin', function () {
-    return view('welcome_admin');
-});
+Route::fallback( function () {
+        return view('login');
+    });
 
-Route::post('/Home', [AuthController::class, 'Login']);
-
-Route::get('/Home', [UsersController::class, 'GetHomePage']);

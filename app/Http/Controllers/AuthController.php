@@ -62,23 +62,22 @@ class AuthController extends Controller
 
     }
 
-    public function Logout()
+    public function Logout(Request $request)
     {
-        if (isset($_COOKIE['Login']) AND isset($_COOKIE['Password']))
+        if (isset($_COOKIE['Login']) OR isset($_COOKIE['Password']))
         {
             unset($_COOKIE['Login']);
             unset($_COOKIE['Password']);
             return View::make('login');
         }
-        elseif (isset($_SESSION['Login']) AND isset($_SESSION['Password']))
+        elseif ($request->session()->get('Login') !== null OR $request->session()->get('Password') !== null)
         {
-            unset($_SESSION['Login']);
-            unset($_SESSION['Password']);
+            $request->session()->invalidate();
             return View::make('login');
         }
         else
         {
-            return View::make('login');
+            //return View::make('login');
         }
 
     }
@@ -102,4 +101,5 @@ class AuthController extends Controller
             return true;
         }
     }
+
 }

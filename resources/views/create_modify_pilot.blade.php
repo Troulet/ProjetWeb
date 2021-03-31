@@ -12,12 +12,12 @@
         </div>
     </div>
     <div>
-        {!! Form::open(['url' => '/Offer', 'method' => 'post']) !!}
+        {!! Form::open(['url' => '/admin/pilot', 'method' => 'post']) !!}
         <fieldset>
             <legend>Créer un pilote</legend>
      
             <label for="First_Name_User">Prénom du pilote : </label>
-            <input type="text" name="First_Name_User" id="v" />
+            <input type="text" name="First_Name_User" id="First_Name_User" />
      
             <label for="Last_Name_User">Nom du pilote : </label>
             <input type="text" name="Last_Name_User" id="Last_Name_User" />
