@@ -21,6 +21,8 @@ Route::get('/', function () {
     return view('login');
 });
 
+Route::get('/Logout', [UsersController::class, 'Logout']);
+
 Route::get('/Offer', [UsersController::class, 'GetOfferPage']);
 
 Route::get('/Contact', [UsersController::class, 'GetContactPage']);

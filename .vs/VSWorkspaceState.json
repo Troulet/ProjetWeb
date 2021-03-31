@@ -1,22 +1,16 @@
 {
   "ExpandedNodes": [
     "",
-<<<<<<< HEAD
-    "\\Public",
-=======
     "\\app",
     "\\app\\Http",
     "\\app\\Http\\Controllers",
     "\\app\\Models",
->>>>>>> 6b2372ec98da81a2cd11fc1751981d11154f48c3
+    "\\config",
     "\\resources",
     "\\resources\\views",
-    "\\routes"
+    "\\routes",
+    "\\storage"
   ],
-<<<<<<< HEAD
-  "SelectedNode": "\\resources\\views\\login.blade.php",
-=======
-  "SelectedNode": "\\app\\Http\\Controllers\\StudentController.php",
->>>>>>> 6b2372ec98da81a2cd11fc1751981d11154f48c3
+  "SelectedNode": "\\app\\Models\\Enterprise.php",
   "PreviewInSolutionExplorer": false
 }
