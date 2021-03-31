@@ -16,3 +16,5 @@
     </div>
     <button class="bouton" type="button">Support</button>
 </footer>
+
+<script type="text/javascript" src="../resources/js/Header.js"></script>
