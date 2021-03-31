@@ -256,9 +256,9 @@
       <button class="contacter" type="button">CONTACTER L'ENTREPRISE</button>
       
   </section>
-
-</body>
     <?php 
     include("../resources/views/footer.blade.php"); 
     ?>
+</body>
+    
 </html>
