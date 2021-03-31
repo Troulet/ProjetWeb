@@ -25,8 +25,9 @@
                 <a href="#" class="list-group-item list-group-item-action">Message</a>
             </div>
         </div>
-    </body>
-<?php 
+        <?php 
           include("../resources/views/footer.blade.php"); 
-?>
+        ?>
+    </body>
+
 </html>
