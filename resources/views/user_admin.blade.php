@@ -34,7 +34,8 @@
                             <input type="checkbox" id="pilot" name="pilot">
                             <label for="pilot">Pilote</label>
                         </div>
-                    <h3>Localité</h3>
+                        
+                        <h3>Localité</h3>
                         <div>
                             <input type="checkbox" id="paris" name="paris">
                             <label for="paris">Paris</label>
@@ -55,7 +56,8 @@
                             <input type="checkbox" id="olympe" name="olympe">
                             <label for="olympe">Mont Olympe</label> 
                         </div>
-                    <h3>Promotion</h3>
+                        
+                        <h3>Promotion</h3>
                         <div>
                             <input type="checkbox" id="info" name="info">
                             <label for="info">A2 Informatique</label>
@@ -74,7 +76,9 @@
                         </div>
                 </div>
             </div>
+            
             <div class="profil_card">
+            
                 <h2>Profil Utilisateur</h2>
                 <div class="card">
                     <div class="card-body">
@@ -85,7 +89,9 @@
                         <button type="button" class="btn">MODIFIER</button>
                     </div>
                 </div>
+                
                 <br/>
+                
                 <div class="card">
                     <div class="card-body">
                         Info élève
@@ -95,7 +101,9 @@
                         <button type="button" class="btn">MODIFIER</button>
                     </div>
                 </div>
+                
                 <br/>
+                
                 <div class="card">
                     <div class="card-body">
                         Info délégué
@@ -105,6 +113,7 @@
                         <button type="button" class="btn">MODIFIER</button>
                     </div>
                 </div>
+                
             </div>
         <div>
             <button type="button" class="btn">CRÉER UN PROFIL UTILISATEUR</button>
