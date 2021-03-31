@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta charsert="utf-8" />
-        <link rel= "stylesheet" href="../resources/views/head_footer.css"/>
+        <link rel= "stylesheet" href="../resources/views/header_footer.css"/>
         <title>LES P'TITES ANNONCES</title>
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <link href="https://fonts.googleapis.com/css2?family=Happy+Monkey&display=swap" rel="stylesheet">
@@ -73,8 +73,9 @@
                 <a href="#" class="list-group-item list-group-item-action"><h5>Nom du pilote</h5>Message</a>
             </div>
         </div>
-    </body>
-    <?php 
+     <?php 
         include("../resources/views/footer.blade.php"); 
-    ?>
+     ?>
+    </body>
+   
 </html>
