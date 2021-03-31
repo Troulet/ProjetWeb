@@ -51,14 +51,7 @@ class UsersController extends Controller
 
   public function GetOfferPage(Request $request)
   {
-      if(isset($_COOKIE['Login']))
-      {
-        $User_id = $this->GetId($_COOKIE['Login']);
-      }
-      else
-      {
-        $User_id = $this->GetId($request->session()->get('Login'));
-      }
+      $User_id = $this->VerifPage($request);
 
       switch ($this->Get_Table($User_id))
             {
@@ -80,19 +73,19 @@ class UsersController extends Controller
 
   public function VerifPage(Request $request)
   {
-    if(isset($_COOKIE['Login']))
-     {
-        return $this->GetId($_COOKIE['Login']);
-     }
-     else
+    if ($request->session()->get('Login') !== null)
      {
        return $this->GetId($request->session()->get('Login'));
      }
+     else
+	{
+        echo "Error";
+    }
+
   }
   
   public function GetHomePage(Request $request)
   {
-     $auth->AuthVerify($request);
      $User_id = $this->VerifPage($request);
      switch ($this->Get_Table($User_id))
      {
@@ -164,7 +157,7 @@ class UsersController extends Controller
   public function Create_User(Request $request)
   {
     $this->Create($request);
-    $User_id = $this->user->GetId($request->Mail);
+    $Users_id = $this->user->GetId($request->Mail);
     $EntryLocal = Localisation::updateOrCreate(
         ['Localisation' => $request->Localisation_Name ]);
 
@@ -188,6 +181,40 @@ class UsersController extends Controller
 
   public function Create(Request $request)
   {
+        $this->user->Mail = $request->Mail;
+        $this->user->Password = $request->Password;
+        $this->user->save();
+  }
+
+
+  public function Update_User(Request $request)
+  {
+    $this->Update($request);
+    $EntryLocal = Localisation::updateOrCreate(
+        ['Localisation' => $request->Localisation_Name ]);
+
+    $NewLocal = new Localisation;
+    $Localisation_id = $NewLocal->GetId($request->Localisation_Name);
+    switch($request->$UpUser_type)
+    {
+        case 0 :
+            $this->student->Update($request, $Localisation_id);
+            break;
+
+        case 1 :
+            $this->pilot->Update($request, $Localisation_id);
+            break;
+
+        case 2 :
+            $this->administrator->Update($request, $Localisation_id);
+            break;
+    }
+
+  }
+
+  public function Update(Request $request)
+  {
+        $this->user->find($request->User_id);
         $this->user->Mail = $request->Mail;
         $this->user->Password = $request->Password;
         $this->user->save();

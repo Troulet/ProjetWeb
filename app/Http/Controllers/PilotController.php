@@ -32,6 +32,32 @@ class PilotController extends Controller
     $this->user->find($id);
     $this->user->delete();
   }
+
+  public function Create(Request $request, $Users_id, $Localisation_id )
+  {
+        $this->user->Users_id = $Users_id;
+        $this->user->$Localisation_id = $Localisation_id;
+        $this->user->Mail = $request->Mail;
+        $this->user->Password = $request->Password;
+        $this->user->Promotion = $request->Promotion;
+        $this->user->First_Name = $request->First_Name;
+        $this->user->Last_name = $request->Last_name;
+        $this->user->save();
+  }
+
+  public function Update(Request $request, $Localisation_id)
+  {
+        $this->user->find($request->Users_id);
+        $this->user->Users_id = $Users_id;
+        $this->user->$Localisation_id = $Localisation_id;
+        $this->user->Mail = $request->Mail;
+        $this->user->Password = $request->Password;
+        $this->user->Promotion = $request->Promotion;
+        $this->user->First_Name = $request->First_Name;
+        $this->user->Last_name = $request->Last_name;
+        $this->user->save();
+  }
+
 }
 
 ?>

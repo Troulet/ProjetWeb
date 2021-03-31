@@ -14,7 +14,7 @@ class EnterpriseController extends Controller
 
     protected $enterprise;
     protected $offers; //array of Id of Offers
-    protected $Comments //array of comments
+    protected $Comments; //array of comments
 
     function __construct()
     {
@@ -25,7 +25,7 @@ class EnterpriseController extends Controller
     {
         //We delete the line on User's table, then on the Child table.
         $deleted = new InternshipController;
-        for($i = 0; isset($offers[$i]); i++)
+        for($i = 0; isset($offers[$i]); $i++)
         {
             $deleted->Hide($offers[$i]);
         }
@@ -61,7 +61,7 @@ class EnterpriseController extends Controller
 
     public function Update(Request $request)
     {
-        $this->enterprise = Enterprise::find($request->Enterprise_id)
+        $this->enterprise = Enterprise::find($request->Enterprise_id);
         $this->enterprise->Enterprise_Name = $request->Enterprise_name;
         $this->enterprise->Activity_Sector = $request->Activity_Sector;
         $this->enterprise->Cesi_Student_Taken = $request->Cesi_Student_Taken;
