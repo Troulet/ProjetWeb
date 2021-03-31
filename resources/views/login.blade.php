@@ -8,6 +8,7 @@
         <link href="https://fonts.googleapis.com/css2?family=Happy+Monkey&display=swap" rel="stylesheet">
         <link rel="preconnect" href="https://fonts.gstatic.com">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <link rel="manifest" href="manifest.json">
     </head>
     
     <body>
@@ -58,5 +59,6 @@
             </li>
         </ul>
     </footer>
+    <script src="js/app.js"></script>
     </body>
 </html>
