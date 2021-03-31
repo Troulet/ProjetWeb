@@ -25,12 +25,12 @@
                                     <li class="nav-item">
                                         <a class="nav-link" href="http://localhost/Public/Offer">Offre</a>
                                     </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="http://localhost/Public/Contact">Contact</a>
                                     </li>
                                     <li class="nav-item">
                                         <a class="nav-link" href="http://localhost/Public/Postulate">Candidature</a>
                                     </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="http://localhost/Public/Contact">Contact</a>
                                     <li class="nav-item">
                                         <a class="nav-link" href="http://localhost/Public/Help">Aide</a>
                                     </li>
@@ -58,10 +58,10 @@
                                             <a class="nav-link" href="http://localhost/Public/Offer">Offre</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link" href="http://localhost/Public/Contact">Contact</a>
+                                            <a class="nav-link" href="http://localhost/Public/Users">Elève</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link" href="http://localhost/Public/Student">Elève</a>
+                                            <a class="nav-link" href="http://localhost/Public/Contact">Contact</a>
                                         </li>
                                         <li class="nav-item">
                                             <a class="nav-link" href="http://localhost/Public/Help">Aide</a>

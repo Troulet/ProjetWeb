@@ -77,19 +77,24 @@ class UsersController extends Controller
 
   }
 
+  public function VerifPage(Request $request)
+  {
+    if(isset($_COOKIE['Login']))
+     {
+        return $this->GetId($_COOKIE['Login']);
+     }
+     else
+     {
+       return $this->GetId($request->session()->get('Login'));
+     }
+  }
+  
   public function GetHomePage(Request $request)
-    {
-      if(isset($_COOKIE['Login']))
-      {
-        $User_id = $this->GetId($_COOKIE['Login']);
-      }
-      else
-      {
-        $User_id = $this->GetId($request->session()->get('Login'));
-      }
-
-      switch ($this->Get_Table($User_id))
-            {
+  {
+     
+     $User_id = $this->VerifPage($request);
+     switch ($this->Get_Table($User_id))
+     {
                 case 2 :
                     return View::make('welcome_admin')->with('user_type', 2);
                     break;
@@ -100,6 +105,55 @@ class UsersController extends Controller
 
                 case 1 :
                     return View::make('welcome_pilot')->with('user_type', 1);
+                    break;
+
+     }
+
+  }
+
+  public function GetUsersPage(Request $request)
+  {
+    $User_id = $this->VerifPage($request);
+      switch ($this->Get_Table($User_id))
+            {
+                case 2 :
+                    return View::make('user_admin')->with('user_type', 2);
+                    break;
+
+                case 1 :
+                    return View::make('student_pilot')->with('user_type', 1);
+                    break;
+
+            }
+  }
+
+  public function GetPostulatePage(Request $request)
+    {
+      $User_id = $this->VerifPage($request);
+      switch ($this->Get_Table($User_id))
+            {
+                case 0 :
+                    return View::make('postulate')->with('user_type', 0);
+                    break;
+            }
+
+  }
+
+  public function GetContactPage(Request $request)
+    {
+      $User_id = $this->VerifPage($request);
+      switch ($this->Get_Table($User_id))
+            {
+                case 2 :
+                    return View::make('contact_admin')->with('user_type', 2);
+                    break;
+
+                case 0 :
+                    return View::make('contact_student')->with('user_type', 0);
+                    break;
+
+                case 1 :
+                    return View::make('contact_pilot')->with('user_type', 1);
                     break;
 
             }

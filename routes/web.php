@@ -23,11 +23,15 @@ Route::get('/', function () {
 
 Route::get('/Offer', [UsersController::class, 'GetOfferPage']);
 
-Route::get('/Contact');
+Route::get('/Contact', [UsersController::class, 'GetContactPage']);
 
-Route::get('/Postulate');
+Route::get('/Postulate', [UsersController::class, 'GetPostulatePage']);
 
-Route::get('/Help');
+Route::get('/Help', function() {
+    return view('Help');
+});
+
+Route::get('/Users', [UsersController::class, 'GetUsersPage']);
 
 Route::get('/admin', function () {
     return view('welcome_admin');
