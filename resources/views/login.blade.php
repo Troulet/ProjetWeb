@@ -9,29 +9,27 @@
         <link rel="preconnect" href="https://fonts.gstatic.com">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     </head>
+    
     <body>
     {!! Form::open(['url' => '/user', 'method' => 'post']) !!}
-        <div id="1">
+        <div id="logo_header">
             <img class="logo2" src="../img/logo_cesi2.0.png">
             <h1>Authentification</h1>
             <p><h2>Bienvenue</h2></p>
         </div>
-        <div id="2">
+        <div id="image_login">
             <img class="image_stage" src="../img/stage.jpg">
         </div>
-        <div id="3">
+        <div id="textbox_login">
             <label for="login">Login :</label><br>
             <input type="text" name="Login" id="login" required><br><br>
 
          <div>
             <label for="pass">Mot de passe :</label><br>
-
-    
-
             <input type="password" id="Password" name="password" minlength="8" required>
          </div>
 
-        <div id="4">
+        <div id="cookies">
             <p>Cookies !</p>
             <p>Nous permettez vous d'utiliser les cookies ? Ils nous permettent de vous offrir la meilleure expérience possible sur notre site.</p>
 
@@ -44,8 +42,9 @@
             <button type="submit" class="btn">CONNEXION</button>
     {!! Form::close() !!}
     </body>
+    
     <footer>
-        <img class="logo" src="../img/logo_cesi.png">
+        <img id="logo_footer" class="logo" src="../img/logo_cesi.png">
         <ul>
             <li>
                 <a href="https://ent.cesi.fr/?RH=&ksession=9e43032b-00b8-446a-8782-5768fbf6406f" title="ENT" target="blank">ENT</a>
