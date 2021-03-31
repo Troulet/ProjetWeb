@@ -44,7 +44,7 @@
         <button type="submit" class="btn">CREER</button>
 
         <fieldset>
-            <legend>Modifier une offre</legend>
+            <legend>Modifier un élève</legend>
      
             <label for="First_Name_User">Prénom de l'élève : </label>
             <input type="text" name="First_Name_User" id="v" />
