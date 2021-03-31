@@ -32,6 +32,14 @@ class StudentController extends Controller
     $this->user->find($id);
     $this->user->delete();
   }
+
+  public function Create(Request $request, $User_id, $Localisation_id )
+  {
+        $this->user->User_id = $request->
+        $this->user->Mail = $request->Mail;
+        $this->user->Password = $request->Password;
+        $this->user->save();
+  }
 }
 
 ?>

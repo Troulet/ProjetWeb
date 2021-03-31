@@ -16,35 +16,30 @@ use Illuminate\Http\RedirectResponse;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/', function () {
-    return view('login');
-});
+    Route::get('/', function () {
+        return view('login');
+    });
+    
+
+    Route::get('/Logout', [AuthController::class, 'Logout']);
+
+    Route::get('/Offer', [UsersController::class, 'GetOfferPage']);
+
+    Route::get('/Contact', [UsersController::class, 'GetContactPage']);
+
+    Route::get('/Postulate', [UsersController::class, 'GetPostulatePage']);
+
+    Route::get('/Help', function() {
+        return view('Help');
+    });
+
+    Route::get('/Users', [UsersController::class, 'GetUsersPage']);
+
+    Route::post('/Home', [AuthController::class, 'Login']);
+
+    Route::get('/Home', [UsersController::class, 'GetHomePage']);
+
 Route::fallback( function () {
-    return view('login');
-});
+        return view('login');
+    });
 
-Route::get('/Logout', [AuthController::class, 'Logout']);
-
-Route::get('/Offer', [UsersController::class, 'GetOfferPage']);
-
-Route::get('/Contact', [UsersController::class, 'GetContactPage']);
-
-Route::get('/Postulate', [UsersController::class, 'GetPostulatePage']);
-
-Route::get('/Help', function() {
-    return view('Help');
-});
-
-Route::get('/Users', [UsersController::class, 'GetUsersPage']);
-
-Route::get('/admin', function () {
-    return view('welcome_admin');
-});
-
-Route::post('/admin', function () {
-    return view('welcome_admin');
-});
-
-Route::post('/Home', [AuthController::class, 'Login']);
-
-Route::get('/Home', [UsersController::class, 'GetHomePage']);

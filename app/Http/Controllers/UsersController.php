@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Users;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\View;
+use App\Models\Localisation;
 
 class UsersController extends Controller 
 {
@@ -91,7 +92,7 @@ class UsersController extends Controller
   
   public function GetHomePage(Request $request)
   {
-     
+     $auth->AuthVerify($request);
      $User_id = $this->VerifPage($request);
      switch ($this->Get_Table($User_id))
      {
@@ -158,6 +159,38 @@ class UsersController extends Controller
 
             }
 
+  }
+
+  public function Create_User(Request $request)
+  {
+    $this->Create($request);
+    $User_id = $this->user->GetId($request->Mail);
+    $EntryLocal = Localisation::updateOrCreate(
+        ['Localisation' => $request->Localisation_Name ]);
+
+    $NewLocal = new Localisation;
+    $Localisation_id = $NewLocal->GetId($request->Localisation_Name);
+    switch($request->$UpUser_type)
+    {
+        case 0 :
+            $this->student->Create($request, $User_id, $Localisation_id);
+            break;
+
+        case 1 :
+            $this->pilot->Create($request, $User_id, $Localisation_id);
+            break;
+
+        case 2 :
+            $this->administrator->Create($request, $User_id, $Localisation_id);
+            break;
+    }
+  }
+
+  public function Create(Request $request)
+  {
+        $this->user->Mail = $request->Mail;
+        $this->user->Password = $request->Password;
+        $this->user->save();
   }
 }
 
