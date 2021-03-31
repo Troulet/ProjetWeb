@@ -24,7 +24,7 @@
                   <div class="row">
                       <div id="banner-one" class="col-sm">
                           <img class="d-block w-100 desk-img" src="https://mdbootstrap.com/img/new/standard/nature/181.jpg" alt="1 slide">
-                          <img class=" w-100  mobile-img" src="https://mdbootstrap.com/img/new/standard/nature/181.jpg" alt="1 slide">
+                          <img class="w-100  mobile-img" src="https://mdbootstrap.com/img/new/standard/nature/181.jpg" alt="1 slide">
                           <div class="card-body">
                               <h5 class="card-title">Stage chez Thalès</h5>
                               <p class="card-text">
@@ -35,7 +35,7 @@
                       </div>
                       <div id="banner-two" class="col-sm">
                           <img class="d-block w-100 desk-img" src="https://mdbootstrap.com/img/new/standard/nature/181.jpg" alt="2 slide">
-                          <img class=" w-100  mobile-img" src="https://mdbootstrap.com/img/new/standard/nature/181.jpg" alt="2 slide">
+                          <img class="w-100  mobile-img" src="https://mdbootstrap.com/img/new/standard/nature/181.jpg" alt="2 slide">
                           <div class="card-body">
                               <h5 class="card-title">Stage chez Gertrude</h5>
                               <p class="card-text">
@@ -44,9 +44,9 @@
                               <a href="#" class="btn btn-primary">Aller voir</a>
                           </div>
                       </div>
-                      <div class="col-sm">
+                      <div id="banner-three" class="col-sm">
                          <img class="d-block w-100 desk-img" src="https://mdbootstrap.com/img/new/standard/nature/181.jpg" alt="3 slide">
-                         <img class=" w-100  mobile-img" src="https://mdbootstrap.com/img/new/standard/nature/181.jpg" alt="3 slide">
+                         <img class="w-100  mobile-img" src="https://mdbootstrap.com/img/new/standard/nature/181.jpg" alt="3 slide">
                          <div class="card-body">
                               <h5 class="card-title">Stage chez Dassault</h5>
                               <p class="card-text">
@@ -86,9 +86,11 @@
             <a href="#" class="list-group-item list-group-item-action">Choix 4</a>
         </div>
     </div>
-</body>
-
+    
 <?php 
           include("../resources/views/footer.blade.php"); 
 ?>
+</body>
+
+
 </html>
