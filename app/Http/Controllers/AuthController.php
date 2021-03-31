@@ -88,8 +88,8 @@ class AuthController extends Controller
         $validator = Validator::make($request->all(), [
             '_token' => 'required',
             'Login' => 'required|exists:users,Mail',
-            'password' => 'required|exists:users,Password',
-            'COOKIE'=> 'required',
+            'Password' => 'required|exists:users,Password',
+            'cookie'=> 'required',
         ]);
 
         //if the inputs are not validated, we came back on the previous page.
