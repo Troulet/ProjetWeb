@@ -1,97 +1,86 @@
 h1 {
-    font-family: Verdana, "DejaVu Sans", "Bitstream Vera Sans", Geneva, sans-serif;
-    text-transform: uppercase;
-    padding: 10px 0;
-    margin-bottom: 10px;
-    text-align: center;
-    color: #5C88DA;
+  font-family: Verdana, "DejaVu Sans", "Bitstream Vera Sans", Geneva, sans-serif;
+  text-transform: uppercase;
+  padding: 10px 0;
+  margin-bottom: 10px;
+  text-align: center;
+  color: #5C88DA;
 }
 
 h2 {
-    font-family: 'Trebuchet MS';
-    text-align: center;
-    color: #5C88DA;
-    padding: 10px 0;
+  font-family: 'Trebuchet MS';
+  text-align: center;
+  color: #5C88DA;
+  padding: 10px 0;
 }
 
 h3 {
-    text-align: left;
+  text-align: left;
 }
 
 .header, body {
-    border-bottom: 3px solid #5C88DA;
+  border-bottom: 3px solid #5C88DA;
 }
 
 
 .candidature, .table, .offre_selec, .carousel_1 {
-    margin-top: 1%;
-    padding: 1%;
-    border: 3px solid #5C88DA;
-    margin-left: 15%;
-    margin-right: 15%;
+  margin-top: 1%;
+  padding: 1%;
+  border: 3px solid #5C88DA;
+  margin-left: 15%;
+  margin-right: 15%;
 }
 
 .categories {
-    margin-top: 1%;
-    padding: 1%;
-    width : 13%;
-    border: 3px solid #5C88DA;
-    float: left;
-    position: absolute;
+  margin-top: 1%;
+  padding: 1%;
+  width : 13%;
+  border: 3px solid #5C88DA;
+  float: left;
+  position: absolute;
 }
 
 
 .create_enterprise, .creation_E, .creation_O {
-    position: relative;
-    top: 530px;
+  position: relative;
+  top: 530px;
 }
 
 .subtitle {
-    font-size: 75%;
-    color: #808080;
-    text-transform: none;
+  font-size: 75%;
+  color: #808080;
+  text-transform: none;
 }
 
 p, ul, label, body {
-    font-family: Verdana, "DejaVu Sans";
-    margin-bottom: 0;
-}
-
-
-
-footer, .titre {
-    background-color: #5C88DA;
-    color: white;
-}
-
-a[title] {
-    color: white;
+  font-family: Verdana, "DejaVu Sans";
+  margin-bottom: 0;
 }
 
 .desk-img {
-    display: block;
+  display: block;
 }
-  
+
 .mobile-img {
-    display: none;
+  display: none;
 }
-  
+
 @media (max-width: 700px) {
-    .desk-img {
-      display: none !important;
-    }
-    .mobile-img {
-      display: block;
-    }
+  .desk-img {
+    display: none !important;
+  }
+  .mobile-img {
+    display: block;
+  }
 }
 
 .wishlist {
-    padding: 0 20px 6px;
-    margin: 2%;
-    vertical-align: top;
-    border-bottom: 2px solid #5C88DA;
-    border: 60px;
-    font-weight: bold;
-    font-size: 1em;
-    text-align: center;
+  padding: 0 20px 6px;
+  margin: 2%;
+  vertical-align: top;
+  border-bottom: 2px solid #5C88DA;
+  border: 60px;
+  font-weight: bold;
+  font-size: 1em;
+  text-align: center;
 }
