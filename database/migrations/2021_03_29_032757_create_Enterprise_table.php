@@ -12,6 +12,7 @@ class CreateEnterpriseTable extends Migration {
 			$table->string('Enterprise_Name', 50);
 			$table->string('Activity_Sector', 50);
 			$table->integer('Cesi_Student_Taken');
+			$table->integer('Localisation_id')->unsigned();
 			$table->timestamps();
 		});
 	}
