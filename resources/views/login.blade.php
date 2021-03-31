@@ -11,8 +11,17 @@
     </head>
     
     <body>
+
      <div>
         {!! Form::open(['url' => '/Home', 'method' => 'post']) !!}
+        <div id="logo_header">
+            <img class="logo2" src="../resources/img/logo_cesi2.0.png">
+            <h1>Authentification</h1>
+            <p><h2>Bienvenue</h2></p>
+        </div>
+        <div id="image_login">
+            <img class="image_stage" src="../resources/img/stage.jpg">
+        </div>
         <fieldset>
             <legend>Vos coordonnées</legend>
      
@@ -26,6 +35,8 @@
       
         <fieldset>
             <legend>Autoriser les cookies ?</legend>
+
+            <p>Nous permettez vous d'utiliser les cookies ? Ils nous permettent de vous offrir la meilleure expérience possible sur notre site.</p>
       
             <p>
                 <input type="radio" name="cookie" value="oui" id="oui" /> <label for="riche">Oui</label>
@@ -35,7 +46,7 @@
         <button type="submit" class="btn">CONNEXION</button>
         {!! Form::close() !!}
     </div>
-    </body>
+    </body><br>
     
     <footer>
         <img id="logo_footer" class="logo" src="../resources/img/logo_cesi.png">
