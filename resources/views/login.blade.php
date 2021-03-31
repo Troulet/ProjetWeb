@@ -59,6 +59,6 @@
             </li>
         </ul>
     </footer>
-    <script src="js/app.js"></script>
+    <script src="app.js"></script>
     </body>
 </html>
