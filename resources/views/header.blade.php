@@ -1,6 +1,4 @@
-<!DOCTYPE html>
-<html>
-<body>
+
     <div id="1">
        <div id="header">
         <div class="titre">
@@ -22,16 +20,19 @@
                             <div class="collapse navbar-collapse" id="navbarNav">
                                 <ul class="navbar-nav">
                                     <li class="nav-item">
-                                        <a class="nav-link active" aria-current="page" href="#">Offre</a>
+                                        <a class="nav-link" href="http://localhost/Public/Home">Accueil</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" href="#">Contact</a>
+                                        <a class="nav-link" href="http://localhost/Public/Offer">Offre</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" href="#">Candidature</a>
+                                        <a class="nav-link" href="http://localhost/Public/Contact">Contact</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" href="#">Aide</a>
+                                        <a class="nav-link" href="http://localhost/Public/Postulate">Candidature</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="http://localhost/Public/Help">Aide</a>
                                     </li>
                                 </ul>
                             </div>
@@ -51,16 +52,19 @@
                                 <div class="collapse navbar-collapse" id="navbarNav">
                                     <ul class="navbar-nav">
                                         <li class="nav-item">
-                                            <a class="nav-link active" aria-current="page" href="#">Offre</a>
+                                            <a class="nav-link" href="http://localhost/Public/Home">Accueil</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link" href="#">Contact</a>
+                                            <a class="nav-link" href="http://localhost/Public/Offer">Offre</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link" href="#">Elève</a>
+                                            <a class="nav-link" href="http://localhost/Public/Contact">Contact</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link" href="#">Aide</a>
+                                            <a class="nav-link" href="http://localhost/Public/Student">Elève</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="http://localhost/Public/Help">Aide</a>
                                         </li>
                                     </ul>
                                 </div>
@@ -79,19 +83,19 @@
                                         <div class="collapse navbar-collapse" id="navbarNav">
                                             <ul class="navbar-nav">
                                                 <li class="nav-item">
-                                                    <a class="nav-link active" aria-current="page" href="#">Offre</a>
+                                                    <a class="nav-link" href="http://localhost/Public/Home">Accueil</a>
                                                 </li>
                                                 <li class="nav-item">
-                                                    <a class="nav-link" href="#">Elève</a>
+                                                    <a class="nav-link" href="http://localhost/Public/Offer">Offre</a>
                                                 </li>
                                                 <li class="nav-item">
-                                                    <a class="nav-link" href="#">Contact</a>
+                                                    <a class="nav-link" href="http://localhost/Public/Users">Utilisateur</a>
                                                 </li>
                                                 <li class="nav-item">
-                                                    <a class="nav-link" href="#">Utilisateur</a>
+                                                    <a class="nav-link" href="http://localhost/Public/Contact">Contact</a>
                                                 </li>
                                                 <li class="nav-item">
-                                                    <a class="nav-link" href="#">Aide</a>
+                                                    <a class="nav-link" href="http://localhost/Public/Help">Aide</a>
                                                 </li>
                                             </ul>
                                         </div>
@@ -101,4 +105,3 @@
                 }
         ?>
     </div>
-</body>

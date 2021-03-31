@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -11,32 +14,32 @@
     </head>
     
     <body>
-    {!! Form::open(['url' => '/user', 'method' => 'post']) !!}
+    {!! Form::open(['url' => '/Home', 'method' => 'post']) !!}
         <div id="logo_header">
-            <img class="logo2" src="../img/logo_cesi2.0.png">
+            <img class="logo2" src="../resources/img/logo_cesi2.0.png">
             <h1>Authentification</h1>
             <p><h2>Bienvenue</h2></p>
         </div>
         <div id="image_login">
-            <img class="image_stage" src="../img/stage.jpg">
+            <img class="image_stage" src="../resources/img/stage.jpg">
         </div>
         <div id="textbox_login">
             <label for="login">Login :</label><br>
-            <input type="text" name="Login" id="login" required><br><br>
+            <input type="text" name="Login" required><br><br>
 
          <div>
             <label for="pass">Mot de passe :</label><br>
-            <input type="password" id="Password" name="password" minlength="8" required>
+            <input type="password" name="password" minlength="8" required>
          </div>
 
         <div id="cookies">
             <p>Cookies !</p>
             <p>Nous permettez vous d'utiliser les cookies ? Ils nous permettent de vous offrir la meilleure expérience possible sur notre site.</p>
 
-            <input type="radio" id="COOKIE" name="COOKIE" value="yes">
+            <input type="radio" name="COOKIE" value="yes">
             <label for="yes">Oui</label>
 
-            <input type="radio" id="COOKIE" name="COOKIE" value="no">
+            <input type="radio" name="COOKIE" value="no">
             <label for="no">Non</label><br><br>
         </div>
             <button type="submit" class="btn">CONNEXION</button>
@@ -44,7 +47,7 @@
     </body>
     
     <footer>
-        <img id="logo_footer" class="logo" src="../img/logo_cesi.png">
+        <img id="logo_footer" class="logo" src="../resources/img/logo_cesi.png">
         <ul>
             <li>
                 <a href="https://ent.cesi.fr/?RH=&ksession=9e43032b-00b8-446a-8782-5768fbf6406f" title="ENT" target="blank">ENT</a>

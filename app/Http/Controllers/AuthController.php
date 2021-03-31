@@ -1,6 +1,8 @@
 <?php 
 
+
 namespace App\Http\Controllers;
+session_start();
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
@@ -26,10 +28,10 @@ class AuthController extends Controller
             }
             else
             {
-                $_SESSION['Login'] = $request->input('Login');
-                $Login = $_SESSION['Login'];
-                $_SESSION['Password'] = $request->input('Password');
-                $Password = $_SESSION['Password'];
+                $request->session()->put('Login', $request->input('Login'));
+                $Login = $request->session()->get('Login');
+                $request->session()->put('Password', $request->input('Password'));
+                $Password = $request->session()->get('Password');
             }
 
             /*We redirect the user on the correct page*/
@@ -49,9 +51,6 @@ class AuthController extends Controller
                     return View::make('welcome_pilot')->with('user_type', 1);
                     break;
 
-                case 'error' :
-                    echo "Erreur de Connexion";
-                    break;
             }
 
             //Renvoyer une vue si l'utilisateur n'appartient à aucune des tables

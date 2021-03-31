@@ -1,6 +1,4 @@
-<!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-<link rel= "stylesheet" href="../resources/views/header_footer.css"/>
 <footer>
     <img class="logo" src="../resources/img/logo_cesi.png">
     <ul>
@@ -13,4 +11,3 @@
     </ul>
     <button class="bouton" type="button">Support</button>
 </footer>
-</html>

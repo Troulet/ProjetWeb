@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta charsert="utf-8" />
+        <meta charset="utf-8" />
         <link rel= "stylesheet" href="../resources/views/welcome_student.css"/>
         <link rel= "stylesheet" href="../resources/views/header_footer.css"/>
         <title>LES P'TITES ANNONCES</title>
@@ -43,7 +43,7 @@
                                 </div>
                             </div>
                             <div id="banner-three" class="col-sm">
-                                <img class="d-block w-100 desk-img" src="https://mdbootstrap.com/img/new/standard/nature/181.jpg" alt="3 slide"
+                                <img class="d-block w-100 desk-img" src="https://mdbootstrap.com/img/new/standard/nature/181.jpg" alt="3 slide">
                                 <img class=" w-100  mobile-img" src="https://mdbootstrap.com/img/new/standard/nature/181.jpg" alt="3 slide">
                                     <div class="card-body">
                                         <h5 class="card-title">Elève</h5>
@@ -73,8 +73,9 @@
                 </a>
             </div>
         </div>
-    </body>
     <?php 
-          include("../resources/views/footer.blade.php"); 
+        include("../resources/views/footer.blade.php"); 
     ?>
+    </body>
+
 </html>

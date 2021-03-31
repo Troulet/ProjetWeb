@@ -2,6 +2,7 @@
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\UsersController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Http\RedirectResponse;
 
@@ -20,6 +21,14 @@ Route::get('/', function () {
     return view('login');
 });
 
+Route::get('/Offer', [UsersController::class, 'GetOfferPage']);
+
+Route::get('/Contact');
+
+Route::get('/Postulate');
+
+Route::get('/Help');
+
 Route::get('/admin', function () {
     return view('welcome_admin');
 });
@@ -28,4 +37,6 @@ Route::post('/admin', function () {
     return view('welcome_admin');
 });
 
-Route::post('/user', [AuthController::class, 'Login']);
+Route::post('/Home', [AuthController::class, 'Login']);
+
+Route::get('/Home', [UsersController::class, 'GetHomePage']);

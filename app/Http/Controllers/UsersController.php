@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Users;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\View;
 
 class UsersController extends Controller 
 {
@@ -45,6 +46,64 @@ class UsersController extends Controller
   //We delete the line on User's table.
     $this->user->find($id);
     $this->user->delete();
+  }
+
+  public function GetOfferPage(Request $request)
+  {
+      if(isset($_COOKIE['Login']))
+      {
+        $User_id = $this->GetId($_COOKIE['Login']);
+      }
+      else
+      {
+        $User_id = $this->GetId($request->session()->get('Login'));
+      }
+
+      switch ($this->Get_Table($User_id))
+            {
+                case 2 :
+                    return View::make('internship_pilot')->with('user_type', 2);
+                    break;
+
+                case 0 :
+                    return View::make('internship_student')->with('user_type', 0);
+                    break;
+
+                case 1 :
+                    return View::make('internship_pilot')->with('user_type', 1);
+                    break;
+
+            }
+
+  }
+
+  public function GetHomePage(Request $request)
+    {
+      if(isset($_COOKIE['Login']))
+      {
+        $User_id = $this->GetId($_COOKIE['Login']);
+      }
+      else
+      {
+        $User_id = $this->GetId($request->session()->get('Login'));
+      }
+
+      switch ($this->Get_Table($User_id))
+            {
+                case 2 :
+                    return View::make('welcome_admin')->with('user_type', 2);
+                    break;
+
+                case 0 :
+                    return View::make('welcome_student')->with('user_type', 0);
+                    break;
+
+                case 1 :
+                    return View::make('welcome_pilot')->with('user_type', 1);
+                    break;
+
+            }
+
   }
 }
 
