@@ -188,8 +188,9 @@ data-mdb-ride="carousel"
         <button class="contacter" type="button">CACHER LE PROFIL</button><br>
         <button class="modif" type="button">MODIFIER LE PROFIL</button>
     </section>
-    </body>
     <?php 
           include("../resources/views/footer.blade.php"); 
     ?>
+    </body>
+    
 </html>
