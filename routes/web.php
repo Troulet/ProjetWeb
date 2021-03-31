@@ -8,6 +8,7 @@ use Illuminate\Http\RedirectResponse;
 use App\Http\Controllers\EnterpriseController;
 use App\Http\Controllers\InternshipController;
 use App\Http\Controllers\StudentController;
+use App\Http\Controllers\PilotController;
 
 /*
 |--------------------------------------------------------------------------
@@ -54,11 +55,14 @@ use App\Http\Controllers\StudentController;
 
     Route::post('/Offer', [InternshipController::class, 'Update']);
 
-    Route::post('/admin/pilot', [StudentController::class, 'Create']);
+    Route::post('/admin/pilot', [PilotController::class, 'Create']);
 
-    Route::post('/admin/pilot', [StudentController::class, 'Update']);
+    Route::post('/admin/pilot', [PilotController::class, 'Update']);
 
-    Route::post
+    Route::post('/admin/student', [StudentController::class, 'Create']);
+
+    Route::post('/admin/student', [StudentController::class, 'Update']);
+
 
 
 
