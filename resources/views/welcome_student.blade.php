@@ -86,9 +86,11 @@
             <a href="#" class="list-group-item list-group-item-action">Choix 4</a>
         </div>
     </div>
-</body>
-
+    
 <?php 
           include("../resources/views/footer.blade.php"); 
 ?>
+</body>
+
+
 </html>
