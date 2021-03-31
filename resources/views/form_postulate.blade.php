@@ -12,7 +12,7 @@
         </div>
     </div>
     <div>
-        {!! Form::open(['url' => '/Offer', 'method' => 'post']) !!}
+        {!! Form::open(['url' => '/Postulate', 'method' => 'post']) !!}
         <fieldset>
             <legend>Candidature</legend>
      
