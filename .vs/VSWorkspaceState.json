@@ -1,24 +1,12 @@
 {
   "ExpandedNodes": [
     "",
-<<<<<<< HEAD
-    "\\Public",
-    "\\resources",
-    "\\resources\\views"
-  ],
-  "SelectedNode": "\\resources\\views\\contact_admin.blade.php",
-=======
     "\\app",
     "\\app\\Http",
     "\\app\\Http\\Controllers",
-    "\\app\\Models",
-    "\\config",
     "\\resources",
-    "\\resources\\views",
-    "\\routes",
-    "\\storage"
+    "\\resources\\views"
   ],
-  "SelectedNode": "\\app\\Models\\Enterprise.php",
->>>>>>> 72b06ad4245b39548b0b7f8b8947e8d5b6e40ad3
+  "SelectedNode": "\\resources\\views\\footer.blade.php",
   "PreviewInSolutionExplorer": false
 }
