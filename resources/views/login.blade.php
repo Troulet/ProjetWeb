@@ -39,8 +39,8 @@
             <p>Nous permettez vous d'utiliser les cookies ? Ils nous permettent de vous offrir la meilleure expérience possible sur notre site.</p>
       
             <p>
-                <input type="radio" name="cookie" value="oui" id="oui" /> <label for="riche">Oui</label>
-                <input type="radio" name="cookie" value="non" id="non" /> <label for="celebre">Non</label>
+                <input type="radio" name="cookie" value="oui" id="oui" /> <label for="oui">Oui</label>
+                <input type="radio" name="cookie" value="non" id="non" /> <label for="non">Non</label>
             </p>
         </fieldset>
         <button type="submit" class="btn">CONNEXION</button>
