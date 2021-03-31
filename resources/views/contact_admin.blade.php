@@ -77,3 +77,4 @@
     <?php 
         include("../resources/views/footer.blade.php"); 
     ?>
+</html>
