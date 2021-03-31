@@ -72,6 +72,11 @@ class InternshipController extends Controller
         $this->Offer->Enterprise_id = $NewEnter->GetId($request->Enterprise_Name);
         $this->Offer->save();
     }
+
+    public function Show($id)
+    {
+        return $this->Offer->GetById(id);
+    }
 }
 
 ?>
