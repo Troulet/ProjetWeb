@@ -12,7 +12,7 @@
         </div>
     </div>
     <div>
-        {!! Form::open(['url' => '/Offer/Comment', 'method' => 'post']) !!}
+        {!! Form::open(['url' => '/Offer', 'method' => 'post']) !!}
         <fieldset>
             <legend>Ajouter un commentaire</legend>
      
