@@ -12,7 +12,7 @@
         </div>
     </div>
     <div>
-        {!! Form::open(['url' => '/Offer', 'method' => 'post']) !!}
+        {!! Form::open(['url' => '/admin/student', 'method' => 'post']) !!}
         <fieldset>
             <legend>Créer un élève</legend>
      
