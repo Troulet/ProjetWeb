@@ -12,7 +12,6 @@
     </head>
     
     <body>
-
      <div class="login">
         {!! Form::open(['url' => '/Home', 'method' => 'post']) !!}
         <div id="logo_header">
@@ -31,7 +30,7 @@
             <input type="text" name="Username" id="Username" /><br><br>
      
             <label for="Password">Mot de passe </label><br>
-            <input type="text" name="Password" id="Password" />
+            <input type="password" name="Password" id="Password" />
       
         </fieldset><br>
       

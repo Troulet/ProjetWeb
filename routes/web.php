@@ -5,6 +5,9 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\UsersController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Http\RedirectResponse;
+use App\Http\Controllers\EnterpriseController;
+use App\Http\Controllers\InternshipController;
+use App\Http\Controllers\StudentController;
 
 /*
 |--------------------------------------------------------------------------
@@ -38,6 +41,26 @@ use Illuminate\Http\RedirectResponse;
     Route::post('/Home', [AuthController::class, 'Login']);
 
     Route::get('/Home', [UsersController::class, 'GetHomePage']);
+
+    Route::post('/Offer', [EnterpriseController::class, 'PostComment']);
+
+    Route::get('/Offer', [EnterpriseController::class, 'GetComment']);
+
+    Route::post('/Offer/Entreprise', [ EnterpriseController::class, 'Create']);
+
+    Route::post('/Offer/Entreprise', [ EnterpriseController::class, 'Update']);
+
+    Route::post('/Offer', [InternshipController::class, 'Create']);
+
+    Route::post('/Offer', [InternshipController::class, 'Update']);
+
+    Route::post('/admin/pilot', [StudentController::class, 'Create']);
+
+    Route::post('/admin/pilot', [StudentController::class, 'Update']);
+
+    Route::post
+
+
 
 Route::fallback( function () {
         return view('login');
