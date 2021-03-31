@@ -45,9 +45,8 @@
         </fieldset>
         <button type="submit" class="btn">CONNEXION</button>
         {!! Form::close() !!}
-    </div>
-    </body><br>
-    
+    </div><br>
+
     <footer>
         <img id="logo_footer" class="logo" src="../resources/img/logo_cesi.png">
         <ul>
@@ -59,4 +58,5 @@
             </li>
         </ul>
     </footer>
+    </body>
 </html>
