@@ -1,37 +1,85 @@
 <!DOCTYPE html>
 <html>
-<link rel= "stylesheet" href="../resources/views/header_footer.css"/>
-<body>
-    <div id="1">
-       <div id="header">
-        <div class="titre">
-            <img class="logo2" src="../resources/img/logo_cesi2.0.png">
-            <h1>LES P'TITES ANNONCES</h1>
-            <h2>Cherche et trouve le stage qui te correspond !</h2>
-        </div>
-        </div>
-    </div>
-    <div>
-        {!! Form::open(['url' => '/Offer', 'method' => 'post']) !!}
-        <fieldset>
-            <legend>Candidature</legend>
-     
-            <label for="Curriculum_Vitae">Curriculum Vitae : </label>
-            <input type="text" name="Curriculum_Vitae" id="Curriculum_Vitae" />
-     
-            <label for="Motivation_Letter">Lettre de Motivation: </label>
-            <input type="text" name="Motivation_Letter" id="Motivation_Letter" />
-
-            <label for="Mail_Content">Contenu du mail : </label>
-            <input type="text" name="Mail_Content" id="Mail_Content" />
-
-            <label for="Mail_Entreprise">Mail de l'entreprise : </label>
-            <input type="text" name="Mail_Entreprise" id="Mail_Entreprise" />
-
-        </fieldset>
-        <button type="submit" class="btn">ENVOYER</button>
+    <head>
+        <meta charsert="utf-8" />
+        <link rel= "stylesheet" href="../resources/views/postulate.css"/>
+        <link rel= "stylesheet" href="../resources/views/header_footer.css"/>
+        <title>LES P'TITES ANNONCES</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link href="https://fonts.googleapis.com/css2?family=Happy+Monkey&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    </head>
         
-        {!! Form::close() !!}
+    <body>
+        <?php 
+          include("../resources/views/header.blade.php"); 
+        ?>
+        <div id="id_candidature" class="candidature">
+            <h2>Statistiques</h2>
+            <label for="post_nbre"> Candidatures déposées:</label><br>
+            <input type="int" name="post_nbre" id="post_nbre" required><br><br>
+
+            <label for="date"> Date de la dernière candidature postée:</label><br>
+            <input type="Date" name="date" id="date" required><br><br>
+            
+            <button class="buton" type="button">CANDIDATURE AVEC RÉPONSE</button>
+            <button class="buton" type="button">CANDIDATURE SANS RÉPONSE</button>
+            <button class="buton" type="button">TOUT</button>
+        </div>
+        <table class="table">
+              <thead>
+                <tr>
+                  <th scope="col">#</th>
+                  <th scope="col">Entreprise</th>
+                  <th scope="col">Intitulé du poste</th>
+                  <th scope="col">Curriculum vitae</th>       <!--Réponse = oui/non uniquement-->
+                  <th scope="col">Lettre de motivation</th>   <!--Réponse = oui/non uniquement-->
+                  <th scope="col">Réponse</th>                <!--Réponse = oui/non uniquement-->
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">1</th>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <th scope="row">2</th>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <th scope="row">3</th>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
+        <div class="wishlist">
+        <div class="list-group">
+            <h3>Wish-List</h3>
+            <a href="#" class="list-group-item list-group-item-action">Choix 1</a>
+            <a href="#" class="list-group-item list-group-item-action">Choix 2</a>
+            <a href="#" class="list-group-item list-group-item-action">Choix 3</a>
+            <a href="#" class="list-group-item list-group-item-action">Choix 4</a>
+        </div>
     </div>
-    </script>
-</body>
+    </body>
+
+    <?php 
+          include("../resources/views/footer.blade.php"); 
+    ?>
+</html>
