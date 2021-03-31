@@ -16,12 +16,14 @@ use Illuminate\Http\RedirectResponse;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
 Route::get('/', function () {
     return view('login');
 });
+Route::fallback( function () {
+    return view('login');
+});
 
-Route::get('/Logout', [UsersController::class, 'Logout']);
+Route::get('/Logout', [AuthController::class, 'Logout']);
 
 Route::get('/Offer', [UsersController::class, 'GetOfferPage']);
 
