@@ -20,7 +20,7 @@ class InternshipController extends Controller
         $this->Offer->delete();
     }
 
-    punblic function Delete($id)
+    public function Delete($id)
     {
         $this->Offer->find($id);
         $this->Offer->forceDelete();
@@ -33,7 +33,7 @@ class InternshipController extends Controller
         $this->Offer->Promotion_researched = $request->Promotion_researched;
         $this->Offer->Internship_Duration = $request->Internship_Duration;
         $this->Offer->Salary = $request->Salary;
-        $this->Offer->Offer_Date = date("F j, Y, g:i a")
+        $this->Offer->Offer_Date = date("F j, Y, g:i a");
         $this->Offer->Number_Of_Places = $request->Number_Of_Places;
         $this->Offer->Contact = $request->Contact;
 
@@ -57,7 +57,7 @@ class InternshipController extends Controller
         $this->Offer->Promotion_researched = $request->Promotion_researched;
         $this->Offer->Internship_Duration = $request->Internship_Duration;
         $this->Offer->Salary = $request->Salary;
-        $this->Offer->Offer_Date = date("F j, Y, g:i a")
+        $this->Offer->Offer_Date = date("F j, Y, g:i a");
         $this->Offer->Number_Of_Places = $request->Number_Of_Places;
         $this->Offer->Contact = $request->Contact;
 
