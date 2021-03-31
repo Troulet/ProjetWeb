@@ -4,13 +4,9 @@
     "\\app",
     "\\app\\Http",
     "\\app\\Http\\Controllers",
-    "\\database",
-    "\\Public",
     "\\resources",
-    "\\resources\\views",
-    "\\routes",
-    "\\storage"
+    "\\resources\\views"
   ],
-  "SelectedNode": "\\app\\Http\\Controllers\\UsersController.php",
+  "SelectedNode": "\\resources\\views\\internship_pilot.blade.php",
   "PreviewInSolutionExplorer": false
 }

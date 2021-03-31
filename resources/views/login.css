@@ -29,7 +29,7 @@ h2 {
     text-transform: none;
 }
 
-p, ul, label {
+p, ul, label, input {
     font-family: Verdana, "DejaVu Sans";
     margin-bottom: 0;
 }
@@ -44,5 +44,12 @@ ul, ol {
 }
 
 .logo {
-    width: 60px;
+    justify-content: center;
+    width: 4%;
+}
+
+.login {
+    justify-content: center;
+    display: flex;
+    margin:auto;
 }

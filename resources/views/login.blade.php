@@ -13,26 +13,27 @@
     
     <body>
 
-     <div>
+     <div class="login">
         {!! Form::open(['url' => '/Home', 'method' => 'post']) !!}
         <div id="logo_header">
-            <img class="logo2" src="../resources/img/logo_cesi2.0.png">
+            <img class="logo2" src="../resources/img/logo_cesi2.0.png" alt="logo2">
             <h1>Authentification</h1>
             <p><h2>Bienvenue</h2></p>
         </div>
         <div id="image_login">
-            <img class="image_stage" src="../resources/img/stage.jpg">
+            <img class="image_stage" src="../resources/img/stage.jpg" alt="image_stage">
         </div>
+        <div>
         <fieldset>
-            <legend>Vos coordonnées</legend>
+            <legend>S'authentifier : </legend>
      
-            <label for="Username">Identifiant</label>
-            <input type="text" name="Username" id="Username" />
+            <label for="Username">Identifiant </label><br>
+            <input type="text" name="Username" id="Username" /><br><br>
      
-            <label for="Password">Mot de passe</label>
+            <label for="Password">Mot de passe </label><br>
             <input type="text" name="Password" id="Password" />
       
-        </fieldset>
+        </fieldset><br>
       
         <fieldset>
             <legend>Autoriser les cookies ?</legend>
@@ -46,10 +47,12 @@
         </fieldset>
         <button type="submit" class="btn">CONNEXION</button>
         {!! Form::close() !!}
+        </div>
     </div><br>
 
     <footer>
-        <img id="logo_footer" class="logo" src="../resources/img/logo_cesi.png">
+        <img id="logo_footer" class="logo" src="../resources/img/logo_cesi.png" alt="logo_footer"><br>
+
         <ul>
             <li>
                 <a href="https://ent.cesi.fr/?RH=&ksession=9e43032b-00b8-446a-8782-5768fbf6406f" title="ENT" target="blank">ENT</a>
@@ -58,6 +61,7 @@
                 <a href="https://www.linkedin.com/school/cesiecoledingenieurs/?trk=public_profile_topcard-school" title="Linkedin" target="blank">Linkedin</a>
             </li>
         </ul>
+
     </footer>
     <script src="app.js"></script>
     </body>
