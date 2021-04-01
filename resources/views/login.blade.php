@@ -12,7 +12,6 @@
     </head>
     
     <body>
-
      <div class="login">
         {!! Form::open(['url' => '/Home', 'method' => 'post']) !!}
         <div id="logo_header">

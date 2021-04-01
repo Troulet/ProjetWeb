@@ -1,7 +1,15 @@
 {
     "name": "CesiJob",
     "short_name": "CesiJob",
-    "start_url": "/Public/index.php",
+    "start_url": "/",
+    "scope": "/",
     "display": "standalone",
-    "orientation": "portrait-primary"
+    "orientation": "portrait-primary",
+    "icons": [
+        {
+          "src": "../resources/img/logo_cesi.png",
+          "type": "image/png",
+          "sizes": "236x236"
+        }
+    ]
 }

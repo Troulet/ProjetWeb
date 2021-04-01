@@ -98,9 +98,10 @@
         <div class="create_user">
             <button type="button" class="btn">CRÉER UN PROFIL UTILISATEUR</button>
         </div>
+        <?php 
+          include("../resources/views/footer.blade.php"); 
+        ?>
     </body>
 
-    <?php 
-          include("../resources/views/footer.blade.php"); 
-    ?>
+    
 </html>

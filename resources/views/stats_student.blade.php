@@ -70,9 +70,9 @@
             </div>
         </div>
       </div>
-
+        <?php 
+            include("../resources/views/footer.blade.php"); 
+        ?>
     </body>
-    <?php 
-    include("../resources/views/footer.blade.php"); 
-    ?>
+    
 </html>

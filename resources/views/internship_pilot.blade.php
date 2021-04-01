@@ -113,7 +113,7 @@ data-mdb-ride="carousel"
                           <img class="d-block w-100 desk-img" src="https://mdbootstrap.com/img/new/standard/nature/181.jpg" alt="1 slide">
                           <img class=" w-100  mobile-img" src="https://mdbootstrap.com/img/new/standard/nature/181.jpg" alt="1 slide">
                           <div class="card-body">
-                              <h5 class="card-title">Stage</h5>
+                              <h5 class="card-title">Stage chez Thalès</h5>
                               <p class="card-text">
                                   Thales recrute un stagiaire en informatique pour du développement.
                               </p>
@@ -124,9 +124,9 @@ data-mdb-ride="carousel"
                           <img class="d-block w-100 desk-img" src="https://mdbootstrap.com/img/new/standard/nature/181.jpg" alt="2 slide">
                           <img class=" w-100  mobile-img" src="https://mdbootstrap.com/img/new/standard/nature/181.jpg" alt="2 slide">
                           <div class="card-body">
-                              <h5 class="card-title">Stage</h5>
+                              <h5 class="card-title">Stage chez Gertrude</h5>
                               <p class="card-text">
-                                  Thales recrute un stagiaire en informatique pour du développement.
+                                  Gertrude recrute un stagiaire en informatique pour du développement web et de la gestion de base de données.
                               </p>
                               <a href="#" class="btn btn-primary">Aller voir</a>
                           </div>
@@ -135,9 +135,9 @@ data-mdb-ride="carousel"
                          <img class="d-block w-100 desk-img" src="https://mdbootstrap.com/img/new/standard/nature/181.jpg" alt="3 slide">
                          <img class=" w-100  mobile-img" src="https://mdbootstrap.com/img/new/standard/nature/181.jpg" alt="3 slide">
                          <div class="card-body">
-                              <h5 class="card-title">Stage</h5>
+                              <h5 class="card-title">Stage chez Dassault</h5>
                               <p class="card-text">
-                                  Thales recrute un stagiaire en informatique pour du développement.
+                                  Dassault recrute un stagiaire en informatique pour informatiser sa gestion de chaîne de production.
                               </p>
                               <a href="#" class="btn btn-primary">Aller voir</a>
                           </div>
@@ -176,9 +176,9 @@ data-mdb-ride="carousel"
             />
                     <div class="card-body">
                         <button type="button" class="btn btn-primary btn-floating"><i class="fas fa-heart"></i></button>
-                      <h5 class="card-title">Stage informatique chez Safran</h5>
+                      <h5 class="card-title">Stage chez Ubisoft</h5>
                       <p class="card-text">
-                        Votre mission si vous l'acceptez sera de vous occuper du suivi informatique d'une de nos chaîne de production.
+                        Votre mission si vous l'acceptez sera de nous aider à concevoir notre nouveau site internet.
                       </p>
                     </div>
                   </div>
@@ -188,8 +188,9 @@ data-mdb-ride="carousel"
         <button class="contacter" type="button">CACHER LE PROFIL</button><br>
         <button class="modif" type="button">MODIFIER LE PROFIL</button>
     </section>
-    </body>
     <?php 
           include("../resources/views/footer.blade.php"); 
     ?>
+    </body>
+    
 </html>

@@ -2,6 +2,9 @@
 <html>
 <link rel= "stylesheet" href="../resources/views/header_footer.css"/>
 <body>
+    <?php 
+          include("../resources/views/header.blade.php"); 
+    ?>
     <div id="1">
        <div id="header">
         <div class="titre">
@@ -34,4 +37,7 @@
         {!! Form::close() !!}
     </div>
     </script>
+    <?php 
+          include("../resources/views/footer.blade.php"); 
+    ?>
 </body>
