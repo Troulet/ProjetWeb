@@ -85,7 +85,7 @@
             
           </section>
           <div class="create_enterprise">
-            <input class="creation" type="button" value="CREER UNE ENTREPRISE"></button>
+            <button class="creation" type="button" value="CREER UNE ENTREPRISE"></button>
             </div>
     </div>
 

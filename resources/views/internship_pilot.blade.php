@@ -83,16 +83,10 @@
                 </div>
               </section>
         </div>
-        <div>
-            <input class="creation_E"
-           type="button"
-           value="CREER UNE ENTREPRISE">
-        </div>
-        <div>
-            <input class="creation_O"
-           type="button"
-           value="CREER UNE OFFRE">
-        </div>
+        
+        <button class="suppr" type="button">CRÉER UNE ENTREPRISE</button><br>
+
+        <button class="suppr" type="button">CRÉER UNE OFFRE</button><br>
 
             <!--Caroussel-->
     <!-- Carousel wrapper -->

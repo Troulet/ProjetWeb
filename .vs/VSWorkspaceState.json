@@ -5,8 +5,11 @@
     "\\app\\Http",
     "\\app\\Http\\Controllers",
     "\\resources",
-    "\\resources\\views"
+    "\\resources\\img",
+    "\\resources\\js",
+    "\\resources\\views",
+    "\\routes"
   ],
-  "SelectedNode": "\\artisan",
+  "SelectedNode": "\\resources\\views\\login.css",
   "PreviewInSolutionExplorer": false
 }

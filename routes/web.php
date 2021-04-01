@@ -67,6 +67,8 @@ use App\Http\Controllers\PilotController;
 
 
 
+
+
 Route::fallback( function () {
         return view('login');
     });
