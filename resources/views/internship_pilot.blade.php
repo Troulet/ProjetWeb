@@ -84,14 +84,20 @@
               </section>
         </div>
         <div>
-            <input class="creation_E"
-           type="button"
+            
+           {!! Form::open(['url' => '/Enterprise_Create', 'method' => 'get']) !!}
+            <button class="creation_E"
+           type="submit"
            value="CREER UNE ENTREPRISE">
+            {!! Form::close() !!}
         </div>
         <div>
-            <input class="creation_O"
-           type="button"
+            
+           {!! Form::open(['url' => '/Offer_Create', 'method' => 'get']) !!}
+            <button class="creation_O"
+           type="submit"
            value="CREER UNE OFFRE">
+            {!! Form::close() !!}
         </div>
 
             <!--Caroussel-->
@@ -187,10 +193,14 @@ data-mdb-ride="carousel"
         <button class="suppr" type="button">SUPPRIMER LE PROFIL</button><br>
         <button class="contacter" type="button">CACHER LE PROFIL</button><br>
         <button class="modif" type="button">MODIFIER LE PROFIL</button>
+
     </section>
     <?php 
           include("../resources/views/footer.blade.php"); 
     ?>
+    <script type="text/javascript">
+
+    </script>
     </body>
     
 </html>

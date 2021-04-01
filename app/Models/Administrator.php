@@ -7,9 +7,10 @@ use Illuminate\Support\Facades\DB;
 
 class Administrator extends Model 
 {
-
+    
     protected $table = 'Administrator';
     public $timestamps = true;
+    protected $fillable = ['Users_id','Localisation_id'];
 
     public function Inform_Step4()
     {
@@ -32,7 +33,7 @@ class Administrator extends Model
     }
 
     public function GetById($id){
-        return $admin = DB::table('administrator')->where('Users_id', '=', $id)->first();
+        return $admin = DB::table('administrator')->where('Users_id', '=', $id)->get();
     }
 
     public function GetAll(){

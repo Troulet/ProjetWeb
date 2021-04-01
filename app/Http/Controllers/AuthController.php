@@ -35,6 +35,7 @@ class AuthController extends Controller
                 );
              if(Auth::attempt($user, $request['_token']))
              {
+                echo Auth::id();
                  $request->session()->regenerate();
                  /*We redirect the user on the correct page*/
                 $User = new UsersController;

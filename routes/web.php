@@ -9,6 +9,7 @@ use App\Http\Controllers\EnterpriseController;
 use App\Http\Controllers\InternshipController;
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\PilotController;
+use App\Http\Controllers\AdministratorController;
 
 /*
 |--------------------------------------------------------------------------
@@ -29,6 +30,10 @@ use App\Http\Controllers\PilotController;
 
     Route::get('/Offer', [UsersController::class, 'GetOfferPage']);
 
+    Route::get('/Enterprise_Create', [EnterpriseController::class, 'GetCreatePage']);
+
+    Route::get('/Offer_Create', [InternshipController::class, 'GetCreatePage']);
+
     Route::get('/Contact', [UsersController::class, 'GetContactPage']);
 
     Route::get('/Postulate', [UsersController::class, 'GetPostulatePage']);
@@ -43,7 +48,13 @@ use App\Http\Controllers\PilotController;
 
     Route::get('/Home', [UsersController::class, 'GetHomePage']);
 
-    Route::post('/Offer', [EnterpriseController::class, 'PostComment']);
+    Route::get('/Users/Admin', [AdministratorController::class, 'GetUsersPage']);
+
+    Route::get('/Users_Create', [UsersController::class, 'GetCreationPage']);
+
+    Route::post('/Users_Create', [UsersController::class, 'Create_User']);
+
+    /*Route::post('/Offer', [EnterpriseController::class, 'PostComment']);
 
     Route::get('/Offer', [EnterpriseController::class, 'GetComment']);
 
@@ -73,7 +84,7 @@ use App\Http\Controllers\PilotController;
 
     Route::post('/Stats', [InformController::class, 'Create5']);
 
-    Route::post('/Stats', [InformController::class, 'Create6']);
+    Route::post('/Stats', [InformController::class, 'Create6']);*/
 
 Route::fallback( function () {
         return view('login');

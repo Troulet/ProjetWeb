@@ -77,6 +77,26 @@ class InternshipController extends Controller
     {
         return $this->Offer->GetById(id);
     }
+
+    public function GetCreatePage()
+    {
+        $user = new UsersController;
+        switch($user->Get_Table(Auth::id()))
+        {
+                case 2 :
+                    return View::make('create_offer')->with('user_type', 2);
+                    break;
+
+                case 0 :
+                    return View::make('create_offer')->with('user_type', 0);
+                    break;
+
+                case 1 :
+                    return View::make('create_offer')->with('user_type', 1);
+                    break;
+
+     }
+    }
 }
 
 ?>

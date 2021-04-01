@@ -4,9 +4,13 @@
     "\\app",
     "\\app\\Http",
     "\\app\\Http\\Controllers",
+    "\\app\\Http\\Middleware",
+    "\\app\\Models",
+    "\\config",
     "\\resources",
-    "\\resources\\views"
+    "\\resources\\views",
+    "\\routes"
   ],
-  "SelectedNode": "\\artisan",
+  "SelectedNode": "\\app\\Http\\Controllers\\UsersController.php",
   "PreviewInSolutionExplorer": false
 }
