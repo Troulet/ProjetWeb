@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\Auth;
 use App\Models\Users;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\View;
@@ -14,6 +15,7 @@ class UsersController extends Controller
   protected $student;
   protected $administrator;
   protected $pilot;
+  protected $User_id
 
   public function GetId($Login)
   {
@@ -39,6 +41,7 @@ class UsersController extends Controller
       $this->student = new StudentController;
       $this->pilot = new PilotController;
       $this->administrator = new AdministratorController;
+      $User_id = Auth::id();
   }
 
   public function Delete($id)
@@ -51,9 +54,7 @@ class UsersController extends Controller
 
   public function GetOfferPage(Request $request)
   {
-      $User_id = $this->VerifPage($request);
-
-      switch ($this->Get_Table($User_id))
+      switch ($this->Get_Table($this->User_id))
             {
                 case 2 :
                     return View::make('internship_pilot')->with('user_type', 2);
@@ -70,24 +71,10 @@ class UsersController extends Controller
             }
 
   }
-
-  public function VerifPage(Request $request)
-  {
-    if ($request->session()->get('Login') !== null)
-     {
-       return $this->GetId($request->session()->get('Login'));
-     }
-     else
-	{
-        echo "Error";
-    }
-
-  }
   
   public function GetHomePage(Request $request)
   {
-     $User_id = $this->VerifPage($request);
-     switch ($this->Get_Table($User_id))
+     switch ($this->Get_Table($this->User_id))
      {
                 case 2 :
                     return View::make('welcome_admin')->with('user_type', 2);
@@ -107,8 +94,7 @@ class UsersController extends Controller
 
   public function GetUsersPage(Request $request)
   {
-    $User_id = $this->VerifPage($request);
-      switch ($this->Get_Table($User_id))
+      switch ($this->Get_Table($this->User_id))
             {
                 case 2 :
                     return View::make('user_admin')->with('user_type', 2);
@@ -123,8 +109,7 @@ class UsersController extends Controller
 
   public function GetPostulatePage(Request $request)
     {
-      $User_id = $this->VerifPage($request);
-      switch ($this->Get_Table($User_id))
+      switch ($this->Get_Table($this->User_id))
             {
                 case 0 :
                     return View::make('postulate')->with('user_type', 0);
@@ -135,8 +120,7 @@ class UsersController extends Controller
 
   public function GetContactPage(Request $request)
     {
-      $User_id = $this->VerifPage($request);
-      switch ($this->Get_Table($User_id))
+      switch ($this->Get_Table($this->User_id))
             {
                 case 2 :
                     return View::make('contact_admin')->with('user_type', 2);

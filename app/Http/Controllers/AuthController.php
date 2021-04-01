@@ -1,10 +1,10 @@
-<?php 
-
+<?php
 
 namespace App\Http\Controllers;
-session_start();
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
+use App\Models\Users;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\Facades\Crypt;
@@ -15,38 +15,59 @@ class AuthController extends Controller
     {
         /*We securize the password by encrypting it.
         We also need it encrypted to be compared on the database*/
-        Crypt::encryptString($request->input('Password'));
 
+        /*$user = new Users;
+        $user->find(1);
+        $password = 'Lagew929';
+        $passwordcrypt = \Hash::make($password);
+        $user->email = 'root@gmail.com';
+        $user->First_Name = 'Admin';
+        $user->Last_Name = 'Admin';
+        $user->password = $passwordcrypt;
+        $user->save();*/
+        
         if ($this->Validation($request))
         {
-            if($request->input('cookie') == true)
-            {
-                $request->session()->put('Login', $request->input('Username'));
-                $Login = $request->session()->get('Login');
-                $request->session()->put('Password', $request->input('Password'));
-                $Password = $request->session()->get('Password');
-            }
 
-            /*We redirect the user on the correct page*/
-            $User = new UsersController;
-            $Id = $User->GetId($Login);
-            switch ($User->Get_Table($Id))
-            {
-                case 2 :
-                    return View::make('welcome_admin')->with('user_type', 2);
-                    break;
+             $user = array(
+                'email' => $request['email'],
+                'password' => $request['password']
+                );
+             if(Auth::attempt($user, $request['_token']))
+             {
+                 $request->session()->regenerate();
+                 /*We redirect the user on the correct page*/
+                $User = new UsersController;
+                $user = Auth::user();
+                switch ($User->Get_Table($user['id']))
+                {
+                    case 2 :
+                        return View::make('welcome_admin')->with('user_type', 2);
+                        break;
 
-                case 0 :
-                    return View::make('welcome_student')->with('user_type', 0);
-                    break;
+                    case 0 :
+                        return View::make('welcome_student')->with('user_type', 0);
+                        break;
 
-                case 1 :
-                    return View::make('welcome_pilot')->with('user_type', 1);
-                    break;
+                    case 1 :
+                        return View::make('welcome_pilot')->with('user_type', 1);
+                        break;
 
-            }
+                }
 
             //Renvoyer une vue si l'utilisateur n'appartient à aucune des tables
+                 
+             }
+             else
+             {
+                echo $dude;
+                echo $request['email'];
+                echo $request['password'];
+	            echo "FAIL";
+             }
+
+
+            
         }
         else
         {
@@ -57,24 +78,15 @@ class AuthController extends Controller
 
     public function Logout(Request $request)
     {
-        if ($request->session()->get('Login') !== null OR $request->session()->get('Password') !== null)
-        {
-            $request->session()->invalidate();
             return View::make('login');
-        }
-        else
-        {
-            return View::make('login');
-        }
-
     }
 
     public function Validation(Request $request)
     {
         $validator = Validator::make($request->all(), [
             '_token' => 'required',
-            'Username' => 'required|exists:users,Mail',
-            'Password' => 'required|exists:users,Password',
+            'email' => 'required|exists:users,email',
+            'password' => 'required',
             'cookie' => 'required|boolean|accepted',
         ]);
 

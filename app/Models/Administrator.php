@@ -39,7 +39,4 @@ class Administrator extends Model
         return $admins = DB::table('administrator')->get();
     }
 
-    public function GetId($mail){
-        return $id = DB::table('administrator')->where('Mail', '=', $mail)->pluck('Users_id');
-    }
 }

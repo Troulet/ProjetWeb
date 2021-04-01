@@ -49,8 +49,4 @@ class Student extends Model
         return $students = DB::table('student')->get();
     }
 
-    public function GetId($mail){
-        return $id = DB::table('student')->where('Mail', '=', $mail)->pluck('Users_id');
-    }
-
 }
