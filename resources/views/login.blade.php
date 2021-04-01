@@ -17,7 +17,7 @@
         <div id="logo_header">
             <img class="logo2" src="../resources/img/logo_cesi2.0.png" alt="logo2">
             <h1>Authentification</h1>
-            <p><h2>Bienvenue</h2></p>
+            <h2>Bienvenue</h2>
         </div>
         <div id="image_login">
             <img class="image_stage" src="../resources/img/stage.jpg" alt="image_stage">

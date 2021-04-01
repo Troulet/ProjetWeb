@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta charsert="utf-8" />
+        <meta charset="utf-8" />
         <link rel= "stylesheet" href="../resources/views/postulate.css"/>
         <link rel= "stylesheet" href="../resources/views/header_footer.css"/>
         <title>LES P'TITES ANNONCES</title>
@@ -18,7 +18,7 @@
         <div id="id_candidature" class="candidature">
             <h2>Statistiques</h2>
             <label for="post_nbre"> Candidatures déposées:</label><br>
-            <input type="int" name="post_nbre" id="post_nbre" required><br><br>
+            <input type="number" name="post_nbre" id="post_nbre" required><br><br>
 
             <label for="date"> Date de la dernière candidature postée:</label><br>
             <input type="Date" name="date" id="date" required><br><br>
@@ -46,7 +46,6 @@
                   <td></td>
                   <td></td>
                   <td></td>
-                  <td></td>
                 </tr>
                 <tr>
                   <th scope="row">2</th>
@@ -55,11 +54,9 @@
                   <td></td>
                   <td></td>
                   <td></td>
-                  <td></td>
                 </tr>
                 <tr>
                   <th scope="row">3</th>
-                  <td></td>
                   <td></td>
                   <td></td>
                   <td></td>
