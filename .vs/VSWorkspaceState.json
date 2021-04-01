@@ -4,12 +4,22 @@
     "\\app",
     "\\app\\Http",
     "\\app\\Http\\Controllers",
+    "\\app\\Http\\Middleware",
+    "\\app\\Models",
+    "\\config",
     "\\resources",
+<<<<<<< HEAD
     "\\resources\\img",
     "\\resources\\js",
     "\\resources\\views",
     "\\routes"
   ],
   "SelectedNode": "\\resources\\views\\login.css",
+=======
+    "\\resources\\views",
+    "\\routes"
+  ],
+  "SelectedNode": "\\app\\Http\\Controllers\\UsersController.php",
+>>>>>>> 473252477f9049c0a80d6bec7a11df66009b513c
   "PreviewInSolutionExplorer": false
 }

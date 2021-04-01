@@ -116,11 +116,31 @@
                 
             </div>
         <div>
-            <button type="button" class="btn">CRÉER UN PROFIL UTILISATEUR</button>
+           {!! Form::open(['url' => '/Users_Create', 'method' => 'get']) !!}
+            <button type="submit" class="btn">CRÉER UN PROFIL UTILISATEUR</button>
+            {!! Form::close() !!}
         </div>
+        <?php 
+          include("../resources/views/footer.blade.php");
+         ?>
+         <script type="text/javascript">
+            var html = ''
+            var Userarray = @json($data);
+
+
+            function GetUsers()
+            {
+                
+				    document.getElementById("data").innerHTML = html;
+            }
+
+            document.onload = function()
+            {
+                GetUsers();
+            }
+
+         </script>
     </body>
 
-    <?php 
-          include("../resources/views/footer.blade.php"); 
-    ?>
+    
 </html>

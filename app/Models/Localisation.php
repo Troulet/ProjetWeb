@@ -10,6 +10,7 @@ class Localisation extends Model
 
     protected $table = 'Localisation';
     public $timestamps = true;
+    protected $fillable = ['id','Localisation'];
 
     public function Internship()
     {

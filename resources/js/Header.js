@@ -2,8 +2,8 @@
 function Logout()
 {
     var xhr = new XMLHttpRequest();
-	xhr.open("GET", "https://localhost/Public/Logout", true);
-	xhr.send();
+	xhr.open("GET", "http://localhost/Public/Logout", true);
+	xhr.send(null);
 }
 
 document.getElementById("deconnect_btn").onclick = function()

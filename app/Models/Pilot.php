@@ -49,8 +49,4 @@ class Pilot extends Model
         return $pilots = DB::table('pilot')->get();
     }
 
-    public function GetId($mail){
-        return $id = DB::table('pilot')->where('Mail', '=', $mail)->pluck('Users_id');
-    }
-
 }
