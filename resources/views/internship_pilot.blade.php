@@ -87,7 +87,6 @@
         <button class="suppr" type="button">CRÉER UNE ENTREPRISE</button><br>
 
         <button class="suppr" type="button">CRÉER UNE OFFRE</button><br>
-
         <div>
             
            {!! Form::open(['url' => '/Enterprise_Create', 'method' => 'get']) !!}
@@ -105,7 +104,6 @@
            </button>
             {!! Form::close() !!}
         </div>
->>>>>>> 473252477f9049c0a80d6bec7a11df66009b513c
 
             <!--Caroussel-->
     <!-- Carousel wrapper -->
