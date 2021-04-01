@@ -83,26 +83,26 @@
                 </div>
               </section>
         </div>
-<<<<<<< HEAD
         
         <button class="suppr" type="button">CRÉER UNE ENTREPRISE</button><br>
 
         <button class="suppr" type="button">CRÉER UNE OFFRE</button><br>
-=======
+
         <div>
             
            {!! Form::open(['url' => '/Enterprise_Create', 'method' => 'get']) !!}
             <button class="creation_E"
-           type="submit"
-           value="CREER UNE ENTREPRISE">
+           type="submit">
+           CRÉER UNE ENTREPRISE
+           </button>
             {!! Form::close() !!}
         </div>
         <div>
             
            {!! Form::open(['url' => '/Offer_Create', 'method' => 'get']) !!}
             <button class="creation_O"
-           type="submit"
-           value="CREER UNE OFFRE">
+           type="submit">CRÉER UNE OFFRE
+           </button>
             {!! Form::close() !!}
         </div>
 >>>>>>> 473252477f9049c0a80d6bec7a11df66009b513c
