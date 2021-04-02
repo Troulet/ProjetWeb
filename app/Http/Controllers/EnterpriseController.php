@@ -24,14 +24,14 @@ class EnterpriseController extends Controller
 
     public function Hide($id)
     {
-        //We delete the line on User's table, then on the Child table.
         $deleted = new InternshipController;
+        $offers = this->GetInternship;
         for($i = 0; isset($offers[$i]); $i++)
         {
             $deleted->Hide($offers[$i]);
         }
 
-        $this->enterprise->find($id);
+        $this->enterprise = Enterprise::find($id);
         $this->enterprise->delete();
     }
 
@@ -40,14 +40,14 @@ class EnterpriseController extends Controller
         //Récupérer dans un tableau les ID des offres liées.
     }
 
-    public function GetLocalisation()
+    /*public function GetLocalisation()
     {
         //Récupérer dans un tableau les ID des localisations liées.
-    }
+    }*/
 
     public function Create(Request $request)
     {
-        $this->enterprise->Enterprise_Name = $request->Enterprise_name;
+        $this->enterprise->Enterprise_Name = $request->Enterprise_Name;
         $this->enterprise->Activity_Sector = $request->Activity_Sector;
         $this->enterprise->Cesi_Student_Taken = $request->Cesi_Student_Taken;
 
@@ -63,7 +63,7 @@ class EnterpriseController extends Controller
     public function Update(Request $request)
     {
         $this->enterprise = Enterprise::find($request->Enterprise_id);
-        $this->enterprise->Enterprise_Name = $request->Enterprise_name;
+        $this->enterprise->Enterprise_Name = $request->Enterprise_Name;
         $this->enterprise->Activity_Sector = $request->Activity_Sector;
         $this->enterprise->Cesi_Student_Taken = $request->Cesi_Student_Taken;
 
@@ -84,8 +84,7 @@ class EnterpriseController extends Controller
     public function PostComment(Request $request)
     {
         $User = new UsersController;
-        $User_id->$User->VerifPage($request);
-        switch($User->Get_Table($User_id))
+        switch($User->Get_Table(Auth::id()))
         {
             case 0 :
                 $Comment = new Student_Commentary;

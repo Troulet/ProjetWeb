@@ -66,6 +66,9 @@ use App\Http\Controllers\AdministratorController;
     //Chemin pour poster la modification des droits d'un Délégué'
     Route::post('/Users_right', [UsersController::class, 'UpdateRight']);
 
+    //Chemin pour poster une nouvelle entreprise
+    Route::post('/Users_Profil', [ UsersController::class, 'GetProfil']);
+
     //Chemin pour afficher la page de création d'une entreprise
     Route::get('/Enterprise_Create', [EnterpriseController::class, 'GetCreatePage']);
 
@@ -92,6 +95,9 @@ use App\Http\Controllers\AdministratorController;
     //Chemin pour restorer une Entreprise
     Route::post('/Enterprise_restore', [EnterpriseController::class, 'Restore']);
 
+    //Chemin pour poster une nouvelle entreprise
+    Route::post('/Entreprise_Profil', [ EnterpriseController::class, 'GetProfil']);
+
     //Chemin pour afficher le résultat d'une recherche d'Entreprise/Offre
     Route::post('Offer_Search', [EnterpriseController::class, 'Search']);
 
@@ -106,6 +112,9 @@ use App\Http\Controllers\AdministratorController;
 
     //Chemin pour Supprimer une offre
     Route::post('/Offer_Delete', [InternshipController::class, 'ForceDelete']);
+
+    //Chemin pour poster une nouvelle entreprise
+    Route::post('/Offer_Profil', [ InternshipController::class, 'GetProfil']);
 
     //Chemin pour afficher le formulaire de candidature
     Route::get('/Postulate_Create', [PostulateController::class, 'Create']);

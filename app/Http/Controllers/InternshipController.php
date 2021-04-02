@@ -16,13 +16,13 @@ class InternshipController extends Controller
 
     public function Hide($id)
     {
-        $this->Offer->find($id);
+        $this->Offer = Internship::find($id);
         $this->Offer->delete();
     }
 
     public function Delete($id)
     {
-        $this->Offer->find($id);
+        $this->Offer = Internship::find($id);
         $this->Offer->forceDelete();
     }
 
@@ -73,10 +73,10 @@ class InternshipController extends Controller
         $this->Offer->save();
     }
 
-    public function Show($id)
+    /*public function Show($id)
     {
         return $this->Offer->GetById(id);
-    }
+    }*/
 
     public function GetCreatePage()
     {
