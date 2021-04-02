@@ -294,7 +294,12 @@ class UsersController extends Controller
 
   public function Update(Request $request)
   {
-        //code
+        $this->user = Users::find($request->id);
+        $this->user->First_Name = $request->First_Name;
+        $this->user->Last_Name = $request->Last_Name;
+        $this->user->email = $request->email;
+        $this->user->password = $request->password;
+        $this->user->save();
   }
 
   public function GetCreationPage()
