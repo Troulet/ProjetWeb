@@ -1,4 +1,5 @@
 <<<<<<< HEAD:resources/views/heade_footer/header.blade.php
+<<<<<<< HEAD:resources/views/heade_footer/header.blade.php
     <div id="header">
         <div class="titre">
             <img class="logo2" src="../resources/img/logo_cesi2.0.png">
@@ -210,3 +211,109 @@
         ?>
     </div>
 >>>>>>> a3875d53745a3f67a54b35cc05b7726f881127dc:resources/views/header.blade.php
+=======
+    <div id="header">
+        <div class="titre">
+            <img class="logo2" src="../resources/img/logo_cesi2.0.png">
+            <h1>LES P'TITES ANNONCES</h1>
+            <h2>Cherche et trouve le stage qui te correspond !</h2>
+        </div>
+    </div>
+    <div id="page_loaded">
+        <?php
+            if($user_type==0)  {
+                echo '<div id="student"> <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                        <div class="container-fluid">
+                            <a class="navbar-brand">Menu</a>
+                            <!--<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                              <span class="navbar-toggler-icon"></span>
+                            </button>-->
+                            <div class="collapse navbar-collapse" id="navbarNav">
+                                <ul class="navbar-nav">
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="http://cesijob.fr/Public/Home">Accueil</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="http://cesijob.fr/Public/Offer">Offre</a>
+                                    </li>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="http://cesijob.fr/Public/Postulate">Candidature</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="http://cesijob.fr/Public/Contact">Contact</a>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="http://cesijob.fr/Public/Help">Aide</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </nav>
+                </div>';
+
+            }
+            else if($user_type==1){
+                echo '<div id="pilot">
+                    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                            <div class="container-fluid">
+                                <a class="navbar-brand">Menu</a>
+                                <!--<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                          <span class="navbar-toggler-icon"></span>
+                        </button>-->
+                                <div class="collapse navbar-collapse" id="navbarNav">
+                                    <ul class="navbar-nav">
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="http://cesijob.fr/Public/Home">Accueil</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="http://cesijob.fr/Public/Offer">Offre</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="http://cesijob.fr/Public/Users">Elève</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="http://cesijob.fr/Public/Contact">Contact</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="http://cesijob.fr/Public/Help">Aide</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </nav>
+                    </div>';
+            }
+            else if($user_type==2) {
+                echo '<div id="admin">
+                        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                               <div class="container-fluid">
+                                        <a class="navbar-brand">Menu</a>
+                                        <!--<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                                  <span class="navbar-toggler-icon"></span>
+                                </button>-->
+                                        <div class="collapse navbar-collapse" id="navbarNav">
+                                            <ul class="navbar-nav">
+                                                <li class="nav-item">
+                                                    <a class="nav-link" href="http://cesijob.fr/Public/Home">Accueil</a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a class="nav-link" href="http://cesijob.fr/Public/Offer">Offre</a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a class="nav-link" href="http://cesijob.fr/Public/Users">Utilisateur</a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a class="nav-link" href="http://cesijob.fr/Public/Contact">Contact</a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a class="nav-link" href="http://cesijob.fr/Public/Help">Aide</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </nav>
+                            </div>';
+                }
+        ?>
+    </div>
+>>>>>>> parent of ba76347 (yep c rang G):resources/views/header.blade.php
