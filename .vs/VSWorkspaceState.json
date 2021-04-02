@@ -6,6 +6,6 @@
     "\\resources\\views\\create",
     "\\resources\\views\\internship"
   ],
-  "SelectedNode": "\\resources\\views\\internship\\internship_template.blade.php",
+  "SelectedNode": "\\resources\\views\\internship\\internship_student.blade.php",
   "PreviewInSolutionExplorer": false
 }
