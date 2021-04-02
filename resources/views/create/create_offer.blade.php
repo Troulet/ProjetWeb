@@ -80,7 +80,7 @@
             <input type="text" name="Number_of_places" id="Number_of_places" />
       
         </fieldset>
-        <button type="submit" class="btn">MODIFIER</button>
+        <button type="submit" id="btn_Modify" class="btn">MODIFIER</button>
         
         {!! Form::close() !!}
     </div>

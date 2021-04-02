@@ -45,7 +45,7 @@
             <input type="text" name="Cesi_Student_Taken" id="Cesi_Student_Taken" />
       
         </fieldset>
-        <button type="submit" class="btn">MODIFIER</button>
+        <button type="submit" id="btn_Modify" class="btn">MODIFIER</button>
         
         {!! Form::close() !!}
     </div>
