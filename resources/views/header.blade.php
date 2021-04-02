@@ -7,6 +7,7 @@
     </div>
     <div id="page_loaded">
         <?php
+        
             if($user_type==0)  {
                 echo '<div id="student"> <nav class="navbar navbar-expand-lg navbar-light bg-light">
                         <div class="container-fluid">
