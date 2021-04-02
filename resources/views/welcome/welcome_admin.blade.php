@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta charset="utf-8" />
-        <link rel= "stylesheet" href="../resources/views/welcome_admin.css"/>
+        <link rel= "stylesheet" href="../resources/views/welcome/welcome_admin.css"/>
         <link rel= "stylesheet" href="../resources/views/header_footer.css"/>
         <title>LES P'TITES ANNONCES</title>
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -12,9 +12,7 @@
 
     </head>
     <body>
-        <?php 
-          include("../resources/views/header.blade.php"); 
-        ?>
+        @include('.resources.views.header.blade.php')
     <br>
         <div id="information_step4" class="informer">
             <div class="list-group">
@@ -25,9 +23,7 @@
                 <a href="#" class="list-group-item list-group-item-action">Message</a>
             </div>
         </div>
-        <?php 
-          include("../resources/views/footer.blade.php"); 
-        ?>
+        @include('.resources.views.footer.blade.php')
     </body>
 
 </html>

@@ -57,5 +57,5 @@
     <script type="text/javascript" src="../resources/js/Create_user.js">
 
     </script> 
-          @include('../resources/views/footer.blade.php')
+          @include('.resources.views.footer.blade.php')
 </body>

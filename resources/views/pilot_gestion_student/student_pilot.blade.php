@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <link rel= "stylesheet" href="../resources/views/student_pilot.css">
+        <link rel= "stylesheet" href="../resources/views/student_gestion_student/student_pilot.css">
         <link rel= "stylesheet" href="../resources/views/header_footer.css">
         <title>LES P'TITES ANNONCES</title>
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -11,10 +11,8 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     </head>
     
-    <body>
-        <?php 
-          include("../resources/views/header.blade.php"); 
-        ?>
+    <body> 
+      @include('.resources.views.header.blade.php')
             <div class="filtre">
             
                 <h3>Filtrer les résultats</h3>
@@ -61,46 +59,26 @@
             
                 <h2>Profil Élève</h2>
                 <div class="card">
-                    <div class="card-body">
-                       Données de l'élève (login, promo, centre, nbre de candidature, email etc)
-                    </div>
-                    <div>
-                        <button type="button" class="btn">SUPPRIMER</button>
-                        <button type="button" class="btn">MODIFIER</button>
-                    </div>
+                    @yield('data_student')
                 </div>
                 
                 <br/>
                 
                 <div class="card">
-                    <div class="card-body">
-                       Données de l'élève (login, promo, centre, nbre de candidature, email etc)
-                    </div>
-                    <div>
-                        <button type="button" class="btn">SUPPRIMER</button>
-                        <button type="button" class="btn">MODIFIER</button>
-                    </div>
+                    @yield('data_student')
                 </div>
                 
                 <br/>
                 
                 <div class="card">
-                    <div class="card-body">
-                       Données de l'élève (login, promo, centre, nbre de candidature, email etc)
-                    </div>
-                    <div>
-                        <button type="button" class="btn">SUPPRIMER</button>
-                        <button type="button" class="btn">MODIFIER</button>
-                    </div>
+                    @yield('data_student')
                 </div>
             </div>
             
         <div class="create_user">
-            <button type="button" class="btn">CRÉER UN PROFIL UTILISATEUR</button>
-        </div>
-        <?php 
-          include("../resources/views/footer.blade.php"); 
-        ?>
+            <button type="button" id="btn_Create" class="btn">CRÉER UN PROFIL UTILISATEUR</button>
+        </div> 
+          @include('.resources.views.footer.blade.php')
     </body>
 
     

@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta charset="utf-8" />
-        <link rel= "stylesheet" href="../resources/views/stats_student.css"/>
+        <link rel= "stylesheet" href="../resources/views/stats/stats_student.css"/>
         <link rel= "stylesheet" href="../resources/views/header_footer.css"/>
         <title>LES P'TITES ANNONCES</title>
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -12,9 +12,7 @@
 
     </head>
     <body>
-        <?php 
-        include("../resources/views/header.blade.php"); 
-        ?>
+            @include('.resources.views.header.blade.php')
         <h2>Statistiques élèves</h2>
                     
         <table class="table">
@@ -67,9 +65,7 @@
             </div>
         </div>
       </div>
-        <?php 
-            include("../resources/views/footer.blade.php"); 
-        ?>
+        @include('.resources.views.footer.blade.php')
     </body>
     
 </html>
