@@ -4,15 +4,16 @@
 
     <div class="card-body">
         <p>
-        Elève : {{$email}}
-        {{$First_Name}}
-        {{$Last_Name}}
-        {{$Promotion}}
-        {{$Representative}}
+        Elève :
+        Email : {{$email}}
+        Prénom : {{$First_Name}}
+        Nom : {{$Last_Name}}
+        Promotion : {{$Promotion}}
+        Délégué : ? {{$Representative}}
         </p>
     </div>
     <div>
-        <button type="button" class="btn">SUPPRIMER</button>
-        <button type="button" class="btn">MODIFIER</button>
+        <button type="button" id="btn_Supp" class="btn">SUPPRIMER</button>
+        <button type="button" id="btn_Modify" class="btn">MODIFIER</button>
     </div>
 @stop
