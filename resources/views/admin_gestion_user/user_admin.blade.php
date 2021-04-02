@@ -11,9 +11,7 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     </head>
     <body>
-        <?php 
-          include("../resources/views/header.blade.php"); 
-        ?>
+        @include('header')
             <div class="filtre">
                 <h3>Filtrer les résultats</h3>
                 <form class="d-flex">
@@ -120,9 +118,7 @@
             <button type="submit" class="btn">CRÉER UN PROFIL UTILISATEUR</button>
             {!! Form::close() !!}
         </div>
-        <?php 
-          include("../resources/views/footer.blade.php");
-         ?>
+            @include('footer')
          <script type="text/javascript">
             var html = ''
             var Userarray = @json($data);

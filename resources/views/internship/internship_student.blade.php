@@ -13,7 +13,7 @@
     </head>
     <body>
         
-        @include('.resources.views.header.blade.php')
+        @include('header')
     </br>
         <!--<div class="filtre">
           <h3>Filtrer les résultats</h3>
@@ -152,7 +152,7 @@
       <button class="contacter" type="button">CONTACTER L'ENTREPRISE</button>
       
   </section>
-    @include('.resources.views.footer.blade.php')
+    @include('footer')
 </body>
     
 </html>

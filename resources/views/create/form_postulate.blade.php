@@ -2,15 +2,7 @@
 <html>
 <link rel= "stylesheet" href="../resources/views/header_footer.css"/>
 <body>
-    <div id="1">
-       <div id="header">
-        <div class="titre">
-            <img class="logo2" src="../resources/img/logo_cesi2.0.png">
-            <h1>LES P'TITES ANNONCES</h1>
-            <h2>Cherche et trouve le stage qui te correspond !</h2>
-        </div>
-        </div>
-    </div>
+    @include('header')
     <div>
         {!! Form::open(['url' => '/Postulate', 'method' => 'post']) !!}
         <fieldset>
@@ -33,5 +25,6 @@
         
         {!! Form::close() !!}
     </div>
-    </script>
+    @include('footer')
+
 </body>

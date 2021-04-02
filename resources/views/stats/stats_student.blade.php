@@ -12,7 +12,7 @@
 
     </head>
     <body>
-            @include('.resources.views.header.blade.php')
+            @include('header')
         <h2>Statistiques élèves</h2>
                     
         <table class="table">
@@ -65,7 +65,7 @@
             </div>
         </div>
       </div>
-        @include('.resources.views.footer.blade.php')
+        @include('footer')
     </body>
     
 </html>

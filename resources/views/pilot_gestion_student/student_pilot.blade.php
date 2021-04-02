@@ -12,7 +12,7 @@
     </head>
     
     <body> 
-      @include('.resources.views.header.blade.php')
+      @include('header')
             <div class="filtre">
             
                 <h3>Filtrer les résultats</h3>
@@ -78,7 +78,7 @@
         <div class="create_user">
             <button type="button" id="btn_Create" class="btn">CRÉER UN PROFIL UTILISATEUR</button>
         </div> 
-          @include('.resources.views.footer.blade.php')
+          @include('footer')
     </body>
 
     
