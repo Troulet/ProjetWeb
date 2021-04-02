@@ -55,16 +55,16 @@ use App\Http\Controllers\AdministratorController;
     Route::post('/Users_Update', [UsersController::class, 'Update_User']);
 
     //Chemin pour supprimer un Utilisateur
-    Route::post('/Users_Delete', [UsersController::class, 'Delete'])
+    Route::post('/Users_Delete', [UsersController::class, 'Delete']);
 
     //Chemin pour rechercher un Utilisateur
-    Route::post('/Users_Search', [UsersController::class, 'Search'])
+    Route::post('/Users_Search', [UsersController::class, 'Search']);
 
     //Chemin pour accéder à la page de modification des droits
-    Route::get('/Users_right', [UsersController::class, 'GetRightPage')
+    Route::get('/Users_right', [UsersController::class, 'GetRightPage']);
 
     //Chemin pour poster la modification des droits d'un Délégué'
-    Route::post('/Users_right', [UsersController::class, 'UpdateRight')
+    Route::post('/Users_right', [UsersController::class, 'UpdateRight']);
 
     //Chemin pour afficher la page de création d'une entreprise
     Route::get('/Enterprise_Create', [EnterpriseController::class, 'GetCreatePage']);
