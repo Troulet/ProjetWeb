@@ -78,38 +78,21 @@
             <div class="profil_card">
             
                 <h2>Profil Utilisateur</h2>
+
                 <div class="card">
-                    <div class="card-body">
-                        Info pilote
-                    </div>
-                    <div>
-                        <button type="button" class="btn">SUPPRIMER</button>
-                        <button type="button" class="btn">MODIFIER</button>
-                    </div>
+                   @yield('data_pilot')
                 </div>
                 
                 <br/>
                 
                 <div class="card">
-                    <div class="card-body">
-                        Info élève
-                    </div>
-                    <div>
-                        <button type="button" class="btn">SUPPRIMER</button>
-                        <button type="button" class="btn">MODIFIER</button>
-                    </div>
+                   @yield('data_student')
                 </div>
                 
                 <br/>
                 
                 <div class="card">
-                    <div class="card-body">
-                        Info délégué
-                    </div>
-                    <div>
-                        <button type="button" class="btn">SUPPRIMER</button>
-                        <button type="button" class="btn">MODIFIER</button>
-                    </div>
+                    @yield('data_student')
                 </div>
                 
             </div>
