@@ -11,10 +11,8 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
     </head>
-    <body>
-        <?php 
-          include("../resources/views/header.blade.php"); 
-        ?>
+    <body> 
+          @include('../resources/views/header.blade.php')
     </br>
             <div class="filtre">
             <h3>Filtrer les résultats</h3>
@@ -193,10 +191,8 @@ data-mdb-ride="carousel"
         <button class="contacter" type="button">CACHER LE PROFIL</button><br>
         <button class="modif" type="button">MODIFIER LE PROFIL</button>
 
-    </section>
-    <?php 
-          include("../resources/views/footer.blade.php"); 
-    ?>
+    </section> 
+       @include('../resources/views/footer.blade.php')
     <script type="text/javascript">
 
     </script>
