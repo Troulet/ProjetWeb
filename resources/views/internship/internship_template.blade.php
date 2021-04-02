@@ -4,7 +4,7 @@
 
                 <h5 class="card-title">Stage chez {{$Enterprise_name}}</h5>
                 <p class="card-text">
-                {{$description}}
+                {{$Description}}
                 Compétences recherchées : {{$Skills_Researched}}
                 Promotion ciblée : {{$Promotion_Researched}}
                 Nombre de places : {{$Number_of_places}}
