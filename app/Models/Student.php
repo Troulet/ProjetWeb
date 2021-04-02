@@ -10,6 +10,7 @@ class Student extends Model
 
     protected $table = 'Student';
     public $timestamps = true;
+    protected $primaryKey = 'Users_id';
 
     public function Postulate()
     {
@@ -49,4 +50,10 @@ class Student extends Model
         return $students = DB::table('student')->get();
     }
 
+    public function tablreturn($localid){
+        return $data = DB::table('student')
+            ->select('student.id, student.Mail, student.First_Name, student.Last_name, student.Promotion, student.Representative')
+            ->where('student.Localisation_id', '=' , $localid)
+            ->get();
+    }
 }
