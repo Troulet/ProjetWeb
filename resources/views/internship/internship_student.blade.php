@@ -13,7 +13,7 @@
     </head>
     <body>
         
-        @include('../resources/views/header.blade.php')
+        @include('.resources.views.header.blade.php')
     </br>
         <!--<div class="filtre">
           <h3>Filtrer les résultats</h3>
