@@ -16,7 +16,7 @@
         include("../resources/views/header.blade.php"); 
         ?>
     </br>
-        <div class="filtre">
+        <!--<div class="filtre">
           <h3>Filtrer les résultats</h3>
           <form class="d-flex">
               <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
@@ -89,7 +89,7 @@
             </div>
     </div>
 
-    
+    -->
 
     
     <!--Caroussel-->
