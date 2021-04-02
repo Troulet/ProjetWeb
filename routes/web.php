@@ -57,6 +57,15 @@ use App\Http\Controllers\AdministratorController;
     //Chemin pour supprimer un Utilisateur
     Route::post('/Users_Delete', [UsersController::class, 'Delete'])
 
+    //Chemin pour rechercher un Utilisateur
+    Route::post('/Users_Search', [UsersController::class, 'Search'])
+
+    //Chemin pour accéder à la page de modification des droits
+    Route::get('/Users_right', [UsersController::class, 'GetRightPage')
+
+    //Chemin pour poster la modification des droits d'un Délégué'
+    Route::post('/Users_right', [UsersController::class, 'UpdateRight')
+
     //Chemin pour afficher la page de création d'une entreprise
     Route::get('/Enterprise_Create', [EnterpriseController::class, 'GetCreatePage']);
 
@@ -80,20 +89,40 @@ use App\Http\Controllers\AdministratorController;
     //Chemin pour supprimer une Entreprise
     Route::post('/Enterprise_delete', [EnterpriseController::class, 'Delete']);
 
+    //Chemin pour restorer une Entreprise
+    Route::post('/Enterprise_restore', [EnterpriseController::class, 'Restore']);
+
+    //Chemin pour afficher le résultat d'une recherche d'Entreprise/Offre
+    Route::post('Offer_Search', [EnterpriseController::class, 'Search']);
+
+    //Chemin pour poster une nouvelle Offre
     Route::post('/Offer_Create' , [InternshipController::class, 'Create']);
 
+    //Chemin pour poster les modifications sur une Offre
+    Route::get('/Offer_Update', [InternshipController::class, 'GetUpdatePage']);
+
+    //Chemin pour poster les modifications sur une Offre
     Route::post('/Offer_Update', [InternshipController::class, 'Update']);
 
-    Route::post('/Postulate', [PostulateController::class, 'Create']);
+    //Chemin pour Supprimer une offre
+    Route::post('/Offer_Delete', [InternshipController::class, 'ForceDelete']);
 
-    Route::post('/Stats', [PostulateController::class, 'Update']);
+    //Chemin pour afficher le formulaire de candidature
+    Route::get('/Postulate_Create', [PostulateController::class, 'Create']);
 
+    //Chemin pour poster la réponse de l'Entreprise (Inform step 2)
+    Route::post('/Postulate_Update', [PostulateController::class, 'Update']);
+
+    //Chemin pour transmettre une fiche de Validation à l'enseignant-tuteur'
     Route::post('/Stats', [InformController::class, 'Create3']);
 
+    //Chemin pour transmettre une fiche de validation à l'assistant administratif'
     Route::post('/Stats', [InformController::class, 'Create4']);
 
+    //Chemin pour prévenir le Tuteur et l'Eleve qu'une Convention de Stage a été envoyée à l'entreprise'
     Route::post('/Stats', [InformController::class, 'Create5']);
 
+    //Chemin pour prévenir le Tuteur et l'Eleve qu'une Convention de Stage signée a été reçue
     Route::post('/Stats', [InformController::class, 'Create6']);
 
 
