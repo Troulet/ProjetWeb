@@ -41,12 +41,14 @@ class UsersController extends Controller
      if (Auth::check())
      {
       $table = [$this->student, $this->pilot, $this->administrator];
-      for ($i=0; isset($table[$i]); $i++)
+      $i = 0;
+      foreach($table as $element)
       {
-        if($table[$i]->GetById($id) !== null)
+        if($element->GetById($id) !== null)
         {
             $reponse = $i;
         }
+        $i++;
       }
       return $reponse;
       }
