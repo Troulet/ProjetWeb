@@ -12,9 +12,8 @@
 
     </head>
     <body>
-        <?php 
-        include("../resources/views/header.blade.php"); 
-        ?>
+        
+        @include('../resources/views/header.blade.php')
     </br>
         <!--<div class="filtre">
           <h3>Filtrer les résultats</h3>
@@ -153,9 +152,7 @@
       <button class="contacter" type="button">CONTACTER L'ENTREPRISE</button>
       
   </section>
-    <?php 
-    include("../resources/views/footer.blade.php"); 
-    ?>
+    @include('../resources/views/footer.blade.php')
 </body>
     
 </html>
