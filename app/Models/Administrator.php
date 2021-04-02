@@ -34,7 +34,7 @@ class Administrator extends Model
     }
 
     public function GetById($id){
-        return $admin = DB::table('administrator')->where('Users_id', '=', $id)->get();
+        return $admin = DB::table('administrator')->where('Users_id', '=', $id)->first();
     }
 
     public function GetAll(){

@@ -15,7 +15,7 @@ class ObjectController extends Controller
 
         // Parse array
         foreach ($obj as $key => $value) {
-            $arr[$key] = $this->objToArray($value);
+            $arr[$key] = ObjectController::objToArray($value);
         }
 
         // Return parsed array

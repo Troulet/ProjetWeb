@@ -9,6 +9,9 @@ use Illuminate\Support\Facades\View;
 use App\Models\Localisation;
 use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Validator;
+use App\Models\Internship;
+use App\Models\Enterprise;
+
 
 class UsersController extends Controller 
 {
@@ -38,18 +41,16 @@ class UsersController extends Controller
      if (Auth::check())
      {
       $table = [$this->student, $this->pilot, $this->administrator];
-      for ($i=0; isset($table[$i]); $i++)
+      $i = 0;
+      foreach($table as $element)
       {
-        if($table[2]->GetById($id) !== null)
+        if($element->GetById($id) !== null)
         {
             $reponse = $i;
         }
+        $i++;
       }
       return $reponse;
-      }
-      else
-      {
-          return 0;
       }
   }
 
