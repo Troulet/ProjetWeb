@@ -4,12 +4,22 @@
     "\\app",
     "\\app\\Http",
     "\\app\\Http\\Controllers",
+<<<<<<< HEAD
     "\\resources",
     "\\resources\\img",
+=======
+    "\\app\\Models",
+    "\\config",
+    "\\resources",
+>>>>>>> 290d521e5d0fec33c38f681951a1850bf61841d0
     "\\resources\\js",
     "\\resources\\views",
     "\\routes"
   ],
+<<<<<<< HEAD
   "SelectedNode": "\\resources\\views\\stats_student.css",
+=======
+  "SelectedNode": "\\app\\Http\\Controllers\\UsersController.php",
+>>>>>>> 290d521e5d0fec33c38f681951a1850bf61841d0
   "PreviewInSolutionExplorer": false
 }

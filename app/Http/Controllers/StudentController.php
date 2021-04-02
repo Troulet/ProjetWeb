@@ -29,7 +29,7 @@ class StudentController extends Controller
     $deleted = new UsersController;
     $deleted->Delete($id);
 
-    $this->user->find($id);
+    $this->user = Users::find($id);
     $this->user->delete();
   }
 
@@ -45,16 +45,11 @@ class StudentController extends Controller
 
   public function Update(Request $request, $Localisation_id)
   {
-        $this->user->find($request->Users_id);
-        $this->user->Users_id = $Users_id;
-        $this->user->$Localisation_id = $Localisation_id;
-        $this->user->Mail = $request->Mail;
-        $this->user->Password = $request->Password;
+        $this->user = Users::find($request->Users_id);
+        $this->user->Localisation_id = $Localisation_id[0];
         $this->user->Promotion = $request->Promotion;
         $this->user->Representative = $request->Representative;
         $this->user->Representative_Rights = $request->Representative_Rights;
-        $this->user->First_Name = $request->First_Name;
-        $this->user->Last_name = $request->Last_name;
         $this->user->save();
   }
 }

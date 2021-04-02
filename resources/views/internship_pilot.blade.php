@@ -82,13 +82,7 @@
                     <label for="s3e">A2 S3E</label>
                 </div>
               </section>
-        </div>
-        
-        <button class="suppr" type="button">CRÉER UNE ENTREPRISE</button><br>
 
-        <button class="suppr" type="button">CRÉER UNE OFFRE</button><br>
-        <div>
-            
            {!! Form::open(['url' => '/Enterprise_Create', 'method' => 'get']) !!}
             <button class="creation_E"
            type="submit">

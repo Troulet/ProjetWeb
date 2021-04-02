@@ -30,10 +30,6 @@ use App\Http\Controllers\AdministratorController;
 
     Route::get('/Offer', [UsersController::class, 'GetOfferPage']);
 
-    Route::get('/Enterprise_Create', [EnterpriseController::class, 'GetCreatePage']);
-
-    Route::get('/Offer_Create', [InternshipController::class, 'GetCreatePage']);
-
     Route::get('/Contact', [UsersController::class, 'GetContactPage']);
 
     Route::get('/Postulate', [UsersController::class, 'GetPostulatePage']);
@@ -48,43 +44,86 @@ use App\Http\Controllers\AdministratorController;
 
     Route::get('/Home', [UsersController::class, 'GetHomePage']);
 
-    Route::get('/Users/Admin', [AdministratorController::class, 'GetUsersPage']);
 
+    //Chemin pour afficher la page de création d'un User
     Route::get('/Users_Create', [UsersController::class, 'GetCreationPage']);
 
+    //Chemin pour poster l'Utilisateur Créer
     Route::post('/Users_Create', [UsersController::class, 'Create_User']);
 
-    /*Route::post('/Offer', [EnterpriseController::class, 'PostComment']);
+    //Chemin pour poster les modifications sur un Utilisateur
+    Route::post('/Users_Update', [UsersController::class, 'Update_User']);
 
-    Route::get('/Offer', [EnterpriseController::class, 'GetComment']);
+    //Chemin pour supprimer un Utilisateur
+    Route::post('/Users_Delete', [UsersController::class, 'Delete']);
 
-    Route::post('/Offer/Entreprise', [ EnterpriseController::class, 'Create']);
+    //Chemin pour rechercher un Utilisateur
+    Route::post('/Users_Search', [UsersController::class, 'Search']);
 
-    Route::post('/Offer/Entreprise', [ EnterpriseController::class, 'Update']);
+    //Chemin pour accéder à la page de modification des droits
+    Route::get('/Users_right', [UsersController::class, 'GetRightPage']);
 
-    Route::post('/Offer', [InternshipController::class, 'Create']);
+    //Chemin pour poster la modification des droits d'un Délégué'
+    Route::post('/Users_right', [UsersController::class, 'UpdateRight']);
 
-    Route::post('/Offer', [InternshipController::class, 'Update']);
+    //Chemin pour afficher la page de création d'une entreprise
+    Route::get('/Enterprise_Create', [EnterpriseController::class, 'GetCreatePage']);
 
-    Route::post('/admin/pilot', [PilotController::class, 'Create']);
+    //Chemin pour afficher la page de création d'une offre
+    Route::get('/Offer_Create', [InternshipController::class, 'GetCreatePage']);
 
-    Route::post('/admin/pilot', [PilotController::class, 'Update']);
+    //Chemin pour afficher la page de création d'un commentaire sur une entreprise
+    Route::get('/Commentary_Create', [EnterpriseController::class, 'GetCreateCommentPage']);
 
-    Route::post('/admin/student', [StudentController::class, 'Create']);
+    //Chemin pour poster un commentaire sur une entreprise
+    Route::post('/Enterprise_Commentary', [EnterpriseController::class, 'PostComment']);
 
-    Route::post('/admin/student', [StudentController::class, 'Update']);
+    //Route::get('/Enterprise_Profile', [EnterpriseController::class, 'GetComment']);
 
-    Route::post('/Postulate', [PostulateController::class, 'Create']);
+    //Chemin pour poster une nouvelle entreprise
+    Route::post('/Entreprise_Create', [ EnterpriseController::class, 'Create']);
 
-    Route::post('/Stats', [PostulateController::class, 'Update']);
+    //Chemin pour poster les modifications d'une Entreprise'
+    Route::post('/Enterprise_Update', [ EnterpriseController::class, 'Update']);
 
+    //Chemin pour supprimer une Entreprise
+    Route::post('/Enterprise_delete', [EnterpriseController::class, 'Delete']);
+
+    //Chemin pour restorer une Entreprise
+    Route::post('/Enterprise_restore', [EnterpriseController::class, 'Restore']);
+
+    //Chemin pour afficher le résultat d'une recherche d'Entreprise/Offre
+    Route::post('Offer_Search', [EnterpriseController::class, 'Search']);
+
+    //Chemin pour poster une nouvelle Offre
+    Route::post('/Offer_Create' , [InternshipController::class, 'Create']);
+
+    //Chemin pour poster les modifications sur une Offre
+    Route::get('/Offer_Update', [InternshipController::class, 'GetUpdatePage']);
+
+    //Chemin pour poster les modifications sur une Offre
+    Route::post('/Offer_Update', [InternshipController::class, 'Update']);
+
+    //Chemin pour Supprimer une offre
+    Route::post('/Offer_Delete', [InternshipController::class, 'ForceDelete']);
+
+    //Chemin pour afficher le formulaire de candidature
+    Route::get('/Postulate_Create', [PostulateController::class, 'Create']);
+
+    //Chemin pour poster la réponse de l'Entreprise (Inform step 2)
+    Route::post('/Postulate_Update', [PostulateController::class, 'Update']);
+
+    //Chemin pour transmettre une fiche de Validation à l'enseignant-tuteur'
     Route::post('/Stats', [InformController::class, 'Create3']);
 
+    //Chemin pour transmettre une fiche de validation à l'assistant administratif'
     Route::post('/Stats', [InformController::class, 'Create4']);
 
+    //Chemin pour prévenir le Tuteur et l'Eleve qu'une Convention de Stage a été envoyée à l'entreprise'
     Route::post('/Stats', [InformController::class, 'Create5']);
 
-    Route::post('/Stats', [InformController::class, 'Create6']);*/
+    //Chemin pour prévenir le Tuteur et l'Eleve qu'une Convention de Stage signée a été reçue
+    Route::post('/Stats', [InformController::class, 'Create6']);
 
 
 
