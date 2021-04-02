@@ -2,18 +2,10 @@
 <html>
 <link rel= "stylesheet" href="../resources/views/header_footer.css"/>
 <body>
-    <?php 
-          include("../resources/views/header.blade.php"); 
-    ?>
-    <div id="1">
-       <div id="header">
-        <div class="titre">
-            <img class="logo2" src="../resources/img/logo_cesi2.0.png">
-            <h1>LES P'TITES ANNONCES</h1>
-            <h2>Cherche et trouve le stage qui te correspond !</h2>
-        </div>
-        </div>
-    </div>
+    
+    @include('../resources/views/header.blade.php') 
+    
+   
     <div>
         {!! Form::open(['url' => '/Offer_Create', 'method' => 'post']) !!}
         <fieldset>
@@ -85,7 +77,5 @@
         {!! Form::close() !!}
     </div>
     </script>
-    <?php 
-          include("../resources/views/footer.blade.php"); 
-    ?>
+       @include('../resources/views/footer.blade.php') 
 </body>
