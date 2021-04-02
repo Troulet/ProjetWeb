@@ -8,7 +8,7 @@
     <div id="1">
        <div id="header">
         <div class="titre">
-            <img class="logo2" src="../resources/img/logo_cesi2.0.png">
+            <img class="logo2" src="../resources/img/logo_cesi2.0.png" alt="logo2">
             <h1>LES P'TITES ANNONCES</h1>
             <h2>Cherche et trouve le stage qui te correspond !</h2>
         </div>
@@ -18,9 +18,9 @@
             <button type="submit" class="btn">Retour à la page Utilisateur</button>
             {!! Form::close() !!}
     <div>
-            <button type="btn" id="btn_Admin" class="btn">CREER UN PROFIL ADMINISTRATEUR</button>
-            <button type="btn" id="btn_Pilot" class="btn">CREER UN PROFIL PILOTE</button>
-            <button type="btn" id="btn_Student" class="btn">CREER UN PROFIL ETUDIANT</button>
+            <button type="button" id="btn_Admin" class="btn">CREER UN PROFIL ADMINISTRATEUR</button>
+            <button type="button" id="btn_Pilot" class="btn">CREER UN PROFIL PILOTE</button>
+            <button type="button" id="btn_Student" class="btn">CREER UN PROFIL ETUDIANT</button>
 
         {!! Form::open(['url' => '/Users_Create', 'method' => 'post']) !!}
 
@@ -145,3 +145,4 @@
           include("../resources/views/footer.blade.php"); 
     ?>
 </body>
+</html>

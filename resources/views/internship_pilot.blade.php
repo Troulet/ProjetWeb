@@ -84,17 +84,18 @@
               </section>
 
            {!! Form::open(['url' => '/Enterprise_Create', 'method' => 'get']) !!}
-            <button class="suppr"
-           type="submit"
-           value="CREER UNE ENTREPRISE">
+            <button class="creation_E"
+           type="submit">
+           CRÉER UNE ENTREPRISE
+           </button>
             {!! Form::close() !!}
         </div>
         <div>
             
            {!! Form::open(['url' => '/Offer_Create', 'method' => 'get']) !!}
-            <button class="suppr"
-           type="submit"
-           value="CREER UNE OFFRE">
+            <button class="creation_O"
+           type="submit">CRÉER UNE OFFRE
+           </button>
             {!! Form::close() !!}
         </div>
 

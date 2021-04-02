@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta charsert="utf-8" />
+        <meta charset="utf-8" />
         <link rel= "stylesheet" href="../resources/views/stats_student.css"/>
         <link rel= "stylesheet" href="../resources/views/header_footer.css"/>
         <title>LES P'TITES ANNONCES</title>
@@ -36,7 +36,6 @@
                   <td></td>
                   <td></td>
                   <td></td>
-                  <td></td>
                 </tr>
                 <tr>
                   <th scope="row">2</th>
@@ -45,11 +44,9 @@
                   <td></td>
                   <td></td>
                   <td></td>
-                  <td></td>
                 </tr>
                 <tr>
                   <th scope="row">3</th>
-                  <td></td>
                   <td></td>
                   <td></td>
                   <td></td>
