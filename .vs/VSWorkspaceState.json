@@ -4,8 +4,10 @@
     "\\resources",
     "\\resources\\views",
     "\\resources\\views\\create",
-    "\\resources\\views\\internship"
+    "\\resources\\views\\inform",
+    "\\resources\\views\\internship",
+    "\\resources\\views\\pilot_gestion_student"
   ],
-  "SelectedNode": "\\resources\\views\\internship\\internship_student.blade.php",
+  "SelectedNode": "\\resources\\views\\pilot_gestion_student\\student_pilot.blade.php",
   "PreviewInSolutionExplorer": false
 }

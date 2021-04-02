@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta charset="utf-8" />
-        <link rel= "stylesheet" href="../resources/views/welcome_student.css"/>
+        <link rel= "stylesheet" href="../resources/views/welcome/welcome_student.css"/>
         <link rel= "stylesheet" href="../resources/views/header_footer.css"/>
         <title>LES P'TITES ANNONCES</title>
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -12,9 +12,7 @@
 
     </head>
     <body>
-        <?php 
-          include("../resources/views/header.blade.php"); 
-        ?>
+        @include('.resources.views.header.blade.php')
         <div class="container">
             <div class="carousel slide" data-ride="carousel" id="multi_item" data-intervale="2000">
                 <div class="carousel-inner">
@@ -73,9 +71,7 @@
                 </a>
             </div>
         </div>
-    <?php 
-        include("../resources/views/footer.blade.php"); 
-    ?>
+        @include('.resources.views.footer.blade.php')
     </body>
 
 </html>

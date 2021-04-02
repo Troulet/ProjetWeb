@@ -3,7 +3,7 @@
 <link rel= "stylesheet" href="../resources/views/header_footer.css"/>
 <body>
    
-    @include('../resources/views/header.blade.php') 
+    @include('.resources.views.header.blade.php') 
 
             {!! Form::open(['url' => '/Offer', 'method' => 'get']) !!}
             <button type="submit" class="btn">Retour à la page Offre</button>
@@ -50,7 +50,5 @@
         {!! Form::close() !!}
     </div>
     </script>
-    <?php 
-          include("../resources/views/footer.blade.php"); 
-    ?>
+          @include('.resources.views.footer.blade.php')
 </body>

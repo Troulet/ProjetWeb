@@ -3,7 +3,7 @@
 <link rel= "stylesheet" href="../resources/views/header_footer.css"/>
 <body>
     
-    @include('../resources/views/header.blade.php') 
+    @include('.resources.views.header.blade.php') 
     
    
     <div>
@@ -77,5 +77,5 @@
         {!! Form::close() !!}
     </div>
     </script>
-       @include('../resources/views/footer.blade.php') 
+       @include('.resources.views.footer.blade.php') 
 </body>
