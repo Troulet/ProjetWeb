@@ -12,7 +12,7 @@
 
     </head>
     <body> 
-          @include('.resources.views.header.blade.php')
+          @include('header')
     </br>
             <div class="filtre">
             <h3>Filtrer les résultats</h3>
@@ -192,7 +192,7 @@ data-mdb-ride="carousel"
         <button class="modif" type="button">MODIFIER LE PROFIL</button>
 
     </section> 
-       @include('.resources.views.footer.blade.php')
+       @include('footer')
     <script type="text/javascript">
 
     </script>

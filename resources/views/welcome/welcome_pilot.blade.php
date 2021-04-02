@@ -12,7 +12,7 @@
 
     </head>
     <body>
-        @include('.resources.views.header.blade.php')
+        @include('header')
         <div class="container">
             <div class="carousel slide" data-ride="carousel" id="multi_item" data-intervale="2000">
                 <div class="carousel-inner">
@@ -71,7 +71,7 @@
                 </a>
             </div>
         </div>
-        @include('.resources.views.footer.blade.php')
+        @include('footer')
     </body>
 
 </html>

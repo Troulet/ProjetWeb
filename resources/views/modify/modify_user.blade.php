@@ -2,7 +2,7 @@
 <html>
 <link rel= "stylesheet" href="../resources/views/header_footer.css"/>
 <body>
-    @include('.resources.views.header.blade.php')
+    @include('header')
     <div id="1">
        <div id="header">
         <div class="titre">
@@ -139,6 +139,6 @@
     }
 
     </script>
-        @include('.resources.views.footer.blade.php')
+        @include('footer')
 </body>
 </html>

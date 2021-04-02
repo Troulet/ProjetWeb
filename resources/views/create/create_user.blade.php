@@ -3,7 +3,7 @@
 <link rel= "stylesheet" href="../resources/views/header_footer.css"/>
 <body>
      
-          @include('.resources.views.header.blade.php')
+    @include('header')
    
             {!! Form::open(['url' => '/Users', 'method' => 'get']) !!}
             <button type="submit" class="btn">Retour à la page Utilisateur</button>
@@ -57,5 +57,5 @@
     <script type="text/javascript" src="../resources/js/Create_user.js">
 
     </script> 
-          @include('.resources.views.footer.blade.php')
+          @include('footer')
 </body>

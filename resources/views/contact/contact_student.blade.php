@@ -12,7 +12,7 @@
     </head>
         
     <body>
-          @include('.resources.views.header.blade.php')
+          @include('header')
 
         <div class="card">
             <div class="card-body">
@@ -64,6 +64,6 @@
                 <a href="#" class="list-group-item list-group-item-action"><h5>Nom du pilote</h5>Message</a>
             </div>
         </div> 
-        @include('.resources.views.footer.blade.php')
+        @include('footer')
     </body>
     

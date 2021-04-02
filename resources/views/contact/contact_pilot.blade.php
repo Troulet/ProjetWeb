@@ -12,7 +12,7 @@
     </head>
         
     <body>
-          @include('.resources.views.header.blade.php')
+          @include('header')
 
         <div class="card">
             <div class="card-body">
@@ -65,4 +65,4 @@
             </div>
         </div>
     </body> 
-        @include('.resources.views.footer.blade.php')
+        @include('footer')

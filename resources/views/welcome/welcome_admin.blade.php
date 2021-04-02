@@ -12,7 +12,7 @@
 
     </head>
     <body>
-        @include('.resources.views.header.blade.php')
+        @include('header')
     <br>
         <div id="information_step4" class="informer">
             <div class="list-group">
@@ -23,7 +23,7 @@
                 <a href="#" class="list-group-item list-group-item-action">Message</a>
             </div>
         </div>
-        @include('.resources.views.footer.blade.php')
+        @include('footer')
     </body>
 
 </html>

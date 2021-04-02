@@ -12,7 +12,7 @@
     </head>
         
     <body>
-            @include('.resources.views.header.blade.php')
+            @include('header')
         <div id="id_candidature" class="candidature">
             <h2>Statistiques</h2>
             <label for="post_nbre"> Candidatures déposées:</label><br>
@@ -72,7 +72,7 @@
             <a href="#" class="list-group-item list-group-item-action">Choix 4</a>
         </div>
     </div>
-        @include('.resources.views.footer.blade.php')
+        @include('footer')
     </body>
 
     
