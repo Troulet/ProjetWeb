@@ -16,7 +16,7 @@
         include("../resources/views/header.blade.php"); 
         ?>
     </br>
-        <div class="filtre">
+        <!--<div class="filtre">
           <h3>Filtrer les résultats</h3>
           <form class="d-flex">
               <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
@@ -88,8 +88,9 @@
             <button class="creation" type="button" value="CREER UNE ENTREPRISE"></button>
             </div>
     </div>
+    -->
 
-    
+    -->
 
     
     <!--Caroussel-->
@@ -112,37 +113,16 @@
                           <img class="d-block w-100 desk-img" src="https://mdbootstrap.com/img/new/standard/nature/181.jpg" alt="1 slide">
                           <img class=" w-100  mobile-img" src="https://mdbootstrap.com/img/new/standard/nature/181.jpg" alt="1 slide">
                           <div class="card-body">
-                              <h5 class="card-title">Stage chez Thalès</h5>
-                              <p class="card-text">
-                                  Thales recrute un stagiaire en informatique pour du développement.
-                              </p>
-                              <a href="#" class="btn btn-primary">Aller voir</a>
-                          </div>
-                      </div>
-                      <div id="banner-two" class="col-sm">
-                          <img class="d-block w-100 desk-img" src="https://mdbootstrap.com/img/new/standard/nature/181.jpg" alt="2 slide">
-                          <img class=" w-100  mobile-img" src="https://mdbootstrap.com/img/new/standard/nature/181.jpg" alt="2 slide">
-                          <div class="card-body">
-                              <h5 class="card-title">Stage chez Gertrude</h5>
-                              <p class="card-text">
-                                  Gertrude recrute un stagiaire en informatique pour du développement web et de la gestion de base de données.
-                              </p>
-                              <a href="#" class="btn btn-primary">Aller voir</a>
-                          </div>
-                      </div>
-                      <div class="col-sm">
-                         <img class="d-block w-100 desk-img" src="https://mdbootstrap.com/img/new/standard/nature/181.jpg" alt="3 slide">
-                         <img class=" w-100  mobile-img" src="https://mdbootstrap.com/img/new/standard/nature/181.jpg" alt="3 slide">
-                         <div class="card-body">
-                              <h5 class="card-title">Stage chez Dassault</h5>
-                              <p class="card-text">
-                                  Dassault recrute un stagiaire en informatique pour informatiser sa gestion de chaîne de production.
-                              </p>
-                              <a href="#" class="btn btn-primary">Aller voir</a>
+                          @foreach ($data as $id => offer)
+                                @yield('carousel_enterprise')
+                          @endforeach
                           </div>
                       </div>
                   </div>
               </div>
+          </div>
+      </div>
+  </div>
               <div class="carousel-item">
                   <div class="row">
                       <div class="col-sm"><img class="d-block w-100" src="https://mdbootstrap.com/img/new/standard/nature/181.jpg" alt="4 slide"></div>
@@ -163,89 +143,6 @@
       </div>
   </div>
 </section>
-
-<!--Caroussel-->
-<div class="carousel_2">
-    <div class="container">
-    <h2>Comparatif des offres :</h2>
-        <div class="carousel slide" data-ride="carousel" id="multi_item2" data-intervale="2000">
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <div class="row">
-                        <div class="col-sm">
-                            <img class="d-block w-100 desk-img" src="https://mdbootstrap.com/img/new/standard/nature/181.jpg" alt="1 slide">
-                            <img class=" w-100  mobile-img" src="https://mdbootstrap.com/img/new/standard/nature/181.jpg" alt="1slide">
-                            <div class="card-body">
-                                <h5 class="card-title">Stage</h5>
-                                <p class="card-text">
-                                    Thales recrute un stagiaire en informatique pour du développement.
-                                </p>
-                                <a href="#" class="btn btn-primary">Aller voir</a>
-                            </div>
-                        </div>
-                        <div class="col-sm">
-                            <img class="d-block w-100 desk-img" src="https://mdbootstrap.com/img/new/standard/nature/181.jpg" alt="2 slide">
-                            <img class=" w-100  mobile-img" src="https://mdbootstrap.com/img/new/standard/nature/181.jpg" alt="2 slide">
-                            <div class="card-body">
-                                <h5 class="card-title">Stage</h5>
-                                <p class="card-text">
-                                    Thales recrute un stagiaire en informatique pour du développement.
-                                </p>
-                                <a href="#" class="btn btn-primary">Aller voir</a>
-                            </div>
-                        </div>
-                        <div class="col-sm">
-                        <img class="d-block w-100 desk-img" src="https://mdbootstrap.com/img/new/standard/nature/181.jpg" alt="3 slide">
-                        <img class=" w-100  mobile-img" src="https://mdbootstrap.com/img/new/standard/nature/181.jpg" alt=3 slide">
-                            <div class="card-body">
-                                <h5 class="card-title">Stage</h5>
-                                <p class="card-text">
-                                    Thales recrute un stagiaire en informatique pour du développement.
-                                </p>
-                                <a href="#" class="btn btn-primary">Aller voir</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <div class="row">
-                        <div class="col-sm"><img class="d-block w-100" src="https://mdbootstrap.com/img/new/standard/nature/181.jpg" alt="4 slide"></div>
-                        <div class="col-sm"><img class="d-block w-100" src="https://mdbootstrap.com/img/new/standard/nature/181.jpg" alt="5 slide"></div>
-                        <div class="col-sm"><img class="d-block w-100" src="https://mdbootstrap.com/img/new/standard/nature/181.jpg" alt="6 slide"></div>
-                    </div>
-                </div>
-            </div>
-            <a class="carousel-control-prev" href="#multi_item2" role="button" data-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="sr-only">Previous</span>
-            </a>
-            <a class="carousel-control-next" href="#multi_item2" role="button" data-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="sr-only">Next</span>
-            </a>
-        </div>
-    </div>
-</div>
-
-<!--pop-up création entreprise ?-->
-  <section class="offre_selec">
-    <h3>Offre selectionnée :</h3>
-      <div class="col-lg-4 d-none d-lg-block">
-        <div class="card">
-          <img
-            src="../resources/img/ubi.jpg"
-            class="card-img-top"
-            alt="..."
-          />
-      <div class="card-body">
-        <h5 class="card-title">Game Designer</h5>
-        <p class="card-text">
-          Participer à la mise en place de feature du jeu en tenant compte des aspects UX
-          Concevoir de nouveaux systèmes en accord avec l'équipe Créative et notamment le directeur UX
-          Réaliser des documents design clairs et détaillés à destination des équipes du projet et leurs mises à jour
-        </p>
-        <a href="#!" class="btn btn-primary">Aller voir</a>
-      </div>
 
       <!--bouton du pop-up-->
       <button class="postuler" type="button">POSTULER</button><br>

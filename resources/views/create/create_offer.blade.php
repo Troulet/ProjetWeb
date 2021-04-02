@@ -15,7 +15,7 @@
         </div>
     </div>
     <div>
-        {!! Form::open(['url' => '/Offer', 'method' => 'post']) !!}
+        {!! Form::open(['url' => '/Offer_Create', 'method' => 'post']) !!}
         <fieldset>
             <legend>Créer une offre</legend>
      
@@ -47,7 +47,7 @@
             <input type="text" name="Number_of_places" id="Number_of_places" />
 
         </fieldset>
-        <button type="submit" class="btn">CREER</button>
+        <button type="submit" id="btn_Create" class="btn_Create">CREER</button>
 
         <fieldset>
             <legend>Modifier une offre</legend>
@@ -80,7 +80,7 @@
             <input type="text" name="Number_of_places" id="Number_of_places" />
       
         </fieldset>
-        <button type="submit" class="btn">MODIFIER</button>
+        <button type="submit" id="btn_Modify" class="btn">MODIFIER</button>
         
         {!! Form::close() !!}
     </div>
