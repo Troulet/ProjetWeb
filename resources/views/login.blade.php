@@ -13,7 +13,7 @@
     
     <body>
      <div class="login">
-        {!! Form::open(['url' => '/Home', 'method' => 'post']) !!}
+        {!! Form::open(['url' => '/Public/Home', 'method' => 'post']) !!}
         <div id="logo_header">
             <img class="logo2" src="../resources/img/logo_cesi2.0.png" alt="logo2">
             <h1>Authentification</h1>

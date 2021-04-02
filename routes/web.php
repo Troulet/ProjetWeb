@@ -30,10 +30,6 @@ use App\Http\Controllers\AdministratorController;
 
     Route::get('/Offer', [UsersController::class, 'GetOfferPage']);
 
-    Route::get('/Enterprise_Create', [EnterpriseController::class, 'GetCreatePage']);
-
-    Route::get('/Offer_Create', [InternshipController::class, 'GetCreatePage']);
-
     Route::get('/Contact', [UsersController::class, 'GetContactPage']);
 
     Route::get('/Postulate', [UsersController::class, 'GetPostulatePage']);
@@ -48,31 +44,45 @@ use App\Http\Controllers\AdministratorController;
 
     Route::get('/Home', [UsersController::class, 'GetHomePage']);
 
-    Route::get('/Users/Admin', [AdministratorController::class, 'GetUsersPage']);
 
+    //Chemin pour afficher la page de création d'un User
     Route::get('/Users_Create', [UsersController::class, 'GetCreationPage']);
 
+    //Chemin pour poster l'Utilisateur Créer
     Route::post('/Users_Create', [UsersController::class, 'Create_User']);
 
-    /*Route::post('/Offer', [EnterpriseController::class, 'PostComment']);
+    //Chemin pour poster les modifications sur un Utilisateur
+    Route::post('/Users_Update', [UsersController::class, 'Update_User']);
 
-    Route::get('/Offer', [EnterpriseController::class, 'GetComment']);
+    //Chemin pour supprimer un Utilisateur
+    Route::post('/Users_Delete', [UsersController::class, 'Delete'])
 
-    Route::post('/Offer/Entreprise', [ EnterpriseController::class, 'Create']);
+    //Chemin pour afficher la page de création d'une entreprise
+    Route::get('/Enterprise_Create', [EnterpriseController::class, 'GetCreatePage']);
 
-    Route::post('/Offer/Entreprise', [ EnterpriseController::class, 'Update']);
+    //Chemin pour afficher la page de création d'une offre
+    Route::get('/Offer_Create', [InternshipController::class, 'GetCreatePage']);
 
-    Route::post('/Offer', [InternshipController::class, 'Create']);
+    //Chemin pour afficher la page de création d'un commentaire sur une entreprise
+    Route::get('/Commentary_Create', [EnterpriseController::class, 'GetCreateCommentPage']);
 
-    Route::post('/Offer', [InternshipController::class, 'Update']);
+    //Chemin pour poster un commentaire sur une entreprise
+    Route::post('/Enterprise_Commentary', [EnterpriseController::class, 'PostComment']);
 
-    Route::post('/admin/pilot', [PilotController::class, 'Create']);
+    //Route::get('/Enterprise_Profile', [EnterpriseController::class, 'GetComment']);
 
-    Route::post('/admin/pilot', [PilotController::class, 'Update']);
+    //Chemin pour poster une nouvelle entreprise
+    Route::post('/Entreprise_Create', [ EnterpriseController::class, 'Create']);
 
-    Route::post('/admin/student', [StudentController::class, 'Create']);
+    //Chemin pour poster les modifications d'une Entreprise'
+    Route::post('/Enterprise_Update', [ EnterpriseController::class, 'Update']);
 
-    Route::post('/admin/student', [StudentController::class, 'Update']);
+    //Chemin pour supprimer une Entreprise
+    Route::post('/Enterprise_delete', [EnterpriseController::class, 'Delete']);
+
+    Route::post('/Offer_Create' , [InternshipController::class, 'Create']);
+
+    Route::post('/Offer_Update', [InternshipController::class, 'Update']);
 
     Route::post('/Postulate', [PostulateController::class, 'Create']);
 
@@ -84,7 +94,7 @@ use App\Http\Controllers\AdministratorController;
 
     Route::post('/Stats', [InformController::class, 'Create5']);
 
-    Route::post('/Stats', [InformController::class, 'Create6']);*/
+    Route::post('/Stats', [InformController::class, 'Create6']);
 
 
 

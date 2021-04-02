@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\View;
 use App\Models\Localisation;
 use Illuminate\Http\Response;
+use Illuminate\Support\Facades\Validator;
 
 class UsersController extends Controller 
 {
@@ -63,7 +64,7 @@ class UsersController extends Controller
   public function GetOfferPage(Request $request)
   {
 
-      switch ($this->Get_Table($this->User_id))
+      switch ($this->Get_Table(Auth::id()))
             {
                 case 2 :
                     return View::make('internship_pilot')->with('user_type', 2);
@@ -83,7 +84,7 @@ class UsersController extends Controller
   
   public function GetHomePage(Request $request)
   {
-     switch ($this->Get_Table($this->User_id))
+     switch ($this->Get_Table(Auth::id()))
      {
                 case 2 :
                     return View::make('welcome_admin')->with('user_type', 2);
@@ -152,7 +153,7 @@ class UsersController extends Controller
 
   public function GetPostulatePage(Request $request)
     {
-      switch ($this->Get_Table($this->User_id))
+      switch ($this->Get_Table(Auth::id()))
             {
                 case 0 :
                     return View::make('postulate')->with('user_type', 0);
@@ -163,7 +164,7 @@ class UsersController extends Controller
 
   public function GetContactPage(Request $request)
     {
-      switch ($this->Get_Table($this->User_id))
+      switch ($this->Get_Table(Auth::id()))
             {
                 case 2 :
                     return View::make('contact_admin')->with('user_type', 2);
@@ -181,17 +182,46 @@ class UsersController extends Controller
 
   }
 
+  public function Validation(Request $request)
+    {
+        $validator = Validator::make($request->all(), [
+            '_token' => 'required',
+            'email' => 'required|email',
+            'password' => 'required|alpha_num',
+            'Promotion' => '',
+            'First_Name'=> 'required|alpha',
+            'Last_Name' => 'required|alpha',
+            'Representative' => 'boolean',
+            'Representative_Rights' => 'numeric',
+            'Localisation_Name' => 'required|alpha',
+            'Users_id' => 'numeric'
+        ]);
+
+        //if the inputs are not validated, we came back on the previous page.
+        if ($validator->fails())
+        {
+            return false;
+        }
+        else
+        {
+            return true;
+        }
+    }
+
   public function Create_User(Request $request)
   {
+
+    if($this->Validation($request))
+    {
     if(Auth::id() == 0)
     {
         $data = "Vous n'avez pas les droits pour effectuer cette fonctionnalité";
-        echo json_encode($data);
+        return $data;
     }
     else if (Auth::id() == 1 AND $request->UpUser_type == 2)
     {
         $data = "Vous n'avez pas les droits pour créer un profil Administrateur";
-        echo json_encode($data);
+        return $data;
     }
     else
     {
@@ -218,8 +248,13 @@ class UsersController extends Controller
         }
     }
     $data = "L'Utilisateur a bien été créer.";
-    return response('Hello World', 200)->header('Content-Type', 'text/plain');
-    
+    return $data;
+    }
+    else
+    {
+        return "Erreur de saisie";
+    }
+
   }
 
   public function Create(Request $request)
@@ -259,10 +294,7 @@ class UsersController extends Controller
 
   public function Update(Request $request)
   {
-        $this->user->find($request->User_id);
-        $this->user->Mail = $request->Mail;
-        $this->user->Password = $request->Password;
-        $this->user->save();
+        //code
   }
 
   public function GetCreationPage()

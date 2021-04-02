@@ -82,17 +82,9 @@
                     <label for="s3e">A2 S3E</label>
                 </div>
               </section>
-        </div>
-<<<<<<< HEAD
-        
-        <button class="suppr" type="button">CRÉER UNE ENTREPRISE</button><br>
 
-        <button class="suppr" type="button">CRÉER UNE OFFRE</button><br>
-=======
-        <div>
-            
            {!! Form::open(['url' => '/Enterprise_Create', 'method' => 'get']) !!}
-            <button class="creation_E"
+            <button class="suppr"
            type="submit"
            value="CREER UNE ENTREPRISE">
             {!! Form::close() !!}
@@ -100,12 +92,11 @@
         <div>
             
            {!! Form::open(['url' => '/Offer_Create', 'method' => 'get']) !!}
-            <button class="creation_O"
+            <button class="suppr"
            type="submit"
            value="CREER UNE OFFRE">
             {!! Form::close() !!}
         </div>
->>>>>>> 473252477f9049c0a80d6bec7a11df66009b513c
 
             <!--Caroussel-->
     <!-- Carousel wrapper -->

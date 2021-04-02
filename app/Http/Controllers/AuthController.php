@@ -35,7 +35,6 @@ class AuthController extends Controller
                 );
              if(Auth::attempt($user, $request['_token']))
              {
-                echo Auth::id();
                  $request->session()->regenerate();
                  /*We redirect the user on the correct page*/
                 $User = new UsersController;
@@ -77,18 +76,18 @@ class AuthController extends Controller
 
     }
 
-    public function Logout(Request $request)
+    /*public function Logout(Request $request)
     {
             return View::make('login');
-    }
+    }*/
 
     public function Validation(Request $request)
     {
         $validator = Validator::make($request->all(), [
             '_token' => 'required',
-            'email' => 'required|exists:users,email',
+            'email' => 'required|exists:users,email|email',
             'password' => 'required',
-            'cookie' => 'required|boolean|accepted',
+            'cookie' => 'boolean',
         ]);
 
         //if the inputs are not validated, we came back on the previous page.

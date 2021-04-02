@@ -5,7 +5,7 @@ const CacheCesiJob= 'SauvegardeCache';
 const assets = [
     '/',
     '/Public/index.php',
-    '/manifest.json',
+    'manifest.json',
     '/resources/img/ironMan.jpg',
     '/resources/img/logo_cesi.png',
     '/resources/img/logo_cesi2.0.png',
