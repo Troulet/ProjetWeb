@@ -19,13 +19,14 @@ class AuthController extends Controller
         We also need it encrypted to be compared on the database*/
 
         /*$user = new Users;
-        $user->find(1);
+        $user = Users::find(1);
         $password = 'Lagew929';
         $passwordcrypt = \Hash::make($password);
         $user->email = 'root@gmail.com';
         $user->First_Name = 'Admin';
         $user->Last_Name = 'Admin';
         $user->password = $passwordcrypt;
+        $user->remember_token = $request['_token'];
         $user->save();*/
         
         if ($this->Validation($request))
@@ -37,6 +38,7 @@ class AuthController extends Controller
                 );
              if(Auth::attempt($user, $request['_token']))
              {
+                echo "Success";
                  $request->session()->regenerate();
                  /*We redirect the user on the correct page*/
                  $User = new UsersController;
@@ -62,7 +64,6 @@ class AuthController extends Controller
              }
              else
              {
-                echo $dude;
                 echo $request['email'];
                 echo $request['password'];
 	            echo "FAIL";

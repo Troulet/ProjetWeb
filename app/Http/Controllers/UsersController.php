@@ -63,15 +63,17 @@ class UsersController extends Controller
 
   public function GetOfferPage(Request $request)
   {
-
+      //On récupère les données à afficher puis on les convertis en array
+      $dataOffer = ObjectController::objtoArray(Internship::tablereturn());
+      $dataEnterprise =  ObjectController::objtoArray(Enterprise::tablereturn());
       switch ($this->Get_Table(Auth::id()))
             {
                 case 2 :
-                    return View::make('internship/internship_pilot')->with('user_type', 2);
+                    return View::make('internship/internship_pilot')->with('user_type', 2)->with('dataOffer', $dataOffer);
                     break;
 
                 case 0 :
-                    return View::make('internship/internship_student')->with('user_type', 0);
+                    return View::make('internship/internship_student')->with('user_type', 0)->with('dataEnterprise', $dataEnterprise);
                     break;
 
                 case 1 :

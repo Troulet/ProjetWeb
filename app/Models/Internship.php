@@ -22,9 +22,7 @@ class Internship extends Model
         return $this->hasMany('Postulate');
     }
 
-    public function GetById(){
-        $id = $_POST('id');
-
+    public static function GetById($id){
         return $intern = DB::table('internship')->whereId($id)->first();
     }
 
@@ -32,11 +30,7 @@ class Internship extends Model
         return $interns = DB::table('internship')->get();
     }
 
-    public function GetId(){
-        $desc = $_POST('description');
-        $skills = $_POST('skills');
-        $promo = $_POST('promotion');
-
+    public function GetId($desc, $skills, $promo){
         return $id = DB::table('internship')->where('Description', '=', $desc)->where('Skills_researched', '=', $skills)->where('Promotion_researched', '=', $promo)->pluck('id');
     }
 

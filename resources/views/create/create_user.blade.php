@@ -3,7 +3,7 @@
 <link rel= "stylesheet" href="../resources/views/header_footer.css"/>
 <body>
      
-          @include('../resources/views/header.blade.php')
+          @include('.resources.views.header.blade.php')
    
             {!! Form::open(['url' => '/Users', 'method' => 'get']) !!}
             <button type="submit" class="btn">Retour à la page Utilisateur</button>

@@ -27,19 +27,19 @@ class Enterprise extends Model
         return $this->hasOne('Pilot_Commentary');
     }
 
-    public function GetById($id){
+    public static function GetById($id){
         return $firm = DB::table('enterprise')->whereId($id)->first();
     }
 
-    public function GetAll(){
+    public static function GetAll(){
         return $firms = DB::table('enterprise')->get();
     }
 
-    public function GetId($ename){
+    public static function GetId($ename){
         return $id = DB::table('enterprise')->where('Enterprise_Name', '=', $ename)->pluck('id');
     }
 
-    public function tablereturn(){
+    public static function tablereturn(){
         return $data = DB::table('enterprise')
             ->select('enterprise.id, enterprise.Enterprise_Name, enterprise.Activity_Sector, enterprise.Cesi_Student_Taken, Localisation.Localisation_Name')
             ->join('localisation', 'localisation.id', '=', 'enterprise.Localisation_id')
