@@ -119,15 +119,15 @@ class EnterpriseController extends Controller
         switch($user->Get_Table(Auth::id()))
         {
                 case 2 :
-                    return View::make('create_enterprise')->with('user_type', 2);
+                    return View::make('create/create_enterprise')->with('user_type', 2);
                     break;
 
                 case 0 :
-                    return View::make('create_enterprise')->with('user_type', 0);
+                    return View::make('create/create_enterprise')->with('user_type', 0);
                     break;
 
                 case 1 :
-                    return View::make('create_enterprise')->with('user_type', 1);
+                    return View::make('create/create_enterprise')->with('user_type', 1);
                     break;
 
      }

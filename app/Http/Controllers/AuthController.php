@@ -12,6 +12,7 @@ use App\Models\Pilot;
 
 class AuthController extends Controller 
 {
+
     public function Login(Request $request)
     {
         /*We securize the password by encrypting it.
@@ -39,20 +40,19 @@ class AuthController extends Controller
                  $request->session()->regenerate();
                  /*We redirect the user on the correct page*/
                  $User = new UsersController;
-                $user = Pilot::GetAll();
+                //$user = $user->result_array();
                 switch ($User->Get_Table(Auth::id()))
                 {
                     case 2 :
-                        echo $user;
-                        return View::make('welcome_admin')->with('user_type', 2);
+                        return View::make('welcome/welcome_admin')->with('user_type', 2);
                         break;
 
                     case 0 :
-                        return View::make('welcome_student')->with('user_type', 0);
+                        return View::make('welcome/welcome_student')->with('user_type', 0);
                         break;
 
                     case 1 :
-                        return View::make('welcome_pilot')->with('user_type', 1);
+                        return View::make('welcome/welcome_pilot')->with('user_type', 1);
                         break;
 
                 }
