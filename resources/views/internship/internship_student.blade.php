@@ -16,7 +16,7 @@
         include("../resources/views/header.blade.php"); 
         ?>
     </br>
-        <div class="filtre">
+        <!--<div class="filtre">
           <h3>Filtrer les résultats</h3>
           <form class="d-flex">
               <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
@@ -88,6 +88,7 @@
             <button class="creation" type="button" value="CREER UNE ENTREPRISE"></button>
             </div>
     </div>
+    -->
 
     
 
@@ -176,53 +177,15 @@
                             <img class="d-block w-100 desk-img" src="https://mdbootstrap.com/img/new/standard/nature/181.jpg" alt="1 slide">
                             <img class=" w-100  mobile-img" src="https://mdbootstrap.com/img/new/standard/nature/181.jpg" alt="1slide">
                             <div class="card-body">
-                                <h5 class="card-title">Stage</h5>
-                                <p class="card-text">
-                                    Thales recrute un stagiaire en informatique pour du développement.
-                                </p>
+                            @foreach ($data as $id => offer)
+                                @yield('carousel_enterprise')
+                            @endforeach
                                 <a href="#" class="btn btn-primary">Aller voir</a>
                             </div>
                         </div>
-                        <div class="col-sm">
-                            <img class="d-block w-100 desk-img" src="https://mdbootstrap.com/img/new/standard/nature/181.jpg" alt="2 slide">
-                            <img class=" w-100  mobile-img" src="https://mdbootstrap.com/img/new/standard/nature/181.jpg" alt="2 slide">
-                            <div class="card-body">
-                                <h5 class="card-title">Stage</h5>
-                                <p class="card-text">
-                                    Thales recrute un stagiaire en informatique pour du développement.
-                                </p>
-                                <a href="#" class="btn btn-primary">Aller voir</a>
-                            </div>
-                        </div>
-                        <div class="col-sm">
-                        <img class="d-block w-100 desk-img" src="https://mdbootstrap.com/img/new/standard/nature/181.jpg" alt="3 slide">
-                        <img class=" w-100  mobile-img" src="https://mdbootstrap.com/img/new/standard/nature/181.jpg" alt=3 slide">
-                            <div class="card-body">
-                                <h5 class="card-title">Stage</h5>
-                                <p class="card-text">
-                                    Thales recrute un stagiaire en informatique pour du développement.
-                                </p>
-                                <a href="#" class="btn btn-primary">Aller voir</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <div class="row">
-                        <div class="col-sm"><img class="d-block w-100" src="https://mdbootstrap.com/img/new/standard/nature/181.jpg" alt="4 slide"></div>
-                        <div class="col-sm"><img class="d-block w-100" src="https://mdbootstrap.com/img/new/standard/nature/181.jpg" alt="5 slide"></div>
-                        <div class="col-sm"><img class="d-block w-100" src="https://mdbootstrap.com/img/new/standard/nature/181.jpg" alt="6 slide"></div>
                     </div>
                 </div>
             </div>
-            <a class="carousel-control-prev" href="#multi_item2" role="button" data-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="sr-only">Previous</span>
-            </a>
-            <a class="carousel-control-next" href="#multi_item2" role="button" data-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="sr-only">Next</span>
-            </a>
         </div>
     </div>
 </div>
