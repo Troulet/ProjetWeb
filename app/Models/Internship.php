@@ -40,7 +40,7 @@ class Internship extends Model
         return $id = DB::table('internship')->where('Description', '=', $desc)->where('Skills_researched', '=', $skills)->where('Promotion_researched', '=', $promo)->pluck('id');
     }
 
-    public function tablreturn(){
+    public function tablereturn(){
         return $data = DB::table('internship')
             ->select('internship.id, internship.Description, internship.Skills_Researched, internship.Promotion_Researched, internship.Number_Of_Places, enterprise.Enterprise_Name, localisation.Localisation_Name')
             ->join('enterprise', 'enterprise.id', '=', 'internship.Enterprise_id')

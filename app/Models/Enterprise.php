@@ -39,7 +39,7 @@ class Enterprise extends Model
         return $id = DB::table('enterprise')->where('Enterprise_Name', '=', $ename)->pluck('id');
     }
 
-    public function tablreturn(){
+    public function tablereturn(){
         return $data = DB::table('enterprise')
             ->select('enterprise.id, enterprise.Enterprise_Name, enterprise.Activity_Sector, enterprise.Cesi_Student_Taken, Localisation.Localisation_Name')
             ->join('localisation', 'localisation.id', '=', 'enterprise.Localisation_id')

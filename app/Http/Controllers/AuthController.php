@@ -8,6 +8,7 @@ use App\Models\Users;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\Facades\Crypt;
+use App\Models\Pilot;
 
 class AuthController extends Controller 
 {
@@ -28,7 +29,7 @@ class AuthController extends Controller
         
         if ($this->Validation($request))
         {
-
+  
              $user = array(
                 'email' => $request['email'],
                 'password' => $request['password']
@@ -37,11 +38,12 @@ class AuthController extends Controller
              {
                  $request->session()->regenerate();
                  /*We redirect the user on the correct page*/
-                $User = new UsersController;
-                $user = Auth::user();
-                switch ($User->Get_Table($user['id']))
+                 $User = new UsersController;
+                $user = Pilot::GetAll();
+                switch ($User->Get_Table(Auth::id()))
                 {
                     case 2 :
+                        echo $user;
                         return View::make('welcome_admin')->with('user_type', 2);
                         break;
 

@@ -38,7 +38,7 @@ class Student_Commentary extends Model
         return $id = DB::table('student_commentary')->where('Student_id', '=', $studid)->where('Enterprise_id', '=', $entid)->pluck('id');
     }
 
-    public function tablreturn($entid){
+    public function tablereturn($entid){
         return $data = DB::table('student_commentary')
             ->select('student.First_Name, student.Last_name, student_commentary.Internship_Difficulty, student_commentary.Level_Of_Knowledge, student_commentary.Work_Environment, student_commentary.Tutor_Lead, student_commentary.Infrastructure, student_commentary.Accessibility, student_commentary.Commentary')
             ->join('student', 'student.Users_id', '=', 'student_commentary.Student_id')

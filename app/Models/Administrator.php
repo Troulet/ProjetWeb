@@ -10,6 +10,7 @@ class Administrator extends Model
     
     protected $table = 'Administrator';
     public $timestamps = true;
+    protected $primaryKey = 'Users_id';
     protected $fillable = ['Users_id','Localisation_id'];
 
     public function Inform_Step4()

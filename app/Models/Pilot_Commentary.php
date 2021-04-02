@@ -38,7 +38,7 @@ class Pilot_Commentary extends Model
         return $id = DB::table('pilot_commentary')->where('Pilot_id', '=', $pilotid)->where('Enterprise_id', '=', $entid)->pluck('id');
     }
 
-    public function tablreturn($entid){
+    public function tablereturn($entid){
         return $data = DB::table('pilot_commentary')
             ->select('pilot.First_Name, pilot.Last_name, pilot_commentary.Internship_Difficulty, pilot_commentary.Level_Of_Knowledge, pilot_commentary.Work_Environment, pilot_commentary.Commentary')
             ->join('pilot', 'pilot.Users_id', '=', 'pilot_commentary.Pilot_id')
