@@ -11,7 +11,6 @@
     <a href="#" class="btn btn-primary">Aller voir</a>
 
     @foreach($dataOffer as $Offer)
-   
         <h5 class="card-title">Stage proposé(s)</h5>
         <p class="card-text">
             {{$Offer['Description']}} </br>
@@ -21,7 +20,6 @@
             Localisation : {{$Offer['Localisation_Name']}} </br>
         </p>
         <a href="#" class="btn btn-primary">Aller voir</a>
-    
     @endforeach
 
     @foreach($dataCommentStudent as $Comment)
@@ -36,8 +34,6 @@
             Infrastructure : {{$Comment['Infrastructure']}} </br>
             Accessibilité : {{$Comment['Accessibility']}} </br>
         </p>
-        
-
     @endforeach
 
     @foreach($dataCommentPilot as $Comment)
@@ -49,6 +45,6 @@
             Niveau d'apprentissage : {{$Comment['Level_Of_Knowledge']}} </br>
             Environnement de travail : {{$Comment['Work_Environment']}} </br>
         </p>
-        
     @endforeach
+
 @stop
