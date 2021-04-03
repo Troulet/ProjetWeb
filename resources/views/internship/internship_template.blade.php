@@ -15,7 +15,6 @@
                 </p>
                 <a href="#" class="btn btn-primary">Aller voir</a>
             @endforeach
-@section('carousel_entreprise')
             @foreach($dataEnterprise as $Enterprise)
                 $i=1;
                 <img class="d-block w-100 desk-img" src="https://mdbootstrap.com/img/new/standard/nature/181.jpg" alt=""$i++." slide">
