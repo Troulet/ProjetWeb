@@ -22,17 +22,8 @@
         <div class="profile_enterprise">
             @yield('profile_enterprise')
         </div>
-    
-      <!--bouton du pop-up-->
-      <button class="postuler" type="button">POSTULER</button><br>
-      <button class="wish_list" type="button">AJOUTER A LA WISH-LIST</button><br>
-      <button class="eval" type="button">EVALUER LE PROFIL</button><br>
-      <button class="suppr" type="button">SUPPRIMER LE PROFIL</button><br>
-      <button class="modif" type="button">MODIFIER LE PROFIL</button><br>
-      <button class="contacter" type="button">CONTACTER L'ENTREPRISE</button>
-      
   </section>
-    @include('footer')
+  @include('footer')
 </body>
     
 </html>
