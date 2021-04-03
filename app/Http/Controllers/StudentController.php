@@ -45,11 +45,12 @@ class StudentController extends Controller
   {
 
   //We delete the line on User's table, then on the Child table.
+    $this->user = Student::find($id);
+    $this->user->delete();
     $deleted = new UsersController;
     $deleted->Delete($id);
 
-    $this->user = Users::find($id);
-    $this->user->delete();
+ 
   }
 
   public function Create(Request $request, $Users_id, $Localisation_id )

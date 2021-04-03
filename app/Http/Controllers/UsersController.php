@@ -72,11 +72,29 @@ class UsersController extends Controller
       }
   }
 
+  public function DeleteUser(Request $request)
+  {
+        switch ($this->Get_Table($request->id))
+            {
+                case 2 :
+                    $this->administrator->Delete($request->id);
+                    break;
+
+                case 0 :
+                    $this->student->Delete($request->id);
+                   break;
+
+                case 1 :
+                   $this->pilot->Delete($request->id);
+                   break;
+
+            }
+  }
+
   public function Delete($id)
   {
-
   //We delete the line on users table.
-    $this->user->find($id);
+    $this->user = Users::find($id);
     $this->user->delete();
   }
 
