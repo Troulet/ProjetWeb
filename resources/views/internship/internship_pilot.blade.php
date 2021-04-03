@@ -157,6 +157,7 @@ data-mdb-ride="carousel"
             />
                     <div class="card-body">
                         @foreach($data as $id => enterprise)
+
                         <button type="button" class="btn btn-primary btn-floating"><i class="fas fa-heart"></i></button>
                       <h5 class="card-title">Stage chez Ubisoft</h5>
                       <p class="card-text">
