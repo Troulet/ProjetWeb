@@ -1,6 +1,7 @@
 @extends('welcome.welcome_student')
 
 @section('carousel_enterprise')
+    <div class="card-body">
             @foreach($dataOffer as $Offer)
                 <h5 class="card-title">Stage chez {{$Offer['Enterprise_Name']}}</h5>
                 <p class="card-text">
@@ -22,4 +23,5 @@
                 </p>
                 <a href="#" class="btn btn-primary">Aller voir</a>
             @endforeach
+    </div>
 @stop

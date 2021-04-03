@@ -23,24 +23,21 @@
                       <div id="banner-one" class="col-sm">
                           <img class="d-block w-100 desk-img" src="https://mdbootstrap.com/img/new/standard/nature/181.jpg" alt="1 slide">
                           <img class="w-100  mobile-img" src="https://mdbootstrap.com/img/new/standard/nature/181.jpg" alt="1 slide">
-                          <div class="card-body">
-                              @yield('carousel_enterprise')
-                          </div>
+                          @yield('carousel_enterprise')
                       </div>
+
                       <div id="banner-two" class="col-sm">
                           <img class="d-block w-100 desk-img" src="https://mdbootstrap.com/img/new/standard/nature/181.jpg" alt="2 slide">
                           <img class="w-100  mobile-img" src="https://mdbootstrap.com/img/new/standard/nature/181.jpg" alt="2 slide">
-                          <div class="card-body">
-                              @yield('carousel_enterprise')
-                          </div>
+                         @yield('carousel_enterprise')
                       </div>
+
                       <div id="banner-three" class="col-sm">
                          <img class="d-block w-100 desk-img" src="https://mdbootstrap.com/img/new/standard/nature/181.jpg" alt="3 slide">
                          <img class="w-100  mobile-img" src="https://mdbootstrap.com/img/new/standard/nature/181.jpg" alt="3 slide">
-                         <div class="card-body">
-                              @yield('carousel_enterprise')
-                          </div>
+                         @yield('carousel_enterprise')
                       </div>
+
                   </div>
               </div>
               <div class="carousel-item">
@@ -70,6 +67,7 @@
           </a>
       </div>
   </div>
+  <!--fin_carousel-->
 </section>
     <div id="wishlist_student" class="wishlist">
         <div class="list-group">
