@@ -13,7 +13,7 @@
     
     <body> 
       @include('header')
-            <div class="filtre">
+            <!--<div class="filtre">
             
                 <h3>Filtrer les résultats</h3>
                 <form class="d-flex">
@@ -39,7 +39,7 @@
                         </div>
                         <!--insérer boucle qui affiche les promo assigné au pilote -->
                         
-                    <h3>Avancement dans la recherche de stage</h3>
+                    <!--<h3>Avancement dans la recherche de stage</h3>
                         <div>
                             <input type="checkbox" id="no_intership" name="no_intership">
                             <label for="no_intership">Sans stage</label>
@@ -53,7 +53,7 @@
                             <label for="internship_found">Stage trouvé</label>
                         </div>
                 </div>
-            </div>
+            </div>-->
             
             <div class="profil_card">
             

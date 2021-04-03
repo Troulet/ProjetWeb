@@ -116,9 +116,7 @@ data-mdb-ride="carousel"
                           <img class="d-block w-100 desk-img" src="https://mdbootstrap.com/img/new/standard/nature/181.jpg" alt="1 slide">
                           <img class=" w-100  mobile-img" src="https://mdbootstrap.com/img/new/standard/nature/181.jpg" alt="1 slide">
                           <div class="card-body">
-                            @foreach ($data as $id => offer)
-                                    @yield('carousel_enterprise')
-                            @endforeach
+                            @yield('carousel_offer')
                           </div>
                       </div>
                   </div>
@@ -151,16 +149,9 @@ data-mdb-ride="carousel"
             <img
               src="../resources/img/ubi.jpg"
               class="card-img-top"
-              alt="..."
-            />
+              alt="...">
                     <div class="card-body">
-                        @foreach($data as $id => enterprise)
-
-                        <button type="button" class="btn btn-primary btn-floating"><i class="fas fa-heart"></i></button>
-                      <h5 class="card-title">Stage chez Ubisoft</h5>
-                      <p class="card-text">
-                        Votre mission si vous l'acceptez sera de nous aider à concevoir notre nouveau site internet.
-                      </p>
+                        @yield('carousel_entreprise')
                     </div>
                   </div>
                 </div>
