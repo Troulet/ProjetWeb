@@ -72,7 +72,13 @@ use App\Http\Controllers\AdministratorController;
     //Chemin pour afficher la page de création d'une entreprise
     Route::get('/Enterprise_Create', [EnterpriseController::class, 'GetCreatePage']);
 
+    //Chemin pour insérer une nouvelle entreprise dans la base
+    Route::post('/Enterprise_Create', [EnterpriseController::class, 'Create']);
+
     //Chemin pour afficher la page de création d'une offre
+    Route::get('/Offer_Create', [InternshipController::class, 'GetCreatePage']);
+
+    //Chemin pour insérer une nouvelle Offre dans la base
     Route::get('/Offer_Create', [InternshipController::class, 'GetCreatePage']);
 
     //Chemin pour afficher la page de création d'un commentaire sur une entreprise

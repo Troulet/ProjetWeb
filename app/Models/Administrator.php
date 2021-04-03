@@ -43,7 +43,8 @@ class Administrator extends Model
 
     public function tablereturn($localid){
         return $data = DB::table('administrator')
-            ->select('administrator.Users_id', 'administrator.email', 'administrator.First_Name', 'administrator.Last_name')
+            ->select('administrator.Users_id', 'users.email', 'users.First_Name', 'users.Last_name')
+            ->join('users', 'users.id', '=', 'administrator.Users_id')
             ->where('administrator.Localisation_id', '=' , $localid)
             ->get();
     }

@@ -135,12 +135,12 @@ class UsersController extends Controller
                 case 2 :
                     $dataPilot = $this->pilot->tablereturn($localid);
                     $dataAdmin = $this->administrator->tablereturn($localid);
-                    return View::make('admin_gestion_user/user_admin')->with('user_type', 2)->with('dataPilot', $dataPilot)->with('dataAdmin', $dataAdmin)->with('dataStudent', $dataStudent);
+                    return View::make('admin_gestion_user/user_admin_template')->with('user_type', 2)->with('dataPilot', $dataPilot)->with('dataAdmin', $dataAdmin)->with('dataStudent', $dataStudent);
                     break;
 
                 case 1 :
 
-                    return View::make('pilot_gestion_student/student_pilot')->with('user_type', 1)->with('dataStudent', $dataStudent);
+                    return View::make('pilot_gestion_student/student_pilot_template')->with('user_type', 1)->with('dataStudent', $dataStudent);
                     break;
             }
   }

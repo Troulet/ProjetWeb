@@ -1,4 +1,4 @@
-@extends('template')
+@extends('admin_gestion_user.user_admin')
 
 @section('data_pilot')
     @foreach ($dataPilot as $user)
@@ -8,7 +8,7 @@
             Information Pilote :
             Email : {{$user['email']}}
             Prénom : {{$user['First_Name']}}
-            Nom : {{$user['Last_Name']}}
+            Nom : {{$user['Last_name']}}
             Promotion : {{$user['Promotion']}}
         </p>
     </div>
@@ -28,14 +28,13 @@
                 Elève :
                 Email : {{$user['email']}}
                 Prénom : {{$user['First_Name']}}
-                Nom : {{$user['Last_Name']}}
+                Nom : {{$user['Last_name']}}
                 Promotion : {{$user['Promotion']}}
 
-                @if($user['Representative']==true) {
-                    Délégué : oui
-                } @else {
-                    Délégué : non
-                }
+                @if($user['Representative']==true)
+                Délégué : oui
+                @else
+                Délégué : non
                 @endif
             </p>
         </div>
@@ -54,7 +53,7 @@
             Information Admin :
             Email : {{$user['email']}}
             Prénom : {{$user['First_Name']}}
-            Nom : {{$user['Last_Name']}}
+            Nom : {{$user['Last_name']}}
         </p>
     </div>
     <div>

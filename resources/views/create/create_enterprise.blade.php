@@ -15,38 +15,19 @@
             <legend>Créer une entreprise</legend>
      
             <label for="Enterprise_name">Nom de l'entreprise : </label>
-            <input type="text" name="Enterprise_name" id="Enterprise_name" />
+            <input type="text" name="Enterprise_Name" id="Enterprise_name" />
      
             <label for="Activity_sector">Secteur d'activité : </label>
-            <input type="text" name="Activity_sector" id="Activity_sector" />
+            <input type="text" name="Activity_Sector" id="Activity_sector" />
 
             <label for="Localisation">Localité : </label>
-            <input type="text" name="Localisation" id="Localisation" />
+            <input type="text" name="Localisation_Name" id="Localisation" />
 
             <label for="Cesi_Student_Taken">Nombre d'étudiants CESI déjà pris : </label>
             <input type="text" name="Cesi_Student_Taken" id="Cesi_Student_Taken" />
       
         </fieldset>
         <button type="submit" id="btn_Create" class="btn_Create">CREER</button>
-
-        <fieldset>
-            <legend>Modifier une entreprise</legend>
-     
-            <label for="Enterprise_name">Nom de l'entreprise : </label>
-            <input type="text" name="Enterprise_name" id="Enterprise_name" />
-     
-            <label for="Activity_sector">Secteur d'activité : </label>
-            <input type="text" name="Activity_sector" id="Activity_sector" />
-
-            <label for="Localisation">Localité : </label>
-            <input type="text" name="Localisation" id="Localisation" />
-
-            <label for="Cesi_Student_Taken">Nombre d'étudiants CESI déjà pris : </label>
-            <input type="text" name="Cesi_Student_Taken" id="Cesi_Student_Taken" />
-      
-        </fieldset>
-        <button type="submit" id="btn_Modify" class="btn">MODIFIER</button>
-        
         {!! Form::close() !!}
     </div>
     </script>

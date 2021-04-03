@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\View;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use App\Models\Enterprise;
 use App\Models\Localisation;
@@ -25,7 +28,7 @@ class EnterpriseController extends Controller
     public function Hide($id)
     {
         $deleted = new InternshipController;
-        $offers = this->GetInternship;
+        $offers = $this->GetInternship;
         for($i = 0; isset($offers[$i]); $i++)
         {
             $deleted->Hide($offers[$i]);
@@ -67,7 +70,7 @@ class EnterpriseController extends Controller
 
     public function Create(Request $request)
     {
-        if($this->ValidationCreate($request) $$ Auth::check() == true)
+        if($this->ValidationCreate($request))
         {
             $this->enterprise->Enterprise_Name = $request->Enterprise_Name;
             $this->enterprise->Activity_Sector = $request->Activity_Sector;
@@ -78,12 +81,13 @@ class EnterpriseController extends Controller
             ['Localisation' => $request->Localisation_Name ]);
 
             $NewLocal = new Localisation;
-            $this->enterprise->Localisation_id = $NewLocal->GetId($request->Localisation_Name);
+            $localid = $NewLocal->GetId($request->Localisation_Name);
+            $this->enterprise->Localisation_id = $localid[0];
             $this->enterprise->save();
         }
         else
         {
-            echo "Erreur de saisie des données"
+            echo "Erreur de saisie des données";
         }
     }
 
@@ -110,7 +114,7 @@ class EnterpriseController extends Controller
 
     public function Update(Request $request)
     {        
-        if($this->ValidationUpdate($request) $$ Auth::check() == true)
+        if($this->ValidationUpdate($request) && Auth::check() == true)
         {
             $this->enterprise = Enterprise::find($request->Enterprise_id);
             $this->enterprise->Enterprise_Name = $request->Enterprise_Name;
@@ -122,12 +126,13 @@ class EnterpriseController extends Controller
             ['Localisation' => $request->Localisation_Name ]);
 
             $NewLocal = new Localisation;
-            $this->enterprise->Localisation_id = $NewLocal->GetId($request->Localisation_Name);
+            $localid = $NewLocal->GetId($request->Localisation_Name);
+            $this->enterprise->Localisation_id = $localid[0];
             $this->enterprise->save();
         }
         else
         {
-            echo "Erreur de saisie des données"
+            echo "Erreur de saisie des données";
         }
     }
 

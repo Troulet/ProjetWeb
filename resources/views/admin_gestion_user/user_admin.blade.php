@@ -92,7 +92,7 @@
                 <br/>
                 
                 <div class="card">
-                    @yield('data_student')
+                    @yield('data_admin')
                 </div>
                 
             </div>
@@ -102,23 +102,6 @@
             {!! Form::close() !!}
         </div>
             @include('footer')
-         <script type="text/javascript">
-            var html = ''
-            var Userarray = @json($data);
-
-
-            function GetUsers()
-            {
-                
-				    document.getElementById("data").innerHTML = html;
-            }
-
-            document.onload = function()
-            {
-                GetUsers();
-            }
-
-         </script>
     </body>
 
     
