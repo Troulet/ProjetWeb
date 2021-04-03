@@ -117,7 +117,13 @@
   </div>
               <div class="carousel-item">
                   <div class="row">
-                      <div class="col-sm"><img class="d-block w-100" src="https://mdbootstrap.com/img/new/standard/nature/181.jpg" alt="4 slide"></div>
+                      <div class="col-sm">
+                      <img class="d-block w-100" src="https://mdbootstrap.com/img/new/standard/nature/181.jpg" alt="4 slide">
+                      <img class=" w-100  mobile-img" src="https://mdbootstrap.com/img/new/standard/nature/181.jpg" alt="4 slide">
+                          <div class="card-body">
+                              @yield('carousel_enterprise')
+                          </div>
+                      </div>
                       <div class="col-sm"><img class="d-block w-100" src="https://mdbootstrap.com/img/new/standard/nature/181.jpg" alt="5 slide"></div>
                       <div class="col-sm"><img class="d-block w-100" src="https://mdbootstrap.com/img/new/standard/nature/181.jpg" alt="6 slide"></div>
                   </div>
