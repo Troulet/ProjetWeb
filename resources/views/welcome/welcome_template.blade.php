@@ -3,12 +3,14 @@
 @section('carousel_enterprise')
 
     <div class="card-body">
-            <div id="banner-"$i."" class="col-sm">
+            <div id="banner-{{$i}}" class="col-sm">
                 @foreach($dataOffer as $Offer)
-                $i++
+                @php
+                    $i=1
+                @endphp
             
-                    <img class="d-block w-100 desk-img" src="https://mdbootstrap.com/img/new/standard/nature/181.jpg" alt=""$i." slide">
-                    <img class="w-100  mobile-img" src="https://mdbootstrap.com/img/new/standard/nature/181.jpg" alt=""$i." slide">
+                    <img class="d-block w-100 desk-img" src="https://mdbootstrap.com/img/new/standard/nature/181.jpg" alt="{{$i}} slide">
+                    <img class="w-100  mobile-img" src="https://mdbootstrap.com/img/new/standard/nature/181.jpg" alt="{{$i}}  slide">
                     <h5 class="card-title">Stage chez {{$Offer['Enterprise_Name']}}</h5>
                     <p class="card-text">
                         {{$Offer['Description']}} </br>
@@ -18,9 +20,13 @@
                         Localisation : {{$Offer['Localisation_Name']}} </br>
                     </p>
                     <a href="#" class="btn btn-primary">Aller voir</a>
-            
+                @php
+                    $i++
+                @endphp
                 @endforeach
+
                 @foreach($dataEnterprise as $Enterprise)
+
                     <h5 class="card-title">Entreprise {{$Enterprise['Enterprise_Name']}}</h5>
                     <p class="card-text">
                     Travaille dans le secteur : {{$Enterprise['Activity_Sector']}} </br>
@@ -29,6 +35,7 @@
                     Se situe à {{$Enterprise['Localisation_Name']}} ! </br>
                     </p>
                     <a href="#" class="btn btn-primary">Aller voir</a>
+
                 @endforeach
             </div>
     </div>
