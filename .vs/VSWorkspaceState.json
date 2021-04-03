@@ -2,14 +2,16 @@
   "ExpandedNodes": [
     "",
     "\\app",
+    "\\app\\Http",
+    "\\app\\Http\\Controllers",
     "\\app\\Models",
     "\\resources",
+    "\\resources\\js",
     "\\resources\\views",
-    "\\resources\\views\\admin_gestion_user",
-    "\\resources\\views\\contact",
     "\\resources\\views\\create",
-    "\\resources\\views\\inform",
-    "\\resources\\views\\welcome"
+    "\\resources\\views\\internship",
+    "\\resources\\views\\modify"
   ],
+  "SelectedNode": "\\resources\\views\\internship\\internship_template.blade.php",
   "PreviewInSolutionExplorer": false
 }

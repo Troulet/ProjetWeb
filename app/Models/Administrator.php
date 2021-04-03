@@ -48,4 +48,6 @@ class Administrator extends Model
             ->where('administrator.Localisation_id', '=' , $localid)
             ->get();
     }
+
+
 }

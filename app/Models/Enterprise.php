@@ -45,4 +45,12 @@ class Enterprise extends Model
             ->join('localisation', 'localisation.id', '=', 'enterprise.Localisation_id')
             ->get();
     }
+
+    public static function tablereturnsearch($search){
+        return $data = DB::table('enterprise')
+            ->select('enterprise.id', 'enterprise.Enterprise_Name', 'enterprise.Activity_Sector', 'enterprise.Cesi_Student_Taken', 'Localisation.Localisation as Localisation_Name')
+            ->join('localisation', 'localisation.id', '=', 'enterprise.Localisation_id')
+
+            ->get();
+    }
 }
