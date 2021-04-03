@@ -20,39 +20,12 @@
           <div class="carousel-inner">
               <div class="carousel-item active">
                   <div class="row">
-                      <div id="banner-one" class="col-sm">
-                          <img class="d-block w-100 desk-img" src="https://mdbootstrap.com/img/new/standard/nature/181.jpg" alt="1 slide">
-                          <img class="w-100  mobile-img" src="https://mdbootstrap.com/img/new/standard/nature/181.jpg" alt="1 slide">
-                          @yield('carousel_enterprise')
-                      </div>
-
-                      <div id="banner-two" class="col-sm">
-                          <img class="d-block w-100 desk-img" src="https://mdbootstrap.com/img/new/standard/nature/181.jpg" alt="2 slide">
-                          <img class="w-100  mobile-img" src="https://mdbootstrap.com/img/new/standard/nature/181.jpg" alt="2 slide">
-                         @yield('carousel_enterprise')
-                      </div>
-
-                      <div id="banner-three" class="col-sm">
-                         <img class="d-block w-100 desk-img" src="https://mdbootstrap.com/img/new/standard/nature/181.jpg" alt="3 slide">
-                         <img class="w-100  mobile-img" src="https://mdbootstrap.com/img/new/standard/nature/181.jpg" alt="3 slide">
-                         @yield('carousel_enterprise')
-                      </div>
-
+                      @yield('carousel_enterprise')
                   </div>
               </div>
               <div class="carousel-item">
                   <div class="row">
-                      <div class="col-sm">
-                          <div id="banner-four" class="col-sm">
-                             <img class="d-block w-100 desk-img" src="https://mdbootstrap.com/img/new/standard/nature/181.jpg" alt="4 slide">
-                             <img class="w-100  mobile-img" src="https://mdbootstrap.com/img/new/standard/nature/181.jpg" alt="4 slide">
-                             <div class="card-body">
-                                  @yield('carousel_enterprise')
-                              </div>
-                          </div>
-                      </div>
-                      <div class="col-sm"><img class="d-block w-100" src="https://mdbootstrap.com/img/new/standard/nature/181.jpg" alt="5 slide"></div>
-                      <div class="col-sm"><img class="d-block w-100" src="https://mdbootstrap.com/img/new/standard/nature/181.jpg" alt="6 slide"></div>
+                      @yield('carousel_enterprise')
                   </div>
               </div>
           </div>
