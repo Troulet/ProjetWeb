@@ -100,22 +100,29 @@ class="carousel slide"
 data-mdb-ride="carousel"
 >
 <!--Caroussel-->
-<section class="carousel_1">
-  <div class="container">
-  <h2>Offres :</h2>
-      <div class="carousel slide" data-ride="carousel" id="multi_item1" data-intervale="2000">
-          <div class="carousel-inner">
-              <div class="carousel-item active">
-                  <div class="row">
-                      <div id="banner-one" class="col-sm">
-                          <img class="d-block w-100 desk-img" src="https://mdbootstrap.com/img/new/standard/nature/181.jpg" alt="1 slide">
-                          <img class=" w-100  mobile-img" src="https://mdbootstrap.com/img/new/standard/nature/181.jpg" alt="1 slide">
-                          <div class="card-body">
-                            @yield('carousel_offer')
-                          </div>
-                      </div>
-                  </div>
+    <section class="carousel_1">
+      <div class="container">
+      <h2>Offres :</h2>
+          <div class="carousel slide" data-ride="carousel" id="multi_item1" data-intervale="2000">
+              <div class="carousel-inner">
+                  
+                           @yield('carousel_offer')
+                      
               </div>
+
+              <a class="carousel-control-prev" href="#multi_item1" role="button" data-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="sr-only">Previous</span>
+              </a>
+              <a class="carousel-control-next" href="#multi_item1" role="button" data-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="sr-only">Next</span>
+              </a>
+          </div>
+      </div>
+  
+    </section>
+</div>
               <div class="carousel-item">
                   <div class="row">
                       <div class="col-sm"><img class="d-block w-100" src="https://mdbootstrap.com/img/new/standard/nature/181.jpg" alt="4 slide"></div>
