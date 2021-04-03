@@ -2,24 +2,48 @@
 
 @section('student_profil')
     <div class="card-body">
-        <h5> Elève :</h5>
             <p>
-                Email : {{$email}}
-                Mot de passe : {{$password}}
-                Prénom : {{$First_Name}}
-                Nom : {{$Last_name}}
-                Promotion : {{$Promotion}}
-                Localité : {{$Localisation_Name}}
+                Elève :
+                Id : {{$user['Users_id']}}
+                Email : {{$user['email']}}
+                Mot de passe : {{$user['password']}}
+                Prénom : {{$user['First_Name']}}
+                Nom : {{$user['Last_name']}}
+                Promotion : {{$user['Promotion']}}
+                Localité : {{$user['Localisation_Name']}}
 
-                @if($Representative==true)
+                @if($user['Representative']==true)
                 Délégué : oui
-                Droits du délégué : {{$Representative_Rights}}
+                Droits du délégué : {{$user['Representative_Rights']}}
                 @else
                 Délégué : non
                 @endif
             </p>
     </div>
-@stop
+@endsection
 
-@section('')
-@stop
+@section('pilot_profil')
+<div class="card-body">
+            <p>
+                Pilote :
+                Id : {{$user['Users_id']}}
+                Email : {{$user['email']}}
+                Mot de passe : {{$user['password']}}
+                Prénom : {{$user['First_Name']}}
+                Nom : {{$user['Last_name']}}
+                Promotion : {{$user['Promotion']}}
+                Localité : {{$user['Localisation_Name']}}
+            </p>
+    </div>
+@endsection
+
+@section
+<div class="card-body">
+    <p>
+        Information Admin :
+        Email : {{$user['email']}}
+        Prénom : {{$user['First_Name']}}
+        Nom : {{$user['Last_name']}}
+    </p>
+</div>
+@endsection
