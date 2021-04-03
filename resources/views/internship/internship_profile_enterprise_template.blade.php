@@ -25,6 +25,19 @@
              <input name='id' type="hidden" value="{{$Offer['id']}}">
              <button type="submit" class="btn">Aller voir</button>
         {!! Form::close() !!}
+
+        @if($user_type != 0 && $user_type == 1 || $user_type == 2)
+            {!! Form::open(['url' => '/Offer_Delete', 'method' => 'post']) !!}
+                        <input name='id' type="hidden" value="{{$Offer['Offer_id']}}">
+                        <button type="submit" class="btn">Supprimer</button>
+            {!! Form::close() !!}
+
+            {!! Form::open(['url' => '/Offer_Update', 'method' => 'get']) !!}
+                        <input name='id' type="hidden" value="{{$Offer['Offer_id']}}">
+                        <button type="submit" class="btn">Modifier</button>
+            {!! Form::close() !!}
+        @endif
+
     @endforeach
     @endif
 

@@ -22,6 +22,7 @@
                     <input name='id' type="hidden" value="{{$Offer['id']}}">
                     <button type="submit" class="btn">Aller voir</button>
                 {!! Form::close() !!}
+
                 @php
                 $i++
                 @endphp
