@@ -279,6 +279,22 @@ class UsersController extends Controller
   }
 
 
+  public function GetUpdatePage(Request $request)
+    {
+      $dataUser = ObjectController::objtoArray(Users::GetforUpdate);
+      switch ($this->Get_Table(Auth::id()))
+            {
+                case 2 :
+                    return View::make('modify/modify_user')->with('user_type', 2)->('UpUser_type', $this->Get_Table($request->id))->with('dataUser', $dataUser);
+                    break;
+
+                case 1 :
+                    return View::make('modify/modify_user')->with('user_type', 1)->('UpUser_type', $this->Get_Table($request->id))->with('dataUser', $dataUser);
+                    break;
+            }
+
+  }
+
   public function Update_User(Request $request)
   {
     $this->Update($request);

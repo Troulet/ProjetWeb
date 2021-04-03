@@ -25,7 +25,7 @@
             
 
             <label id="First_Label" for="First_Name">Prénom de l'élève : </label>
-            <input type="text" name="First_Name" id="First_Name" />
+            <input type="text" name="First_Name" id="First_Name" value="{{}}"/>
      
             <label id="Last_Label" for="Last_Name">Nom de l'élève : </label>
             <input type="text" name="Last_Name" id="Last_Name" />
@@ -49,8 +49,6 @@
             <input type="text" name="Representative_Rights" id="Representative_Rights" />
             <input type="hidden" name="UpUser_type" id="UpUser_type" />
 
-        </fieldset>
-        <button type="submit" id="btn_Create" class="btn_Create">CREER</button>
 
         </fieldset>
         <button type="submit" id="btn_Modify" class="btn_Modify">MODIFIER</button>
@@ -114,11 +112,9 @@
         {
             showAdminCreation();
         }
-
-
     }
 
-    function AJAXPOST(){
+    /*function AJAXPOST(){
         var xhr = new XMLHttpRequest();
 	    xhr.open("POST", "http://localhost/Public/Users_Create", true);
         xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
@@ -133,7 +129,7 @@
 
     document.getElementById("btn_Create").onclick = function(){
         AJAXPOST();
-    }
+    }*/
 
     </script>
         @include('footer')
