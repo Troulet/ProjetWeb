@@ -1,4 +1,4 @@
-@extends('template')
+@extends('pilot_gestion_student.student_pilot')
 
 @section('data_student')
 

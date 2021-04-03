@@ -50,9 +50,10 @@ class Student extends Model
         return $students = DB::table('student')->get();
     }
 
-    public function tablreturn($localid){
+    public function tablereturn($localid){
         return $data = DB::table('student')
-            ->select('student.id, student.Mail, student.First_Name, student.Last_name, student.Promotion, student.Representative')
+            ->select('student.Users_id', 'student.email', 'student.First_Name', 'student.Last_name', 'student.Promotion', 'student.Representative')
+            ->join('users', 'users.id', '=', 'student.Users_id')
             ->where('student.Localisation_id', '=' , $localid)
             ->get();
     }

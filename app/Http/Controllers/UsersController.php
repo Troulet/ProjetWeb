@@ -11,7 +11,7 @@ use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Validator;
 use App\Models\Internship;
 use App\Models\Enterprise;
-
+use App\Models\Administrator;
 
 class UsersController extends Controller 
 {
@@ -34,6 +34,24 @@ class UsersController extends Controller
   public function GetId($Login)
   {
     return $this->user->GetId($Login);
+  }
+
+  public function Get_Local($id)
+  {
+     if (Auth::check())
+     {
+      $table = [$this->student, $this->pilot, $this->administrator];
+      $i = 0;
+      foreach($table as $element)
+      {
+        if($element->Get_Local($id) !== null)
+        {
+            $reponse = $element->Get_Local($id);
+        }
+        $i++;
+      }
+      return $reponse;
+      }
   }
 
   public function Get_Table($id)
@@ -70,7 +88,7 @@ class UsersController extends Controller
       switch ($this->Get_Table(Auth::id()))
             {
                 case 2 :
-                    return View::make('internship/internship_template')->with('user_type', 2)->with('dataOffer', $dataOffer)->with('dataEnterprise', $dataEnterprise);
+                    return View::make('internship/internship_pilot')->with('user_type', 2)->with('dataOffer', $dataOffer)->with('dataEnterprise', $dataEnterprise);
                     break;
 
                 case 0 :
@@ -78,14 +96,14 @@ class UsersController extends Controller
                     break;
 
                 case 1 :
-                    return View::make('internship/internship_template')->with('user_type', 1)->with('dataOffer', $dataOffer)->with('dataEnterprise', $dataEnterprise);
+                    return View::make('internship/internship_pilot')->with('user_type', 1)->with('dataOffer', $dataOffer)->with('dataEnterprise', $dataEnterprise);
                     break;
 
             }
 
   }
   
-  public function GetHomePage(Request $request)
+  public function GetHomePage()
   {
      switch ($this->Get_Table(Auth::id()))
      {
@@ -94,7 +112,9 @@ class UsersController extends Controller
                     break;
 
                 case 0 :
-                    return View::make('welcome/welcome_student')->with('user_type', 0);
+                    $dataOffer = ObjectController::objtoArray(Internship::tablereturn());
+                    $dataEnterprise =  ObjectController::objtoArray(Enterprise::tablereturn());
+                    return View::make('welcome/welcome_template')->with('user_type', 0)->with('dataOffer', $dataOffer)->with('dataEnterprise', $dataEnterprise);
                     break;
 
                 case 1 :
@@ -108,50 +128,20 @@ class UsersController extends Controller
 
   public function GetUsersPage(Request $request)
   {
-      $userArray = json_encode($this->user->GetAll());
-      
-      /*for($i = 0; $userArray[$i] !== null; $i++)
-      {
-          $AllUser[$i]['User_id'] = $userArray[$i]['id'];
-          switch ($this->Get_Table($userArray[$i]->id))
-          {
-                case 2 :
-                    $AllUser[$i]['thisUser_type'] = "Administrateur";
-                    $usertemp = new AdministratorController;
-                    break;
-
-                case 0 :
-                    $AllUser[$i]['thisUser_type'] = "Pilote";
-                    $usertemp = new PilotController;
-                    break;
-
-                case 1 :
-                    $AllUser[$i]['thisUser_type'] = "Pilote";
-                    $usertemp = new StudentController;
-                    break;
-
-          }
-          
-          $AllUser[$i]['Last_Name'] = $userArray[$i]['Last_Name'];
-          $AllUser[$i]['First_Name'] = $userArray[$i]->First_Name;
-          $AllUser[$i]['email'] = $userArray[$i]->email;
-          $AllUser[$i]['password'] = $userArray[$i]->password;
-          $usertempOBJECT = $usertemp->GetById($userArray[$i]->id);
-          $NewLocal = new Localisation;
-          $NewLocal->GetById($usertempOBJECT->Localisation_id);
-          $AllUser[$i]['Localisation_name'] = $NewLocal->Localisation;
-      }*/
-
-      switch ($this->Get_Table($this->User_id))
+      $localid = $this->Get_Local(Auth::id());
+      $dataStudent = $this->student->tablereturn($localid);
+      switch ($this->Get_Table(Auth::id()))
             {
                 case 2 :
-                    return View::make('admin_gestion_user/user_admin')->with('user_type', 2)->with('data', $userArray);
+                    $dataPilot = $this->pilot->tablereturn($localid);
+                    $dataAdmin = $this->administrator->tablereturn($localid);
+                    return View::make('admin_gestion_user/user_admin')->with('user_type', 2)->with('dataPilot', $dataPilot)->with('dataAdmin', $dataAdmin)->with('dataStudent', $dataStudent);
                     break;
 
                 case 1 :
-                    return View::make('pilot_gestion_student/student_pilot')->with('user_type', 1)->with('data', $userArray);
-                    break;
 
+                    return View::make('pilot_gestion_student/student_pilot')->with('user_type', 1)->with('dataStudent', $dataStudent);
+                    break;
             }
   }
 

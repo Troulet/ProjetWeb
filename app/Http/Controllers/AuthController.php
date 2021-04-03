@@ -4,11 +4,13 @@ namespace App\Http\Controllers;
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
-use App\Models\Users;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\Facades\Crypt;
 use App\Models\Pilot;
+use App\Models\Users;
+use App\Models\Internship;
+use App\Models\Enterprise;
 
 class AuthController extends Controller 
 {
@@ -41,22 +43,24 @@ class AuthController extends Controller
                 
                  $request->session()->regenerate();
                  /*We redirect the user on the correct page*/
-                 $User = new UsersController;
-                switch ($User->Get_Table(Auth::id()))
-                {
+                 $user = new UsersController;
+                 switch ($user->Get_Table(Auth::id()))
+                 {
                     case 2 :
                         return View::make('welcome/welcome_admin')->with('user_type', 2);
                         break;
 
                     case 0 :
-                        return View::make('welcome/welcome_student')->with('user_type', 0);
+                        $dataOffer = ObjectController::objtoArray(Internship::tablereturn());
+                        $dataEnterprise =  ObjectController::objtoArray(Enterprise::tablereturn());
+                        return View::make('welcome/welcome_template')->with('user_type', 0)->with('dataOffer', $dataOffer)->with('dataEnterprise', $dataEnterprise);
                         break;
 
                     case 1 :
                         return View::make('welcome/welcome_pilot')->with('user_type', 1);
                         break;
 
-                }
+     };
 
             //Renvoyer une vue si l'utilisateur n'appartient à aucune des tables
                  

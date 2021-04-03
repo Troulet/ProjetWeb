@@ -50,9 +50,9 @@ class Pilot extends Model
         return $pilots = DB::table('pilot')->get();
     }
 
-    public function tablreturn($localid){
+    public function tablereturn($localid){
         return $data = DB::table('pilot')
-            ->select('pilot.id, pilot.Mail, pilot.First_Name, pilot.Last_name, pilot.Promotion')
+            ->select('pilot.Users_id', 'pilot.email', 'pilot.First_Name', 'pilot.Last_name', 'pilot.Promotion')
             ->where('pilot.Localisation_id', '=' , $localid)
             ->get();
     }
