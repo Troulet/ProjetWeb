@@ -2,9 +2,9 @@
 
 @section('carousel_offer')
             @foreach($dataOffer as $Offer)
-                $i++
-                <img class="d-block w-100 desk-img" src="https://mdbootstrap.com/img/new/standard/nature/181.jpg" alt=""$i." slide">
-                <img class="w-100  mobile-img" src="https://mdbootstrap.com/img/new/standard/nature/181.jpg" alt=""$i." slide">
+                $i=1;
+                <img class="d-block w-100 desk-img" src="https://mdbootstrap.com/img/new/standard/nature/181.jpg" alt=""$i++." slide">
+                <img class="w-100  mobile-img" src="https://mdbootstrap.com/img/new/standard/nature/181.jpg" alt=""$i++." slide">
                 <h5 class="card-title">Stage chez {{$Offer['Enterprise_Name']}}</h5>
                 <p class="card-text">
                     {{$Offer['Description']}} </br>
@@ -17,9 +17,9 @@
             @endforeach
 @section('carousel_entreprise')
             @foreach($dataEnterprise as $Enterprise)
-                $i++
-                <img class="d-block w-100 desk-img" src="https://mdbootstrap.com/img/new/standard/nature/181.jpg" alt=""$i." slide">
-                <img class="w-100  mobile-img" src="https://mdbootstrap.com/img/new/standard/nature/181.jpg" alt=""$i." slide">
+                $i=1;
+                <img class="d-block w-100 desk-img" src="https://mdbootstrap.com/img/new/standard/nature/181.jpg" alt=""$i++." slide">
+                <img class="w-100  mobile-img" src="https://mdbootstrap.com/img/new/standard/nature/181.jpg" alt=""$i++." slide">
                 <h5 class="card-title">Entreprise {{$Enterprise['Enterprise_Name']}}</h5>
                 <p class="card-text">
                     Travaille dans le secteur : {{$Enterprise['Activity_Sector']}} </br>
