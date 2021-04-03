@@ -12,7 +12,7 @@
     </head>
     <body>
         @include('header')
-            <div class="filtre">
+            <!--<div class="filtre">
                 <h3>Filtrer les résultats</h3>
                 <form class="d-flex">
                     <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
@@ -73,7 +73,7 @@
                             <label for="s3e">A2 S3E</label>
                         </div>
                 </div>
-            </div>
+            </div>-->
             
             <div class="profil_card">
             

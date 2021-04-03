@@ -1,6 +1,6 @@
 @extends('internship.internship_student')
 
-@section('carousel_enterprise')
+@section('carousel_offer')
             @foreach($dataOffer as $Offer)
                 <h5 class="card-title">Stage chez {{$Offer['Enterprise_Name']}}</h5>
                 <p class="card-text">
@@ -12,6 +12,7 @@
                 </p>
                 <a href="#" class="btn btn-primary">Aller voir</a>
             @endforeach
+@section('carousel_entreprise')
             @foreach($dataEnterprise as $Enterprise)
                 <h5 class="card-title">Entreprise {{$Enterprise['Enterprise_Name']}}</h5>
                 <p class="card-text">

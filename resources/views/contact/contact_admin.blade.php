@@ -16,10 +16,7 @@
 
         <div class="card">
             <div class="card-body">
-                <h5 class="card-title">Contact pilotes</h5>
-                <p class="card-text">
-                Mail pilote 1 :
-                </p>
+                @yield('data_pilot')
                 <button type="button" class="btn btn-primary">Contacter</button>
                 <p class="card-text">
                 Mail pilote 2 :
