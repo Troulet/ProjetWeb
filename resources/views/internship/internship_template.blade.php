@@ -12,6 +12,8 @@
                 </p>
                 <a href="#" class="btn btn-primary">Aller voir</a>
             @endforeach
+@endsection
+
 @section('carousel_entreprise')
             @foreach($dataEnterprise as $Enterprise)
                 <h5 class="card-title">Entreprise {{$Enterprise['Enterprise_Name']}}</h5>
@@ -23,4 +25,4 @@
                 </p>
                 <a href="#" class="btn btn-primary">Aller voir</a>
             @endforeach
-@stop
+@endsection

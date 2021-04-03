@@ -15,37 +15,10 @@
           @include('header')
 
         <div class="card">
-            <div class="card-body">
-                @yield('data_pilot')
-                <button type="button" class="btn btn-primary">Contacter</button>
-                <p class="card-text">
-                Mail pilote 2 :
-                </p>
-                <button type="button" class="btn btn-primary">Contacter</button>
-                <p class="card-text">
-                Mail pilote 3 :
-                </p>
-                <button type="button" class="btn btn-primary">Contacter</button>
-            </div>
+            @yield('data_pilot')
         </div><br>
 
-        <div class="card">
-            <div class="card-body">
-                <h5 class="card-title">Contact élève</h5>
-                <p class="card-text">
-                Mail élève 1 :
-                </p>
-                <button type="button" class="btn btn-primary">Contacter</button>
-                <p class="card-text">
-                Mail élève 2 :
-                </p>
-                <button type="button" class="btn btn-primary">Contacter</button>
-                <p class="card-text">
-                Mail élève 3 :
-                </p>
-                <button type="button" class="btn btn-primary">Contacter</button>
-            </div>
-        </div><br>
+       @yield('data_student')
 
         <div class="card">
             <div class="card-body">
