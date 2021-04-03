@@ -7,6 +7,9 @@
         Secteur d'activité : {{$dataEnterprise['Activity_Sector']}} </br>
         Etudiants CESI déjà pris : {{$dataEnterprise['Cesi_Student_Taken']}} </br>
         Localisation : {{$dataEnterprise['Localisation_Name']}} </br>
+
+        <button type="submit" id="btn_Modify" class="btn">Modifier</button>
+        <button type="submit" id="btn_Supp" class="btn">Supprimer</button>
     </p>
     @if($dataOffer !== null)
     @foreach($dataOffer as $Offer)
