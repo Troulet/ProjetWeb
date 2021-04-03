@@ -15,15 +15,14 @@
         
         @include('header')
     </br>
-        <div class="profil_offer">
-
-
-
+        <div class="profile_offer">
+            @yield('profile_offer')
         </div>
-    <!--Caroussel-->
-    <!-- Carousel wrapper -->
 
-
+        <div class="profile_enterprise">
+            @yield('profile_enterprise')
+        </div>
+    
       <!--bouton du pop-up-->
       <button class="postuler" type="button">POSTULER</button><br>
       <button class="wish_list" type="button">AJOUTER A LA WISH-LIST</button><br>
