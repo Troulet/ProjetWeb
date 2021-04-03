@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta charsert="utf-8" />
-        <link rel= "stylesheet" href="../resources/views/internship_student.css"/>
+        <link rel= "stylesheet" href="../resources/views/internship/internship_student.css"/>
         <link rel= "stylesheet" href="../resources/views/header_footer.css"/>
         <title>LES P'TITES ANNONCES</title>
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -12,9 +12,8 @@
 
     </head>
     <body>
-        <?php 
-        include("../resources/views/header.blade.php"); 
-        ?>
+        
+        @include('header')
     </br>
         <!--<div class="filtre">
           <h3>Filtrer les résultats</h3>
@@ -88,11 +87,6 @@
             <button class="creation" type="button" value="CREER UNE ENTREPRISE"></button>
             </div>
     </div>
-    -->
-
-    -->
-
-    
     <!--Caroussel-->
     <!-- Carousel wrapper -->
     <div
@@ -111,21 +105,38 @@
                   <div class="row">
                       <div id="banner-one" class="col-sm">
                           <img class="d-block w-100 desk-img" src="https://mdbootstrap.com/img/new/standard/nature/181.jpg" alt="1 slide">
-                          <img class=" w-100  mobile-img" src="https://mdbootstrap.com/img/new/standard/nature/181.jpg" alt="1 slide">
+                          <img class="w-100  mobile-img" src="https://mdbootstrap.com/img/new/standard/nature/181.jpg" alt="1 slide">
                           <div class="card-body">
-                          @foreach ($data as $id => offer)
-                                @yield('carousel_enterprise')
-                          @endforeach
+                              @yield('carousel_enterprise')
+                          </div>
+                      </div>
+                      <div id="banner-two" class="col-sm">
+                          <img class="d-block w-100 desk-img" src="https://mdbootstrap.com/img/new/standard/nature/181.jpg" alt="2 slide">
+                          <img class="w-100  mobile-img" src="https://mdbootstrap.com/img/new/standard/nature/181.jpg" alt="2 slide">
+                          <div class="card-body">
+                              @yield('carousel_enterprise')
+                          </div>
+                      </div>
+                      <div id="banner-three" class="col-sm">
+                         <img class="d-block w-100 desk-img" src="https://mdbootstrap.com/img/new/standard/nature/181.jpg" alt="3 slide">
+                         <img class="w-100  mobile-img" src="https://mdbootstrap.com/img/new/standard/nature/181.jpg" alt="3 slide">
+                         <div class="card-body">
+                              @yield('carousel_enterprise')
                           </div>
                       </div>
                   </div>
               </div>
-          </div>
-      </div>
-  </div>
               <div class="carousel-item">
                   <div class="row">
-                      <div class="col-sm"><img class="d-block w-100" src="https://mdbootstrap.com/img/new/standard/nature/181.jpg" alt="4 slide"></div>
+                      <div class="col-sm">
+                          <div id="banner-four" class="col-sm">
+                             <img class="d-block w-100 desk-img" src="https://mdbootstrap.com/img/new/standard/nature/181.jpg" alt="4 slide">
+                             <img class="w-100  mobile-img" src="https://mdbootstrap.com/img/new/standard/nature/181.jpg" alt="4 slide">
+                             <div class="card-body">
+                                  @yield('carousel_enterprise')
+                              </div>
+                          </div>
+                      </div>
                       <div class="col-sm"><img class="d-block w-100" src="https://mdbootstrap.com/img/new/standard/nature/181.jpg" alt="5 slide"></div>
                       <div class="col-sm"><img class="d-block w-100" src="https://mdbootstrap.com/img/new/standard/nature/181.jpg" alt="6 slide"></div>
                   </div>
@@ -153,9 +164,7 @@
       <button class="contacter" type="button">CONTACTER L'ENTREPRISE</button>
       
   </section>
-    <?php 
-    include("../resources/views/footer.blade.php"); 
-    ?>
+    @include('footer')
 </body>
     
 </html>

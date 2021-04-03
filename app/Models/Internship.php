@@ -22,22 +22,23 @@ class Internship extends Model
         return $this->hasMany('Postulate');
     }
 
-    public function GetById(){
-        $id = $_POST('id');
-
+    public static function GetById($id){
         return $intern = DB::table('internship')->whereId($id)->first();
     }
 
-    public function GetAll(){
+    public static function GetAll(){
         return $interns = DB::table('internship')->get();
     }
 
-    public function GetId(){
-        $desc = $_POST('description');
-        $skills = $_POST('skills');
-        $promo = $_POST('promotion');
-
+    public static function GetId($desc, $skills, $promo){
         return $id = DB::table('internship')->where('Description', '=', $desc)->where('Skills_researched', '=', $skills)->where('Promotion_researched', '=', $promo)->pluck('id');
     }
 
+    public static function tablereturn(){
+        return $data = DB::table('internship')
+            ->select('internship.id', 'internship.Description', 'internship.Skills_Researched', 'internship.Promotion_Researched', 'internship.Number_Of_Places', 'enterprise.Enterprise_Name', 'localisation.Localisation as Localisation_Name')
+            ->join('enterprise', 'enterprise.id', '=', 'internship.Enterprise_id')
+            ->join('localisation', 'localisation.id', '=', 'internship.Localisation_id')
+            ->get();
+    }
 }

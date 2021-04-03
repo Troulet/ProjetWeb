@@ -46,7 +46,7 @@ class Pilot extends Model
         return $pilot = DB::table('pilot')->where('Users_id', '=', $id)->first();
     }
 
-    public function GetAll(){
+    public static function GetAll(){
         return $pilots = DB::table('pilot')->get();
     }
 

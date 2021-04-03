@@ -9,6 +9,9 @@ use Illuminate\Support\Facades\View;
 use App\Models\Localisation;
 use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Validator;
+use App\Models\Internship;
+use App\Models\Enterprise;
+
 
 class UsersController extends Controller 
 {
@@ -38,18 +41,16 @@ class UsersController extends Controller
      if (Auth::check())
      {
       $table = [$this->student, $this->pilot, $this->administrator];
-      for ($i=0; isset($table[$i]); $i++)
+      $i = 0;
+      foreach($table as $element)
       {
-        if($table[2]->GetById($id) !== null)
+        if($element->GetById($id) !== null)
         {
             $reponse = $i;
         }
+        $i++;
       }
       return $reponse;
-      }
-      else
-      {
-          return 0;
       }
   }
 
@@ -63,19 +64,21 @@ class UsersController extends Controller
 
   public function GetOfferPage(Request $request)
   {
-
+      //On récupère les données à afficher puis on les convertis en array
+      $dataOffer = ObjectController::objtoArray(Internship::tablereturn());
+      $dataEnterprise =  ObjectController::objtoArray(Enterprise::tablereturn());
       switch ($this->Get_Table(Auth::id()))
             {
                 case 2 :
-                    return View::make('internship_pilot')->with('user_type', 2);
+                    return View::make('internship/internship_template')->with('user_type', 2)->with('dataOffer', $dataOffer)->with('dataEnterprise', $dataEnterprise);
                     break;
 
                 case 0 :
-                    return View::make('internship_student')->with('user_type', 0);
+                    return View::make('internship/internship_template')->with('user_type', 0)->with('dataOffer', $dataOffer)->with('dataEnterprise', $dataEnterprise);
                     break;
 
                 case 1 :
-                    return View::make('internship_pilot')->with('user_type', 1);
+                    return View::make('internship/internship_template')->with('user_type', 1)->with('dataOffer', $dataOffer)->with('dataEnterprise', $dataEnterprise);
                     break;
 
             }
@@ -87,18 +90,19 @@ class UsersController extends Controller
      switch ($this->Get_Table(Auth::id()))
      {
                 case 2 :
-                    return View::make('welcome_admin')->with('user_type', 2);
+                    return View::make('welcome/welcome_admin')->with('user_type', 2);
                     break;
 
                 case 0 :
-                    return View::make('welcome_student')->with('user_type', 0);
+                    return View::make('welcome/welcome_student')->with('user_type', 0);
                     break;
 
                 case 1 :
-                    return View::make('welcome_pilot')->with('user_type', 1);
+                    return View::make('welcome/welcome_pilot')->with('user_type', 1);
                     break;
 
      }
+     return View::make('login/login');
 
   }
 
@@ -141,11 +145,11 @@ class UsersController extends Controller
       switch ($this->Get_Table($this->User_id))
             {
                 case 2 :
-                    return View::make('user_admin')->with('user_type', 2)->with('data', $userArray);
+                    return View::make('admin_gestion_user/user_admin')->with('user_type', 2)->with('data', $userArray);
                     break;
 
                 case 1 :
-                    return View::make('student_pilot')->with('user_type', 1)->with('data', $userArray);
+                    return View::make('pilot_gestion_student/student_pilot')->with('user_type', 1)->with('data', $userArray);
                     break;
 
             }
@@ -156,7 +160,7 @@ class UsersController extends Controller
       switch ($this->Get_Table(Auth::id()))
             {
                 case 0 :
-                    return View::make('postulate')->with('user_type', 0);
+                    return View::make('postulate/postulate')->with('user_type', 0);
                     break;
             }
 
@@ -167,15 +171,15 @@ class UsersController extends Controller
       switch ($this->Get_Table(Auth::id()))
             {
                 case 2 :
-                    return View::make('contact_admin')->with('user_type', 2);
+                    return View::make('contact/contact_admin')->with('user_type', 2);
                     break;
 
                 case 0 :
-                    return View::make('contact_student')->with('user_type', 0);
+                    return View::make('contact/contact_student')->with('user_type', 0);
                     break;
 
                 case 1 :
-                    return View::make('contact_pilot')->with('user_type', 1);
+                    return View::make('contact/contact_pilot')->with('user_type', 1);
                     break;
 
             }
@@ -304,7 +308,7 @@ class UsersController extends Controller
 
   public function GetCreationPage()
   {
-      return View::make('create_user')->with('user_type', $this->Get_Table(Auth::id()));
+      return View::make('create/create_user')->with('user_type', $this->Get_Table(Auth::id()));
   }
 
 }

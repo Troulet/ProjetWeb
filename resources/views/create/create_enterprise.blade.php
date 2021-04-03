@@ -2,20 +2,15 @@
 <html>
 <link rel= "stylesheet" href="../resources/views/header_footer.css"/>
 <body>
-    <?php 
-          include("../resources/views/header.blade.php"); 
-    ?>
-    <div id="1">
-       <div id="header">
-        <div class="titre">
-            <img class="logo2" src="../resources/img/logo_cesi2.0.png">
-            <h1>LES P'TITES ANNONCES</h1>
-            <h2>Cherche et trouve le stage qui te correspond !</h2>
-        </div>
-        </div>
-    </div>
+   
+    @include('header')
+
+            {!! Form::open(['url' => '/Offer', 'method' => 'get']) !!}
+            <button type="submit" class="btn">Retour à la page Offre</button>
+            {!! Form::close() !!}
+
     <div>
-        {!! Form::open(['url' => '/Offer/Entreprise', 'method' => 'post']) !!}
+        {!! Form::open(['url' => '/Enterprise_Create', 'method' => 'post']) !!}
         <fieldset>
             <legend>Créer une entreprise</legend>
      
@@ -32,7 +27,7 @@
             <input type="text" name="Cesi_Student_Taken" id="Cesi_Student_Taken" />
       
         </fieldset>
-        <button type="submit" class="btn">CREER</button>
+        <button type="submit" id="btn_Create" class="btn_Create">CREER</button>
 
         <fieldset>
             <legend>Modifier une entreprise</legend>
@@ -50,12 +45,10 @@
             <input type="text" name="Cesi_Student_Taken" id="Cesi_Student_Taken" />
       
         </fieldset>
-        <button type="submit" class="btn">MODIFIER</button>
+        <button type="submit" id="btn_Modify" class="btn">MODIFIER</button>
         
         {!! Form::close() !!}
     </div>
     </script>
-    <?php 
-          include("../resources/views/footer.blade.php"); 
-    ?>
+          @include('footer')
 </body>

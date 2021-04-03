@@ -45,35 +45,90 @@ class EnterpriseController extends Controller
         //Récupérer dans un tableau les ID des localisations liées.
     }*/
 
+    public function ValidationCreate(Request $request)
+    {       
+        $validator = Validator::make($request->all(), [
+            'Enterprise_Name' => 'required|Alpha_num',
+            'Activity_Sector' => 'required|Alpha',
+            'Cesi_Student_Taken' => 'required|numeric',
+            'Localisation_Name' => 'required|Alpha'
+        ]);
+
+        //if the inputs are not validated, we came back on the previous page.
+        if ($validator->fails())
+        {
+            return false;
+        }
+        else
+        {
+            return true;
+        }
+    }
+
     public function Create(Request $request)
     {
-        $this->enterprise->Enterprise_Name = $request->Enterprise_Name;
-        $this->enterprise->Activity_Sector = $request->Activity_Sector;
-        $this->enterprise->Cesi_Student_Taken = $request->Cesi_Student_Taken;
+        if($this->ValidationCreate($request) $$ Auth::check() == true)
+        {
+            $this->enterprise->Enterprise_Name = $request->Enterprise_Name;
+            $this->enterprise->Activity_Sector = $request->Activity_Sector;
+            $this->enterprise->Cesi_Student_Taken = $request->Cesi_Student_Taken;
 
-        //We update the localisation table, in case we created a new place.
-         $EntryLocal = Localisation::updateOrCreate(
-        ['Localisation' => $request->Localisation_Name ]);
+            //We update the localisation table, in case we created a new place.
+            $EntryLocal = Localisation::updateOrCreate(
+            ['Localisation' => $request->Localisation_Name ]);
 
-        $NewLocal = new Localisation;
-        $this->enterprise->Localisation_id = $NewLocal->GetId($request->Localisation_Name);
-        $this->enterprise->save();
+            $NewLocal = new Localisation;
+            $this->enterprise->Localisation_id = $NewLocal->GetId($request->Localisation_Name);
+            $this->enterprise->save();
+        }
+        else
+        {
+            echo "Erreur de saisie des données"
+        }
+    }
+
+    public function ValidationUpdate(Request $request)
+    {       
+        $validator = Validator::make($request->all(), [
+            'Enterprise_id' => 'numeric',
+            'Enterprise_Name' => 'required|Alpha_num',
+            'Activity_Sector' => 'required|Alpha',
+            'Cesi_Student_Taken' => 'required|numeric',
+            'Localisation_Name' => 'required|Alpha'
+        ]);
+
+        //if the inputs are not validated, we came back on the previous page.
+        if ($validator->fails())
+        {
+            return false;
+        }
+        else
+        {
+            return true;
+        }
     }
 
     public function Update(Request $request)
-    {
-        $this->enterprise = Enterprise::find($request->Enterprise_id);
-        $this->enterprise->Enterprise_Name = $request->Enterprise_Name;
-        $this->enterprise->Activity_Sector = $request->Activity_Sector;
-        $this->enterprise->Cesi_Student_Taken = $request->Cesi_Student_Taken;
+    {        
+        if($this->ValidationUpdate($request) $$ Auth::check() == true)
+        {
+            $this->enterprise = Enterprise::find($request->Enterprise_id);
+            $this->enterprise->Enterprise_Name = $request->Enterprise_Name;
+            $this->enterprise->Activity_Sector = $request->Activity_Sector;
+            $this->enterprise->Cesi_Student_Taken = $request->Cesi_Student_Taken;
 
-        //We update the localisation table, in case we created a new place.
-         $EntryLocal = Localisation::updateOrCreate(
-        ['Localisation' => $request->Localisation_Name ]);
+            //We update the localisation table, in case we created a new place.
+            $EntryLocal = Localisation::updateOrCreate(
+            ['Localisation' => $request->Localisation_Name ]);
 
-        $NewLocal = new Localisation;
-        $this->enterprise->Localisation_id = $NewLocal->GetId($request->Localisation_Name);
-        $this->enterprise->save();
+            $NewLocal = new Localisation;
+            $this->enterprise->Localisation_id = $NewLocal->GetId($request->Localisation_Name);
+            $this->enterprise->save();
+        }
+        else
+        {
+            echo "Erreur de saisie des données"
+        }
     }
 
     public function Show($id)
@@ -119,15 +174,15 @@ class EnterpriseController extends Controller
         switch($user->Get_Table(Auth::id()))
         {
                 case 2 :
-                    return View::make('create_enterprise')->with('user_type', 2);
+                    return View::make('create/create_enterprise')->with('user_type', 2);
                     break;
 
                 case 0 :
-                    return View::make('create_enterprise')->with('user_type', 0);
+                    return View::make('create/create_enterprise')->with('user_type', 0);
                     break;
 
                 case 1 :
-                    return View::make('create_enterprise')->with('user_type', 1);
+                    return View::make('create/create_enterprise')->with('user_type', 1);
                     break;
 
      }

@@ -3,7 +3,7 @@
     <head>
         <meta charsert="utf-8" />
         <link rel= "stylesheet" href="../resources/views/header_footer.css"/>
-        <link rel= "stylesheet" href="../resources/views/contact.css"/>
+        <link rel= "stylesheet" href="../resources/views/contact/contact.css"/>
         <title>LES P'TITES ANNONCES</title>
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <link href="https://fonts.googleapis.com/css2?family=Happy+Monkey&display=swap" rel="stylesheet">
@@ -12,9 +12,7 @@
     </head>
         
     <body>
-        <?php 
-          include("../resources/views/header.blade.php"); 
-        ?>
+          @include('header')
 
         <div class="card">
             <div class="card-body">
@@ -66,7 +64,5 @@
                 <a href="#" class="list-group-item list-group-item-action"><h5>Nom d'élève/délégué</h5>Message</a>
             </div>
         </div>
-    </body>
-    <?php 
-        include("../resources/views/footer.blade.php"); 
-    ?>
+    </body> 
+        @include('footer')

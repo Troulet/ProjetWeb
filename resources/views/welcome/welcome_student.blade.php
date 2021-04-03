@@ -2,7 +2,7 @@
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
     <meta charset="utf-8" />
-    <link rel="stylesheet" href="../resources/views/welcome_student.css" />
+    <link rel="stylesheet" href="../resources/views/welcome/welcome_student.css" />
     <link rel="stylesheet" href="../resources/views/header_footer.css" />
     <title>LES P'TITES ANNONCES</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -11,9 +11,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 </head>
 <body>
-    <?php 
-          include("../resources/views/header.blade.php"); 
-    ?>
+    @include('header')
     <!--Caroussel-->
 <section class="carousel_1">
   <div class="container">
@@ -22,46 +20,12 @@
           <div class="carousel-inner">
               <div class="carousel-item active">
                   <div class="row">
-                      <div id="banner-one" class="col-sm">
-                          <img class="d-block w-100 desk-img" src="https://mdbootstrap.com/img/new/standard/nature/181.jpg" alt="1 slide">
-                          <img class="w-100  mobile-img" src="https://mdbootstrap.com/img/new/standard/nature/181.jpg" alt="1 slide">
-                          <div class="card-body">
-                              <h5 class="card-title">Stage chez Thalès</h5>
-                              <p class="card-text">
-                                  Thales recrute un stagiaire en informatique pour du développement.
-                              </p>
-                              <a href="#" class="btn btn-primary">Aller voir</a>
-                          </div>
-                      </div>
-                      <div id="banner-two" class="col-sm">
-                          <img class="d-block w-100 desk-img" src="https://mdbootstrap.com/img/new/standard/nature/181.jpg" alt="2 slide">
-                          <img class="w-100  mobile-img" src="https://mdbootstrap.com/img/new/standard/nature/181.jpg" alt="2 slide">
-                          <div class="card-body">
-                              <h5 class="card-title">Stage chez Gertrude</h5>
-                              <p class="card-text">
-                                  Gertrude recrute un stagiaire en informatique pour du développement web et de la gestion de base de données.
-                              </p>
-                              <a href="#" class="btn btn-primary">Aller voir</a>
-                          </div>
-                      </div>
-                      <div id="banner-three" class="col-sm">
-                         <img class="d-block w-100 desk-img" src="https://mdbootstrap.com/img/new/standard/nature/181.jpg" alt="3 slide">
-                         <img class="w-100  mobile-img" src="https://mdbootstrap.com/img/new/standard/nature/181.jpg" alt="3 slide">
-                         <div class="card-body">
-                              <h5 class="card-title">Stage chez Dassault</h5>
-                              <p class="card-text">
-                                  Dassault recrute un stagiaire en informatique pour informatiser sa gestion de chaîne de production.
-                              </p>
-                              <a href="#" class="btn btn-primary">Aller voir</a>
-                          </div>
-                      </div>
+                      @yield('carousel_enterprise')
                   </div>
               </div>
               <div class="carousel-item">
                   <div class="row">
-                      <div class="col-sm"><img class="d-block w-100" src="https://mdbootstrap.com/img/new/standard/nature/181.jpg" alt="4 slide"></div>
-                      <div class="col-sm"><img class="d-block w-100" src="https://mdbootstrap.com/img/new/standard/nature/181.jpg" alt="5 slide"></div>
-                      <div class="col-sm"><img class="d-block w-100" src="https://mdbootstrap.com/img/new/standard/nature/181.jpg" alt="6 slide"></div>
+                      @yield('carousel_enterprise')
                   </div>
               </div>
           </div>
@@ -76,6 +40,7 @@
           </a>
       </div>
   </div>
+  <!--fin_carousel-->
 </section>
     <div id="wishlist_student" class="wishlist">
         <div class="list-group">
@@ -87,9 +52,7 @@
         </div>
     </div>
     
-<?php 
-          include("../resources/views/footer.blade.php"); 
-?>
+    @include('footer')
 </body>
 
 
