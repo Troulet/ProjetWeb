@@ -1,4 +1,4 @@
-@extends('admin_gestion_user.user_admin')
+@extends('users.user_admin')
 
 @section('data_pilot')
     @if($dataPilot !== null)
