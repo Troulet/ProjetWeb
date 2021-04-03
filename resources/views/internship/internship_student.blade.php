@@ -95,18 +95,18 @@
     <section class="carousel_1">
       <div class="container">
       <h2>Offres :</h2>
-          <div class="carousel slide" data-ride="carousel" id="multi_item1" data-intervale="2000">
+          <div class="carousel slide" data-ride="carousel" id="multi_item" data-intervale="2000">
               <div class="carousel-inner">
                   
                            @yield('carousel_offer')
                       
               </div>
 
-              <a class="carousel-control-prev" href="#multi_item1" role="button" data-slide="prev">
+              <a class="carousel-control-prev" href="#multi_item" role="button" data-slide="prev">
                   <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                   <span class="sr-only">Previous</span>
               </a>
-              <a class="carousel-control-next" href="#multi_item1" role="button" data-slide="next">
+              <a class="carousel-control-next" href="#multi_item" role="button" data-slide="next">
                   <span class="carousel-control-next-icon" aria-hidden="true"></span>
                   <span class="sr-only">Next</span>
               </a>

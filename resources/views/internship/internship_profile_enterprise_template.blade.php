@@ -7,6 +7,9 @@
         Secteur d'activité : {{$dataEnterprise['Activity_Sector']}} </br>
         Etudiants CESI déjà pris : {{$dataEnterprise['Cesi_Student_Taken']}} </br>
         Localisation : {{$dataEnterprise['Localisation_Name']}} </br>
+
+        <button type="submit" id="btn_Modify" class="btn">Modifier</button>
+        <button type="submit" id="btn_Supp" class="btn">Supprimer</button>
     </p>
     @if($dataOffer !== null)
     @foreach($dataOffer as $Offer)
@@ -22,6 +25,19 @@
              <input name='id' type="hidden" value="{{$Offer['id']}}">
              <button type="submit" class="btn">Aller voir</button>
         {!! Form::close() !!}
+
+        @if($user_type != 0 && $user_type == 1 || $user_type == 2)
+            {!! Form::open(['url' => '/Offer_Delete', 'method' => 'post']) !!}
+                        <input name='id' type="hidden" value="{{$Offer['Offer_id']}}">
+                        <button type="submit" class="btn">Supprimer</button>
+            {!! Form::close() !!}
+
+            {!! Form::open(['url' => '/Offer_Update', 'method' => 'get']) !!}
+                        <input name='id' type="hidden" value="{{$Offer['Offer_id']}}">
+                        <button type="submit" class="btn">Modifier</button>
+            {!! Form::close() !!}
+        @endif
+
     @endforeach
     @endif
 
