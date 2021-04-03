@@ -20,35 +20,36 @@
 
         <fieldset>
 
-            <legend>Créer un élève</legend>
+            <legend>Modifier un élève</legend>
 
             
 
             <label id="First_Label" for="First_Name">Prénom de l'élève : </label>
-            <input type="text" name="First_Name" id="First_Name" value="{{}}"/>
+            <input type="text" name="First_Name" id="First_Name" value="{{$First_Name}}"/>
      
             <label id="Last_Label" for="Last_Name">Nom de l'élève : </label>
-            <input type="text" name="Last_Name" id="Last_Name" />
+            <input type="text" name="Last_Name" id="Last_Name" value="{{$Last_Name}}"/>
 
             <label id="Localisation_Label" for="Localisation">Localité : </label>
-            <input type="text" name="Localisation_Name" id="Localisation_Name" />
+            <input type="text" name="Localisation_Name" id="Localisation_Name" value="{{$Localisation}}"/>
 
-            <label id="Promotion_Label" for="Promotion">Promotion :  </label>
-            <input type="text" name="Promotion" id="Promotion" />
-      
             <label id="email_Label" for="Email">Email :  </label>
-            <input type="text" name="email" id="Email" />
+            <input type="text" name="email" id="Email" value="{{$Email}}"/>
 
             <label id="password_Label" for="Password">Mot de passe :  </label>
-            <input type="text" name="password" id="Password" />
+            <input type="text" name="password" id="Password" value="{{$Password}}"/>
 
-            <label id="Representative_Label" for="Representative">Délégué</label>
-            <input type="checkbox" name="Representative" id="Representative" /> 
+            @if($user_type != 0 && $user_type == 1 || $user_type == 2)
+                <label id="Promotion_Label" for="Promotion">Promotion :  </label>
+                <input type="text" name="Promotion" id="Promotion" />
+
+                <label id="Representative_Label" for="Representative">Délégué</label>
+                <input type="checkbox" name="Representative" id="Representative" /> 
             
-            <label id="Representative_Rights_Label" for="Representative_Rights">Droits :  </label>
-            <input type="text" name="Representative_Rights" id="Representative_Rights" />
-            <input type="hidden" name="UpUser_type" id="UpUser_type" />
-
+                <label id="Representative_Rights_Label" for="Representative_Rights">Droits :  </label>
+                <input type="text" name="Representative_Rights" id="Representative_Rights" />
+                <input type="hidden" name="UpUser_type" id="UpUser_type" />
+            @endif
 
         </fieldset>
         <button type="submit" id="btn_Modify" class="btn_Modify">MODIFIER</button>
