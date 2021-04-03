@@ -4,14 +4,11 @@
     "\\app",
     "\\app\\Http",
     "\\app\\Http\\Controllers",
-    "\\app\\Models",
     "\\resources",
-    "\\resources\\js",
     "\\resources\\views",
-    "\\resources\\views\\create",
     "\\resources\\views\\internship",
-    "\\resources\\views\\modify"
+    "\\routes"
   ],
-  "SelectedNode": "\\resources\\views\\internship\\internship_template.blade.php",
+  "SelectedNode": "\\app\\Http\\Controllers\\EnterpriseController.php",
   "PreviewInSolutionExplorer": false
 }

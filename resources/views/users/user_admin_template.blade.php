@@ -1,6 +1,7 @@
-@extends('admin_gestion_user.user_admin')
+@extends('users.user_admin')
 
 @section('data_pilot')
+    @if($dataPilot !== null)
     @foreach ($dataPilot as $user)
 
     <div class="card-body">
@@ -18,9 +19,12 @@
     </div>
 
     @endforeach
+    @endif
 @stop
 
+
 @section('data_student')
+    @if($dataStudent !== null)
     @foreach ($dataStudent as $user)
         
         <div class="card-body">
@@ -43,9 +47,11 @@
             <button type="button" id="btn_Modify" class="btn">MODIFIER</button>
         </div>
     @endforeach
+    @endif
 @stop
 
 @section('data_admin')
+
     @foreach ($dataAdmin as $user)
 
     <div class="card-body">

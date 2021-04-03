@@ -92,7 +92,7 @@
         <div>
             
            {!! Form::open(['url' => '/Offer_Create', 'method' => 'get']) !!}
-            <button type="submit" class="btn">CRÉER UNE Offre</button>
+            <button type="submit" class="btn">CRÉER UNE OFFRE</button>
             {!! Form::close() !!}
         </div>
 

@@ -102,7 +102,7 @@ use App\Http\Controllers\AdministratorController;
     Route::post('/Enterprise_restore', [EnterpriseController::class, 'Restore']);
 
     //Chemin pour poster une nouvelle entreprise
-    Route::post('/Entreprise_Profil', [ EnterpriseController::class, 'GetProfil']);
+    Route::post('/Enterprise_Profil', [ EnterpriseController::class, 'GetProfil']);
 
     //Chemin pour afficher le résultat d'une recherche d'Entreprise/Offre
     Route::post('Offer_Search', [EnterpriseController::class, 'Search']);

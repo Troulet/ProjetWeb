@@ -1,6 +1,8 @@
-@extends('pilot_gestion_student.student_pilot')
+@extends('users.student_pilot')
 
 @section('data_student')
+
+    @if($dataStudent !== null)
     @foreach ($dataStudent as $user)
         
         <div class="card-body">
@@ -23,4 +25,5 @@
             <button type="button" id="btn_Modify" class="btn">MODIFIER</button>
         </div>
     @endforeach
+    @endif
 @stop
