@@ -12,9 +12,13 @@
 
     </head>
     <body> 
-          @include('header')
+        @include('header')
     </br>
 
     <div class="card">
         @yield('data_student')
     </div>
+
+        @include('footer')
+    </body>
+</html>
