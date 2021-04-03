@@ -3,11 +3,10 @@
     "",
     "\\resources",
     "\\resources\\views",
-    "\\resources\\views\\create",
-    "\\resources\\views\\inform",
+    "\\resources\\views\\contact",
     "\\resources\\views\\internship",
-    "\\resources\\views\\pilot_gestion_student"
+    "\\routes"
   ],
-  "SelectedNode": "\\resources\\views\\pilot_gestion_student\\student_pilot.blade.php",
+  "SelectedNode": "\\resources\\views\\internship\\internship_template.blade.php",
   "PreviewInSolutionExplorer": false
 }
