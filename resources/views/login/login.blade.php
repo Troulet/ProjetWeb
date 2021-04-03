@@ -30,7 +30,7 @@
             <input type="text" name="email" id="Username" /><br><br>
      
             <label for="Password">Mot de passe </label><br>
-            <input type="text" name="password" id="Password" />
+            <input type="password" name="password" id="Password" />
       
         </fieldset><br>
       
