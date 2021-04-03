@@ -21,10 +21,24 @@ class AdministratorController extends Controller
     $this->localisation = new Localisation;
   }
 
-  /*public function GetUsersPage()
+  public function Get_Local($id)
   {
     
-  }*/
+    if(Administrator::find($id) !== null)
+    {
+        $user = Administrator::find($id);
+        return $user->Localisation_id;
+    }
+    else
+    {
+        return null;
+    }
+  }
+
+   public function tablereturn($localid)
+  {
+      return ObjectController::objtoArray($this->user->tablereturn($localid));
+  }
 
   public function GetById($id)
   {

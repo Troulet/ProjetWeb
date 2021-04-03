@@ -17,6 +17,25 @@ class PilotController extends Controller
     $this->localisation = new Localisation;
   }
 
+  public function Get_Local($id)
+  {
+      
+      if(Pilot::find($id) !== null)
+      {
+            $user = Pilot::find($id);
+            return $user->Localisation_id;
+      }
+      else
+      {
+          return null;
+      }
+  }
+
+   public function tablereturn($localid)
+  {
+      return ObjectController::objtoArray($this->user->tablereturn($localid));
+  }
+
   public function GetById($id)
   {
         return $this->user->GetById($id);
