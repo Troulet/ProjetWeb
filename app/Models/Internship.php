@@ -50,8 +50,8 @@ class Internship extends Model
             ->where('internship.Description', 'like', '%' . $search . '%')
             ->orwhere('internship.Skills_researched', 'like', '%' . $search . '%')
             ->orwhere('internship.Promotion_Researched', 'like', '%' . $search . '%')
-            ->orwhere('internship.Enterprise_Name', 'like', '%' . $search . '%')
-            ->orwhere('internship.Localisation_Name', 'like', '%' . $search . '%')
+            ->orwhere('enterprise.Enterprise_Name', 'like', '%' . $search . '%')
+            ->orwhere('localisation.Localisation', 'like', '%' . $search . '%')
             ->get();
     }
 }

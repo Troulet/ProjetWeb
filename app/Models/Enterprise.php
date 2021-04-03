@@ -50,7 +50,10 @@ class Enterprise extends Model
         return $data = DB::table('enterprise')
             ->select('enterprise.id', 'enterprise.Enterprise_Name', 'enterprise.Activity_Sector', 'enterprise.Cesi_Student_Taken', 'Localisation.Localisation as Localisation_Name')
             ->join('localisation', 'localisation.id', '=', 'enterprise.Localisation_id')
-
+            ->where('enterprise.Enterprise_Name', 'like', '%' . $search . '%')
+            ->orwhere('enterprise.Activity_Sector', 'like', '%' . $search . '%')
+            ->orwhere('enterprise.Cesi_Student_Taken', 'like', '%' . $search . '%')
+            ->orwhere('localisation.Localisation', 'like', '%' . $search . '%')
             ->get();
     }
 }

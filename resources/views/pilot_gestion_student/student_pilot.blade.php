@@ -55,21 +55,8 @@
                 </div>
             </div>-->
             
-            <div class="profil_card">
-            
-                <h2>Profil Élève</h2>
-                <div class="card">
-                    @yield('data_student')
-                </div>
-                
-                <br/>
-                
-                <div class="card">
-                    @yield('data_student')
-                </div>
-                
-                <br/>
-                
+            <div class="profil_card">           
+                <h2>Profils des Élèves</h2>
                 <div class="card">
                     @yield('data_student')
                 </div>

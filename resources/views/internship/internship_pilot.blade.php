@@ -14,6 +14,10 @@
     <body> 
           @include('header')
     </br>
+            {!! Form::open(['url' => '/Offer_Search', 'method' => 'post']) !!}
+            <input class="form-control me-2" type="search" name="seacrh" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success" type="submit">Search</button>
+            {!! Form::close() !!}
            <!-- <div class="filtre">
             <h3>Filtrer les résultats</h3>
             <form class="d-flex">

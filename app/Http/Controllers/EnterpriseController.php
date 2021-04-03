@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\View;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use App\Models\Enterprise;
+use App\Models\Internship;
 use App\Models\Localisation;
 use App\Models\Located;
 use App\Models\Pilot_Commentary;
@@ -191,6 +192,37 @@ class EnterpriseController extends Controller
                     break;
 
      }
+    }
+
+    public function Search(Request $request)
+    {
+        $dataOffer = null;
+        $dataEnterprise = null;
+        //On récupère les données à afficher puis on les convertis en array
+        if(Internship::tablereturnsearch($request->research) !== null)
+        {
+            $dataOffer = ObjectController::objtoArray(Internship::tablereturnsearch($request->research));
+        }
+        elseif(Enterprise::tablereturnsearch($request->research))
+        {
+            $dataEnterprise =  ObjectController::objtoArray(Enterprise::tablereturnsearch($request->research));
+        }       
+        $user = new UsersController;
+        switch ($user->Get_Table(Auth::id()))
+        {
+                case 2 :
+                    return View::make('internship/internship_template')->with('user_type', 2)->with('dataOffer', $dataOffer)->with('dataEnterprise', $dataEnterprise);
+                    break;
+
+                case 0 :
+                    return View::make('internship/internship_template')->with('user_type', 0)->with('dataOffer', $dataOffer)->with('dataEnterprise', $dataEnterprise);
+                    break;
+
+                case 1 :
+                    return View::make('internship/internship_template')->with('user_type', 1)->with('dataOffer', $dataOffer)->with('dataEnterprise', $dataEnterprise);
+                    break;
+
+        }
     }
 
 }

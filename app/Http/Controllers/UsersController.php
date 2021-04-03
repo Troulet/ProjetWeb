@@ -88,7 +88,7 @@ class UsersController extends Controller
       switch ($this->Get_Table(Auth::id()))
             {
                 case 2 :
-                    return View::make('internship/internship_pilot')->with('user_type', 2)->with('dataOffer', $dataOffer)->with('dataEnterprise', $dataEnterprise);
+                    return View::make('internship/internship_template')->with('user_type', 2)->with('dataOffer', $dataOffer)->with('dataEnterprise', $dataEnterprise);
                     break;
 
                 case 0 :
@@ -96,7 +96,7 @@ class UsersController extends Controller
                     break;
 
                 case 1 :
-                    return View::make('internship/internship_pilot')->with('user_type', 1)->with('dataOffer', $dataOffer)->with('dataEnterprise', $dataEnterprise);
+                    return View::make('internship/internship_template')->with('user_type', 1)->with('dataOffer', $dataOffer)->with('dataEnterprise', $dataEnterprise);
                     break;
 
             }
