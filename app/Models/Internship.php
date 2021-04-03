@@ -37,11 +37,20 @@ class Internship extends Model
     public static function GetProfil($id)
     {
         return $data = DB::table('internship')
-            ->select('internship.id', 'internship.Description', 'internship.Skills_Researched', 'internship.Promotion_Researched', 'internship.Internship_Duration', 'internship.Salary', 'Offer_Date', 'internship.Number_Of_Places', 'internship.Contact', 'enterprise.Enterprise_Name', 'localisation.Localisation as Localisation_Name')
+            ->select('internship.Enterprise_id', 'internship.id', 'internship.Description', 'internship.Skills_Researched', 'internship.Promotion_Researched', 'internship.Internship_Duration', 'internship.Salary', 'Offer_Date', 'internship.Number_Of_Places', 'internship.Contact', 'enterprise.Enterprise_Name', 'localisation.Localisation as Localisation_Name')
             ->join('enterprise', 'enterprise.id', '=', 'internship.Enterprise_id')
             ->join('localisation', 'localisation.id', '=', 'internship.Localisation_id')
             ->where('internship.id', '=', $id)
             ->first();
+    }
+
+    public static function GetInternship($entid){
+        return $data = DB::table('internship')
+            ->select('internship.id', 'internship.Description', 'internship.Skills_Researched', 'internship.Promotion_Researched', 'internship.Number_Of_Places', 'enterprise.Enterprise_Name', 'localisation.Localisation as Localisation_Name', 'internship.Enterprise_id')
+            ->join('enterprise', 'enterprise.id', '=', 'internship.Enterprise_id')
+            ->join('localisation', 'localisation.id', '=', 'internship.Localisation_id')
+            ->where('internship.Enterprise_id', '=', $entid)
+            ->get();
     }
 
     public static function tablereturn(){

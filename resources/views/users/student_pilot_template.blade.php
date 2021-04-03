@@ -1,6 +1,8 @@
 @extends('pilot_gestion_student.student_pilot')
 
 @section('data_student')
+
+    @if($dataStudent !== null)
     @foreach ($dataStudent as $user)
         
         <div class="card-body">

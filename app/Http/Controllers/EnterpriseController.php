@@ -215,11 +215,16 @@ class EnterpriseController extends Controller
                     break;
 
         }
+       
+    }
 
-        public function GetProfil(Request $request)
+    public function GetProfil(Request $request)
         {
         $user = new UsersController;
-        $dataOffer = ObjectController::objtoArray(Internship::GetProfil($request->id));
+        $dataEnterprise = ObjectController::objtoArray(Enterprise::GetProfil($request->id));
+        $dataOffer = ObjectController::objtoArray(Internship::GetInternship($request->id));
+        $dataCommentPilot = ObjectController::objtoArray(Pilot_Commentary::tablereturn($request->id));
+        $dataCommentStudent = ObjectController::objtoArray(Student_Commentary::tablereturn($request->id));
             switch($user->Get_Table(Auth::id()))
             {
                 case 2 :
@@ -236,7 +241,6 @@ class EnterpriseController extends Controller
 
             }
         }
-    }
 
 }
 
