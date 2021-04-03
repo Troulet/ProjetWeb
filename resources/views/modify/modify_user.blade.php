@@ -16,10 +16,6 @@
             <button type="submit" class="btn">Retour à la page Utilisateur</button>
             {!! Form::close() !!}
     <div>
-            <button type="button" id="btn_Admin" class="btn">CREER UN PROFIL ADMINISTRATEUR</button>
-            <button type="button" id="btn_Pilot" class="btn">CREER UN PROFIL PILOTE</button>
-            <button type="button" id="btn_Student" class="btn">CREER UN PROFIL ETUDIANT</button>
-
         {!! Form::open(['url' => '/Users_Create', 'method' => 'post']) !!}
 
         <fieldset>
@@ -106,19 +102,20 @@
 
     document.onload = function()
     {
-        showStudentCreation();
-    }
+        if(UpUser_type = 0)
+        {
+            showStudentCreation();
+        }
+        elseif (UpUser_type = 1)
+        {
+            showPilotCreation();
+        }
+        elseif (UpUser_type = 2)
+        {
+            showAdminCreation();
+        }
 
-    document.getElementById("btn_Admin").onclick = function(){
-        showAdminCreation();
-    }
 
-    document.getElementById("btn_Pilot").onclick = function(){
-        showPilotCreation();
-    }
-
-    document.getElementById("btn_Student").onclick = function(){
-        showStudentCreation();
     }
 
     function AJAXPOST(){
