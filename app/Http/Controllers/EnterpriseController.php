@@ -196,17 +196,9 @@ class EnterpriseController extends Controller
 
     public function Search(Request $request)
     {
-        $dataOffer = null;
-        $dataEnterprise = null;
         //On récupère les données à afficher puis on les convertis en array
-        if(Internship::tablereturnsearch($request->research) !== null)
-        {
-            $dataOffer = ObjectController::objtoArray(Internship::tablereturnsearch($request->research));
-        }
-        elseif(Enterprise::tablereturnsearch($request->research))
-        {
-            $dataEnterprise =  ObjectController::objtoArray(Enterprise::tablereturnsearch($request->research));
-        }       
+        $dataOffer = ObjectController::objtoArray(Internship::tablereturnsearch($request->research));
+        $dataEnterprise =  ObjectController::objtoArray(Enterprise::tablereturnsearch($request->research));     
         $user = new UsersController;
         switch ($user->Get_Table(Auth::id()))
         {
