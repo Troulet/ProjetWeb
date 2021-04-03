@@ -49,5 +49,13 @@ class Administrator extends Model
             ->get();
     }
 
+    public static function GetforUpdate($id){
+        return $data = DB::table('administrator')
+            ->select('administrator.Users_id', 'users.email', 'users.password', 'users.First_Name', 'users.Last_name', 'localisation.Localisation as Localisation_Name')
+            ->join('users', 'users.id', '=', 'administrator.Users_id')
+            ->join('localisation', 'localisation.id', '=', 'administrator.Localisation_id')
+            ->where('administrator.Users_id', '=' , $id)
+            ->first();
+    }
 
 }
