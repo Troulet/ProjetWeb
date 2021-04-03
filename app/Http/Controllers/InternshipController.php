@@ -9,6 +9,7 @@ use Illuminate\Http\Request;
 use App\Models\Internship;
 use App\Models\Enterprise;
 
+
 class InternshipController extends Controller 
 {
     protected $Offer;
@@ -96,6 +97,27 @@ class InternshipController extends Controller
 
                 case 1 :
                     return View::make('create/create_offer')->with('user_type', 1);
+                    break;
+
+     }
+    }
+
+    public function GetProfil(Request $request)
+    {
+        $user = new UsersController;
+        $dataOffer = ObjectController::objtoArray(Internship::GetProfil($request->id));
+        switch($user->Get_Table(Auth::id()))
+        {
+                case 2 :
+                    return View::make('internship/internship_profile_offer_template')->with('user_type', 2)->with('dataOffer', $dataOffer);
+                    break;
+
+                case 0 :
+                    return View::make('internship/internship_profile_offer_template')->with('user_type', 0)->with('dataOffer', $dataOffer);
+                    break;
+
+                case 1 :
+                    return View::make('internship/internship_profile_offer_template')->with('user_type', 1)->with('dataOffer', $dataOffer);
                     break;
 
      }

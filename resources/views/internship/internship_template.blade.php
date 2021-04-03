@@ -18,10 +18,10 @@
                     Nombre de places : {{$Offer['Number_Of_Places']}} </br>
                     Localisation : {{$Offer['Localisation_Name']}} </br>
                 </p>
-                {!! Form::open(['url' => '/Users', 'method' => 'get']) !!}
-                <
-            <button type="submit" class="btn">Aller voir</button>
-            {!! Form::close() !!}
+                {!! Form::open(['url' => '/Offer_Profil', 'method' => 'post']) !!}
+                    <input name='id' type="hidden" value="{{$Offer['id']}}">
+                    <button type="submit" class="btn">Aller voir</button>
+                {!! Form::close() !!}
                 @php
                 $i++
                 @endphp
@@ -38,7 +38,10 @@
                     A déjà pris {{$Enterprise['Cesi_Student_Taken']}} élèves. </br>
                     Se situe à {{$Enterprise['Localisation_Name']}} ! </br>
                 </p>
-                <a href="#" class="btn btn-primary">Aller voir</a>
+                {!! Form::open(['url' => '/Enterprise_Profil', 'method' => 'post']) !!}
+                    <input name='id' type="hidden" value="{{$Enterprise['id']}}">
+                    <button type="submit" class="btn">Aller voir</button>
+                {!! Form::close() !!}
                 @php
                 $i++
                 @endphp

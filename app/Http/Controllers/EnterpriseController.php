@@ -215,6 +215,27 @@ class EnterpriseController extends Controller
                     break;
 
         }
+
+        public function GetProfil(Request $request)
+        {
+        $user = new UsersController;
+        $dataOffer = ObjectController::objtoArray(Internship::GetProfil($request->id));
+            switch($user->Get_Table(Auth::id()))
+            {
+                case 2 :
+                    return View::make('internship/internship_profile_enterprise_template')->with('user_type', 2)->with('dataOffer', $dataOffer)->with('dataEnterprise', $dataEnterprise)->with('dataCommentPilot', $dataCommentPilot)->with('dataCommentStudent', $dataCommentStudent);
+                    break;
+                    
+                case 0 :
+                    return View::make('internship/internship_profile_enterprise_template')->with('user_type', 0)->with('dataOffer', $dataOffer)->with('dataEnterprise', $dataEnterprise)->with('dataCommentPilot', $dataCommentPilot)->with('dataCommentStudent', $dataCommentStudent);
+                    break;
+
+                case 1 :
+                    return View::make('internship/internship_profile_enterprise_template')->with('user_type', 1)->with('dataOffer', $dataOffer)->with('dataEnterprise', $dataEnterprise)->with('dataCommentPilot', $dataCommentPilot)->with('dataCommentStudent', $dataCommentStudent);
+                    break;
+
+            }
+        }
     }
 
 }
