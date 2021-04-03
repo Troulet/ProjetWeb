@@ -16,7 +16,7 @@
           include("../resources/views/header.blade.php"); 
         ?>
     </br>
-            <div class="filtre">
+           <!-- <div class="filtre">
             <h3>Filtrer les résultats</h3>
             <form class="d-flex">
                 <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
@@ -81,7 +81,7 @@
                            >
                     <label for="s3e">A2 S3E</label>
                 </div>
-              </section>
+              </section>-->
 
            {!! Form::open(['url' => '/Enterprise_Create', 'method' => 'get']) !!}
             <button class="creation_E"
@@ -118,33 +118,9 @@ data-mdb-ride="carousel"
                           <img class="d-block w-100 desk-img" src="https://mdbootstrap.com/img/new/standard/nature/181.jpg" alt="1 slide">
                           <img class=" w-100  mobile-img" src="https://mdbootstrap.com/img/new/standard/nature/181.jpg" alt="1 slide">
                           <div class="card-body">
-                              <h5 class="card-title">Stage chez Thalès</h5>
-                              <p class="card-text">
-                                  Thales recrute un stagiaire en informatique pour du développement.
-                              </p>
-                              <a href="#" class="btn btn-primary">Aller voir</a>
-                          </div>
-                      </div>
-                      <div id="banner-two" class="col-sm">
-                          <img class="d-block w-100 desk-img" src="https://mdbootstrap.com/img/new/standard/nature/181.jpg" alt="2 slide">
-                          <img class=" w-100  mobile-img" src="https://mdbootstrap.com/img/new/standard/nature/181.jpg" alt="2 slide">
-                          <div class="card-body">
-                              <h5 class="card-title">Stage chez Gertrude</h5>
-                              <p class="card-text">
-                                  Gertrude recrute un stagiaire en informatique pour du développement web et de la gestion de base de données.
-                              </p>
-                              <a href="#" class="btn btn-primary">Aller voir</a>
-                          </div>
-                      </div>
-                      <div class="col-sm">
-                         <img class="d-block w-100 desk-img" src="https://mdbootstrap.com/img/new/standard/nature/181.jpg" alt="3 slide">
-                         <img class=" w-100  mobile-img" src="https://mdbootstrap.com/img/new/standard/nature/181.jpg" alt="3 slide">
-                         <div class="card-body">
-                              <h5 class="card-title">Stage chez Dassault</h5>
-                              <p class="card-text">
-                                  Dassault recrute un stagiaire en informatique pour informatiser sa gestion de chaîne de production.
-                              </p>
-                              <a href="#" class="btn btn-primary">Aller voir</a>
+                            @foreach ($data as $id => offer)
+                                    @yield('carousel_enterprise')
+                            @endforeach
                           </div>
                       </div>
                   </div>
@@ -180,6 +156,7 @@ data-mdb-ride="carousel"
               alt="..."
             />
                     <div class="card-body">
+                        @foreach($data as $id => enterprise)
                         <button type="button" class="btn btn-primary btn-floating"><i class="fas fa-heart"></i></button>
                       <h5 class="card-title">Stage chez Ubisoft</h5>
                       <p class="card-text">
