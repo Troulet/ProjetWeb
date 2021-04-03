@@ -21,12 +21,12 @@ class AuthController extends Controller
         We also need it encrypted to be compared on the database*/
 
         /*$user = new Users;
-        $user = Users::find(7);
-        $password = 'Lagew929';
+        //$user = Users::find();
+        $password = 'licorne4568';
         $passwordcrypt = \Hash::make($password);
-        $user->email = 'pilot@gmail.com';
-        $user->First_Name = 'Thomas';
-        $user->Last_Name = 'Christ';
+        $user->email = 'clem@gmail.com';
+        $user->First_Name = 'Jarvis';
+        $user->Last_Name = 'Simba';
         $user->password = $passwordcrypt;
         $user->remember_token = $request['_token'];
         $user->save();*/
