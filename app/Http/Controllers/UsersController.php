@@ -70,15 +70,15 @@ class UsersController extends Controller
       switch ($this->Get_Table(Auth::id()))
             {
                 case 2 :
-                    return View::make('internship/internship_pilot')->with('user_type', 2)->with('dataOffer', $dataOffer);
+                    return View::make('internship/internship_template')->with('user_type', 2)->with('dataOffer', $dataOffer)->with('dataEnterprise', $dataEnterprise);
                     break;
 
                 case 0 :
-                    return View::make('internship/internship_student')->with('user_type', 0)->with('dataEnterprise', $dataEnterprise);
+                    return View::make('internship/internship_template')->with('user_type', 0)->with('dataOffer', $dataOffer)->with('dataEnterprise', $dataEnterprise);
                     break;
 
                 case 1 :
-                    return View::make('internship/internship_pilot')->with('user_type', 1);
+                    return View::make('internship/internship_template')->with('user_type', 1)->with('dataOffer', $dataOffer)->with('dataEnterprise', $dataEnterprise);
                     break;
 
             }

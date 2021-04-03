@@ -87,11 +87,6 @@
             <button class="creation" type="button" value="CREER UNE ENTREPRISE"></button>
             </div>
     </div>
-    -->
-
-    -->
-
-    
     <!--Caroussel-->
     <!-- Carousel wrapper -->
     <div
@@ -112,9 +107,7 @@
                           <img class="d-block w-100 desk-img" src="https://mdbootstrap.com/img/new/standard/nature/181.jpg" alt="1 slide">
                           <img class=" w-100  mobile-img" src="https://mdbootstrap.com/img/new/standard/nature/181.jpg" alt="1 slide">
                           <div class="card-body">
-                          @foreach ($data as $id => offer)
-                                @yield('carousel_enterprise')
-                          @endforeach
+                              @yield('carousel_enterprise')
                           </div>
                       </div>
                   </div>

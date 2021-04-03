@@ -1,15 +1,25 @@
-@extends('template')
+@extends('internship.internship_student')
 
 @section('carousel_enterprise')
-        @foreach
-                <h5 class="card-title">Stage chez {{$Enterprise_name}}</h5>
+            @foreach($dataOffer as $Offer)
+                <h5 class="card-title">Stage chez {{$Offer['Enterprise_Name']}}</h5>
                 <p class="card-text">
-                    {{$Description}}
-                    Compétences recherchées : {{$Skills_Researched}}
-                    Promotion ciblée : {{$Promotion_Researched}}
-                    Nombre de places : {{$Number_of_places}}
-                    Localisation : {{$Localisation_Name}}
+                {{$Offer['Description']}} </br>
+                Compétences recherchées : {{$Offer['Skills_Researched']}} </br>
+                Promotion ciblée : {{$Offer['Promotion_Researched']}} </br>
+                Nombre de places : {{$Offer['Number_Of_Places']}} </br>
+                Localisation : {{$Offer['Localisation_Name']}} </br>
                 </p>
                 <a href="#" class="btn btn-primary">Aller voir</a>
-        @endforeach
+            @endforeach
+            @foreach($dataEnterprise as $Enterprise)
+                <h5 class="card-title">Entreprise {{$Enterprise['Enterprise_Name']}}</h5>
+                <p class="card-text">
+                Travaille dans le secteur : {{$Enterprise['Activity_Sector']}} </br>
+                A déjà pris {{$Enterprise['Cesi_Student_Taken']}} élèves. </br>
+                Nombre de places : {{$Offer['Number_Of_Places']}} </br>
+                Se situe à {{$Enterprise['Localisation_Name']}} ! </br>
+                </p>
+                <a href="#" class="btn btn-primary">Aller voir</a>
+            @endforeach
 @stop
