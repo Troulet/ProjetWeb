@@ -6,7 +6,7 @@
     <div class="carousel-item active">
             <div class="row">
                     @php
-                    $i=1
+                        $i=1
                     @endphp
                     @if($dataOffer !== null)
                     @foreach($dataOffer as $Offer)
