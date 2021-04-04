@@ -1,6 +1,7 @@
 {
   "ExpandedNodes": [
     "",
+<<<<<<< HEAD
     "\\app",
     "\\resources",
     "\\resources\\views",
@@ -8,5 +9,16 @@
     "\\resources\\views\\welcome"
   ],
   "SelectedNode": "\\resources\\views\\users\\user_admin.css",
+=======
+    "\\resources",
+    "\\resources\\views",
+    "\\resources\\views\\contact",
+    "\\resources\\views\\internship",
+    "\\resources\\views\\modify",
+    "\\resources\\views\\users",
+    "\\resources\\views\\welcome"
+  ],
+  "SelectedNode": "\\resources\\views\\internship\\internship_pilot.blade.php",
+>>>>>>> 0d8b246bbe1302d00b452eb0b61a067cc11e39cc
   "PreviewInSolutionExplorer": false
 }

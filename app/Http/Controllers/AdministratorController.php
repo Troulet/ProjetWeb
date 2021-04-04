@@ -49,11 +49,10 @@ class AdministratorController extends Controller
   {
 
   //We delete the line on User's table, then on the Child table.
-    $deleted = new UsersController;
-    $deleted->Delete($id);
-
     $this->user = Administrator::find($id);
     $this->user->delete();
+    $deleted = new UsersController;
+    $deleted->Delete($id);
   }
 
   public function Create(Request $request, $Users_id, $Localisation_id )
@@ -66,7 +65,7 @@ class AdministratorController extends Controller
   public function Update(Request $request, $Localisation_id)
   {
         $this->user = Administrator::find($request->Users_id);
-        $this->user->$Localisation_id = $Localisation_id;
+        $this->user->Localisation_id = $Localisation_id[0];
         $this->user->save();
   }
 

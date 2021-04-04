@@ -52,10 +52,13 @@ use App\Http\Controllers\AdministratorController;
     Route::post('/Users_Create', [UsersController::class, 'Create_User']);
 
     //Chemin pour poster les modifications sur un Utilisateur
+    Route::get('/Users_Update', [UsersController::class, 'GetUpdatePage']);
+
+    //Chemin pour poster les modifications sur un Utilisateur
     Route::post('/Users_Update', [UsersController::class, 'Update_User']);
 
     //Chemin pour supprimer un Utilisateur
-    Route::post('/Users_Delete', [UsersController::class, 'Delete']);
+    Route::post('/Users_Delete', [UsersController::class, 'DeleteUser']);
 
     //Chemin pour rechercher un Utilisateur
     Route::post('/Users_Search', [UsersController::class, 'Search']);

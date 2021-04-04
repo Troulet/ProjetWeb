@@ -21,8 +21,14 @@
             </p>
         </div>
         <div>
-            <button type="button" id="btn_Supp" class="btn">SUPPRIMER</button>
-            <button type="button" id="btn_Modify" class="btn">MODIFIER</button>
+            {!! Form::open(['url' => '/Users_Delete', 'method' => 'post']) !!}
+                    <input name='id' type="hidden" value="{{$user['Users_id']}}">
+                    <button type="submit" class="btn">Supprimer</button>
+            {!! Form::close() !!}
+            {!! Form::open(['url' => '/Users_Update', 'method' => 'get']) !!}
+                    <input name='id' type="hidden" value="{{$user['Users_id']}}">
+                    <button type="submit" class="btn">Modifier</button>
+            {!! Form::close() !!}
         </div>
     @endforeach
     @endif
