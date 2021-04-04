@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta charsert="utf-8" />
+        <meta charset="utf-8" />
         <link rel= "stylesheet" href="../resources/views/header_footer.css"/>
         <link rel= "stylesheet" href="../resources/views/contact/contact.css"/>
         <title>LES P'TITES ANNONCES</title>
