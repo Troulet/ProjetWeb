@@ -30,51 +30,113 @@ class InternshipController extends Controller
         $this->Offer->forceDelete();
     }
 
+    public function ValidationCreate(Request $request)
+    {
+        $validator = Validator::make($request->all(), [
+            'Description' => 'required|alpha_num',
+            'Skills_reserached' => 'required|alpha_num',
+            'Promotion_researched' => 'required|alpha_num',
+            'Internship_Duration' => 'required|alpha',
+            'Salary' => 'required|alpha',
+            'Offer_Date' => 'required|date',
+            'Number_Of_Places' => 'required|alpha',
+            'Contact' => 'required|alpha_num',
+        ]);
+
+        //if the inputs are not validated, we came back on the previous page.
+        if ($validator->fails())
+        {
+            return false;
+        }
+        else
+        {
+            return true;
+        }
+    }
+
     public function Create(Request $request)
     {
-        $this->Offer->Description = $request->Description;
-        $this->Offer->Skills_researched = $request->Skills_researched;
-        $this->Offer->Promotion_researched = $request->Promotion_researched;
-        $this->Offer->Internship_Duration = $request->Internship_Duration;
-        $this->Offer->Salary = $request->Salary;
-        $this->Offer->Offer_Date = date("F j, Y, g:i a");
-        $this->Offer->Number_Of_Places = $request->Number_Of_Places;
-        $this->Offer->Contact = $request->Contact;
+        if($this->ValidationCreate($request))
+        {
+            $this->Offer->Description = $request->Description;
+            $this->Offer->Skills_researched = $request->Skills_researched;
+            $this->Offer->Promotion_researched = $request->Promotion_researched;
+            $this->Offer->Internship_Duration = $request->Internship_Duration;
+            $this->Offer->Salary = $request->Salary;
+            $this->Offer->Offer_Date = date("F j, Y, g:i a");
+            $this->Offer->Number_Of_Places = $request->Number_Of_Places;
+            $this->Offer->Contact = $request->Contact;
 
+            //We update the localisation table, in case we created a new place.
+             $EntryLocal = Localisation::updateOrCreate(
+            ['Localisation' => $request->Localisation_Name ]);
+            
+            $NewLocal = new Localisation;
+            $this->Offer->Localisation_id = $NewLocal->GetId($request->Localisation_Name);
+            $NewEnter = new Enterprise;
+            $this->Offer->Enterprise_id = $NewEnter->GetId($request->Enterprise_Name);
+            $this->Offer->save();
+        }
+        else
+        {
+            echo "Erreur de saisie des données";
+        }
+    }
 
-        //We update the localisation table, in case we created a new place.
-         $EntryLocal = Localisation::updateOrCreate(
-        ['Localisation' => $request->Localisation_Name ]);
-        
-        $NewLocal = new Localisation;
-        $this->Offer->Localisation_id = $NewLocal->GetId($request->Localisation_Name);
-        $NewEnter = new Enterprise;
-        $this->Offer->Enterprise_id = $NewEnter->GetId($request->Enterprise_Name);
-        $this->Offer->save();
+    public function ValidationUpdate(Request $request)
+    {
+        $validator = Validator::make($request->all(), [
+            'Internship_id' => 'numeric',
+            'Description' => 'required|alpha_num',
+            'Skills_reserached' => 'required|alpha_num',
+            'Promotion_researched' => 'required|alpha_num',
+            'Internship_Duration' => 'required|alpha',
+            'Salary' => 'required|alpha',
+            'Offer_Date' => 'required|date',
+            'Number_Of_Places' => 'required|alpha',
+            'Contact' => 'required|alpha_num',
+        ]);
+
+        //if the inputs are not validated, we came back on the previous page.
+        if ($validator->fails())
+        {
+            return false;
+        }
+        else
+        {
+            return true;
+        }
     }
 
     public function Update(Request $request)
     {
-        $this->Offer = Internship::find($request->Internship_id);
-        $this->Offer->Description = $request->Description;
-        $this->Offer->Skills_researched = $request->Skills_researched;
-        $this->Offer->Promotion_researched = $request->Promotion_researched;
-        $this->Offer->Internship_Duration = $request->Internship_Duration;
-        $this->Offer->Salary = $request->Salary;
-        $this->Offer->Offer_Date = date("F j, Y, g:i a");
-        $this->Offer->Number_Of_Places = $request->Number_Of_Places;
-        $this->Offer->Contact = $request->Contact;
-
-
-        //We update the localisation table, in case we created a new place.
-         $EntryLocal = Localisation::updateOrCreate(
-        ['Localisation' => $request->Localisation_Name ]);
-        
-        $NewLocal = new Localisation;
-        $this->Offer->Localisation_id = $NewLocal->GetId($request->Localisation_Name);
-        $NewEnter = new Enterprise;
-        $this->Offer->Enterprise_id = $NewEnter->GetId($request->Enterprise_Name);
-        $this->Offer->save();
+        if($this->ValidationUpdate($request))
+        {
+            $this->Offer = Internship::find($request->Internship_id);
+            $this->Offer->Description = $request->Description;
+            $this->Offer->Skills_researched = $request->Skills_researched;
+            $this->Offer->Promotion_researched = $request->Promotion_researched;
+            $this->Offer->Internship_Duration = $request->Internship_Duration;
+            $this->Offer->Salary = $request->Salary;
+            $this->Offer->Offer_Date = date("F j, Y, g:i a");
+            $this->Offer->Number_Of_Places = $request->Number_Of_Places;
+            $this->Offer->Contact = $request->Contact;
+    
+    
+            //We update the localisation table, in case we created a new place.
+             $EntryLocal = Localisation::updateOrCreate(
+            ['Localisation' => $request->Localisation_Name ]);
+            
+            $NewLocal = new Localisation;
+            $this->Offer->Localisation_id = $NewLocal->GetId($request->Localisation_Name);
+            $NewEnter = new Enterprise;
+            $this->Offer->Enterprise_id = $NewEnter->GetId($request->Enterprise_Name);
+            $this->Offer->save();
+        }
+        else
+        {
+            echo "Erreur de saisie des données";
+        }
     }
 
     /*public function Show($id)
