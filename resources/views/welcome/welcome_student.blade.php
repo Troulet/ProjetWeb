@@ -18,16 +18,8 @@
   <h2>Offres :</h2>
       <div class="carousel slide" data-ride="carousel" id="multi_item1" data-intervale="2000">
           <div class="carousel-inner">
-              <div class="carousel-item active">
-                  <div class="row">
+              
                       @yield('carousel_enterprise')
-                  </div>
-              </div>
-              <div class="carousel-item">
-                  <div class="row">
-                      @yield('carousel_enterprise')
-                  </div>
-              </div>
           </div>
 
           <a class="carousel-control-prev" href="#multi_item1" role="button" data-slide="prev">
