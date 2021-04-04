@@ -1,31 +1,48 @@
-@extends('template')
+@extends('contact.contact_admin')
 
 @section('data_student')
-
+    @foreach ($dataStudent as $user)
     <div class="card-body">
-        <p>
-        Elève : {{$email}}
-        {{$First_Name}}
-        {{$Last_Name}}
-        {{$Promotion}}
-        {{$Representative}}
-        </p>
+    <p>
+        Elève :
+        Email : {{$user['email']}}
+        Prénom : {{$user['First_Name']}}
+        Nom : {{$user['Last_name']}}
+        Promotion : {{$user['Promotion']}}
+
+        @if($user['Representative']==true)
+            Délégué : oui
+        @else
+            Délégué : non
+        @endif
+    </p>
     </div>
-    <div>
-        <button type="button" class="btn">SUPPRIMER</button>
-        <button type="button" class="btn">MODIFIER</button>
-    </div>
+    @endforeach
+    
 @stop
 
 @section('data_pilot')
+    @foreach ($dataPilot as $user)
     <div class="card-body">
         <p>
-        Pilote : {{$email}}
-        {{$First_Name}}
-        {{$Last_Name}}
-        {{$Promotion}}
+            Information Pilote :
+            Email : {{$user['email']}}
+            Prénom : {{$user['First_Name']}}
+            Nom : {{$user['Last_name']}}
+            Promotion : {{$user['Promotion']}}
+        </p>
     </div>
-    <div>
-        <button type="button" class="btn">SUPPRIMER</button>
-        <button type="button" class="btn">MODIFIER</button>
+    @endforeach
+@stop
+
+@section('data_admin')
+    @foreach ($dataAdmin as $user)
+    <div class="card-body">
+        <p>
+            Information Admin :
+            Email : {{$user['email']}}
+            Prénom : {{$user['First_Name']}}
+            Nom : {{$user['Last_name']}}
+        </p>
     </div>
+@stop

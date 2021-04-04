@@ -20,6 +20,8 @@
 
        @yield('data_student')
 
+       @yield('data_pilot')
+
         <div class="card">
             <div class="card-body">
                 <h5 class="card-title">Contact délégué</h5>
