@@ -33,6 +33,12 @@
              <button type="submit" class="btn">Aller voir</button>
         {!! Form::close() !!}
     @endforeach
+
+            {!! Form::open(['url' => '/Offer_Create', 'method' => 'get']) !!}
+            <button type="submit" class="btn">Créer une Offre</button>
+            <input type='hidden' name="Enterprise_id" value="{{$dataEnterprise['id']}}">
+            {!! Form::close() !!}
+
     @endif
 
     @if($dataCommentStudent !== null)
