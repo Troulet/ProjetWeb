@@ -98,6 +98,9 @@ use App\Http\Controllers\AdministratorController;
     //Chemin pour poster les modifications d'une Entreprise'
     Route::post('/Enterprise_Update', [ EnterpriseController::class, 'Update']);
 
+    //Chemin pour poster les modifications d'une Entreprise'
+    Route::get('/Enterprise_Update', [ EnterpriseController::class, 'GetUpdatePage']);
+
     //Chemin pour supprimer une Entreprise
     Route::post('/Enterprise_Delete', [EnterpriseController::class, 'Hide']);
 
