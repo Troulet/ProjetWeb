@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use App\Models\Internship;
 use App\Models\Enterprise;
+use App\Models\Localisation;
 
 
 class InternshipController extends Controller 
@@ -33,13 +34,14 @@ class InternshipController extends Controller
     public function ValidationCreate(Request $request)
     {
         $validator = Validator::make($request->all(), [
-            'Description' => 'required|alpha_num',
-            'Skills_reserached' => 'required|alpha_num',
-            'Promotion_researched' => 'required|alpha_num',
-            'Internship_Duration' => 'required|numeric',
+            'Description' => 'required',
+            'Skills_researched' => 'required',
+            'Promotion_researched' => 'required',
+            'Internship_Duration' => 'required|date',
             'Salary' => 'required|numeric',
             'Number_Of_Places' => 'required|numeric',
-            'Contact' => 'required|alpha_num',
+            'Localisation_Name' => 'required|alpha',
+            'Contact' => 'required|email',
             'Enterprise_id' => 'required|exists:enterprise,id'
         ]);
 
@@ -63,7 +65,7 @@ class InternshipController extends Controller
             $this->Offer->Promotion_researched = $request->Promotion_researched;
             $this->Offer->Internship_Duration = $request->Internship_Duration;
             $this->Offer->Salary = $request->Salary;
-            $this->Offer->Offer_Date = date("F j, Y, g:i a");
+            $this->Offer->Offer_Date = date("y.m.d");
             $this->Offer->Number_Of_Places = $request->Number_Of_Places;
             $this->Offer->Contact = $request->Contact;
 
@@ -72,9 +74,9 @@ class InternshipController extends Controller
             ['Localisation' => $request->Localisation_Name ]);
             
             $NewLocal = new Localisation;
-            $this->Offer->Localisation_id = $NewLocal->GetId($request->Localisation_Name);
-            $NewEnter = new Enterprise;
-            $this->Offer->Enterprise_id = $NewEnter->GetId($request->Enterprise_Name);
+            $Localisation_id = $NewLocal->GetId($request->Localisation_Name);
+            $this->Offer->Localisation_id = $Localisation_id[0];
+            $this->Offer->Enterprise_id = $request->Enterprise_id;
             $this->Offer->save();
         }
         else
@@ -129,8 +131,7 @@ class InternshipController extends Controller
             
             $NewLocal = new Localisation;
             $this->Offer->Localisation_id = $NewLocal->GetId($request->Localisation_Name);
-            $NewEnter = new Enterprise;
-            $this->Offer->Enterprise_id = $NewEnter->GetId($request->Enterprise_Name);
+            $this->Offer->Enterprise_id = $request->Enterprise_id;
             $this->Offer->save();
         }
         else
@@ -144,21 +145,23 @@ class InternshipController extends Controller
         return $this->Offer->GetById(id);
     }*/
 
-    public function GetCreatePage()
+    public function GetCreatePage(Request $request)
     {
         $user = new UsersController;
+        $Enterprise = ObjectController::objtoArray(Enterprise::GetById($request->Enterprise_id));
+        $Enterprise_Name = $Enterprise['Enterprise_Name'];
         switch($user->Get_Table(Auth::id()))
         {
                 case 2 :
-                    return View::make('create/create_offer')->with('user_type', 2);
+                    return View::make('create/create_offer')->with('user_type', 2)->with('Enterprise_id', $request->Enterprise_id)->with('Enterprise_Name', $Enterprise_Name);
                     break;
 
                 case 0 :
-                    return View::make('create/create_offer')->with('user_type', 0);
+                    return View::make('create/create_offer')->with('user_type', 0)->with('Enterprise_id', $request->Enterprise_id)->with('Enterprise_Name', $Enterprise_Name);
                     break;
 
                 case 1 :
-                    return View::make('create/create_offer')->with('user_type', 1);
+                    return View::make('create/create_offer')->with('user_type', 1)->with('Enterprise_id', $request->Enterprise_id)->with('Enterprise_Name', $Enterprise_Name);
                     break;
 
      }
@@ -183,11 +186,6 @@ class InternshipController extends Controller
                     break;
 
         }
-    }
-
-    public function GetCreatePage()
-    {
-
     }
 }
 

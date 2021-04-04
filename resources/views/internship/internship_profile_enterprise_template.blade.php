@@ -17,6 +17,10 @@
                     <input name='id' type="hidden" value="{{$dataEnterprise['id']}}">
                     <button type="submit" class="btn">Modifier</button>
         {!! Form::close() !!}
+        {!! Form::open(['url' => '/Offer_Create', 'method' => 'get']) !!}
+            <input type='hidden' name="Enterprise_id" value="{{$dataEnterprise['id']}}">
+            <button type="submit" class="btn">Créer une Offre</button>
+        {!! Form::close() !!}
     </p>
     @if($dataOffer !== null)
     @foreach($dataOffer as $Offer)
@@ -33,12 +37,6 @@
              <button type="submit" class="btn">Aller voir</button>
         {!! Form::close() !!}
     @endforeach
-
-            {!! Form::open(['url' => '/Offer_Create', 'method' => 'get']) !!}
-            <button type="submit" class="btn">Créer une Offre</button>
-            <input type='hidden' name="Enterprise_id" value="{{$dataEnterprise['id']}}">
-            {!! Form::close() !!}
-
     @endif
 
     @if($dataCommentStudent !== null)
