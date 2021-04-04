@@ -51,11 +51,11 @@ class Users extends Authenticatable
 
     public static function GetforUpdate($id){
         return $user = DB::table('users')
-                ->select('users.id', 'users.email', 'users.First_Name', 'users.Last_name', 'Promotion', 'student.Representative', 'student.Representative_Rights', 'localisation.Localisation as Localisation_Name')
+                ->select('users.id', 'users.email', 'users.First_Name', 'users.Last_name',  'student.Promotion', 'pilot.Promotion', 'student.Representative', 'student.Representative_Rights', 'localisation.Localisation as Localisation_Name')
                 ->join('student', 'users.id', '=', 'student.Users_id')
                 ->join('administrator', 'users.id', '=', 'administrator.Users_id')
                 ->join('pilot', 'users.id', '=', 'pilot.Users_id')
-                ->join('localisation', 'localisation.id', '=', 'Localisation_id')
+                ->join('localisation', 'localisation.id', '=', 'student.Localisation_id')
                 ->where('users.id', '=' , $id)
                 ->first();
     }

@@ -12,6 +12,8 @@ use Illuminate\Support\Facades\Validator;
 use App\Models\Internship;
 use App\Models\Enterprise;
 use App\Models\Administrator;
+use App\Models\Pilot;
+use App\Models\Student;
 
 class UsersController extends Controller 
 {
@@ -281,15 +283,32 @@ class UsersController extends Controller
 
   public function GetUpdatePage(Request $request)
     {
-      $dataUser = ObjectController::objtoArray(Users::GetforUpdate);
+      switch ($this->Get_Table($request->id))
+      {
+          case 1 :
+              $dataUser = ObjectController::objtoArray(Pilot::GetforUpdate($request->id));
+              break;
+
+          case 2 :
+              $dataUser = ObjectController::objtoArray(Administrator::GetforUpdate($request->id));
+              break;
+
+          case 0 :
+              $dataUser = ObjectController::objtoArray(Student::GetforUpdate($request->id));
+              break;
+
+
+      }
+
+      $UpUser_type = $this->Get_Table($request->id);
       switch ($this->Get_Table(Auth::id()))
             {
                 case 2 :
-                    return View::make('modify/modify_user')->with('user_type', 2)->('UpUser_type', $this->Get_Table($request->id))->with('dataUser', $dataUser);
+                    return View::make('modify/modify_user')->with('user_type', 2)->with('UpUser_type', $UpUser_type)->with('dataUser', $dataUser);
                     break;
 
                 case 1 :
-                    return View::make('modify/modify_user')->with('user_type', 1)->('UpUser_type', $this->Get_Table($request->id))->with('dataUser', $dataUser);
+                    return View::make('modify/modify_user')->with('user_type', 1)->with('UpUser_type', $UpUser_type)->with('dataUser', $dataUser);
                     break;
             }
 
@@ -303,7 +322,7 @@ class UsersController extends Controller
 
     $NewLocal = new Localisation;
     $Localisation_id = $NewLocal->GetId($request->Localisation_Name);
-    switch($request->$UpUser_type)
+    switch($request->UpUser_type)
     {
         case 0 :
             $this->student->Update($request, $Localisation_id);
@@ -322,11 +341,10 @@ class UsersController extends Controller
 
   public function Update(Request $request)
   {
-        $this->user = Users::find($request->id);
+        $this->user = Users::find($request->Users_id);
         $this->user->First_Name = $request->First_Name;
         $this->user->Last_Name = $request->Last_Name;
         $this->user->email = $request->email;
-        $this->user->password = $request->password;
         $this->user->save();
   }
 

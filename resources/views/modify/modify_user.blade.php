@@ -16,39 +16,40 @@
             <button type="submit" class="btn">Retour à la page Utilisateur</button>
             {!! Form::close() !!}
     <div>
-        {!! Form::open(['url' => '/Users_Create', 'method' => 'post']) !!}
+        {!! Form::open(['url' => '/Users_Update', 'method' => 'post']) !!}
 
         <fieldset>
 
             <legend>Modifier un élève</legend>
 
-            
+            <input type='hidden' name="Users_id" value="{{$dataUser['Users_id']}}">
+            <input type='hidden' name="UpUser_type" value="{{$UpUser_type}}">
 
             <label id="First_Label" for="First_Name">Prénom de l'élève : </label>
-            <input type="text" name="First_Name" id="First_Name" value="{{$First_Name}}"/>
+            <input type="text" name="First_Name" id="First_Name" value="{{$dataUser['First_Name']}}"/>
      
             <label id="Last_Label" for="Last_Name">Nom de l'élève : </label>
-            <input type="text" name="Last_Name" id="Last_Name" value="{{$Last_Name}}"/>
+            <input type="text" name="Last_Name" id="Last_Name" value="{{$dataUser['Last_name']}}"/>
 
             <label id="Localisation_Label" for="Localisation">Localité : </label>
-            <input type="text" name="Localisation_Name" id="Localisation_Name" value="{{$Localisation}}"/>
+            <input type="text" name="Localisation_Name" id="Localisation_Name" value="{{$dataUser['Localisation_Name']}}"/>
 
             <label id="email_Label" for="Email">Email :  </label>
-            <input type="text" name="email" id="Email" value="{{$Email}}"/>
+            <input type="text" name="email" id="Email" value="{{$dataUser['email']}}"/>
 
-            <label id="password_Label" for="Password">Mot de passe :  </label>
-            <input type="text" name="password" id="Password" value="{{$Password}}"/>
 
-            @if($user_type != 0 && $user_type == 1 || $user_type == 2)
+            @if($UpUser_type == 0 || $UpUser_type == 1)
                 <label id="Promotion_Label" for="Promotion">Promotion :  </label>
-                <input type="text" name="Promotion" id="Promotion" />
+                <input type="text" name="Promotion" id="Promotion" value="{{$dataUser['Promotion']}}"/>
 
+                @if($UpUser_type == 0 && $UpUser_type != 1)
                 <label id="Representative_Label" for="Representative">Délégué</label>
-                <input type="checkbox" name="Representative" id="Representative" /> 
+                <input type="checkbox" name="Representative" id="Representative" value="{{$dataUser['Representative']}}" /> 
             
                 <label id="Representative_Rights_Label" for="Representative_Rights">Droits :  </label>
-                <input type="text" name="Representative_Rights" id="Representative_Rights" />
+                <input type="text" name="Representative_Rights" id="Representative_Rights" value="{{$dataUser['Representative_Rights']}}"/>
                 <input type="hidden" name="UpUser_type" id="UpUser_type" />
+                @endif
             @endif
 
         </fieldset>

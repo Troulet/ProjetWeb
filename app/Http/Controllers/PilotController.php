@@ -62,7 +62,7 @@ class PilotController extends Controller
   public function Update(Request $request, $Localisation_id)
   {
         $this->user = Pilot::find($request->Users_id);
-        $this->user->$Localisation_id = $Localisation_id[0];
+        $this->user->Localisation_id = $Localisation_id[0];
         $this->user->Promotion = $request->Promotion;
         $this->user->save();
   }

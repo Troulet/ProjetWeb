@@ -57,4 +57,13 @@ class Pilot extends Model
             ->where('pilot.Localisation_id', '=' , $localid)
             ->get();
     }
+
+    public static function GetforUpdate($id){
+        return $data = DB::table('pilot')
+            ->select('pilot.Users_id', 'users.email', 'users.password', 'users.First_Name', 'users.Last_name', 'pilot.Promotion', 'localisation.Localisation as Localisation_Name')
+            ->join('users', 'users.id', '=', 'pilot.Users_id')
+            ->join('localisation', 'localisation.id', '=', 'pilot.Localisation_id')
+            ->where('pilot.Users_id', '=' , $id)
+            ->first();
+    }
 }
