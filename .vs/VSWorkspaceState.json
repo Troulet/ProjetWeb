@@ -1,14 +1,14 @@
 {
   "ExpandedNodes": [
     "",
-    "\\app",
-    "\\app\\Http",
-    "\\app\\Http\\Controllers",
     "\\resources",
     "\\resources\\views",
+    "\\resources\\views\\contact",
     "\\resources\\views\\internship",
-    "\\routes"
+    "\\resources\\views\\modify",
+    "\\resources\\views\\users",
+    "\\resources\\views\\welcome"
   ],
-  "SelectedNode": "\\app\\Http\\Controllers\\EnterpriseController.php",
+  "SelectedNode": "\\resources\\views\\internship\\internship_pilot.blade.php",
   "PreviewInSolutionExplorer": false
 }
