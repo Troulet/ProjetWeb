@@ -95,7 +95,7 @@ class EnterpriseController extends Controller
     public function ValidationUpdate(Request $request)
     {       
         $validator = Validator::make($request->all(), [
-            'Enterprise_id' => 'numeric',
+            'Enterprise_id' => 'required|numeric|exists:enterprise,id',
             'Enterprise_Name' => 'required|Alpha_num',
             'Activity_Sector' => 'required|Alpha',
             'Cesi_Student_Taken' => 'required|numeric',
