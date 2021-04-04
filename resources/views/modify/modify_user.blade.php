@@ -3,15 +3,7 @@
 <link rel= "stylesheet" href="../resources/views/header_footer.css"/>
 <body>
     @include('header')
-    <div id="1">
-       <div id="header">
-        <div class="titre">
-            <img class="logo2" src="../resources/img/logo_cesi2.0.png" alt="logo2">
-            <h1>LES P'TITES ANNONCES</h1>
-            <h2>Cherche et trouve le stage qui te correspond !</h2>
-        </div>
-        </div>
-    </div>
+    
             {!! Form::open(['url' => '/Users', 'method' => 'get']) !!}
             <button type="submit" class="btn">Retour à la page Utilisateur</button>
             {!! Form::close() !!}
