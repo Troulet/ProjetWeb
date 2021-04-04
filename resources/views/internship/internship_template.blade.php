@@ -32,9 +32,6 @@
                     @endforeach
                     @endif
 
-                    @php
-                        $i=1
-                    @endphp
                     @if($dataEnterprise !== null)
                     @foreach($dataEnterprise as $Enterprise)
                         <div id="banner-{{$i}}" class="col-sm">
