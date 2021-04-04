@@ -65,7 +65,7 @@ class StudentController extends Controller
 
   public function Update(Request $request, $Localisation_id)
   {
-        $this->user = Users::find($request->Users_id);
+        $this->user = Student::find($request->Users_id);
         $this->user->Localisation_id = $Localisation_id[0];
         $this->user->Promotion = $request->Promotion;
         $this->user->Representative = $request->Representative;
