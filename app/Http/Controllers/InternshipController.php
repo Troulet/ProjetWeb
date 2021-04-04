@@ -36,11 +36,11 @@ class InternshipController extends Controller
             'Description' => 'required|alpha_num',
             'Skills_reserached' => 'required|alpha_num',
             'Promotion_researched' => 'required|alpha_num',
-            'Internship_Duration' => 'required|alpha',
-            'Salary' => 'required|alpha',
-            'Offer_Date' => 'required|date',
-            'Number_Of_Places' => 'required|alpha',
+            'Internship_Duration' => 'required|numeric',
+            'Salary' => 'required|numeric',
+            'Number_Of_Places' => 'required|numeric',
             'Contact' => 'required|alpha_num',
+            'Enterprise_id' => 'required|exists:enterprise,id'
         ]);
 
         //if the inputs are not validated, we came back on the previous page.
@@ -86,15 +86,15 @@ class InternshipController extends Controller
     public function ValidationUpdate(Request $request)
     {
         $validator = Validator::make($request->all(), [
-            'Internship_id' => 'numeric',
+            'Internship_id' => 'required|numeric',
             'Description' => 'required|alpha_num',
             'Skills_reserached' => 'required|alpha_num',
             'Promotion_researched' => 'required|alpha_num',
-            'Internship_Duration' => 'required|alpha',
-            'Salary' => 'required|alpha',
-            'Offer_Date' => 'required|date',
-            'Number_Of_Places' => 'required|alpha',
+            'Internship_Duration' => 'required|numeric',
+            'Salary' => 'required|numeric',
+            'Number_Of_Places' => 'required|numeric',
             'Contact' => 'required|alpha_num',
+            'Enterprise_id' => 'required|exists:enterprise,id'
         ]);
 
         //if the inputs are not validated, we came back on the previous page.
