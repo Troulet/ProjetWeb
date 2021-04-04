@@ -26,22 +26,22 @@ class EnterpriseController extends Controller
         $this->enterprise = new Enterprise;
     }
 
-    public function Hide($id)
+    public function Hide(Request $request)
     {
         $deleted = new InternshipController;
-        $dataOffer = $this->GetInternship($id);
+        $dataOffer = $this->GetInternship($request->id);
         foreach($dataOffer as $Offer)
         {
             $deleted->Hide($Offer['id']);
         }
 
-        $this->enterprise = Enterprise::find($id);
+        $this->enterprise = Enterprise::find($request->id);
         $this->enterprise->delete();
     }
 
     public function GetInternship($entid)
     {
-        return ObjectController::objtoArray(Internship::GetInternship);
+        return ObjectController::objtoArray(Internship::GetInternship($entid));
     }
 
     /*public function GetLocalisation()

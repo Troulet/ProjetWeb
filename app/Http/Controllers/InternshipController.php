@@ -182,7 +182,12 @@ class InternshipController extends Controller
                     return View::make('internship/internship_profile_offer_template')->with('user_type', 1)->with('dataOffer', $dataOffer);
                     break;
 
-     }
+        }
+    }
+
+    public function GetCreatePage()
+    {
+
     }
 }
 
