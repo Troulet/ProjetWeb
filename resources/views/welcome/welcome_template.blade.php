@@ -12,7 +12,7 @@
                     @if($dataOffer !== null)
 
                         @foreach($dataOffer as $Offer)
-                            @if($Offer['deleted_at'] != null && $user_type != 0)
+                            @if($Offer['deleted_at'] == null || ($Offer['deleted_at'] != null && $user_type != 0))
                             <div id="banner-{{$i}}" class="col-sm">
                             <img class="d-block w-100 desk-img" src="https://mdbootstrap.com/img/new/standard/nature/181.jpg" alt="{{$i}} slide">
                             <img class="w-100  mobile-img" src="https://mdbootstrap.com/img/new/standard/nature/181.jpg" alt="{{$i}} slide">
@@ -32,7 +32,6 @@
                             @php
                                 $i++
                             @endphp
-
                             @endif
                         @endforeach
 
@@ -43,7 +42,7 @@
                     @endphp
                     @if($dataEnterprise !== null)
                     @foreach($dataEnterprise as $Enterprise)
-                    @if($Offer['deleted_at'] != null && $user_type != 0)
+                    @if($Enterprise['deleted_at'] == null || ($Enterprise['deleted_at'] != null && $user_type != 0))
                         <div id="banner-{{$i}}" class="col-sm">
                         <img class="d-block w-100 desk-img" src="https://mdbootstrap.com/img/new/standard/nature/181.jpg" alt="{{$i}} slide">
                         <img class="w-100  mobile-img" src="https://mdbootstrap.com/img/new/standard/nature/181.jpg" alt="{{$i}} slide">
