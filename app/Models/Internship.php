@@ -46,7 +46,8 @@ class Internship extends Model
 
     public static function GetInternship($entid){
         return $data = DB::table('internship')
-            ->select('internship.id', 'internship.Description', 'internship.Skills_Researched', 'internship.Promotion_Researched', 'internship.Number_Of_Places', 'enterprise.Enterprise_Name', 'localisation.Localisation as Localisation_Name', 'internship.Enterprise_id')
+            ->select('internship.id', 'internship.Description', 'internship.Skills_Researched', 'internship.Promotion_Researched', 'internship.Number_Of_Places', 'enterprise.Enterprise_Name', 'localisation.Localisation as Localisation_Name', 'internship.Enterprise_id', 'internship.deleted_at')
+            ->join('localisation', 'localisation.id', '=', 'enterprise.Localisation_id'))
             ->join('enterprise', 'enterprise.id', '=', 'internship.Enterprise_id')
             ->join('localisation', 'localisation.id', '=', 'internship.Localisation_id')
             ->where('internship.Enterprise_id', '=', $entid)
@@ -55,7 +56,8 @@ class Internship extends Model
 
     public static function tablereturn(){
         return $data = DB::table('internship')
-            ->select('internship.id', 'internship.Description', 'internship.Skills_Researched', 'internship.Promotion_Researched', 'internship.Number_Of_Places', 'enterprise.Enterprise_Name', 'localisation.Localisation as Localisation_Name', 'internship.Enterprise_id')
+            ->select('internship.id', 'internship.Description', 'internship.Skills_Researched', 'internship.Promotion_Researched', 'internship.Number_Of_Places', 'enterprise.Enterprise_Name', 'localisation.Localisation as Localisation_Name', 'internship.Enterprise_id', 'internship.deleted_at')
+            ->join('localisation', 'localisation.id', '=', 'enterprise.Localisation_id'))
             ->join('enterprise', 'enterprise.id', '=', 'internship.Enterprise_id')
             ->join('localisation', 'localisation.id', '=', 'internship.Localisation_id')
             ->get();

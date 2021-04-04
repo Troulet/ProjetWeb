@@ -99,10 +99,10 @@ use App\Http\Controllers\AdministratorController;
     Route::post('/Enterprise_Update', [ EnterpriseController::class, 'Update']);
 
     //Chemin pour supprimer une Entreprise
-    Route::post('/Enterprise_delete', [EnterpriseController::class, 'Delete']);
+    Route::post('/Enterprise_Delete', [EnterpriseController::class, 'Hide']);
 
     //Chemin pour restorer une Entreprise
-    Route::post('/Enterprise_restore', [EnterpriseController::class, 'Restore']);
+    Route::post('/Enterprise_Restore', [EnterpriseController::class, 'Restore']);
 
     //Chemin pour poster une nouvelle entreprise
     Route::post('/Enterprise_Profil', [ EnterpriseController::class, 'GetProfil']);
@@ -110,6 +110,8 @@ use App\Http\Controllers\AdministratorController;
     //Chemin pour afficher le résultat d'une recherche d'Entreprise/Offre
     Route::post('Offer_Search', [EnterpriseController::class, 'Search']);
 
+    //Chemin pour poster une nouvelle Offre
+    Route::get('/Offer_Create' , [InternshipController::class, 'GetCreatePage']);
     //Chemin pour poster une nouvelle Offre
     Route::post('/Offer_Create' , [InternshipController::class, 'Create']);
 
