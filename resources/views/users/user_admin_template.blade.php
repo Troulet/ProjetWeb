@@ -3,7 +3,7 @@
 @section('data_pilot')
     @if($dataPilot !== null)
     @foreach ($dataPilot as $user)
-
+    <div class="pilot">
     <div class="card-body">
         <p>
             Information Pilote :
@@ -23,7 +23,7 @@
                     <button type="submit" class="btn">Modifier</button>
             {!! Form::close() !!}
     </div>
-
+    </div>
     @endforeach
     @endif
 @stop
@@ -32,7 +32,11 @@
 @section('data_student')
     @if($dataStudent !== null)
     @foreach ($dataStudent as $user)
-        
+        @if($user['Representative'] == true)
+        <div class="representative">
+        @else
+        <div class="student">
+        @endif
         <div class="card-body">
             <p>
                 Elève :
@@ -58,14 +62,15 @@
                     <button type="submit" class="btn">Modifier</button>
             {!! Form::close() !!}
         </div>
+        </div>
     @endforeach
     @endif
 @stop
 
 @section('data_admin')
-
+    @if($dataAdmin !== null)
     @foreach ($dataAdmin as $user)
-
+    <div class="admin">
     <div class="card-body">
         <p>
             Information Admin :
@@ -84,6 +89,8 @@
                 <button type="submit" class="btn">Modifier</button>
         {!! Form::close() !!}
     </div>
+    </div>
 
     @endforeach
+    @endif
 @stop

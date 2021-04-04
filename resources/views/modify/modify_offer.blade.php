@@ -15,10 +15,9 @@
         <fieldset>
             <legend>Modifier une offre</legend>
 
-            <input type='hidden' name="Offer_id" value="{{$dataOffer['id']}}">
+            <input type='hidden' name="Internship_id" value="{{$dataOffer['id']}}">
      
-            <label for="Enterprise_Name">Nom de l'entreprise : </label>
-            <input type="text" name="Enterprise_Name" id="Enterprise_Name" value="{{$dataOffer['Enterprise_Name']}}"/>
+            <label>Nom de l'entreprise : {{$dataOffer['Enterprise_Name']}}</label>
 
             <label for="Description">Description : </label>
             <input type="text" name="Description" id="Description" value="{{$dataOffer['Description']}}"/>
@@ -27,19 +26,16 @@
             <input type="text" name="Promotion_researched" id="Promotion_researched" value="{{$dataOffer['Promotion_researched']}}"/>
 
             <label for="Localisation">Localité : </label>
-            <input type="text" name="Localisation" id="Localisation" value="{{$dataOffer['Localisation']}}"/>
+            <input type="text" name="Localisation_Name" id="Localisation" value="{{$dataOffer['Localisation_Name']}}"/>
 
             <label for="Skills_researched">Compétences recherchées : </label>
             <input type="text" name="Skills_researched" id="Skills_researched" value="{{$dataOffer['Skills_researched']}}"/>
       
             <label for="Duration">Durée : </label>
-            <input type="text" name="Duration" id="Duration" value="{{$dataOffer['Duration']}}"/>
+            <input type="text" name="Internship_Duration" id="Duration" value="{{$dataOffer['Internship_Duration']}}"/>
 
             <label for="Salary">Gratification : </label>
             <input type="text" name="Salary" id="Salary" value="{{$dataOffer['Salary']}}"/>
-
-            <label for="Offer_Date">Date de l'offre : </label>
-            <input type="text" name="Offer_Date" id="Offer_Date" value="{{$dataOffer['Offer_Date']}}"/>
 
             <label for="Contact">Contact : </label>
             <input type="text" name="Contact" id="Contact" value="{{$dataOffer['Contact']}}"/>

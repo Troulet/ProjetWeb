@@ -353,6 +353,25 @@ class UsersController extends Controller
       return View::make('create/create_user')->with('user_type', $this->Get_Table(Auth::id()));
   }
 
+  public function Search(Request $request)
+    {
+        $localid = $this->Get_Local(Auth::id());
+      $dataStudent = $this->student->tablereturn($localid);
+        $user = new UsersController;
+        switch ($user->Get_Table(Auth::id()))
+        {
+                case 2 :
+                    return View::make('users/user_admin_template')->with('user_type', 2)->with('dataStudent', ObjectController::objtoArray(Student::tablereturnsearch($request->research, $localid)))->with('dataPilot', ObjectController::objtoArray(Pilot::tablereturnsearch($request->research, $localid)))->with('dataAdmin', ObjectController::objtoArray(Administrator::tablereturnsearch($request->research, $localid)));
+                    break;
+
+                case 1 :
+                    return View::make('user/student_pilot_template')->with('user_type', 1)->with('dataStudent', ObjectController::objtoArray(Student::tablereturnsearch($request->research, $localid)))->with('dataPilot', ObjectController::objtoArray(Pilot::tablereturnsearch($request->research, $localid)))->with('dataAdmin', ObjectController::objtoArray(Administrator::tablereturnsearch($request->research, $localid)));
+                    break;
+
+        }
+       
+    }
+
 }
 
 ?>

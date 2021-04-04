@@ -125,7 +125,7 @@ use App\Http\Controllers\AdministratorController;
     Route::post('/Offer_Update', [InternshipController::class, 'Update']);
 
     //Chemin pour Supprimer une offre
-    Route::post('/Offer_Delete', [InternshipController::class, 'ForceDelete']);
+    Route::post('/Offer_Delete', [InternshipController::class, 'Delete']);
 
     //Chemin pour poster une nouvelle entreprise
     Route::post('/Offer_Profil', [ InternshipController::class, 'GetProfil']);
