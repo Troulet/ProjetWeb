@@ -38,9 +38,6 @@
 
                     @endif
 
-                    @php
-                        $i=1
-                    @endphp
                     @if($dataEnterprise !== null)
                     @foreach($dataEnterprise as $Enterprise)
                     @if($Enterprise['deleted_at'] == null || ($Enterprise['deleted_at'] != null && $user_type != 0))
