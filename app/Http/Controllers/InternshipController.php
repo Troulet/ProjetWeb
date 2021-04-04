@@ -40,6 +40,7 @@ class InternshipController extends Controller
             'Salary' => 'required|numeric',
             'Number_Of_Places' => 'required|numeric',
             'Contact' => 'required|alpha_num',
+            'Enterprise_id' => 'required|exists:enterprise,id'
         ]);
 
         //if the inputs are not validated, we came back on the previous page.
@@ -93,6 +94,7 @@ class InternshipController extends Controller
             'Salary' => 'required|numeric',
             'Number_Of_Places' => 'required|numeric',
             'Contact' => 'required|alpha_num',
+            'Enterprise_id' => 'required|exists:enterprise,id'
         ]);
 
         //if the inputs are not validated, we came back on the previous page.

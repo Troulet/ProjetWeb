@@ -29,19 +29,19 @@ class EnterpriseController extends Controller
     public function Hide($id)
     {
         $deleted = new InternshipController;
-        $offers = $this->GetInternship;
-        for($i = 0; isset($offers[$i]); $i++)
+        $dataOffer = $this->GetInternship($id);
+        foreach($dataOffer as $Offer)
         {
-            $deleted->Hide($offers[$i]);
+            $deleted->Hide($Offer['id']);
         }
 
         $this->enterprise = Enterprise::find($id);
         $this->enterprise->delete();
     }
 
-    public function GetInternship()
+    public function GetInternship($entid)
     {
-        //Récupérer dans un tableau les ID des offres liées.
+        return ObjectController::objtoArray(Internship::GetInternship);
     }
 
     /*public function GetLocalisation()
@@ -222,7 +222,7 @@ class EnterpriseController extends Controller
         {
         $user = new UsersController;
         $dataEnterprise = ObjectController::objtoArray(Enterprise::GetProfil($request->id));
-        $dataOffer = ObjectController::objtoArray(Internship::GetInternship($request->id));
+        $dataOffer = $this->GetInternship($request->id);
         $dataCommentPilot = ObjectController::objtoArray(Pilot_Commentary::tablereturn($request->id));
         $dataCommentStudent = ObjectController::objtoArray(Student_Commentary::tablereturn($request->id));
             switch($user->Get_Table(Auth::id()))

@@ -19,6 +19,7 @@ class CreateInternshipTable extends Migration {
 			$table->string('Contact', 50);
 			$table->integer('Enterprise_id')->unsigned();
 			$table->integer('Localisation_id')->unsigned();
+            $table->softDeletes();
 			$table->timestamps();
 		});
 	}
