@@ -14,23 +14,35 @@
             <input type="text" name="Commentary" id="Commentary" />
      
             <label for="Internship_Difficulty">Difficulté du stage : </label>
-            <input type="text" name="Internship_Difficulty" id="Internship_Difficulty" />
+            <div id="increment_difficulty" class="increment_difficulty">
+                <input id="number_difficulty" type="number" min="0" max="10" value="0">
+            </div>
 
             <label for="Level_Of_Knowledge">Niveau d'apprentissage : </label>
-            <input type="text" name="Level_Of_Knowledge" id="Level_Of_Knowledge" />
+            <div id="increment_level_of_knowledge" class="increment_level_of_knowledge">
+                <input id="number_level" type="number" min="0" max="10" value="0">
+            </div>
 
             <label for="Work_Environment">Environnement de travail : </label>
-            <input type="text" name="Work_Environment" id="Work_Environment" />
+            <div id="increment_work_environment" class="increment_work_environment">
+                <input id="number_work" type="number" min="0" max="10" value="0">
+            </div>
 
             @if($user_type == 0)
             <label for="Tutor_Lead">Accompagnement tuteur :  </label>
-            <input type="text" name="Tutor_Lead" id="Tutor_Lead" />
-
+            <div id="increment_tutor_lead" class="increment">
+                <input id="number_tutor" type="number" min="0" max="10" value="0">
+            </div>
+            
             <label for="Infrastructure">Infrastructure :  </label>
-            <input type="text" name="Infrastructure" id="Infrastructure" />
+            <div id="increment_infra" class="increment">
+                <input id="number_infra" type="number" min="0" max="10" value="0">
+            </div>
 
             <label for="Accessibility">Accessibilité :  </label>
-            <input type="text" name="Accessibility" id="Accessibility" />
+            <div id="increment_accessibility" class="increment_accessibility">
+                <input id="number_accessibility" type="number" min="0" max="10" value="0">
+            </div>
             @endif
 
 
@@ -40,6 +52,6 @@
         
         {!! Form::close() !!}
     </div>
-    </script>
+    
           @include('footer')
 </body>
