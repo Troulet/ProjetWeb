@@ -47,6 +47,16 @@ class InformController extends Controller
         $this->step5->save();
     }
 
+    public static function GetInform5($id)
+    {
+        return ObjectController::objtoArray(Inform_Step5::GetAll($id));
+    }
+
+    public static function GetInform6($id)
+    {
+        return ObjectController::objtoArray(Inform_Step6::GetAll($id));
+    }
+
     public function Create6(Request $request){
         $pilot = ObjectController::objtoArray(Student::GetPilot($request->id));
         $this->step6->Pilot_id = $pilot[0];                            

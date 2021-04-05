@@ -186,8 +186,10 @@ class UsersController extends Controller
                     break;
 
                 case 0 :
+                    $dataInform5 = InformController::GetInform5(Auth::id());
+                    $dataInform6 = InformController::GetInform6(Auth::id());
                     $dataPilot = $this->pilot->tablereturn($localid);
-                    return View::make('contact/contact_student_template')->with('user_type', 0)->with('dataPilot', $dataPilot);
+                    return View::make('contact/contact_student_template')->with('user_type', 0)->with('dataPilot', $dataPilot)->with('dataInform5', $dataInform5)->with('dataInform6', $dataInform6);
                     break;
             }
 
