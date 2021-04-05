@@ -1,6 +1,6 @@
 @extends('welcome.welcome')
 
-@section('welcome_pilot')
+@section('welcome')
 <div class="container">
             <div class="carousel slide" data-ride="carousel" id="multi_item" data-intervale="2000">
                 <div class="carousel-inner">

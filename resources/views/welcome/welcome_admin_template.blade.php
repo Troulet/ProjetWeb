@@ -1,6 +1,6 @@
 @extends('welcome.welcome')
 
-@section('welcom_admin')
+@section('welcome')
         <div id="information_step4" class="informer">
             <div class="list-group">
                 <h3>Les News du Jour :</h3>
