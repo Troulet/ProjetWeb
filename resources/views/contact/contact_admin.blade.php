@@ -27,18 +27,9 @@
             </div>
         </div><br>
 
-        <div class="notif">
-            <div class="list-group">
-                <h3>Messagerie</h3>
 
-                <a href="#" class="list-group-item list-group-item-action"><h5>Nom d'élève/délégué</h5>Message</a>
-                <a href="#" class="list-group-item list-group-item-action"><h5>Nom du pilote</h5>Message</a>
-                <a href="#" class="list-group-item list-group-item-action"><h5>Nom d'élève</h5>Message</a>
-                <a href="#" class="list-group-item list-group-item-action"><h5>Nom du pilote</h5>Message</a>
-                <a href="#" class="list-group-item list-group-item-action"><h5>Nom d'élève</h5>Message</a>
-                <a href="#" class="list-group-item list-group-item-action"><h5>Nom du pilote</h5>Message</a>
-            </div>
-        </div> 
+        @yield('Notif')
+        
         @include('footer')
     </body>
    

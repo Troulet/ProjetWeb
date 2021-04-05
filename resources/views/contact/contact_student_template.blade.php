@@ -22,3 +22,16 @@
     @endif
 @stop
 
+@section('Notif')
+<div class="notif">
+            <div class="list-group">
+                <h3>Messagerie</h3>
+                @if($dataInform5 != null)
+                @foreach($dataInform5 as $Inform)
+                <a href="#" class="list-group-item list-group-item-action"><h5>{{$Inform['Administrator_First_Name']</h5>Message</a>
+                @endforeach
+                @endif
+            </div>
+        </div>
+
+@stop
