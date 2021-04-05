@@ -88,4 +88,13 @@ class Pilot extends Model
             ->where('Localisation_id', '=', $localid)
             ->get();
     }
+
+    public static function GetProfile($id){
+        return $data = DB::table('pilot')
+            ->select('users.id', 'users.email', 'users.First_Name', 'users.Last_name', 'pilot.Promotion')
+            ->join('users', 'users.id', '=', 'pilot.Users_id')
+            ->where('pilot.Users_id', '=' , $id)
+            ->first();
+    }
+
 }

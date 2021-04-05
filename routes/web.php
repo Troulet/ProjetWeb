@@ -72,7 +72,7 @@ use App\Http\Controllers\InformController;
     Route::post('/Users_right', [UsersController::class, 'UpdateRight']);
 
     //Chemin pour poster une nouvelle entreprise
-    Route::post('/Users_Profil', [ UsersController::class, 'GetProfil']);
+    Route::get('/Users_Profil', [ UsersController::class, 'GetProfil']);
 
     //Chemin pour afficher la page de création d'une entreprise
     Route::get('/Enterprise_Create', [EnterpriseController::class, 'GetCreatePage']);

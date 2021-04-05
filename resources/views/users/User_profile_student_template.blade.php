@@ -1,38 +1,37 @@
 @extends('users.User_profile')
 
-@section('student_profile')
-    @foreach($dataUser as $User)
-    <div class="card-body">
+@section('users_profile')
+
         <h5>Profil : </h5>
             <p>
                 Elève
-                Email : {{$User['email']}}
-                Mot de passe : {{$User['password']}}
-                Prénom : {{$User['First_Name']}}
-                Nom : {{$User['Last_name']}}
-                Promotion : {{$User['Promotion']}}
-                Localité : {{$User['Localisation_Name']}}
+                Email : {{$dataUser['email']}}
+                Prénom : {{$dataUser['First_Name']}}
+                Nom : {{$dataUser['Last_name']}}
+                Promotion : {{$dataUser['Promotion']}}
 
-                @if($User['Representative']==true)
+                @if($dataUser['Representative']==true)
                 Délégué : oui
-                Droits du délégué : {{$User['Representative_Rights']}}
+                Droits du délégué : {{$dataUser['Representative_Rights']}}
                 @else
                 Délégué : non
                 @endif
+
+                Nombre de candidatures : {{$PostulateCount}}
             </p>
+            @if($user_type == 2)
             {!! Form::open(['url' => '/inform_step3', 'method' => 'get']) !!}
-                        <input name='id' type="hidden" value="{{$User['id']}}">
+                        <input name='id' type="hidden" value="{{$dataUser['id']}}">
                         <input name='Internship_Contract' type="file" required>
                         <button type="submit" class="btn">Transmettre une Convention non signée par l'entreprise</button>
             {!! Form::close() !!}
             {!! Form::open(['url' => '/inform_step3', 'method' => 'get']) !!}
-                  <input name='id' type="hidden" value="{{$User['id']}}">
+                  <input name='id' type="hidden" value="{{$dataUser['id']}}">
                   <input name='Internship_Contract' type="file" required>
                   <button type="submit" class="btn">Transmettre une Convention signée par l'entreprise</button>
             {!! Form::close() !!}
+            @endif
 
-    </div>
-    @endforeach
 @stop
 
 

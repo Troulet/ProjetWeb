@@ -15,7 +15,7 @@
         @include('header')
     </br>
     <div class="users_profil">
-        @yield('users_profil')
+        @yield('users_profile')
     </div>
         @include('footer')
     </body>

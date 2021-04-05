@@ -368,6 +368,26 @@ class UsersController extends Controller
        
     }
 
+    public function GetProfil(Request $request)
+    {
+        
+        $user = new UsersController;
+        switch ($user->Get_Table($request->id))
+        {
+                case 2 :
+                    return View::make('users/user_profile_admin_template')->with('user_type', $user->Get_Table(Auth::id()))->with('dataUser', ObjectController::objtoArray(Administrator::GetProfile($request->id)));
+                    break;
+
+                case 1 :
+                    return View::make('users/user_profile_pilot_template')->with('user_type', $user->Get_Table(Auth::id()))->with('dataUser', ObjectController::objtoArray(Pilot::GetProfile($request->id)));
+                    break;
+
+                case 0 :
+                    return View::make('users/user_profile_student_template')->with('user_type', $user->Get_Table(Auth::id()))->with('PostulateCount', ObjectController::objtoArray(Student::CountPostulate($request->id)))->with('dataUser', ObjectController::objtoArray(Student::GetProfile($request->id)));
+                    break;
+        }
+    }
+
 }
 
 ?>

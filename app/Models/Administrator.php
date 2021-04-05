@@ -74,4 +74,13 @@ class Administrator extends Model
             ->where('Localisation_id', '=', $localid)
             ->get();
     }
+
+    public static function GetProfile($id)
+    {
+        return $data = DB::table('administrator')
+            ->select('users.id', 'users.email', 'users.First_Name', 'users.Last_name')
+            ->join('users', 'users.id', '=', 'administrator.Users_id')
+            ->where('administrator.Users_id', '=' , $id)
+            ->first();
+    }
 }

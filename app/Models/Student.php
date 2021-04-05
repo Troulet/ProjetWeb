@@ -92,7 +92,27 @@ class Student extends Model
 
     public static function GetPilot($id)
     {
-        return $pilotid = DB::table('student')->join('pilot', 'pilot.Promotion', '=', 'student.Promotion')->where('student.Users_id', '=', $id)->pluck('pilot.Users_id');
+        return $pilotid = DB::table('student')
+            ->join('pilot', 'pilot.Promotion', '=', 'student.Promotion')
+            ->where('student.Users_id', '=', $id)
+            ->pluck('pilot.Users_id');
     }
+
+    public static function GetProfile($id)
+    {
+        return $pilotid = DB::table('student')
+            ->select('users.id', 'users.email', 'users.First_Name', 'users.Last_name', 'student.Promotion', 'student.Representative', 'student.Representative_Rights')
+            ->join('users', 'users.id', '=', 'student.Users_id')
+            ->where('student.Users_id', '=', $id)
+            ->first();
+    }
+
+    public static function CountPostulate($id){
+        return $count = DB::table('postulate')
+            ->where('Student_id', '=', $id)
+            ->get()
+            ->count();
+    }
+
         
 }

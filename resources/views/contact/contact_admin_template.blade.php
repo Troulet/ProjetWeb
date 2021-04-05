@@ -1,7 +1,7 @@
 @extends('contact.contact_admin')
 
 @section('dataContact')
-    <!--@if($dataStudent !== null)
+    @if($dataStudent !== null)
     <div class="card">
         @foreach ($dataStudent as $user)
         <div class="card-body">
@@ -18,14 +18,14 @@
                     Délégué : non
                 @endif
             </p>
-                {!! Form::open(['url' => '/Users_profil', 'method' => 'get']) !!}
+                {!! Form::open(['url' => '/Users_Profil', 'method' => 'get']) !!}
                         <input name='id' type="hidden" value="{{$user['Users_id']}}">
                         <button type="submit" class="btn">Contacter</button>
                 {!! Form::close() !!}
         </div>
         @endforeach
     </div><br>
-    @endif-->
+    @endif
     @if($dataPilot !== null)
     <div class="card">
         @foreach ($dataPilot as $user)
@@ -37,7 +37,7 @@
                 Nom : {{$user['Last_name']}}
                 Promotion : {{$user['Promotion']}}
             </p>
-            {!! Form::open(['url' => '/Users_profil', 'method' => 'get']) !!}
+            {!! Form::open(['url' => '/Users_Profil', 'method' => 'get']) !!}
                     <input name='id' type="hidden" value="{{$user['Users_id']}}">
                     <button type="submit" class="btn">Contacter</button>
             {!! Form::close() !!}
