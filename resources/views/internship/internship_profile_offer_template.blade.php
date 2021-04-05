@@ -22,9 +22,10 @@
                             <button type="submit" class="btn">Modifier</button>
                     {!! Form::close() !!}
 
+                @else
                     {!! Form::open(['url' => '/Postulate', 'method' => 'get']) !!}
                             <input name='id' type="hidden" value="{{$dataOffer['id']}}">
-                            <button type="submit" class="btn">Postuler</button>
+                            <button type="submit" class="btn">Postuler à l'Offre</button>
                     {!! Form::close() !!}
                 @endif
             @endif
@@ -41,6 +42,5 @@
         Nombre de places : {{$dataOffer['Number_Of_Places']}} </br>
         Contact : {{$dataOffer['Contact']}} </br>
         Localisation : {{$dataOffer['Localisation_Name']}} </br>
-    </p>
-    <a href="#" class="btn btn-primary">Aller voir</a>    
+    </p>  
 @stop

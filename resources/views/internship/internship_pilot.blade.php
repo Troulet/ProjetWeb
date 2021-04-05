@@ -16,8 +16,13 @@
     </br>
             {!! Form::open(['url' => '/Offer_Search', 'method' => 'post']) !!}
             <input class="form-control me-2" type="search" name="seacrh" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success" type="submit">Search</button>
+            <button class="btn" type="submit">Search</button>
             {!! Form::close() !!}
+            <div>
+            {!! Form::open(['url' => '/Enterprise_Create', 'method' => 'get']) !!}
+                <button type="submit" class="btn">CRÉER UNE ENTREPRISE</button>
+            {!! Form::close() !!}
+            </div>
            <!-- <div class="filtre">
             <h3>Filtrer les résultats</h3>
             <form class="d-flex">
@@ -85,16 +90,7 @@
                 </div>
               </section>-->
 
-           {!! Form::open(['url' => '/Enterprise_Create', 'method' => 'get']) !!}
-            <button type="submit" class="btn">CRÉER UNE ENTREPRISE</button>
-            {!! Form::close() !!}
-        </div>
-        <div>
-            
-           {!! Form::open(['url' => '/Offer_Create', 'method' => 'get']) !!}
-            <button type="submit" class="btn">CRÉER UNE OFFRE</button>
-            {!! Form::close() !!}
-        </div>
+           
 
             <!--Caroussel-->
     <!-- Carousel wrapper -->

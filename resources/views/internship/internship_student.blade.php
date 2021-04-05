@@ -20,7 +20,11 @@
             <input class="form-control me-2" type="search" name="research" placeholder="Search" aria-label="Search">
             <button class="btn btn-outline-success" type="submit">Search</button>
             {!! Form::close() !!}
-        
+            <div>
+            {!! Form::open(['url' => '/Enterprise_Create', 'method' => 'get']) !!}
+                <button type="submit" class="btn">CRÉER UNE ENTREPRISE</button>
+            {!! Form::close() !!}
+            </div>
         <!--<section class="categories">
             <h3>Catégories</h3>
             <div>

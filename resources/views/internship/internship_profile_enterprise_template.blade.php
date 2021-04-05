@@ -13,6 +13,13 @@
                     <button type="submit" class="btn">Restore</button>
             {!! Form::close() !!}
         @else
+            @if($user_type != 2)
+            {!! Form::open(['url' => '/Commentary_Create', 'method' => 'get']) !!}
+                    <input name='id' type="hidden" value="{{$dataEnterprise['id']}}">
+                    <button type="submit" id="btn" class="btn">Evaluer</button>
+            {!! Form::close() !!}
+            @endif
+
             {!! Form::open(['url' => '/Enterprise_Delete', 'method' => 'post']) !!}
                     <input name='id' type="hidden" value="{{$dataEnterprise['id']}}">
                     <button type="submit" class="btn">Supprimer</button>
@@ -41,8 +48,6 @@
         {!! Form::open(['url' => '/Offer_Profil', 'method' => 'post']) !!}
              <input name='id' type="hidden" value="{{$Offer['id']}}">
              <button type="submit" class="btn">Aller voir</button>
-
-             <button type="submit" id="btn_Evaluate" class="btn_Evaluate">Evaluer</button>
         {!! Form::close() !!}
     @endforeach
     @endif

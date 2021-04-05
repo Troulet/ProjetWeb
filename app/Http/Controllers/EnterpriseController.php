@@ -197,9 +197,20 @@ class EnterpriseController extends Controller
 
     }
 
-    public function GetComment()
+    public function GetCreateCommentPage(Request $request)
     {
-        //array : First_name - Last_name - Critere - Critere - Critere - Critere - Critere - Critere - Commentary
+        $user = new UsersController;
+        switch($user->Get_Table(Auth::id()))
+        {
+                case 0 :
+                    return View::make('create/commentary')->with('user_type', 0)->with('Users_id', Auth::id())->with('Enterprise_id', $request->id);
+                    break;
+
+                case 1 :
+                    return View::make('create/commentary')->with('user_type', 1)->with('Users_id', Auth::id())->with('Enterprise_id', $request->id);
+                    break;
+
+     }
     }
 
     public function GetCreatePage()
