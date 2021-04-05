@@ -208,20 +208,6 @@ class InternshipController extends Controller
         }
     }
 
-    public function Postulate(Request $request)
-    {
-        $postulate = new Postulate;
-        $postulate->Internship_id = $request->Internship_id;
-        $postulate->Student_id = $request->Student_id;
-        $postulate->Curiculum_Vitae = $request->Curiculum_Vitae;
-        $postulate->Motivation_Letter = $request->Motivation_Letter;
-        $postulate->Response_State = 0;
-        $postulate->Application_Date = Date ("y.m.d");
-        $postulate->Mail_Content = $request->Mail_Content;
-        $postulate->save();
-    }
-
-    
 }
 
 ?>

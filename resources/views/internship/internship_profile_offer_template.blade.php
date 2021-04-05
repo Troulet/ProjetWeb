@@ -23,7 +23,7 @@
                     {!! Form::close() !!}
 
                 @else
-                    {!! Form::open(['url' => '/Postulate', 'method' => 'get']) !!}
+                    {!! Form::open(['url' => '/Postulate_Create', 'method' => 'get']) !!}
                             <input name='id' type="hidden" value="{{$dataOffer['id']}}">
                             <button type="submit" class="btn">Postuler à l'Offre</button>
                     {!! Form::close() !!}

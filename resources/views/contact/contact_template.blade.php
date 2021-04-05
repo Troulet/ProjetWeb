@@ -1,6 +1,6 @@
-@extends('contact.contact_admin')
-@extends('contact.contact_pilot')
-@extends('contact.contact_student')
+@extends('contact.contact')
+@extends('contact.contact')
+@extends('contact.contact')
 
 @section('data_student')
     @if($dataStudent !== null)
