@@ -31,4 +31,14 @@
     </div>
 </div>
 
+<div id="wishlist_student" class="wishlist">
+    <div class="list-group">
+        <h3>Wish-List</h3>
+        <a href="#" class="list-group-item list-group-item-action">Choix 1</a>
+        <a href="#" class="list-group-item list-group-item-action">Choix 2</a>
+        <a href="#" class="list-group-item list-group-item-action">Choix 3</a>
+        <a href="#" class="list-group-item list-group-item-action">Choix 4</a>
+    </div>
+</div>
+
 @stop
