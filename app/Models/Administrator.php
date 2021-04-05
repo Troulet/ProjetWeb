@@ -68,4 +68,10 @@ class Administrator extends Model
             ->first();
     }
 
+    public static function TableReturnContact($localid){
+        return $data = DB::table('administrator')
+            ->select('Users_id', 'First_Name', 'Last_name')
+            ->where('Localisation_id', '=', $localid)
+            ->get();
+    }
 }

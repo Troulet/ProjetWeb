@@ -57,7 +57,7 @@
         <h5 class="card-title">Commentaire d'un étudiant</h5>
         <p class="card-text">
             Prénom : {{$Comment['First_Name']}} </br>
-            Nom : {{$Comment['Last_Name']}} </br>
+            Nom : {{$Comment['Last_name']}} </br>
             Difficulté du stage : {{$Comment['Internship_Difficulty']}} </br>
             Niveau d'apprentissage : {{$Comment['Level_Of_Knowledge']}} </br>
             Environnement de travail : {{$Comment['Work_Environment']}} </br>
@@ -73,7 +73,7 @@
         <h5 class="card-title">Commentaire d'un pilote de formation</h5>
         <p class="card-text">
             Prénom : {{$Comment['First_Name']}} </br>
-            Nom : {{$Comment['Last_Name']}} </br>
+            Nom : {{$Comment['Last_name']}} </br>
             Difficulté du stage : {{$Comment['Internship_Difficulty']}} </br>
             Niveau d'apprentissage : {{$Comment['Level_Of_Knowledge']}} </br>
             Environnement de travail : {{$Comment['Work_Environment']}} </br>

@@ -50,6 +50,10 @@ class Student extends Model
         return $students = DB::table('student')->get();
     }
 
+    public function GetPromo($id){
+        return $promo = DB::table('student')->where('Users_id', '=', $id)->pluck('Promotion');
+    }
+
     public function tablereturn($localid){
         return $data = DB::table('student')
             ->select('student.Users_id', 'users.email', 'users.First_Name', 'users.Last_name', 'student.Promotion', 'student.Representative')
@@ -76,5 +80,13 @@ class Student extends Model
             ->join('localisation', 'localisation.id', '=', 'student.Localisation_id')
             ->where('student.Users_id', '=' , $id)
             ->first();
+    }
+
+    public static function TableReturnContact($localid){
+        return $data = DB::table('student')
+            ->select('Users_id', 'First_Name', 'Last_name')
+            ->where('Localisation_id', '=', $localid)
+            ->where('Representative', '=', true)
+            ->get();
     }
 }
