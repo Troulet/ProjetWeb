@@ -40,8 +40,7 @@ class AuthController extends Controller
                 'password' => $request['password']
                 );
              if(Auth::attempt($user, $request['_token']))
-             {
-               
+             {             
                  $request->session()->regenerate();
                  /*We redirect the user on the correct page*/
                  $user = new UsersController;

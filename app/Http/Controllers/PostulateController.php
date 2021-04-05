@@ -28,9 +28,9 @@ class PostulateController extends Controller
     }
 
     public function Update(Request $request){
-        $postulateid =[$request->Internship_id, Auth::id()]
-        $this->postulate->Internship_id = $populateid;
-        $this->postulate->Response_State = $requests->Response_State;
+        Postulate::where('Internship_id', $request->Internship_id)
+            ->where('Student_id', Auth::id())
+            ->update(['Response_State' => $request->Response_State]);
     }
 
     public function GetCreatePage(Request $request)

@@ -10,7 +10,6 @@ class Postulate extends Model
 
 	protected $table = 'Postulate';
 	public $timestamps = true;
-    protected $primaryKey = ['Internship_id', 'Student_id'];
 
 	public function Internship()
 	{
