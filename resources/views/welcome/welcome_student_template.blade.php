@@ -1,7 +1,7 @@
 @extends('welcome.welcome')
 
 @section('welcome')
-  
+  <div class="container">
     <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
         <div class="carousel-inner">
             @foreach($dataEnterprise as $key=>$Enterprise)
@@ -30,7 +30,7 @@
             </a>
         </div>
     </div>
-
+</div>
     <div id="wishlist_student" class="wishlist">
         <div class="list-group">
             <h3>Wish-List</h3>
