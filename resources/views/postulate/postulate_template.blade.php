@@ -42,23 +42,34 @@
                             <input name='id' type="hidden" value="{{$Offer['id']}}">
                             <button type="submit" class="btn">Offre</button>
                     {!! Form::close() !!}</td><!--form avec Internship_id-->
-                  <td>bite</td>
-                  <td>bite</td>
+                  <td>
+                  <form action="{{ route('Offer_CV')}}" method="get">
+                  <input name="PDF" type="hidden" value="{{$Offer['Curriculum_Vitae']}}">
+                  <button class="button" type="submit">CV</button>
+                  </td>
+                  <td>
+                  <form action="{{ route('Offer_CV')}}" method="get">
+                  <input name="PDF" type="hidden" value="{{$Offer['Motivation_Letter']}}">
+                  <button class="button" type="submit">Lettre de motivation</button>
+                  </td>
 
                   @if($Offer['Response_State'] == 0)
                   <td><select name="Response_State">
 	                    <option selected="yes">Pas de réponse</option>
 	                    <option>Oui</option>
+                        <option>Non</option>
                       </select></td>
                   @elseif ($Offer['Response_State'] == 1)
                   <td><select name="Response_State">
 	                    <option selected="yes">Non</option>
-	                    <option>Non</option>
+	                    <option>Oui</option>
+                        <option>Pas de réponse</option>
                       </select></td>
                   @elseif ($Offer['Response_State'] == 2)
                   <td><select name="Response_State">
 	                    <option selected="yes">Oui</option>
 	                    <option>Non</option>
+                        <option>Pas de réponse</option>
                       </select></td>
                   @endif
                 </tr>
@@ -66,9 +77,4 @@
                @endif
               </tbody>
         </table>
-
-
-    <a href="../index.html"> ... </a>
-
-
 @stop
