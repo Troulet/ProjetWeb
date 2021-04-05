@@ -41,6 +41,8 @@
         {!! Form::open(['url' => '/Offer_Profil', 'method' => 'post']) !!}
              <input name='id' type="hidden" value="{{$Offer['id']}}">
              <button type="submit" class="btn">Aller voir</button>
+
+             <button type="submit" id="btn_Evaluate" class="btn_Evaluate">Evaluer</button>
         {!! Form::close() !!}
     @endforeach
     @endif
