@@ -50,6 +50,10 @@ class Pilot extends Model
         return $pilots = DB::table('pilot')->get();
     }
 
+    public function GetPromo($id){
+        return $promo = DB::table('pilot')->where('Users_id', '=', $id)->pluck('Promotion');
+    }
+
     public function tablereturn($localid){
         return $data = DB::table('pilot')
             ->select('pilot.Users_id', 'users.email', 'users.First_Name', 'users.Last_name', 'pilot.Promotion')
@@ -76,5 +80,12 @@ class Pilot extends Model
             ->join('localisation', 'localisation.id', '=', 'pilot.Localisation_id')
             ->where('pilot.Users_id', '=' , $id)
             ->first();
+    }
+
+    public static function TableReturnContact($localid){
+        return $data = DB::table('pilot')
+            ->select('Users_id', 'First_Name', 'Last_name')
+            ->where('Localisation_id', '=', $localid)
+            ->get();
     }
 }
