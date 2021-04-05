@@ -81,4 +81,12 @@ class Student extends Model
             ->where('student.Users_id', '=' , $id)
             ->first();
     }
+
+    public static function TableReturnContact($localid){
+        return $data = DB::table('student')
+            ->select('Users_id', 'First_Name', 'Last_name')
+            ->where('Localisation_id', '=', $localid)
+            ->where('Representative', '=', true)
+            ->get();
+    }
 }

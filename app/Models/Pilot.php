@@ -81,4 +81,11 @@ class Pilot extends Model
             ->where('pilot.Users_id', '=' , $id)
             ->first();
     }
+
+    public static function TableReturnContact($localid){
+        return $data = DB::table('pilot')
+            ->select('Users_id', 'First_Name', 'Last_name')
+            ->where('Localisation_id', '=', $localid)
+            ->get();
+    }
 }
