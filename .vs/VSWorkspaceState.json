@@ -4,13 +4,13 @@
     "\\app",
     "\\app\\Http",
     "\\app\\Http\\Controllers",
-    "\\app\\Models",
     "\\resources",
     "\\resources\\views",
-    "\\resources\\views\\postulate",
-    "\\resources\\views\\welcome",
-    "\\routes"
+    "\\resources\\views\\create",
+    "\\resources\\views\\internship",
+    "\\resources\\views\\users",
+    "\\resources\\views\\welcome"
   ],
-  "SelectedNode": "\\app\\Models\\Pilot.php",
+  "SelectedNode": "\\resources\\views\\welcome\\welcome_student_template.blade.php",
   "PreviewInSolutionExplorer": false
 }
