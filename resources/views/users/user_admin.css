@@ -15,7 +15,7 @@ h2 {
 }
 
 h3 {
-  text-align: left;  
+  text-align: center;  
   border-top: 1px solid #5C88DA;
 }
 
@@ -25,7 +25,7 @@ h3 {
 
 .navbar {
   display: flex;
-  justify-content: right;
+  justify-content: center;
   align-items: center;
 }
 

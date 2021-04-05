@@ -21,6 +21,11 @@
                             <input name='id' type="hidden" value="{{$dataOffer['id']}}">
                             <button type="submit" class="btn">Modifier</button>
                     {!! Form::close() !!}
+
+                    {!! Form::open(['url' => '/Postulate', 'method' => 'get']) !!}
+                            <input name='id' type="hidden" value="{{$dataOffer['id']}}">
+                            <button type="submit" class="btn">Postuler</button>
+                    {!! Form::close() !!}
                 @endif
             @endif
 
