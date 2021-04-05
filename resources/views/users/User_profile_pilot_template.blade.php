@@ -10,7 +10,7 @@
                 Promotion : {{$dataUser['Promotion']}}
             </p>
             @if($user_type == 0)
-                {!! Form::open(['url' => '/inform_step3', 'method' => 'get']) !!}
+                {!! Form::open(['url' => '/Inform_step3', 'method' => 'post']) !!}
                         <input name='id' type="hidden" value="{{$dataUser['id']}}">
                         <input name='Validation_Sheet' type="file" required>
                         <button type="submit" class="btn">Transmettre une fiche de validation signée</button>

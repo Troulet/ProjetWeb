@@ -20,12 +20,12 @@
                 Nombre de candidatures : {{$PostulateCount}}
             </p>
             @if($user_type == 2)
-            {!! Form::open(['url' => '/inform_step3', 'method' => 'get']) !!}
+            {!! Form::open(['url' => '/Inform_step5', 'method' => 'post']) !!}
                         <input name='id' type="hidden" value="{{$dataUser['id']}}">
                         <input name='Internship_Contract' type="file" required>
                         <button type="submit" class="btn">Transmettre une Convention non signée par l'entreprise</button>
             {!! Form::close() !!}
-            {!! Form::open(['url' => '/inform_step3', 'method' => 'get']) !!}
+            {!! Form::open(['url' => '/Inform_step6', 'method' => 'post']) !!}
                   <input name='id' type="hidden" value="{{$dataUser['id']}}">
                   <input name='Internship_Contract' type="file" required>
                   <button type="submit" class="btn">Transmettre une Convention signée par l'entreprise</button>

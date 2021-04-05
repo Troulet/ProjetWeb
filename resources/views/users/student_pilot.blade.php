@@ -62,9 +62,11 @@
                 </div>
             </div>
             
-        <div class="create_user">
-            <button type="button" id="btn_Create" class="btn">CRÉER UN PROFIL UTILISATEUR</button>
-        </div> 
+        <div>
+           {!! Form::open(['url' => '/Users_Create', 'method' => 'get']) !!}
+            <button type="submit" class="btn">CRÉER UN PROFIL UTILISATEUR</button>
+            {!! Form::close() !!}
+        </div>
           @include('footer')
     </body>
 

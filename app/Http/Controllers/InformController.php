@@ -17,11 +17,11 @@ class InformController extends Controller
     protected $step5;
     protected $step6;
 
-    function __controller(){
+    function __construct(){
         $this->step3 = new Inform_Step3;
-        $this->step3 = new Inform_Step4;
-        $this->step3 = new Inform_Step5;
-        $this->step3 = new Inform_Step6;
+        $this->step4 = new Inform_Step4;
+        $this->step5 = new Inform_Step5;
+        $this->step6 = new Inform_Step6;
     }
 
     public function Create3(Request $request){
@@ -38,16 +38,18 @@ class InformController extends Controller
         $this->step4->save();
     }
 
-    public function Create5(Requests $request){
-        $this->step5->Pilot_id = Student::GetPilot($request->id);                          
+    public function Create5(Request $request){
+        $pilot = ObjectController::objtoArray(Student::GetPilot($request->id));
+        $this->step5->Pilot_id = $pilot[0];                          
         $this->step5->Administrator_id = Auth::id();
         $this->step5->Student_id = $request->id;                       
         $this->step5->Internship_Contract = $request->Internship_Contract;
         $this->step5->save();
     }
 
-    public function Create6(Requests $requests){
-        $this->step6->Pilot_id = Student::GetPilot($request->id);                          
+    public function Create6(Request $request){
+        $pilot = ObjectController::objtoArray(Student::GetPilot($request->id));
+        $this->step6->Pilot_id = $pilot[0];                            
         $this->step6->Administrator_id = Auth::id();          
         $this->step6->Student_id = $request->id;
         $this->step6->Internship_Contract = $request->Internship_Contract;

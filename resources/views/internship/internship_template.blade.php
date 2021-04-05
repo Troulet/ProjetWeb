@@ -1,6 +1,7 @@
 @extends('internship.internship_student')
 
 @section('carousel_offer')
+<h1>TEST TEST TEST CSS</h1>
 <center> 
 <div id="carousel_offer" class="carousel slide" data-ride="carousel">
     <div class="carousel-inner">

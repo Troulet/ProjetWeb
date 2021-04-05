@@ -146,16 +146,16 @@ use App\Http\Controllers\InformController;
     Route::post('/Postulate_Update', [PostulateController::class, 'Update']);
 
     //Chemin pour transmettre une fiche de Validation à l'enseignant-tuteur'
-    Route::post('/Stats', [InformController::class, 'Create3']);
+    Route::post('/Inform_step3', [InformController::class, 'Create3']);
 
     //Chemin pour transmettre une fiche de validation à l'assistant administratif'
-    Route::post('/Stats', [InformController::class, 'Create4']);
+    Route::post('/Inform_step4', [InformController::class, 'Create4']);
 
     //Chemin pour prévenir le Tuteur et l'Eleve qu'une Convention de Stage a été envoyée à l'entreprise'
-    Route::post('/Stats', [InformController::class, 'Create5']);
+    Route::post('/Inform_step5', [InformController::class, 'Create5']);
 
     //Chemin pour prévenir le Tuteur et l'Eleve qu'une Convention de Stage signée a été reçue
-    Route::post('/Stats', [InformController::class, 'Create6']);
+    Route::post('/Inform_step6', [InformController::class, 'Create6']);
 
 
 

@@ -10,7 +10,7 @@
         <fieldset>
             <legend>Ajouter un commentaire</legend>
      
-            <label for="Commentary">Commentaire de l'élève : </label>
+            <label for="Commentary">Commentaire : </label>
             <input type="text" name="Commentary" id="Commentary" />
      
             <label for="Internship_Difficulty">Difficulté du stage : </label>
