@@ -34,7 +34,7 @@ use App\Http\Controllers\InformController;
 
     Route::get('/Contact', [UsersController::class, 'GetContactPage']);
 
-    Route::get('/Postulate', [UsersController::class, 'GetPostulatePage']);
+    Route::get('/Postulate', [PostulateController::class, 'GetPostulatePage']);
 
     Route::get('/Help', function() {
         return view('Help');
@@ -117,6 +117,7 @@ use App\Http\Controllers\InformController;
 
     //Chemin pour poster une nouvelle Offre
     Route::get('/Offer_Create' , [InternshipController::class, 'GetCreatePage']);
+
     //Chemin pour poster une nouvelle Offre
     Route::post('/Offer_Create' , [InternshipController::class, 'Create']);
 
@@ -131,6 +132,9 @@ use App\Http\Controllers\InformController;
 
     //Chemin pour poster une nouvelle entreprise
     Route::post('/Offer_Profil', [ InternshipController::class, 'GetProfil']);
+
+    //Chemin pour voir son CV
+    Route::get('/Offer_CV', [ PostulateController::class, 'ViewCV']);
 
     //Chemin pour afficher le formulaire de candidature
     Route::get('/Postulate_Create', [PostulateController::class, 'GetCreatePage']);
