@@ -50,6 +50,10 @@ class Student extends Model
         return $students = DB::table('student')->get();
     }
 
+    public function GetPromo($id){
+        return $promo = DB::table('student')->where('Users_id', '=', $id)->pluck('Promotion');
+    }
+
     public function tablereturn($localid){
         return $data = DB::table('student')
             ->select('student.Users_id', 'users.email', 'users.First_Name', 'users.Last_name', 'student.Promotion', 'student.Representative')
