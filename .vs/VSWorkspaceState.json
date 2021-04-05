@@ -6,11 +6,11 @@
     "\\app\\Http\\Controllers",
     "\\resources",
     "\\resources\\views",
-    "\\resources\\views\\contact",
     "\\resources\\views\\create",
     "\\resources\\views\\internship",
-    "\\routes"
+    "\\resources\\views\\users",
+    "\\resources\\views\\welcome"
   ],
-  "SelectedNode": "\\resources\\views\\create\\form_postulate.blade.php",
+  "SelectedNode": "\\resources\\views\\welcome\\welcome_student_template.blade.php",
   "PreviewInSolutionExplorer": false
 }
