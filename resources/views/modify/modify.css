@@ -4,7 +4,7 @@ h1 {
     padding: 10px 0;
     margin-bottom: 10px;
     text-align: center;
-    color: white;
+    color: #5C88DA;
 }
 
 h2 {
@@ -18,9 +18,7 @@ h3 {
     text-align: left;
 }
 
-.header, body {
-    border-bottom: 3px solid #5C88DA;
-}
+
 
 .navbar {
     display: flex;

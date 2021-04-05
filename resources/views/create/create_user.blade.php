@@ -29,33 +29,33 @@
 
             <fieldset>
 
-                <legend>Créer un élève</legend>
+                <legend>Créer un élève</legend> <br>
 
                 <label id="First_Label" for="First_Name">Prénom de l'élève : </label>
-                <input type="text" name="First_Name" id="First_Name" />
+                <input type="text" name="First_Name" id="First_Name" /> <br>
      
                 <label id="Last_Label" for="Last_Name">Nom de l'élève : </label>
-                <input type="text" name="Last_Name" id="Last_Name" />
+                <input type="text" name="Last_Name" id="Last_Name" /> <br>
 
                 <label id="Localisation_Label" for="Localisation">Localité : </label>
-                <input type="text" name="Localisation_Name" id="Localisation_Name" />
+                <input type="text" name="Localisation_Name" id="Localisation_Name" /> <br>
 
                 <label id="Promotion_Label" for="Promotion">Promotion :  </label>
-                <input type="text" name="Promotion" id="Promotion" />
+                <input type="text" name="Promotion" id="Promotion" /> <br>
       
                 <label id="email_Label" for="Email">Email :  </label>
-                <input type="text" name="email" id="email" />
+                <input type="text" name="email" id="email" /> <br>
 
                 <label id="password_Label" for="Password">Mot de passe :  </label>
-                <input type="text" name="password" id="password" />
+                <input type="text" name="password" id="password" /> <br>
 
                 <label id="Representative_Label" for="Representative">Délégué</label>
                 <input type="radio" name="Representative" id="Representative" text="Oui" value="1"/>
-                <input type="radio" name="Representative" id="Representative2" text="Non" value="0"/>
+                <input type="radio" name="Representative" id="Representative2" text="Non" value="0"/> <br>
             
                 <label id="Representative_Rights_Label" for="Representative_Rights">Droits :  </label>
                 <input type="text" name="Representative_Rights" id="Representative_Rights" value="0"/>
-                <input type="hidden" name="UpUser_type" id="UpUser_type" />
+                <input type="hidden" name="UpUser_type" id="UpUser_type" /> <br>
 
             </fieldset>
 

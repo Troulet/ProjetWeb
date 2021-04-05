@@ -23,11 +23,11 @@
                 <input class="form-control me-2" type="search" name="research" placeholder="Search" aria-label="Search">
                 <button class="btn btn-outline-success" type="submit">Search</button>
                 {!! Form::close() !!}
-                <button class="btn btn-outline-success" type="button" id="btn_Admin">Voir les profils Administrateurs</button>
-                <button class="btn btn-outline-success" type="button" id="btn_Pilot">Voir les profils Pilotes</button>
-                <button class="btn btn-outline-success" type="button" id="btn_Student">Voir les profils Etudiants</button>
-                <button class="btn btn-outline-success" type="button" id="btn_Representative">Voir les profils Délégués</button>
-                <button class="btn btn-outline-success" type="button" id="btn_User">Voir tous les profils</button>
+                <button class="btn btn-outline-success" type="button" id="btn_Admin">Voir les profils Administrateurs</button> <br>
+                <button class="btn btn-outline-success" type="button" id="btn_Pilot">Voir les profils Pilotes</button> <br>
+                <button class="btn btn-outline-success" type="button" id="btn_Student">Voir les profils Etudiants</button> <br>
+                <button class="btn btn-outline-success" type="button" id="btn_Representative">Voir les profils Délégués</button> <br>
+                <button class="btn btn-outline-success" type="button" id="btn_User">Voir tous les profils</button> <br>
                 <div>
                 <!--
                      <h3>Catégories</h3>

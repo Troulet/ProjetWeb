@@ -19,10 +19,6 @@ h3 {
     border-top: 1px solid #5C88DA;
 }
 
-.header, body {
-    border-bottom: 3px solid #5C88DA;
-    text-align:
-}
 
 .navbar {
     display: flex;
