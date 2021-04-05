@@ -45,4 +45,17 @@ class PostulateController extends Controller
 
         }
     }
+
+    public function GetPostulatePage(Request $request)
+    {
+        $user = new UsersController;
+      switch ($user->Get_Table(Auth::id()))
+            {
+                case 0 :
+                    return View::make('postulate/postulate_template')->with('user_type', 0)->with('dataOffer', ObjectController::objtoArray(Postulate::GetPostulate(Auth::id())));
+                    break;
+            }
+
+
+    }
 }

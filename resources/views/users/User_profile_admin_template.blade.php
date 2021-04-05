@@ -11,7 +11,7 @@
                 Nom : {{$User['Last_name']}}
             </p>
             @if(user_type == 1)
-                {!! Form::open(['url' => '/Users_profil', 'method' => 'get']) !!}
+                {!! Form::open(['url' => '/Inform_step4', 'method' => 'post']) !!}
                         <input name='id' type="hidden" value="{{$User['id']}}">
                         <input name='Validation_Sheet' type="file" required>
                         <button type="submit" class="btn">Transmettre une fiche de validation signée</button>

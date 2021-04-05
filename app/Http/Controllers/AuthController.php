@@ -60,7 +60,7 @@ class AuthController extends Controller
                         return View::make('welcome/welcome_pilot')->with('user_type', 1);
                         break;
 
-     };
+                };
 
             //Renvoyer une vue si l'utilisateur n'appartient à aucune des tables
                  
@@ -69,7 +69,7 @@ class AuthController extends Controller
              {
                 echo $request['email'];
                 echo $request['password'];
-	            echo "FAIL";
+                echo "FAIL";
              }
 
 
