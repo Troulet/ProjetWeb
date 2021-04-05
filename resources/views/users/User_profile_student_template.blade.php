@@ -19,6 +19,41 @@
 
                 Nombre de candidatures : {{$PostulateCount}}
             </p>
+            </br>
+
+            <table class="table">
+              <thead>
+                <tr>
+                  <th scope="col">#</th>
+                  <th scope="col">Entreprise</th>
+                  <th scope="col">Intitulé du poste</th>
+                  <th scope="col">Réponse</th>                <!--Réponse = oui/non uniquement-->
+                </tr>
+              </thead>
+              <tbody>
+              @if($dataOffer != null)
+              @foreach($dataOffer as $Offer)
+                <tr>
+                  <th scope="row">{{$loop->iteration}}</th>
+                  <td>{{$Offer['Enterprise_Name']}}</td>
+                  <td>{!! Form::open(['url' => '/Offer_Profil', 'method' => 'post']) !!}
+                            <input name='id' type="hidden" value="{{$Offer['id']}}">
+                            <button type="submit" class="btn">Offre</button>
+                    {!! Form::close() !!}</td><!--form avec Internship_id-->
+                  @if($Offer['Response_State'] == 0)
+                  <td>Pas de réponse</td>
+                  @elseif ($Offer['Response_State'] == 1)
+                  <td>Non</td>    
+                  @elseif ($Offer['Response_State'] == 2)
+                  <td>Oui</td>
+                  @endif
+                                                             
+                </tr>
+               @endforeach
+               @endif
+              </tbody>
+        </table>
+
             @if($user_type == 2)
             {!! Form::open(['url' => '/Inform_step5', 'method' => 'post']) !!}
                         <input name='id' type="hidden" value="{{$dataUser['id']}}">

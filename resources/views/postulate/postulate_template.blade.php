@@ -30,6 +30,8 @@
                   <th scope="col">Curriculum vitae</th>       <!--Réponse = oui/non uniquement-->
                   <th scope="col">Lettre de motivation</th>   <!--Réponse = oui/non uniquement-->
                   <th scope="col">Réponse</th>                <!--Réponse = oui/non uniquement-->
+                  <th scope="col"></th>
+                  <th scope="col"></th>
                 </tr>
               </thead>
               <tbody>
@@ -43,16 +45,17 @@
                             <button type="submit" class="btn">Offre</button>
                     {!! Form::close() !!}</td><!--form avec Internship_id-->
                   <td>
-                  <form action="{{ route('Offer_CV')}}" method="get">
-                  <input name="PDF" type="hidden" value="{{$Offer['Curriculum_Vitae']}}">
-                  <button class="button" type="submit">CV</button>
+                  {!! Form::open(['url' => '/Offer_CV', 'method' => 'get']) !!}
+                  <input name="PDF" type="hidden" value="{{$Offer['Curiculum_Vitae']}}">
+                  <button class="btn" type="submit">CV</button>
                   </td>
                   <td>
-                  <form action="{{ route('Offer_CV')}}" method="get">
+                  {!! Form::open(['url' => '/Offer_CV', 'method' => 'get']) !!}
                   <input name="PDF" type="hidden" value="{{$Offer['Motivation_Letter']}}">
-                  <button class="button" type="submit">Lettre de motivation</button>
+                  <button class="btn" type="submit">Lettre de motivation</button>
+                  {!! Form::close() !!}
                   </td>
-
+                  {!! Form::open(['url' => '/Postulate_Update', 'method' => 'post']) !!}
                   @if($Offer['Response_State'] == 0)
                   <td><select name="Response_State">
 	                    <option selected="yes">Pas de réponse</option>
@@ -72,7 +75,14 @@
                         <option>Pas de réponse</option>
                       </select></td>
                   @endif
-                </tr>
+                
+                  <td>
+                  
+                  <input name="Internship_id" type="hidden" value="{{$Offer['id']}}">
+                  <button class="btn" type="submit">Mettre à jour</button>
+                  {!! Form::close() !!}
+                  </td>
+                  </tr>
                @endforeach
                @endif
               </tbody>

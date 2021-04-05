@@ -14,6 +14,7 @@ use App\Models\Enterprise;
 use App\Models\Administrator;
 use App\Models\Pilot;
 use App\Models\Student;
+use App\Models\Postulate;
 
 class UsersController extends Controller 
 {
@@ -383,7 +384,7 @@ class UsersController extends Controller
                     break;
 
                 case 0 :
-                    return View::make('users/user_profile_student_template')->with('user_type', $user->Get_Table(Auth::id()))->with('PostulateCount', ObjectController::objtoArray(Student::CountPostulate($request->id)))->with('dataUser', ObjectController::objtoArray(Student::GetProfile($request->id)));
+                    return View::make('users/user_profile_student_template')->with('user_type', $user->Get_Table(Auth::id()))->with('PostulateCount', ObjectController::objtoArray(Student::CountPostulate($request->id)))->with('dataUser', ObjectController::objtoArray(Student::GetProfile($request->id)))->with('dataOffer', ObjectController::objtoArray(Postulate::GetPostulate($request->id)));
                     break;
         }
     }
