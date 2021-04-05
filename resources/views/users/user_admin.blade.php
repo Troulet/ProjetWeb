@@ -12,6 +12,11 @@
     </head>
     <body>
         @include('header')
+        <div>
+           {!! Form::open(['url' => '/Users_Create', 'method' => 'get']) !!}
+            <button type="submit" class="btn">CRÉER UN PROFIL UTILISATEUR</button>
+            {!! Form::close() !!}
+        </div>
             <div class="filtre">
               <h3>Filtrer les résultats</h3>
                 {!! Form::open(['url' => '/Users_Search', 'method' => 'post']) !!}
@@ -102,11 +107,7 @@
                 </div>
                 
             </div>
-        <div>
-           {!! Form::open(['url' => '/Users_Create', 'method' => 'get']) !!}
-            <button type="submit" class="btn">CRÉER UN PROFIL UTILISATEUR</button>
-            {!! Form::close() !!}
-        </div>
+        
             @include('footer')
         <script type="text/javascript">
 
