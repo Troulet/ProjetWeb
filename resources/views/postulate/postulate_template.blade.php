@@ -1,8 +1,8 @@
-@extends(postulate.postulate)
+@extends(postulate.postulate_studentS)
 
 @section('candidate_status')
 
-    <div id="id_candidature" class="candidature">
+    <!--<div id="id_candidature" class="candidature">
     <h2>Statistiques</h2>
     <label for="post_nbre"> Candidatures déposées:</label><br>
     <input type="number" name="post_nbre" id="post_nbre" required><br><br>
@@ -13,7 +13,7 @@
     <button class="button" type="button">CANDIDATURE AVEC RÉPONSE</button>
     <button class="button" type="button">CANDIDATURE SANS RÉPONSE</button>
     <button class="button" type="button">TOUT</button>
-    </div>
+    </div>-->
 
 @stop
 
@@ -34,18 +34,18 @@
               <tbody>
               @foreach($dataOffer as $Offer)
                 <tr>
-                  <th scope="row">1</th>
+                  <th scope="row">{{$loop->iteration}}</th>
                   <td>{{$Offer['Enterprise_Name']}}</td>
-                  <td><a href="/Offer/{{$Offer['id']}}" >Offre</a> </td> <!--form avec Internship_id-->
-                  <td>{{echo $Offer['Curriculum_Vitae']}}</td>
-                  <td>{{echo $Offer['Motivation_Letter']}}</td>
+                  <td><a href="/Offer_Profil?id={{$Offer['id']}}" >Offre</a> </td> <!--form avec Internship_id-->
+                  <td>bite</td>
+                  <td>bite</td>
 
-                  @if($dataOffer['Response_State'] == 0)
+                  @if($Offer['Response_State'] == 0)
                   <td><select name="Response_State">
 	                    <option selected="yes">Non</option>
 	                    <option>Oui</option>
                       </select></td>
-                  @elseif ($dataOffer['Response_State'] == 1)
+                  @elseif ($Offer['Response_State'] == 1)
                   <td><select name="Response_State">
 	                    <option selected="yes">Oui</option>
 	                    <option>Non</option>

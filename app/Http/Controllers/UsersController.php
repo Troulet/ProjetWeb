@@ -165,16 +165,7 @@ class UsersController extends Controller
             }
   }
 
-  public function GetPostulatePage(Request $request)
-    {
-      switch ($this->Get_Table(Auth::id()))
-            {
-                case 0 :
-                    return View::make('postulate/postulate')->with('user_type', 0);
-                    break;
-            }
-
-  }
+  
 
   public function GetContactPage(Request $request)
     {
