@@ -72,7 +72,7 @@ use App\Http\Controllers\InformController;
     Route::post('/Users_right', [UsersController::class, 'UpdateRight']);
 
     //Chemin pour poster une nouvelle entreprise
-    Route::post('/Users_Profil', [ UsersController::class, 'GetProfil']);
+    Route::get('/Users_Profil', [ UsersController::class, 'GetProfil']);
 
     //Chemin pour afficher la page de création d'une entreprise
     Route::get('/Enterprise_Create', [EnterpriseController::class, 'GetCreatePage']);
@@ -133,7 +133,7 @@ use App\Http\Controllers\InformController;
     //Chemin pour poster une nouvelle entreprise
     Route::post('/Offer_Profil', [ InternshipController::class, 'GetProfil']);
 
-    //Chemin pour voir son CV
+    //Chemin pour voir son CV ou ML
     Route::get('/Offer_CV', [ PostulateController::class, 'ViewCV']);
 
     //Chemin pour afficher le formulaire de candidature
@@ -146,16 +146,16 @@ use App\Http\Controllers\InformController;
     Route::post('/Postulate_Update', [PostulateController::class, 'Update']);
 
     //Chemin pour transmettre une fiche de Validation à l'enseignant-tuteur'
-    Route::post('/Stats', [InformController::class, 'Create3']);
+    Route::post('/Inform_step3', [InformController::class, 'Create3']);
 
     //Chemin pour transmettre une fiche de validation à l'assistant administratif'
-    Route::post('/Stats', [InformController::class, 'Create4']);
+    Route::post('/Inform_step4', [InformController::class, 'Create4']);
 
     //Chemin pour prévenir le Tuteur et l'Eleve qu'une Convention de Stage a été envoyée à l'entreprise'
-    Route::post('/Stats', [InformController::class, 'Create5']);
+    Route::post('/Inform_step5', [InformController::class, 'Create5']);
 
     //Chemin pour prévenir le Tuteur et l'Eleve qu'une Convention de Stage signée a été reçue
-    Route::post('/Stats', [InformController::class, 'Create6']);
+    Route::post('/Inform_step6', [InformController::class, 'Create6']);
 
 
 

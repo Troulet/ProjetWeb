@@ -18,7 +18,7 @@
                     Délégué : non
                 @endif
             </p>
-                {!! Form::open(['url' => '/Users_profil', 'method' => 'get']) !!}
+                {!! Form::open(['url' => '/Users_Profil', 'method' => 'get']) !!}
                         <input name='id' type="hidden" value="{{$user['Users_id']}}">
                         <button type="submit" class="btn">Contacter</button>
                 {!! Form::close() !!}
@@ -38,7 +38,7 @@
                 Prénom : {{$user['First_Name']}}
                 Nom : {{$user['Last_name']}}
             </p>
-            {!! Form::open(['url' => '/Users_profil', 'method' => 'get']) !!}
+            {!! Form::open(['url' => '/Users_Profil', 'method' => 'get']) !!}
                     <input name='id' type="hidden" value="{{$user['Users_id']}}">
                     <button type="submit" class="btn">Contacter</button>
             {!! Form::close() !!}

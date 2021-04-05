@@ -28,10 +28,22 @@ class PostulateController extends Controller
     }
 
     public function Update(Request $request){
-        // a corriger
-        $this->postulate->Internship_id = Postulate::find($request->Internship_id);
-        $this->postulate->Student_id = Postulate::find($request->Internship_id);
-        $this->postulate->Response_State = $requests->Response_State;
+        if($request->Response_State == "Pas de réponse")
+        {
+            $Response_State = 0;
+        }
+        elseif($request->Response_State == "Oui")
+        {
+            $Response_State = 2;
+        }
+        elseif($request->Response_State == "Non")
+        {
+            $Response_State = 1;
+        }
+
+        Postulate::where('Internship_id', $request->Internship_id)
+            ->where('Student_id', Auth::id())
+            ->update(['Response_State' => $Response_State]);
     }
 
     public function GetCreatePage(Request $request)
