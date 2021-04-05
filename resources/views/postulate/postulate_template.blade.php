@@ -47,10 +47,15 @@
 
                   @if($Offer['Response_State'] == 0)
                   <td><select name="Response_State">
-	                    <option selected="yes">Non</option>
+	                    <option selected="yes">Pas de réponse</option>
 	                    <option>Oui</option>
                       </select></td>
                   @elseif ($Offer['Response_State'] == 1)
+                  <td><select name="Response_State">
+	                    <option selected="yes">Non</option>
+	                    <option>Non</option>
+                      </select></td>
+                  @elseif ($Offer['Response_State'] == 2)
                   <td><select name="Response_State">
 	                    <option selected="yes">Oui</option>
 	                    <option>Non</option>

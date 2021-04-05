@@ -133,7 +133,7 @@ use App\Http\Controllers\InformController;
     //Chemin pour poster une nouvelle entreprise
     Route::post('/Offer_Profil', [ InternshipController::class, 'GetProfil']);
 
-    //Chemin pour voir son CV
+    //Chemin pour voir son CV ou ML
     Route::get('/Offer_CV', [ PostulateController::class, 'ViewCV']);
 
     //Chemin pour afficher le formulaire de candidature

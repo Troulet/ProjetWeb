@@ -89,4 +89,10 @@ class Student extends Model
             ->where('Representative', '=', true)
             ->get();
     }
+
+    public static function GetPilot($id)
+    {
+        return $pilotid = DB::table('student')->join('pilot', 'pilot.Promotion', '=', 'student.Promotion')->where('student.Users_id', '=', $id)->pluck('pilot.Users_id');
+    }
+        
 }

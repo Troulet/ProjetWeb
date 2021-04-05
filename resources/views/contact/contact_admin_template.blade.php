@@ -1,7 +1,7 @@
 @extends('contact.contact_admin')
 
 @section('dataContact')
-    @if($dataStudent !== null)
+    <!--@if($dataStudent !== null)
     <div class="card">
         @foreach ($dataStudent as $user)
         <div class="card-body">
@@ -25,8 +25,7 @@
         </div>
         @endforeach
     </div><br>
-    @endif
-
+    @endif-->
     @if($dataPilot !== null)
     <div class="card">
         @foreach ($dataPilot as $user)

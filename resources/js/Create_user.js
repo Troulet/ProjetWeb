@@ -55,22 +55,3 @@
     document.getElementById("btn_Student").onclick = function(){
         showStudentCreation();
     }
-
-    /*function AJAXPOST(){
-        var xhr = new XMLHttpRequest();
-	    xhr.open("POST", "http://cesijob.fr/Public/Users_Create", true);
-        xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-        xhr.onload = function(){
-            if(xhr.status == 200 && xhr.readyState === XMLHttpRequest.DONE)
-            {
-                callback(xhr.ResponseText);
-                var response = JSON.Parse(xhr.ResponseText);
-                document.getElementById("result").innerHTML = response.data;
-            }
-        }
-		xhr.send("_token=".document.getElementsByName("_token")+"$UpUser_type="+document.getElementById("UpUser_type").value+"&First_Name="+document.getElementById("First_Name").value+"&Last_Name="+document.getElementById("Last_Name").value+"&Localisation_Name="+document.getElementById("Localisation_Name").value+"&Promotion="+document.getElementById("Promotion").value+"&email="+document.getElementById("email").value+"&password="+document.getElementById("password").value+"&Representative="+document.getElementById("Representative").value+"&Representative_Rights="+document.getElementById("Representative_Rights").value)
-    }
-
-    document.getElementById("btn_Create").onclick = function(){
-        AJAXPOST();
-    };*/

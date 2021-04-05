@@ -20,6 +20,17 @@
                 Délégué : non
                 @endif
             </p>
+            {!! Form::open(['url' => '/inform_step3', 'method' => 'get']) !!}
+                        <input name='id' type="hidden" value="{{$User['id']}}">
+                        <input name='Internship_Contract' type="file" required>
+                        <button type="submit" class="btn">Transmettre une Convention non signée par l'entreprise</button>
+            {!! Form::close() !!}
+            {!! Form::open(['url' => '/inform_step3', 'method' => 'get']) !!}
+                  <input name='id' type="hidden" value="{{$User['id']}}">
+                  <input name='Internship_Contract' type="file" required>
+                  <button type="submit" class="btn">Transmettre une Convention signée par l'entreprise</button>
+            {!! Form::close() !!}
+
     </div>
     @endforeach
 @stop
