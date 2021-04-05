@@ -24,7 +24,7 @@
             <input type="text" name="Activity_Sector" id="Activity_Sector" value="{{$dataEnterprise['Activity_Sector']}}"/>
 
             <label for="Localisation">Localité : </label>
-            <input type="text" name="Localisation_Name" id="Localisation" value="{{$dataEnterprise['Localisation']}}"/>
+            <input type="text" name="Localisation_Name" id="Localisation" value="{{$dataEnterprise['Localisation_Name']}}"/>
 
             <label for="Cesi_Student_Taken">Nombre d'étudiants CESI déjà pris : </label>
             <input type="text" name="Cesi_Student_Taken" id="Cesi_Student_Taken" value="{{$dataEnterprise['Cesi_Student_Taken']}}"/>

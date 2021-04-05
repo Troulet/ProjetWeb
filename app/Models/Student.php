@@ -58,6 +58,17 @@ class Student extends Model
             ->get();
     }
 
+    public static function tablereturnsearch($search, $localid){
+        return $data = DB::table('student')
+            ->select('student.Users_id', 'users.email', 'users.First_Name', 'users.Last_name', 'student.Promotion', 'student.Representative')
+            ->join('users', 'users.id', '=', 'student.Users_id')
+            ->where('student.Localisation_id', '=' , $localid)
+            ->where('users.First_Name', 'like', '%' . $search . '%')
+            ->orwhere('users.Last_name', 'like', '%' . $search . '%')
+            ->orwhere('student.Promotion', 'like', '%' . $search . '%')
+            ->get();
+    }
+
     public static function GetforUpdate($id){
         return $data = DB::table('student')
             ->select('student.Users_id', 'users.email', 'users.password', 'users.First_Name', 'users.Last_name', 'student.Promotion', 'student.Representative', 'student.Representative_Rights', 'localisation.Localisation as Localisation_Name')

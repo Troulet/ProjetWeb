@@ -49,6 +49,16 @@ class Administrator extends Model
             ->get();
     }
 
+    public static function tablereturnsearch($search, $localid){
+        return $data = DB::table('administrator')
+            ->select('administrator.Users_id', 'users.email', 'users.First_Name', 'users.Last_name')
+            ->join('users', 'users.id', '=', 'administrator.Users_id')
+            ->where('administrator.Localisation_id', '=' , $localid)
+            ->where('users.First_Name', 'like', '%' . $search . '%')
+            ->orwhere('users.Last_name', 'like', '%' . $search . '%')
+            ->get();
+    }
+
     public static function GetforUpdate($id){
         return $data = DB::table('administrator')
             ->select('administrator.Users_id', 'users.email', 'users.password', 'users.First_Name', 'users.Last_name', 'localisation.Localisation as Localisation_Name')

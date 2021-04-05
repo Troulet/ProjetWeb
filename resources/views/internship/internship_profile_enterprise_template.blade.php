@@ -7,20 +7,26 @@
         Secteur d'activité : {{$dataEnterprise['Activity_Sector']}} </br>
         Etudiants CESI déjà pris : {{$dataEnterprise['Cesi_Student_Taken']}} </br>
         Localisation : {{$dataEnterprise['Localisation_Name']}} </br>     
-
-        {!! Form::open(['url' => '/Enterprise_Delete', 'method' => 'post']) !!}
+        @if($dataEnterprise['deleted_at'] != null)
+            {!! Form::open(['url' => '/Enterprise_Restore', 'method' => 'post']) !!}
+                    <input name='id' type="hidden" value="{{$dataEnterprise['id']}}">
+                    <button type="submit" class="btn">Restore</button>
+            {!! Form::close() !!}
+        @else
+            {!! Form::open(['url' => '/Enterprise_Delete', 'method' => 'post']) !!}
                     <input name='id' type="hidden" value="{{$dataEnterprise['id']}}">
                     <button type="submit" class="btn">Supprimer</button>
-        {!! Form::close() !!}
+            {!! Form::close() !!}
 
-        {!! Form::open(['url' => '/Enterprise_Update', 'method' => 'get']) !!}
+            {!! Form::open(['url' => '/Enterprise_Update', 'method' => 'get']) !!}
                     <input name='id' type="hidden" value="{{$dataEnterprise['id']}}">
                     <button type="submit" class="btn">Modifier</button>
-        {!! Form::close() !!}
-        {!! Form::open(['url' => '/Offer_Create', 'method' => 'get']) !!}
-            <input type='hidden' name="Enterprise_id" value="{{$dataEnterprise['id']}}">
-            <button type="submit" class="btn">Créer une Offre</button>
-        {!! Form::close() !!}
+            {!! Form::close() !!}
+            {!! Form::open(['url' => '/Offer_Create', 'method' => 'get']) !!}
+                <input type='hidden' name="Enterprise_id" value="{{$dataEnterprise['id']}}">
+                <button type="submit" class="btn">Créer une Offre</button>
+            {!! Form::close() !!}
+        @endif
     </p>
     @if($dataOffer !== null)
     @foreach($dataOffer as $Offer)

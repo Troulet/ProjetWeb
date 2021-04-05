@@ -59,6 +59,15 @@ class Enterprise extends Model
 
     public static function GetProfil($id){
         return $data = DB::table('enterprise')
+            ->select('enterprise.id', 'enterprise.Enterprise_Name', 'enterprise.Activity_Sector', 'enterprise.Cesi_Student_Taken', 'Localisation.Localisation as Localisation_Name', 'enterprise.deleted_at')
+            ->join('localisation', 'localisation.id', '=', 'enterprise.Localisation_id')
+            ->where('enterprise.id', '=', $id)
+            ->first();
+    }
+
+    public static function GetforUpdate($id)
+    {
+        return $data = DB::table('enterprise')
             ->select('enterprise.id', 'enterprise.Enterprise_Name', 'enterprise.Activity_Sector', 'enterprise.Cesi_Student_Taken', 'Localisation.Localisation as Localisation_Name')
             ->join('localisation', 'localisation.id', '=', 'enterprise.Localisation_id')
             ->where('enterprise.id', '=', $id)

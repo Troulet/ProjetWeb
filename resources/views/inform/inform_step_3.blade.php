@@ -3,21 +3,13 @@
 <link rel= "stylesheet" href="../resources/views/header_footer.css"/>
 <body>
         @include('header')
-    <div id="1">
-       <div id="header">
-        <div class="titre">
-            <img class="logo2" src="../resources/img/logo_cesi2.0.png">
-            <h1>LES P'TITES ANNONCES</h1>
-            <h2>Cherche et trouve le stage qui te correspond !</h2>
-        </div>
-        </div>
-    </div>
+    
     <div>
-        {!! Form::open(['url' => '/Stats', 'method' => 'post']) !!}
+        {!! Form::open(['url' => '/Contact', 'method' => 'post']) !!}
         <fieldset enctype="multipart/form-data">
             <legend>Information étape 3 </legend>
      
-            <label for="Validation_Sheet">Réponse de l'entreprise : </label>
+            <label for="Validation_Sheet">Envoyer la fiche de validation : </label>
             <input type="file" name="Validation_Sheet" id="Validation_Sheet" />
      
 
