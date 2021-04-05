@@ -38,6 +38,7 @@ class Postulate extends Model
 			->join('internship', 'internship.id', '=', 'postulate.Internship_id')
 			->join('enterprise', 'enterprise.id', '=', 'internship.Enterprise_id')
 			->where('postulate.Student_id', '=', $id)
+            ->orderBy('postulate.created_at', 'DESC')
             ->get();
 
 	}

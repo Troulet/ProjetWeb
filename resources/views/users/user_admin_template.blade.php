@@ -80,6 +80,7 @@
         </p>
     </div>
     <div>
+        @if(Auth::id() != $user['Users_id'])
         {!! Form::open(['url' => '/Users_Delete', 'method' => 'post']) !!}
                 <input name='id' type="hidden" value="{{$user['Users_id']}}">
                 <button type="submit" class="btn">Supprimer</button>
@@ -88,6 +89,9 @@
                 <input name='id' type="hidden" value="{{$user['Users_id']}}">
                 <button type="submit" class="btn">Modifier</button>
         {!! Form::close() !!}
+        @else
+        <p>Vous ne pouvez pas Modifier ou Supprimer votre propre compte</p>
+        @endif
     </div>
     </div>
 
