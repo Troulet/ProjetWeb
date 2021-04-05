@@ -177,14 +177,14 @@ class EnterpriseController extends Controller
         {
             case 0 :
                 $Comment = new Student_Commentary;
-                $Comment->Student_id = $User_id;
+                $Comment->Student_id = Auth::id();
                 $Comment->Tutor_Lead = $request->Tutor_Lead;
                 $Comment->Infrastructure = $request->Infrastructure;
                 $Comment->Accessibility = $request->Accessibility;
                 break;
             case 1 :
                 $Comment = new Pilot_Commentary;
-                $Comment->Pilot_id = $User_id;         
+                $Comment->Pilot_id = Auth::id();         
                 break;
         }
         $Comment->Enterprise_id = $request->Enterprise_id;

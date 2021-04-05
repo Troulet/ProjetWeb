@@ -4,12 +4,12 @@
     "\\app",
     "\\app\\Models",
     "\\resources",
+    "\\resources\\js",
     "\\resources\\views",
-    "\\resources\\views\\contact",
     "\\resources\\views\\create",
     "\\resources\\views\\internship",
     "\\resources\\views\\users",
-    "\\resources\\views\\welcome"
+    "\\routes"
   ],
   "SelectedNode": "\\resources\\views\\users\\user_admin.blade.php",
   "PreviewInSolutionExplorer": false
