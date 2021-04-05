@@ -16,32 +16,32 @@
             <legend>Modifier un élève</legend>
 
             <input type='hidden' name="Users_id" value="{{$dataUser['Users_id']}}">
-            <input type='hidden' name="UpUser_type" value="{{$UpUser_type}}">
+            <input type='hidden' name="UpUser_type" value="{{$UpUser_type}}"> <br>
 
             <label id="First_Label" for="First_Name">Prénom de l'élève : </label>
-            <input type="text" name="First_Name" id="First_Name" value="{{$dataUser['First_Name']}}"/>
+            <input type="text" name="First_Name" id="First_Name" value="{{$dataUser['First_Name']}}"/> <br>
      
             <label id="Last_Label" for="Last_Name">Nom de l'élève : </label>
-            <input type="text" name="Last_Name" id="Last_Name" value="{{$dataUser['Last_name']}}"/>
+            <input type="text" name="Last_Name" id="Last_Name" value="{{$dataUser['Last_name']}}"/> <br>
 
             <label id="Localisation_Label" for="Localisation">Localité : </label>
-            <input type="text" name="Localisation_Name" id="Localisation_Name" value="{{$dataUser['Localisation_Name']}}"/>
+            <input type="text" name="Localisation_Name" id="Localisation_Name" value="{{$dataUser['Localisation_Name']}}"/> <br>
 
             <label id="email_Label" for="Email">Email :  </label>
-            <input type="text" name="email" id="Email" value="{{$dataUser['email']}}"/>
+            <input type="text" name="email" id="Email" value="{{$dataUser['email']}}"/> <br>
 
 
             @if($UpUser_type == 0 || $UpUser_type == 1)
                 <label id="Promotion_Label" for="Promotion">Promotion :  </label>
-                <input type="text" name="Promotion" id="Promotion" value="{{$dataUser['Promotion']}}"/>
+                <input type="text" name="Promotion" id="Promotion" value="{{$dataUser['Promotion']}}"/> <br>
 
                 @if($UpUser_type == 0 && $UpUser_type != 1)
                 <label id="Representative_Label" for="Representative">Délégué</label>
-                <input type="checkbox" name="Representative" id="Representative" value="{{$dataUser['Representative']}}" /> 
+                <input type="checkbox" name="Representative" id="Representative" value="{{$dataUser['Representative']}}" /> <br>
             
                 <label id="Representative_Rights_Label" for="Representative_Rights">Droits :  </label>
-                <input type="text" name="Representative_Rights" id="Representative_Rights" value="{{$dataUser['Representative_Rights']}}"/>
-                <input type="hidden" name="UpUser_type" id="UpUser_type" />
+                <input type="text" name="Representative_Rights" id="Representative_Rights" value="{{$dataUser['Representative_Rights']}}"/> 
+                <input type="hidden" name="UpUser_type" id="UpUser_type" /> <br>
                 @endif
             @endif
 
