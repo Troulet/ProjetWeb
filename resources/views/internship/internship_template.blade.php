@@ -1,8 +1,8 @@
 @extends('internship.internship_student')
 
 @section('carousel_offer')
-  
-<div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+<center> 
+<div id="carousel_offer" class="carousel slide" data-ride="carousel">
     <div class="carousel-inner">
         @if($dataEnterprise !== null)
         @foreach($dataEnterprise as $key=>$Enterprise)
@@ -45,16 +45,17 @@
                 @endif
             @endforeach
         @endif
-        <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="sr-only">Previous</span>
-        </a>
-        <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="sr-only">Next</span>
-        </a>
+
+        <button class="carousel-control-prev" type="button" data-target="#carousel_offer" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-target="#carousel_offer" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </button>
         @endif
     </div>
 </div>
-
+</center>
 @stop
