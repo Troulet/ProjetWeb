@@ -47,17 +47,17 @@ class AuthController extends Controller
                  switch ($user->Get_Table(Auth::id()))
                  {
                     case 2 :
-                        return View::make('welcome/welcome_admin')->with('user_type', 2);
+                        return View::make('welcome/welcome_admin_template')->with('user_type', 2);
                         break;
 
                     case 0 :
                         $dataOffer = ObjectController::objtoArray(Internship::tablereturn());
                         $dataEnterprise =  ObjectController::objtoArray(Enterprise::tablereturn());
-                        return View::make('welcome/welcome_template')->with('user_type', 0)->with('dataOffer', $dataOffer)->with('dataEnterprise', $dataEnterprise);
+                        return View::make('welcome/welcome_student_template')->with('user_type', 0)->with('dataOffer', $dataOffer)->with('dataEnterprise', $dataEnterprise);
                         break;
 
                     case 1 :
-                        return View::make('welcome/welcome_pilot')->with('user_type', 1);
+                        return View::make('welcome/welcome_pilot_template')->with('user_type', 1);
                         break;
 
                 };
