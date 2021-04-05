@@ -34,7 +34,7 @@ class Postulate extends Model
 
 	public static function GetPostulate($id){
 		return $user = DB::table('postulate')
-			->select('enterprise.Enterprise_Name', 'internship.id', 'postulate.Curiculum_Vitae', 'postulate.Motivation_Letter', 'postulate.Response_State')
+			->select('postulate.Curiculum_Vitae', 'postulate.Motivation_Letter', 'postulate.Response_State', 'enterprise.Enterprise_Name', 'internship.id')
 			->join('internship', 'internship.id', '=', 'postulate.Internship_id')
 			->join('enterprise', 'enterprise.id', '=', 'internship.Enterprise_id')
 			->where('postulate.Student_id', '=', $id)

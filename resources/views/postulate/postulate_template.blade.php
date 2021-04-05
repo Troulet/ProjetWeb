@@ -1,4 +1,5 @@
-@extends(postulate.postulate_studentS)
+
+@extends('postulate.postulate_student')
 
 @section('candidate_status')
 
@@ -32,11 +33,15 @@
                 </tr>
               </thead>
               <tbody>
+              @if($dataOffer != null)
               @foreach($dataOffer as $Offer)
                 <tr>
                   <th scope="row">{{$loop->iteration}}</th>
                   <td>{{$Offer['Enterprise_Name']}}</td>
-                  <td><a href="/Offer_Profil?id={{$Offer['id']}}" >Offre</a> </td> <!--form avec Internship_id-->
+                  <td>{!! Form::open(['url' => '/Offer_Profil', 'method' => 'post']) !!}
+                            <input name='id' type="hidden" value="{{$Offer['id']}}">
+                            <button type="submit" class="btn">Offre</button>
+                    {!! Form::close() !!}</td><!--form avec Internship_id-->
                   <td>bite</td>
                   <td>bite</td>
 
@@ -53,11 +58,12 @@
                   @endif
                 </tr>
                @endforeach
+               @endif
               </tbody>
         </table>
 
 
-<a href="../index.html"> ... </a>
+    <a href="../index.html"> ... </a>
 
 
 @stop
