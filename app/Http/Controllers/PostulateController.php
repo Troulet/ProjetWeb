@@ -28,9 +28,8 @@ class PostulateController extends Controller
     }
 
     public function Update(Request $request){
-        // a corriger
-        $this->postulate->Internship_id = Postulate::find($request->Internship_id);
-        $this->postulate->Student_id = Postulate::find($request->Internship_id);
+        $postulateid =[$request->Internship_id, Auth::id()]
+        $this->postulate->Internship_id = $populateid;
         $this->postulate->Response_State = $requests->Response_State;
     }
 

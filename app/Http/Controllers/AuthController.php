@@ -11,6 +11,7 @@ use App\Models\Pilot;
 use App\Models\Users;
 use App\Models\Internship;
 use App\Models\Enterprise;
+use App\Models\Postulate;
 
 class AuthController extends Controller 
 {
@@ -40,7 +41,7 @@ class AuthController extends Controller
                 );
              if(Auth::attempt($user, $request['_token']))
              {
-                
+               
                  $request->session()->regenerate();
                  /*We redirect the user on the correct page*/
                  $user = new UsersController;
