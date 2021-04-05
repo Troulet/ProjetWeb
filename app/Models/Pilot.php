@@ -58,6 +58,17 @@ class Pilot extends Model
             ->get();
     }
 
+    public static function tablereturnsearch($search, $localid){
+        return $data = DB::table('pilot')
+            ->select('pilot.Users_id', 'users.email', 'users.First_Name', 'users.Last_name', 'pilot.Promotion')
+            ->join('users', 'users.id', '=', 'pilot.Users_id')
+            ->where('pilot.Localisation_id', '=' , $localid)
+             ->where('users.First_Name', 'like', '%' . $search . '%')
+            ->orwhere('users.Last_name', 'like', '%' . $search . '%')
+            ->orwhere('pilot.Promotion', 'like', '%' . $search . '%')
+            ->get();
+    }
+
     public static function GetforUpdate($id){
         return $data = DB::table('pilot')
             ->select('pilot.Users_id', 'users.email', 'users.password', 'users.First_Name', 'users.Last_name', 'pilot.Promotion', 'localisation.Localisation as Localisation_Name')

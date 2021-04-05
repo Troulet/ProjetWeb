@@ -10,16 +10,18 @@
             <button type="submit" class="btn">Voir le Profil de l'Entreprise</button>
             {!! Form::close() !!}
 
-            @if($user_type != 0 && $user_type == 1 || $user_type == 2)
-                {!! Form::open(['url' => '/Offer_Delete', 'method' => 'post']) !!}
+            @if($dataOffer['deleted_at'] == null)
+                @if($user_type != 0 && $user_type == 1 || $user_type == 2)
+                    {!! Form::open(['url' => '/Offer_Delete', 'method' => 'post']) !!}
                             <input name='id' type="hidden" value="{{$dataOffer['id']}}">
                             <button type="submit" class="btn">Supprimer</button>
-                {!! Form::close() !!}
+                    {!! Form::close() !!}
 
-                {!! Form::open(['url' => '/Offer_Update', 'method' => 'get']) !!}
+                    {!! Form::open(['url' => '/Offer_Update', 'method' => 'get']) !!}
                             <input name='id' type="hidden" value="{{$dataOffer['id']}}">
                             <button type="submit" class="btn">Modifier</button>
-                {!! Form::close() !!}
+                    {!! Form::close() !!}
+                @endif
             @endif
 
     <h5 class="card-title">Offre</h5>

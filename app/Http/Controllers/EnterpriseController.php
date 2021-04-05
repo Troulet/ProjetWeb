@@ -39,6 +39,18 @@ class EnterpriseController extends Controller
         $this->enterprise->delete();
     }
 
+    public function Restore(Request $request)
+    {
+        $restored = new InternshipController;
+        $dataOffer = $this->GetInternship($request->id);
+        foreach($dataOffer as $Offer)
+        {
+            $restored->Restore($Offer['id']);
+        }
+
+        $this->enterprise = Enterprise::withTrashed()->find($request->id)->restore();
+    }
+
     public function GetInternship($entid)
     {
         return ObjectController::objtoArray(Internship::GetInternship($entid));
@@ -52,10 +64,10 @@ class EnterpriseController extends Controller
     public function ValidationCreate(Request $request)
     {       
         $validator = Validator::make($request->all(), [
-            'Enterprise_Name' => 'required|Alpha_num',
-            'Activity_Sector' => 'required|Alpha',
+            'Enterprise_Name' => 'required|alpha_num',
+            'Activity_Sector' => 'required|alpha',
             'Cesi_Student_Taken' => 'required|numeric',
-            'Localisation_Name' => 'required|Alpha'
+            'Localisation_Name' => 'required|alpha'
         ]);
 
         //if the inputs are not validated, we came back on the previous page.
@@ -137,10 +149,26 @@ class EnterpriseController extends Controller
         }
     }
 
-    public function Show($id)
+    public function GetUpdatePage(Request $request)
     {
-        return $this->enterprise->GetById(id);
+        $user = new UsersController;
+        switch($user->Get_Table(Auth::id()))
+        {
+                case 2 :
+                    return View::make('modify/modify_enterprise')->with('user_type', 2)->with('dataEnterprise', ObjectController::objtoArray(Enterprise::GetforUpdate($request->id)));
+                    break;
+
+                case 0 :
+                    return View::make('modify/modify_enterprise')->with('user_type', 0)->with('dataEnterprise', ObjectController::objtoArray(Enterprise::GetforUpdate($request->id)));
+                    break;
+
+                case 1 :
+                    return View::make('modify/modify_enterprise')->with('user_type', 1)->with('dataEnterprise', ObjectController::objtoArray(Enterprise::GetforUpdate($request->id)));
+                    break;
+
+     }
     }
+
 
     public function PostComment(Request $request)
     {

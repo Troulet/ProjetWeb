@@ -12,7 +12,6 @@
 
     </head>
     <body>
-        
         @include('header')
     </br>
         <div class="filtre">

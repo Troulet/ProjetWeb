@@ -25,9 +25,14 @@ class InternshipController extends Controller
         $this->Offer->delete();
     }
 
-    public function Delete($id)
+    public function Restore($id)
     {
-        $this->Offer = Internship::find($id);
+        $this->Offer = Internship::withTrashed()->find($id)->restore();
+    }
+
+    public function Delete(Request $request)
+    {
+        $this->Offer = Internship::find($request->id);
         $this->Offer->forceDelete();
     }
 
@@ -88,15 +93,15 @@ class InternshipController extends Controller
     public function ValidationUpdate(Request $request)
     {
         $validator = Validator::make($request->all(), [
-            'Internship_id' => 'required|numeric',
-            'Description' => 'required|alpha_num',
-            'Skills_reserached' => 'required|alpha_num',
-            'Promotion_researched' => 'required|alpha_num',
-            'Internship_Duration' => 'required|numeric',
+            'Internship_id' => 'required|exists:internship,id',
+            'Description' => 'required',
+            'Skills_researched' => 'required',
+            'Promotion_researched' => 'required',
+            'Internship_Duration' => 'required|date',
             'Salary' => 'required|numeric',
             'Number_Of_Places' => 'required|numeric',
-            'Contact' => 'required|alpha_num',
-            'Enterprise_id' => 'required|exists:enterprise,id'
+            'Localisation_Name' => 'required|alpha',
+            'Contact' => 'required|email'
         ]);
 
         //if the inputs are not validated, we came back on the previous page.
@@ -120,7 +125,7 @@ class InternshipController extends Controller
             $this->Offer->Promotion_researched = $request->Promotion_researched;
             $this->Offer->Internship_Duration = $request->Internship_Duration;
             $this->Offer->Salary = $request->Salary;
-            $this->Offer->Offer_Date = date("F j, Y, g:i a");
+            $this->Offer->Offer_Date = date("y.m.d");
             $this->Offer->Number_Of_Places = $request->Number_Of_Places;
             $this->Offer->Contact = $request->Contact;
     
@@ -130,8 +135,8 @@ class InternshipController extends Controller
             ['Localisation' => $request->Localisation_Name ]);
             
             $NewLocal = new Localisation;
-            $this->Offer->Localisation_id = $NewLocal->GetId($request->Localisation_Name);
-            $this->Offer->Enterprise_id = $request->Enterprise_id;
+            $Localisation_id = $NewLocal->GetId($request->Localisation_Name);
+            $this->Offer->Localisation_id = $Localisation_id[0];
             $this->Offer->save();
         }
         else
@@ -140,10 +145,25 @@ class InternshipController extends Controller
         }
     }
 
-    /*public function Show($id)
+    public function GetUpdatePage(Request $request)
     {
-        return $this->Offer->GetById(id);
-    }*/
+        $user = new UsersController;
+        switch($user->Get_Table(Auth::id()))
+        {
+                case 2 :
+                    return View::make('modify/modify_offer')->with('user_type', 2)->with('dataOffer', ObjectController::objtoArray(Internship::GetforUpdate($request->id)));
+                    break;
+
+                case 0 :
+                    return View::make('modify/modify_offer')->with('user_type', 0)->with('dataOffer', ObjectController::objtoArray(Internship::GetforUpdate($request->id)));
+                    break;
+
+                case 1 :
+                    return View::make('modify/modify_offer')->with('user_type', 1)->with('dataOffer', ObjectController::objtoArray(Internship::GetforUpdate($request->id)));
+                    break;
+
+     }
+    }
 
     public function GetCreatePage(Request $request)
     {
@@ -187,6 +207,8 @@ class InternshipController extends Controller
 
         }
     }
+
+    
 }
 
 ?>
