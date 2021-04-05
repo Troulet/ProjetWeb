@@ -23,6 +23,14 @@
                 <button type="submit" class="btn">CRÉER UNE ENTREPRISE</button>
             {!! Form::close() !!}
             </div>
+
+            <article class="forecast">
+                <h1>Offre de Stage</h1>
+                <article class="offer">
+                    @yield('carousel_entreprise')
+                </article>
+            </article>
+
            <!-- <div class="filtre">
             <h3>Filtrer les résultats</h3>
             <form class="d-flex">
@@ -93,22 +101,29 @@
            
 
             <!--Caroussel-->
-    <!-- Carousel wrapper -->
+    <!-- Carousel wrapper
 <div
 id="carousel"
 class="carousel slide"
 data-mdb-ride="carousel"
 >
-<!--Caroussel-->
+<!--Caroussel
     <section class="carousel_1">
       <div class="container">
       <h2>Offres :</h2>
           <div class="carousel slide" data-ride="carousel" id="multi_item1" data-intervale="2000">
               <div class="carousel-inner">
+              <div class="carousel-item active">
                   
                            @yield('carousel_offer')
                       
               </div>
+              <div class="carousel-item">
+                  
+                           @yield('carousel_offer')
+                      
+              </div>
+
 
               <a class="carousel-control-prev" href="#multi_item1" role="button" data-slide="prev">
                   <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -123,28 +138,11 @@ data-mdb-ride="carousel"
   
     </section>
 </div>
-              <div class="carousel-item">
-                  <div class="row">
-                      <div class="col-sm"><img class="d-block w-100" src="https://mdbootstrap.com/img/new/standard/nature/181.jpg" alt="4 slide"></div>
-                      <div class="col-sm"><img class="d-block w-100" src="https://mdbootstrap.com/img/new/standard/nature/181.jpg" alt="5 slide"></div>
-                      <div class="col-sm"><img class="d-block w-100" src="https://mdbootstrap.com/img/new/standard/nature/181.jpg" alt="6 slide"></div>
-                  </div>
-              </div>
-          </div>
-
-          <a class="carousel-control-prev" href="#multi_item1" role="button" data-slide="prev">
-              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-              <span class="sr-only">Previous</span>
-          </a>
-          <a class="carousel-control-next" href="#multi_item1" role="button" data-slide="next">
-              <span class="carousel-control-next-icon" aria-hidden="true"></span>
-              <span class="sr-only">Next</span>
-          </a>
       </div>
   </div>
 </section>
 
-    <!--pop-up consulter une entreprise-->
+    <!--pop-up consulter une entreprise
     <section class="offre_selec">
         <div class="col-lg-4 d-none d-lg-block">
           <div class="card">
@@ -157,10 +155,10 @@ data-mdb-ride="carousel"
                     </div>
                   </div>
                 </div>
-        <!--bouton du pop-up-->
+        <!--bouton du pop-up
         <button class="suppr" type="button">SUPPRIMER LE PROFIL</button><br>
         <button class="contacter" type="button">CACHER LE PROFIL</button><br>
-        <button class="modif" type="button">MODIFIER LE PROFIL</button>
+        <button class="modif" type="button">MODIFIER LE PROFIL</button>-->
 
     </section> 
        @include('footer')

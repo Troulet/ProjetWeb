@@ -14,8 +14,6 @@
                         @foreach($dataOffer as $Offer)
                             @if($Offer['deleted_at'] == null || ($Offer['deleted_at'] != null && $user_type != 0))
                             <div id="banner-{{$i}}" class="col-sm">
-                            <img class="d-block w-100 desk-img" src="https://mdbootstrap.com/img/new/standard/nature/181.jpg" alt="{{$i}} slide">
-                            <img class="w-100  mobile-img" src="https://mdbootstrap.com/img/new/standard/nature/181.jpg" alt="{{$i}} slide">
                             <h5 class="card-title">Stage chez {{$Offer['Enterprise_Name']}}</h5>
                             <p class="card-text">
                                 Desccription : {{$Offer['Description']}} </br>
@@ -42,8 +40,6 @@
                     @foreach($dataEnterprise as $Enterprise)
                     @if($Enterprise['deleted_at'] == null || ($Enterprise['deleted_at'] != null && $user_type != 0))
                         <div id="banner-{{$i}}" class="col-sm">
-                        <img class="d-block w-100 desk-img" src="https://mdbootstrap.com/img/new/standard/nature/181.jpg" alt="{{$i}} slide">
-                        <img class="w-100  mobile-img" src="https://mdbootstrap.com/img/new/standard/nature/181.jpg" alt="{{$i}} slide">
                         <h5 class="card-title">Entreprise {{$Enterprise['Enterprise_Name']}}</h5>
                         <p class="card-text">
                             Travaille dans le secteur : {{$Enterprise['Activity_Sector']}} </br>
