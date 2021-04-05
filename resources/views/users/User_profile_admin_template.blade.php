@@ -16,6 +16,7 @@
                         <input name='Validation_Sheet' type="file" required>
                         <button type="submit" class="btn">Transmettre une fiche de validation signée</button>
                 {!! Form::close() !!}
+            @endif
     </div>
     @endforeach
 @stop
