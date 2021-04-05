@@ -185,17 +185,17 @@ class UsersController extends Controller
                 case 2 :
                     $dataPilot = $this->pilot->tablereturn($localid);
                     $dataAdmin = $this->administrator->tablereturn($localid);
-                    return View::make('contact/contact_template')->with('user_type', 2)->with('dataPilot', $dataPilot)->with('dataAdmin', $dataAdmin)->with('dataStudent', $dataStudent);
+                    return View::make('contact/contact_admin_template')->with('user_type', 2)->with('dataPilot', $dataPilot)->with('dataAdmin', $dataAdmin)->with('dataStudent', $dataStudent);
                     break;
 
                 case 1 :
                     $dataAdmin = $this->administrator->tablereturn($localid);
-                    return View::make('contact/contact_template')->with('user_type', 1)->with('dataStudent', $dataStudent)->with('dataAdmin', $dataAdmin);
+                    return View::make('contact/contact_pilot_template')->with('user_type', 1)->with('dataStudent', $dataStudent)->with('dataAdmin', $dataAdmin);
                     break;
 
                 case 0 :
                     $dataPilot = $this->pilot->tablereturn($localid);
-                    return View::make('contact/contact_template')->with('user_type', 1)->with('dataPilot', $dataPilot);
+                    return View::make('contact/contact_student_template')->with('user_type', 0)->with('dataPilot', $dataPilot);
                     break;
             }
 

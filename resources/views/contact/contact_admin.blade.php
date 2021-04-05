@@ -14,29 +14,8 @@
     <body> 
           @include('header')
 
-
-    @if($user_type == 0)
-       <div class="card">
-            @yield('data_pilot')
-       </div><br>
-
-    @elseif($user_type == 1)
-       <div class="card">
-            @yield('data_student')
-       </div><br>
-       <div class="card">
-            @yield('data_admin')
-       <div><br>
-
-    @elseif($user_type == 2)
-       <div class="card">
-            @yield('data_student')
-       </div><br>
-       <div class="card">
-            @yield('data_pilot')
-       <div><br>
-    @endif
-
+      
+       @yield('dataContact')      
 
         <div class="card">
             <div class="card-body">
