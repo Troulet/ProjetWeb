@@ -1,69 +1,34 @@
 @extends('internship.internship_student')
 
 @section('carousel_offer')
-
-<div class="card-body">
-    <div class="carousel-item active">
-            <div class="row">
-                    @php
-                        $i=1
-                    @endphp
-
-                    @if($dataOffer !== null)
-
-                        @foreach($dataOffer as $Offer)
-                            @if($Offer['deleted_at'] == null || ($Offer['deleted_at'] != null && $user_type != 0))
-                            <div id="banner-{{$i}}" class="col-sm">
-                            <img class="d-block w-100 desk-img" src="https://mdbootstrap.com/img/new/standard/nature/181.jpg" alt="{{$i}} slide">
-                            <img class="w-100  mobile-img" src="https://mdbootstrap.com/img/new/standard/nature/181.jpg" alt="{{$i}} slide">
-                            <h5 class="card-title">Stage chez {{$Offer['Enterprise_Name']}}</h5>
-                            <p class="card-text">
-                                Desccription : {{$Offer['Description']}} </br>
-                                Compétences recherchées : {{$Offer['Skills_Researched']}} </br>
-                                Promotion ciblée : {{$Offer['Promotion_Researched']}} </br>
-                                Nombre de places : {{$Offer['Number_Of_Places']}} </br>
-                                Localisation : {{$Offer['Localisation_Name']}} </br>
-                            </p>
-                            {!! Form::open(['url' => '/Offer_Profil', 'method' => 'post']) !!}
-                                <input name='id' type="hidden" value="{{$Offer['id']}}">
-                                <button type="submit" class="btn">Aller voir</button>
-                            {!! Form::close() !!}
-                            </div>       
-                            @php
-                                $i++
-                            @endphp
-
-                            @endif
-                        @endforeach
-
-                    @endif
-
-                    @if($dataEnterprise !== null)
-                    @foreach($dataEnterprise as $Enterprise)
-                    @if($Enterprise['deleted_at'] == null || ($Enterprise['deleted_at'] != null && $user_type != 0))
-                        <div id="banner-{{$i}}" class="col-sm">
-                        <img class="d-block w-100 desk-img" src="https://mdbootstrap.com/img/new/standard/nature/181.jpg" alt="{{$i}} slide">
-                        <img class="w-100  mobile-img" src="https://mdbootstrap.com/img/new/standard/nature/181.jpg" alt="{{$i}} slide">
-                        <h5 class="card-title">Entreprise {{$Enterprise['Enterprise_Name']}}</h5>
-                        <p class="card-text">
-                            Travaille dans le secteur : {{$Enterprise['Activity_Sector']}} </br>
-                            A déjà pris {{$Enterprise['Cesi_Student_Taken']}} élèves. </br>
-                            Se situe à {{$Enterprise['Localisation_Name']}} ! </br>
-                        </p>
-                        {!! Form::open(['url' => '/Enterprise_Profil', 'method' => 'post']) !!}
-                            <input name='id' type="hidden" value="{{$Enterprise['id']}}">
-                            <button type="submit" class="btn">Aller voir</button>
-                        {!! Form::close() !!}
-                        </div>
-                    @php
-                        $i++
-                    @endphp
-                    @endif
-
-                    @endforeach
-                    @endif
+  
+<div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+    <div class="carousel-inner">
+        @foreach($dataEnterprise as $key=>$Enterprise)
+            <div class="carousel-item {{$loop->iteration == 1 ? 'active' : ''}}">
+            
+                    <h5 class="card-title">Entreprise {{$Enterprise['Enterprise_Name']}}</h5>
+                    <p class="card-text">
+                        Travaille dans le secteur : {{$Enterprise['Activity_Sector']}} </br>
+                        A déjà pris {{$Enterprise['Cesi_Student_Taken']}} élèves. </br>
+                        Se situe à {{$Enterprise['Localisation_Name']}} ! </br>
+                    </p>
+                    {!! Form::open(['url' => '/Enterprise_Profil', 'method' => 'post']) !!}
+                        <input name='id' type="hidden" value="{{$Enterprise['id']}}">
+                        <button type="submit" class="btn">Aller voir</button>
+                    {!! Form::close() !!}
 
             </div>
+        @endforeach
+        <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+        </a>
     </div>
 </div>
+
 @stop
