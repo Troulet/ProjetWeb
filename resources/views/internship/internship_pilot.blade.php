@@ -23,7 +23,6 @@
                 <button type="submit" class="btn">CRÉER UNE ENTREPRISE</button>
             {!! Form::close() !!}
             </div>
-
             <article class="forecast">
                 <h1>Offre de Stage</h1>
                 <article class="offer">
@@ -101,46 +100,12 @@
            
 
             <!--Caroussel-->
-    <!-- Carousel wrapper
-<div
-id="carousel"
-class="carousel slide"
-data-mdb-ride="carousel"
->
-<!--Caroussel
-    <section class="carousel_1">
-      <div class="container">
-      <h2>Offres :</h2>
-          <div class="carousel slide" data-ride="carousel" id="multi_item1" data-intervale="2000">
-              <div class="carousel-inner">
-              <div class="carousel-item active">
-                  
-                           @yield('carousel_offer')
-                      
-              </div>
-              <div class="carousel-item">
-                  
-                           @yield('carousel_offer')
-                      
-              </div>
+    <!-- Carousel wrapper-->
 
+<!--Caroussel -->
+    
+        @yield('carousel_offer')
 
-              <a class="carousel-control-prev" href="#multi_item1" role="button" data-slide="prev">
-                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                  <span class="sr-only">Previous</span>
-              </a>
-              <a class="carousel-control-next" href="#multi_item1" role="button" data-slide="next">
-                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                  <span class="sr-only">Next</span>
-              </a>
-          </div>
-      </div>
-  
-    </section>
-</div>
-      </div>
-  </div>
-</section>
 
     <!--pop-up consulter une entreprise
     <section class="offre_selec">
@@ -163,6 +128,9 @@ data-mdb-ride="carousel"
     </section> 
        @include('footer')
     <script type="text/javascript">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
     </script>
     </body>
