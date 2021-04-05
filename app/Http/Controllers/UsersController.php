@@ -178,20 +178,25 @@ class UsersController extends Controller
 
   public function GetContactPage(Request $request)
     {
+      $localid = $this->Get_Local(Auth::id());
+      $dataStudent = $this->student->tablereturn($localid);
       switch ($this->Get_Table(Auth::id()))
             {
                 case 2 :
-                    return View::make('contact/contact_admin')->with('user_type', 2);
-                    break;
-
-                case 0 :
-                    return View::make('contact/contact_student')->with('user_type', 0);
+                    $dataPilot = $this->pilot->tablereturn($localid);
+                    $dataAdmin = $this->administrator->tablereturn($localid);
+                    return View::make('contact/contact_template')->with('user_type', 2)->with('dataPilot', $dataPilot)->with('dataAdmin', $dataAdmin)->with('dataStudent', $dataStudent);
                     break;
 
                 case 1 :
-                    return View::make('contact/contact_pilot')->with('user_type', 1);
+                    $dataAdmin = $this->administrator->tablereturn($localid);
+                    return View::make('contact/contact_template')->with('user_type', 1)->with('dataStudent', $dataStudent)->with('dataAdmin', $dataAdmin);
                     break;
 
+                case 0 :
+                    $dataPilot = $this->pilot->tablereturn($localid);
+                    return View::make('contact/contact_template')->with('user_type', 1)->with('dataPilot', $dataPilot);
+                    break;
             }
 
   }
