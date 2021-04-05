@@ -13,9 +13,22 @@
         
     <body>
         @include('header')
+            {{
+                $file = $_POST['PDF'];
+                $filename = 'offre.pdf';
 
-       
+                // Header content type
+                header('Content-type: application/pdf');
 
+                header('Content-Disposition: inline; filename="' . $filename . '"');
+
+                header('Content-Transfer-Encoding: binary');
+
+                header('Accept-Ranges: bytes');
+
+                // Read the file
+                @readfile($file);
+            }}
         @include('footer')
     </body>
 

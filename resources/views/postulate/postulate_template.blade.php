@@ -44,12 +44,12 @@
                     {!! Form::close() !!}</td><!--form avec Internship_id-->
                   <td>
                   <form action="{{ route('Offer_CV')}}" method="get">
-                  <input type="hidden" value="{{$Offer['Curriculum_Vitae']}}">
+                  <input name="PDF" type="hidden" value="{{$Offer['Curriculum_Vitae']}}">
                   <button class="button" type="submit">CV</button>
                   </td>
                   <td>
                   <form action="{{ route('Offer_CV')}}" method="get">
-                  <input type="hidden" value="{{$Offer['Motivation_Letter']}}">
+                  <input name="PDF" type="hidden" value="{{$Offer['Motivation_Letter']}}">
                   <button class="button" type="submit">Lettre de motivation</button>
                   </td>
 
