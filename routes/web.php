@@ -10,6 +10,8 @@ use App\Http\Controllers\InternshipController;
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\PilotController;
 use App\Http\Controllers\AdministratorController;
+use App\Http\Controllers\PostulateController;
+use App\Http\Controllers\InformController;
 
 /*
 |--------------------------------------------------------------------------
@@ -131,7 +133,10 @@ use App\Http\Controllers\AdministratorController;
     Route::post('/Offer_Profil', [ InternshipController::class, 'GetProfil']);
 
     //Chemin pour afficher le formulaire de candidature
-    Route::get('/Postulate_Create', [PostulateController::class, 'Create']);
+    Route::get('/Postulate_Create', [PostulateController::class, 'GetCreatePage']);
+
+    //Chemin pour afficher le formulaire de candidature
+    Route::post('/Postulate_Create', [PostulateController::class, 'Create']);
 
     //Chemin pour poster la réponse de l'Entreprise (Inform step 2)
     Route::post('/Postulate_Update', [PostulateController::class, 'Update']);

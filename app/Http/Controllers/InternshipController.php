@@ -208,7 +208,6 @@ class InternshipController extends Controller
         }
     }
 
-    
 }
 
 ?>

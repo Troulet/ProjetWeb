@@ -1,13 +1,15 @@
 {
   "ExpandedNodes": [
     "",
+    "\\app",
+    "\\app\\Http",
+    "\\app\\Http\\Controllers",
     "\\resources",
     "\\resources\\views",
     "\\resources\\views\\contact",
     "\\resources\\views\\create",
     "\\resources\\views\\internship",
-    "\\resources\\views\\postulate",
-    "\\resources\\views\\users"
+    "\\routes"
   ],
   "SelectedNode": "\\resources\\views\\create\\form_postulate.blade.php",
   "PreviewInSolutionExplorer": false

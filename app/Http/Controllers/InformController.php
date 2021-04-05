@@ -22,41 +22,33 @@ class InformController extends Controller
         $this->step3 = new Inform_Step6;
     }
 
-    public function VerifPage(Request $request)
-    {
-        if ($request->session()->get('Login') !== null)
-        {
-            return $this->GetId($request->session()->get('Login'));
-        }
-        else
-	    {
-            echo "Error";
-        }
-    }
-
     public function Create3(Requests $requests){
-        $this->step3->Pilot_id = $requests->Pilot_id;                           //Comment le récupérer?
-        $this->step3->Student_id = VerifPage($requests);
+        $this->step3->Pilot_id = $requests->Pilot_id;                           
+        $this->step3->Student_id = Auth::id();
         $this->step3->Validation_Sheet = $requests->Validation_Sheet;
+        $this->step3->save();
     }
 
     public function Create4(Requests $requests){
-        $this->step3->Pilot_id = VerifPage($requests);
-        $this->step3->Administrator_id = $requests->Administrator_id;           //Comment le récupérer?
-        $this->step3->Validation_Sheet = $requests->Validation_Sheet;
+        $this->step4->Pilot_id = Auth::id();
+        $this->step4->Administrator_id = $requests->Administrator_id;           
+        $this->step4->Validation_Sheet = $requests->Validation_Sheet;
+        $this->step4->save();
     }
 
     public function Create5(Requests $requests){
-        $this->step3->Pilot_id = $requests->Pilot_id;                           //Comment le récupérer?
-        $this->step3->Administrator_id = VerifPage($requests);
-        $this->step3->Student_id = $requests->Student_id;                       //Comment le récupérer?
-        $this->step3->Internship_Contract = $requests->Internship_Contract;
+        $this->step5->Pilot_id = $requests->Pilot_id;                          
+        $this->step5->Administrator_id = Auth::id();
+        $this->step5->Student_id = $requests->Student_id;                       
+        $this->step5->Internship_Contract = $requests->Internship_Contract;
+        $this->step5->save();
     }
 
     public function Create6(Requests $requests){
-        $this->step3->Pilot_id = $requests->Pilot_id;                           //Comment le récupérer?
-        $this->step3->Administrator_id = $requests->Administrator_id;           //Comment le récupérer?
-        $this->step3->Student_id = VerifPage($requests);
-        $this->step3->Internship_Contract = $requests->Internship_Contract;
+        $this->step6->Pilot_id = $requests->Pilot_id;                          
+        $this->step6->Administrator_id = $requests->Administrator_id;          
+        $this->step6->Student_id = Auth::id();
+        $this->step6->Internship_Contract = $requests->Internship_Contract;
+        $this->step6->save();
     }
 }
