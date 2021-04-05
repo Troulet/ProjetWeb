@@ -32,9 +32,13 @@
                 </tr>
               </thead>
               <tbody>
+                <?php
+                    i=0;
+                ?>
               @foreach($dataOffer as $Offer)
+                
                 <tr>
-                  <th scope="row">1</th>
+                  <th scope="row">{{i++}}</th>
                   <td>{{$Offer['Enterprise_Name']}}</td>
                   <td><a href="/Offer/{{$Offer['id']}}" >Offre</a> </td> <!--form avec Internship_id-->
                   <td>{{echo $Offer['Curriculum_Vitae']}}</td>
@@ -51,22 +55,6 @@
 	                    <option>Non</option>
                       </select></td>
                   @endif
-                </tr>
-                <tr>
-                  <th scope="row">2</th>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <th scope="row">3</th>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
                 </tr>
                @endforeach
               </tbody>
