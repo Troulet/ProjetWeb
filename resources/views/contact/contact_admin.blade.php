@@ -14,13 +14,13 @@
     <body> 
           @include('header')
 
-        <div class="card">
+       <div class="card">
+            @yield('data_student')
+       </div><br>
+
+       <div class="card">
             @yield('data_pilot')
-        </div><br>
-
-       @yield('data_student')
-
-       @yield('data_pilot')
+       </div><br>
 
         <div class="card">
             <div class="card-body">

@@ -14,7 +14,7 @@
         </p>
     </div>
     <div>
-        {!! Form::open(['url' => '/Users_Delete', 'method' => 'post']) !!}
+            {!! Form::open(['url' => '/Users_Delete', 'method' => 'post']) !!}
                     <input name='id' type="hidden" value="{{$user['Users_id']}}">
                     <button type="submit" class="btn">Supprimer</button>
             {!! Form::close() !!}
