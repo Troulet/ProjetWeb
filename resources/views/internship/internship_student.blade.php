@@ -97,9 +97,9 @@
     <section class="carousel_1">
       <div class="container">
       <h2>Offres :</h2>
-                  
-              @yield('carousel_offer')
-                     
+        <div class="yield">
+            @yield('carousel_offer')
+        </div>             
       </div>
   
     </section>

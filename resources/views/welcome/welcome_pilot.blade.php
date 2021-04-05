@@ -19,8 +19,6 @@
                     <div class="carousel-item active">
                         <div class="row">
                             <div id="banner-one" class="col-sm">
-                                <img class="d-block w-100 desk-img" src="https://mdbootstrap.com/img/new/standard/nature/181.jpg" alt="1 slide">
-                                <img class=" w-100  mobile-img" src="https://mdbootstrap.com/img/new/standard/nature/181.jpg" alt="1 slide">
                                 <div class="card-body">
                                     <h5 class="card-title">Elève</h5>
                                     <p class="card-text">
@@ -30,8 +28,7 @@
                                 </div>
                             </div>
                             <div id="banner-two" class="col-sm">
-                                <img class="d-block w-100 desk-img" src="https://mdbootstrap.com/img/new/standard/nature/181.jpg" alt="2 slide">
-                                <img class=" w-100  mobile-img" src="https://mdbootstrap.com/img/new/standard/nature/181.jpg" alt="2 slide">
+                                
                                 <div class="card-body">
                                     <h5 class="card-title">Elève</h5>
                                     <p class="card-text">
@@ -41,8 +38,6 @@
                                 </div>
                             </div>
                             <div id="banner-three" class="col-sm">
-                                <img class="d-block w-100 desk-img" src="https://mdbootstrap.com/img/new/standard/nature/181.jpg" alt="3 slide">
-                                <img class=" w-100  mobile-img" src="https://mdbootstrap.com/img/new/standard/nature/181.jpg" alt="3 slide">
                                     <div class="card-body">
                                         <h5 class="card-title">Elève</h5>
                                         <p class="card-text">
@@ -55,23 +50,27 @@
                     </div>
                     <div class="carousel-item">
                         <div class="row">
-                            <div class="col-sm"><img class="d-block w-100" src="https://mdbootstrap.com/img/new/standard/nature/181.jpg" alt="4 slide"></div>
-                            <div class="col-sm"><img class="d-block w-100" src="https://mdbootstrap.com/img/new/standard/nature/181.jpg" alt="5 slide"></div>
-                            <div class="col-sm"><img class="d-block w-100" src="https://mdbootstrap.com/img/new/standard/nature/181.jpg" alt="6 slide"></div>
+                            <div class="col-sm"> </div>
+                            <div class="col-sm"> </div>
+                            <div class="col-sm"> </div>
                         </div>
                     </div>
                 </div>
-                <a id="go_previous" class="carousel-control-prev" href="#multi_item" role="button" data-slide="prev">
+                <button class="carousel-control-prev" type="button" data-target="#multi_item1" data-slide="prev">
                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                     <span class="sr-only">Previous</span>
-                </a>
-                <a id="go_next" class="carousel-control-next" href="#multi_item" role="button" data-slide="next">
+                </button>
+                <button class="carousel-control-next" type="button" data-target="#multi_item1" data-slide="next">
                     <span class="carousel-control-next-icon" aria-hidden="true"></span>
                     <span class="sr-only">Next</span>
-                </a>
+                </button>
             </div>
         </div>
         @include('footer')
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     </body>
 
 </html>
