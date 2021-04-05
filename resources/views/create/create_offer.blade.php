@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <link rel= "stylesheet" href="../resources/views/header_footer.css"/>
-<link rel= "stylesheet" href="../resources/views/welcome/create_user.css"/>
+<link rel= "stylesheet" href="../resources/views/create/create_user.css"/>
 <body>
     
     @include('header') 

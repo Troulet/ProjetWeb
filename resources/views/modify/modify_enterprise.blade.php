@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <link rel= "stylesheet" href="../resources/views/header_footer.css"/>
+<link rel= "stylesheet" href="../resources/views/modify/modify.css"/>
 <body>
    
     @include('header')
