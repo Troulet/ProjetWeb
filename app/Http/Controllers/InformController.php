@@ -29,6 +29,7 @@ class InformController extends Controller
         $this->step3->Student_id = Auth::id();
         $this->step3->Validation_Sheet = $request->Validation_Sheet;
         $this->step3->save();
+        UsersController::GetHomePage();
     }
 
     public function Create4(Request $request){
@@ -36,6 +37,7 @@ class InformController extends Controller
         $this->step4->Administrator_id = $request->id;           
         $this->step4->Validation_Sheet = $request->Validation_Sheet;
         $this->step4->save();
+        UsersController::GetHomePage();
     }
 
     public function Create5(Request $request){
@@ -45,6 +47,17 @@ class InformController extends Controller
         $this->step5->Student_id = $request->id;                       
         $this->step5->Internship_Contract = $request->Internship_Contract;
         $this->step5->save();
+        UsersController::GetHomePage();
+    }
+
+    public static function GetInform3($id)
+    {
+        return ObjectController::objtoArray(Inform_Step3::GetAll($id));
+    }
+
+    public static function GetInform4($id)
+    {
+        return ObjectController::objtoArray(Inform_Step4::GetAll($id));
     }
 
     public static function GetInform5($id)
@@ -64,5 +77,6 @@ class InformController extends Controller
         $this->step6->Student_id = $request->id;
         $this->step6->Internship_Contract = $request->Internship_Contract;
         $this->step6->save();
+        UsersController::GetHomePage();
     }
 }

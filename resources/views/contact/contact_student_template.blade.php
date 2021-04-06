@@ -27,22 +27,22 @@
             <div class="list-group">
                 <h3>Messagerie</h3>
                 @if($dataInform5 != null)
-                @foreach($dataInform5 as $Inform)
-                <a href="#" class="list-group-item list-group-item-action">
-                <h5>Inform_step5</h5>  
-                {{$Inform['Administrator_First_Name']}} {{$Inform['Administrator_Last_name']}} as transmis une Convention de Stage a votre Entreprise
-                </a>
-                @endforeach
+                    @foreach($dataInform5 as $Inform)
+                        <a href="#" class="list-group-item list-group-item-action">
+                            <h5>Inform_step5</h5>  
+                            {{$Inform['First_Name']}} {{$Inform['Last_name']}} as transmis une Convention de Stage a votre Entreprise
+                        </a>
+                    @endforeach
                 @endif
                 @if($dataInform6 != null)
-                @foreach($dataInform6 as $Inform)
-                <a href="#" class="list-group-item list-group-item-action">
-                <h5>Inform_step5</h5>  
-                {{$Inform['Administrator_First_Name']}} {{$Inform['Administrator_Last_name']}} as reçu une Convention de Stage signée de votre Entreprise
-                </a>
-                @endforeach
+                    @foreach($dataInform6 as $Inform)
+                        <a href="#" class="list-group-item list-group-item-action">
+                            <h5>Inform_step6</h5>  
+                            {{$Inform['First_Name']}} {{$Inform['Last_name']}} as reçu une Convention de Stage signée de votre Entreprise
+                        </a>
+                    @endforeach
                 @endif
             </div>
-        </div>
+</div>
 
 @stop

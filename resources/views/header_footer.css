@@ -81,7 +81,7 @@ header.button:hover {
     background-color: #c9c3c3;
 }
 
-.navbar {
+header.navbar {
     display: flex;
     justify-content: right;
     align-items: right;

@@ -14,7 +14,6 @@ class CreatePostulateTable extends Migration {
 			$table->binary('Curiculum_Vitae');
 			$table->binary('Motivation_Letter');
 			$table->integer('Response_State');
-			$table->date('Application_Date');
 			$table->string('Mail_Content', 300);
 		});
 	}

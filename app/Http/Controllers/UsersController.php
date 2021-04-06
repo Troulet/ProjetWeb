@@ -124,12 +124,14 @@ class UsersController extends Controller
 
   }
   
-  public function GetHomePage()
+  public static function GetHomePage()
   {
-     switch ($this->Get_Table(Auth::id()))
+    $user = new UsersController;
+     $dataInform4 = InformController::GetInform4(Auth::id());
+     switch ($user->Get_Table(Auth::id()))
      {
                 case 2 :
-                    return View::make('welcome/welcome_admin_template')->with('user_type', 2);
+                    return View::make('welcome/welcome_admin_template')->with('user_type', 2)->with('dataInform4', $dataInform4);
                     break;
 
                 case 0 :
@@ -164,6 +166,7 @@ class UsersController extends Controller
                     return View::make('users/student_pilot_template')->with('user_type', 1)->with('dataStudent', $dataStudent);
                     break;
             }
+        UsersController::GetHomePage();
   }
 
   
@@ -172,26 +175,29 @@ class UsersController extends Controller
     {
       $localid = $this->Get_Local(Auth::id());
       $dataStudent = $this->student->tablereturn($localid);
+      $dataInform3 = InformController::GetInform3(Auth::id());
+      $dataInform4 = InformController::GetInform4(Auth::id());
+      $dataInform5 = InformController::GetInform5(Auth::id());
+      $dataInform6 = InformController::GetInform6(Auth::id());
       switch ($this->Get_Table(Auth::id()))
             {
                 case 2 :
                     $dataPilot = $this->pilot->tablereturn($localid);
                     $dataAdmin = $this->administrator->tablereturn($localid);
-                    return View::make('contact/contact_admin_template')->with('user_type', 2)->with('dataPilot', $dataPilot)->with('dataAdmin', $dataAdmin)->with('dataStudent', $dataStudent);
+                    return View::make('contact/contact_admin_template')->with('user_type', 2)->with('dataPilot', $dataPilot)->with('dataAdmin', $dataAdmin)->with('dataStudent', $dataStudent)->with('dataInform4', $dataInform4);
                     break;
 
                 case 1 :
                     $dataAdmin = $this->administrator->tablereturn($localid);
-                    return View::make('contact/contact_pilot_template')->with('user_type', 1)->with('dataStudent', $dataStudent)->with('dataAdmin', $dataAdmin);
+                    return View::make('contact/contact_pilot_template')->with('user_type', 1)->with('dataStudent', $dataStudent)->with('dataAdmin', $dataAdmin)->with('dataInform3', $dataInform3)->with('dataInform5', $dataInform5)->with('dataInform6', $dataInform6);
                     break;
 
                 case 0 :
-                    $dataInform5 = InformController::GetInform5(Auth::id());
-                    $dataInform6 = InformController::GetInform6(Auth::id());
                     $dataPilot = $this->pilot->tablereturn($localid);
                     return View::make('contact/contact_student_template')->with('user_type', 0)->with('dataPilot', $dataPilot)->with('dataInform5', $dataInform5)->with('dataInform6', $dataInform6);
                     break;
             }
+        UsersController::GetHomePage();
 
   }
 
@@ -229,12 +235,14 @@ class UsersController extends Controller
     if(Auth::id() == 0)
     {
         $data = "Vous n'avez pas les droits pour effectuer cette fonctionnalité";
-        return $data;
+        echo $data;
+        UsersController::GetHomePage();
     }
     else if (Auth::id() == 1 AND $request->UpUser_type == 2)
     {
         $data = "Vous n'avez pas les droits pour créer un profil Administrateur";
-        return $data;
+        echo $data;
+        UsersController::GetHomePage();
     }
     else
     {
@@ -261,11 +269,13 @@ class UsersController extends Controller
         }
     }
     $data = "L'Utilisateur a bien été créer.";
-    return $data;
+    echo $data;
+    UsersController::GetHomePage();
     }
     else
     {
-        return "Erreur de saisie";
+        echo "Erreur de saisie";
+        UsersController::GetHomePage();
     }
 
   }
@@ -310,6 +320,7 @@ class UsersController extends Controller
                     return View::make('modify/modify_user')->with('user_type', 1)->with('UpUser_type', $UpUser_type)->with('dataUser', $dataUser);
                     break;
             }
+        UsersController::GetHomePage();
 
   }
 
@@ -335,6 +346,7 @@ class UsersController extends Controller
             $this->administrator->Update($request, $Localisation_id);
             break;
     }
+    UsersController::GetHomePage();
 
   }
 
@@ -364,10 +376,11 @@ class UsersController extends Controller
                     break;
 
                 case 1 :
-                    return View::make('user/student_pilot_template')->with('user_type', 1)->with('dataStudent', ObjectController::objtoArray(Student::tablereturnsearch($request->research, $localid)))->with('dataPilot', ObjectController::objtoArray(Pilot::tablereturnsearch($request->research, $localid)))->with('dataAdmin', ObjectController::objtoArray(Administrator::tablereturnsearch($request->research, $localid)));
+                    return View::make('users/student_pilot_template')->with('user_type', 1)->with('dataStudent', ObjectController::objtoArray(Student::tablereturnsearch($request->research, $localid)))->with('dataPilot', ObjectController::objtoArray(Pilot::tablereturnsearch($request->research, $localid)))->with('dataAdmin', ObjectController::objtoArray(Administrator::tablereturnsearch($request->research, $localid)));
                     break;
 
         }
+        UsersController::GetHomePage();
        
     }
 
@@ -389,6 +402,7 @@ class UsersController extends Controller
                     return View::make('users/user_profile_student_template')->with('user_type', $user->Get_Table(Auth::id()))->with('PostulateCount', ObjectController::objtoArray(Student::CountPostulate($request->id)))->with('dataUser', ObjectController::objtoArray(Student::GetProfile($request->id)))->with('dataOffer', ObjectController::objtoArray(Postulate::GetPostulate($request->id)));
                     break;
         }
+        UsersController::GetHomePage();
     }
 
 }

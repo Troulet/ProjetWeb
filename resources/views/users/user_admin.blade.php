@@ -28,62 +28,6 @@
                 <button class="btn btn-outline-success" type="button" id="btn_Student">Voir les profils Etudiants</button> <br>
                 <button class="btn btn-outline-success" type="button" id="btn_Representative">Voir les profils Délégués</button> <br>
                 <button class="btn btn-outline-success" type="button" id="btn_User">Voir tous les profils</button> <br>
-                <div>
-                <!--
-                     <h3>Catégories</h3>
-                            <div>
-                                <input type="checkbox" id="student" name="student">
-                                <label for="student">Étudiant</label>
-                            </div>
-                            <div>
-                                <input type="checkbox" id="representative" name="representative">
-                                <label for="representative">Délégué</label>
-                            </div>
-                            <div>
-                                <input type="checkbox" id="pilot" name="pilot">
-                                <label for="pilot">Pilote</label>
-                            </div>
-                        
-                            <h3>Localité</h3>
-                            <div>
-                                <input type="checkbox" id="paris" name="paris">
-                                <label for="paris">Paris</label>
-                            </div>
-                            <div>
-                                <input type="checkbox" id="bordeaux" name="bordeaux">
-                                <label for="bordeaux">Bordeaux</label>
-                            </div>
-                            <div>
-                                <input type="checkbox" id="merignac" name="merignac">
-                                <label for="merignac">Mérignac</label>
-                            </div>
-                            <div>
-                                <input type="checkbox" id="lyon" name="lyon">
-                                <label for="lyon">Lyon</label>
-                            </div>
-                            <div>
-                                <input type="checkbox" id="olympe" name="olympe">
-                                <label for="olympe">Mont Olympe</label> 
-                            </div>
-                        
-                            <h3>Promotion</h3>
-                            <div>
-                                <input type="checkbox" id="info" name="info">
-                                <label for="info">A2 Informatique</label>
-                            </div>
-                            <div>
-                                <input type="checkbox" id="generaliste" name="generaliste">
-                                <label for="generaliste">A2 Généraliste</label>
-                            </div>
-                            <div>
-                                <input type="checkbox" id="btp" name="btp">
-                                <label for="btp">A2 BTP</label>
-                            </div>
-                            <div>
-                                <input type="checkbox" id="s3e" name="s3e">
-                                <label for="s3e">A2 S3E</label>
-                            </div>-->
-                </div>
             </div>
             
             <div class="profil_card">
@@ -109,60 +53,11 @@
             </div>
         
             @include('footer')
-        <script type="text/javascript">
 
-            function Hide(divsToHide) {
-                for(var i = 0; i < divsToHide.length; i++){
-                    divsToHide[i].style.display = "none"; // depending on what you're doing
-                }
-            }
-
-            function Show(divsToHide) {
-                    for(var i = 0; i < divsToHide.length; i++){
-                    divsToHide[i].style.display = "block"; // depending on what you're doing
-                }
-            }
-
-            document.getElementById("btn_Admin").onclick = function(){
-                Hide(document.getElementsByClassName("student"));
-                Hide(document.getElementsByClassName("representative"));
-                Hide(document.getElementsByClassName("pilot"));
-                Show(document.getElementsByClassName("admin"));
-            }
-
-            document.getElementById("btn_Pilot").onclick = function(){
-                Hide(document.getElementsByClassName("student"));
-                Hide(document.getElementsByClassName("representative"));
-                Show(document.getElementsByClassName("pilot"));
-                Hide(document.getElementsByClassName("admin"));
-            }
-
-            document.getElementById("btn_Student").onclick = function(){
-
-                Show(document.getElementsByClassName("student"));
-                Show(document.getElementsByClassName("representative"));
-                Hide(document.getElementsByClassName("pilot"));
-                Hide(document.getElementsByClassName("admin"));
-            }
-
-            document.getElementById("btn_Representative").onclick = function(){
-                Hide(document.getElementsByClassName("student"));
-                Show(document.getElementsByClassName("representative"));
-                Hide(document.getElementsByClassName("pilot"));
-                Hide(document.getElementsByClassName("admin"));
-            }
-
-            document.getElementById("btn_User").onclick = function(){
-                Show(document.getElementsByClassName("student"));
-                Show(document.getElementsByClassName("representative"));
-                Show(document.getElementsByClassName("pilot"));
-                Show(document.getElementsByClassName("admin"));
-            }
-
-        </script>
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+        <script src="../resources/js/User_filter.js"></script>       
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     </body>
 
     

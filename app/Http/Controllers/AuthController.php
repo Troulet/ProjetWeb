@@ -18,16 +18,13 @@ class AuthController extends Controller
 
     public function Login(Request $request)
     {
-        /*We securize the password by encrypting it.
-        We also need it encrypted to be compared on the database*/
-
         /*$user = new Users;
         //$user = Users::find();
-        $password = 'licorne4568';
+        $password = 'admin';
         $passwordcrypt = \Hash::make($password);
-        $user->email = 'clem@gmail.com';
-        $user->First_Name = 'Jarvis';
-        $user->Last_Name = 'Simba';
+        $user->email = 'admin@gmail.com';
+        $user->First_Name = 'Jean-Aymeric';
+        $user->Last_Name = 'Diet';
         $user->password = $passwordcrypt;
         $user->remember_token = $request['_token'];
         $user->save();*/
@@ -35,19 +32,22 @@ class AuthController extends Controller
         if ($this->Validation($request))
         {
   
-             $user = array(
+            $user = array(
                 'email' => $request['email'],
                 'password' => $request['password']
                 );
-             if(Auth::attempt($user, $request['_token']))
-             {             
-                 $request->session()->regenerate();
-                 /*We redirect the user on the correct page*/
-                 $user = new UsersController;
-                 switch ($user->Get_Table(Auth::id()))
-                 {
+            if(Auth::attempt($user, $request['_token']))
+            {             
+                $request->session()->regenerate();
+                /*We redirect the user on the correct page*/
+                $user = new UsersController;
+                $dataInform4 = InformController::GetInform4(Auth::id());
+                $user = new UsersController;
+                $dataInform4 = InformController::GetInform4(Auth::id());
+                switch ($user->Get_Table(Auth::id()))
+                {
                     case 2 :
-                        return View::make('welcome/welcome_admin_template')->with('user_type', 2);
+                        return View::make('welcome/welcome_admin_template')->with('user_type', 2)->with('dataInform4', $dataInform4);
                         break;
 
                     case 0 :
@@ -60,17 +60,17 @@ class AuthController extends Controller
                         return View::make('welcome/welcome_pilot_template')->with('user_type', 1);
                         break;
 
-                };
+                }
+                return View::make('login/login');
 
-            //Renvoyer une vue si l'utilisateur n'appartient à aucune des tables
+                //Renvoyer une vue si l'utilisateur n'appartient à aucune des tables
                  
-             }
-             else
-             {
-                echo $request['email'];
-                echo $request['password'];
-                echo "FAIL";
-             }
+            }
+            else
+            {
+                echo 'erreur de champs de connexion.';
+                return View::make('login/login');
+            }
 
 
             

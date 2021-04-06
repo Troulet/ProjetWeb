@@ -48,6 +48,7 @@
                   {!! Form::open(['url' => '/Offer_CV', 'method' => 'get']) !!}
                   <input name="PDF" type="hidden" value="{{$Offer['Curiculum_Vitae']}}">
                   <button class="btn" type="submit">CV</button>
+                  {!! Form::close() !!}
                   </td>
                   <td>
                   {!! Form::open(['url' => '/Offer_CV', 'method' => 'get']) !!}

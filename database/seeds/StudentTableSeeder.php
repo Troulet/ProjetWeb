@@ -12,11 +12,7 @@ class StudentTableSeeder extends Seeder {
 		// Student Profile
 		Student::create(array(
 				'Users_id' => 1,
-				'Mail' => student@viacesi.fr,
-				'Password' => student,
-				'Promotion' => A2Informatique,
-				'First_Name' => Tristan,
-				'Last_name' => Roulet,
+				'Promotion' => 'A2 Informatique',
 				'Localisation_id' => 1
 			));
 	}

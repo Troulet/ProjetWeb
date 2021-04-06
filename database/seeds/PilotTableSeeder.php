@@ -12,11 +12,7 @@ class PilotTableSeeder extends Seeder {
 		// Pilot Profile
 		Pilot::create(array(
 				'Users_id' => 2,
-				'Mail' => pilot@viacesi.fr,
-				'Password' => pilot,
-				'Promotion' => A2Informatique,
-				'First_Name' => Manu,
-				'Last_name' => Iacobellis,
+				'Promotion' => 'A2 Informatique',	
 				'Localisation_id' => 1
 			));
 	}

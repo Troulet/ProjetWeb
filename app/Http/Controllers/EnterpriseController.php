@@ -37,6 +37,7 @@ class EnterpriseController extends Controller
 
         $this->enterprise = Enterprise::find($request->id);
         $this->enterprise->delete();
+        UsersController::GetHomePage();
     }
 
     public function Restore(Request $request)
@@ -49,6 +50,7 @@ class EnterpriseController extends Controller
         }
 
         $this->enterprise = Enterprise::withTrashed()->find($request->id)->restore();
+        UsersController::GetHomePage();
     }
 
     public function GetInternship($entid)
@@ -64,8 +66,8 @@ class EnterpriseController extends Controller
     public function ValidationCreate(Request $request)
     {       
         $validator = Validator::make($request->all(), [
-            'Enterprise_Name' => 'required|alpha_num',
-            'Activity_Sector' => 'required|alpha',
+            'Enterprise_Name' => 'required',
+            'Activity_Sector' => 'required',
             'Cesi_Student_Taken' => 'required|numeric',
             'Localisation_Name' => 'required|alpha'
         ]);
@@ -97,10 +99,12 @@ class EnterpriseController extends Controller
             $localid = $NewLocal->GetId($request->Localisation_Name);
             $this->enterprise->Localisation_id = $localid[0];
             $this->enterprise->save();
+            $user = UsersController::GetHomePage();
         }
         else
         {
             echo "Erreur de saisie des données";
+            $user = UsersController::GetHomePage();
         }
     }
 
@@ -142,10 +146,12 @@ class EnterpriseController extends Controller
             $localid = $NewLocal->GetId($request->Localisation_Name);
             $this->enterprise->Localisation_id = $localid[0];
             $this->enterprise->save();
+            UsersController::GetHomePage();
         }
         else
         {
             echo "Erreur de saisie des données";
+            UsersController::GetHomePage();
         }
     }
 
@@ -166,7 +172,8 @@ class EnterpriseController extends Controller
                     return View::make('modify/modify_enterprise')->with('user_type', 1)->with('dataEnterprise', ObjectController::objtoArray(Enterprise::GetforUpdate($request->id)));
                     break;
 
-     }
+        }
+        UsersController::GetHomePage();
     }
 
 
@@ -193,6 +200,7 @@ class EnterpriseController extends Controller
         $Comment->Work_Environment = $request->Work_Environment;
         $Comment->Commentary = $request->Commentary;
         $Comment->save();
+        UsersController::GetHomePage();
 
 
     }
@@ -210,7 +218,8 @@ class EnterpriseController extends Controller
                     return View::make('create/commentary')->with('user_type', 1)->with('Users_id', Auth::id())->with('Enterprise_id', $request->id);
                     break;
 
-     }
+        }
+        UsersController::GetHomePage();
     }
 
     public function GetCreatePage()
@@ -230,7 +239,8 @@ class EnterpriseController extends Controller
                     return View::make('create/create_enterprise')->with('user_type', 1);
                     break;
 
-     }
+        }
+        UsersController::GetHomePage();
     }
 
     public function Search(Request $request)
@@ -254,6 +264,7 @@ class EnterpriseController extends Controller
                     break;
 
         }
+        UsersController::GetHomePage();
        
     }
 
@@ -279,6 +290,7 @@ class EnterpriseController extends Controller
                     break;
 
             }
+            UsersController::GetHomePage();
         }
 
 }

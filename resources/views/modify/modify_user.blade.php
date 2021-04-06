@@ -1,132 +1,67 @@
 <!DOCTYPE html>
-<html>
-<link rel= "stylesheet" href="../resources/views/header_footer.css"/>
-<link rel= "stylesheet" href="../resources/views/modify/modify.css"/>
-<body>
-    @include('header')
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+    <head>
+        <meta charsert="utf-8"  name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+        <link rel= "stylesheet" href="../resources/views/modify/modify.css"/>
+        <link rel= "stylesheet" href="../resources/views/header_footer.css"/>
+        <title>LES P'TITES ANNONCES</title>
+        <link href="https://fonts.googleapis.com/css2?family=Happy+Monkey&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    </head>
+    <body>
+        @include('header')
     
-            {!! Form::open(['url' => '/Users', 'method' => 'get']) !!}
+        {!! Form::open(['url' => '/Users', 'method' => 'get']) !!}
             <button type="submit" class="btn">Retour à la page Utilisateur</button>
-            {!! Form::close() !!}
-    <div>
-        {!! Form::open(['url' => '/Users_Update', 'method' => 'post']) !!}
-
-        <fieldset>
-
-            <legend>Modifier un élève</legend>
-
-            <input type='hidden' name="Users_id" value="{{$dataUser['Users_id']}}">
-            <input type='hidden' name="UpUser_type" value="{{$UpUser_type}}"> <br>
-
-            <label id="First_Label" for="First_Name">Prénom de l'élève : </label>
-            <input type="text" name="First_Name" id="First_Name" value="{{$dataUser['First_Name']}}"/> <br>
-     
-            <label id="Last_Label" for="Last_Name">Nom de l'élève : </label>
-            <input type="text" name="Last_Name" id="Last_Name" value="{{$dataUser['Last_name']}}"/> <br>
-
-            <label id="Localisation_Label" for="Localisation">Localité : </label>
-            <input type="text" name="Localisation_Name" id="Localisation_Name" value="{{$dataUser['Localisation_Name']}}"/> <br>
-
-            <label id="email_Label" for="Email">Email :  </label>
-            <input type="text" name="email" id="Email" value="{{$dataUser['email']}}"/> <br>
-
-
-            @if($UpUser_type == 0 || $UpUser_type == 1)
-                <label id="Promotion_Label" for="Promotion">Promotion :  </label>
-                <input type="text" name="Promotion" id="Promotion" value="{{$dataUser['Promotion']}}"/> <br>
-
-                @if($UpUser_type == 0 && $UpUser_type != 1)
-                <label id="Representative_Label" for="Representative">Délégué</label>
-                <input type="checkbox" name="Representative" id="Representative" value="{{$dataUser['Representative']}}" /> <br>
-            
-                <label id="Representative_Rights_Label" for="Representative_Rights">Droits :  </label>
-                <input type="text" name="Representative_Rights" id="Representative_Rights" value="{{$dataUser['Representative_Rights']}}"/> 
-                <input type="hidden" name="UpUser_type" id="UpUser_type" /> <br>
-                @endif
-            @endif
-
-        </fieldset>
-        <button type="submit" id="btn_Modify" class="btn_Modify">MODIFIER</button>
-        
         {!! Form::close() !!}
-    </div>
-    <div id="result"></div>
-    <script type="text/javascript">
+        <div>
+            {!! Form::open(['url' => '/Users_Update', 'method' => 'post']) !!}
 
-    var StudentTable = ['First_Name', 'Last_Name', 'Localisation_Name', 'Promotion', 'Email', 'Password', 'Representative', 'Representative_Rights', "First_Label", 'Last_Label', 'Localisation_Label', 'Promotion_Label', 'email_Label', 'password_Label', 'Representative_Label', 'Representative_Rights_Label'];
-    var PilotTable = ['First_Name', 'Last_Name', 'Localisation_Name', 'Promotion', 'Email', 'Password', "First_Label", 'Last_Label', 'Localisation_Label', 'Promotion_Label', 'email_Label', 'password_Label'];
-    var AdminTable = ['First_Name', 'Last_Name', 'Localisation_Name', 'Email', 'Password', "First_Label", 'Last_Label', 'Localisation_Label', 'email_Label', 'password_Label'];
-    function showStudentCreation()
-    {
-        document.getElementById("UpUser_type").value = 0;
-        StudentTable.forEach(Showing);
-        function Showing(item, index) {
-        document.getElementById(item).style.display='block'
-        }
-    }
+                <fieldset>
 
-    function showPilotCreation()
-    {
-        document.getElementById("UpUser_type").value = 1;
-        StudentTable.forEach(Shadowing);
-        function Shadowing(item, index) {
-        document.getElementById(item).style.display='none'
-        }
+                    <legend>Modifier un élève</legend>
 
-        PilotTable.forEach(Showing);
-        function Showing(item, index) {
-        document.getElementById(item).style.display='block'
-        }
-    }
+                    <input type='hidden' name="Users_id" value="{{$dataUser['Users_id']}}">
+                    <input type='hidden' name="UpUser_type" value="{{$UpUser_type}}"> <br>
 
-    function showAdminCreation()
-    {
-        document.getElementById("UpUser_type").value = 2;
-        StudentTable.forEach(Shadowing);
-        function Shadowing(item, index) {
-        document.getElementById(item).style.display='none'
-        }
+                    <label id="First_Label" for="First_Name">Prénom de l'élève : </label>
+                    <input type="text" name="First_Name" id="First_Name" value="{{$dataUser['First_Name']}}"/> <br>
+     
+                    <label id="Last_Label" for="Last_Name">Nom de l'élève : </label>
+                    <input type="text" name="Last_Name" id="Last_Name" value="{{$dataUser['Last_name']}}"/> <br>
 
-        AdminTable.forEach(Showing);
-        function Showing(item, index) {
-        document.getElementById(item).style.display='block'
-        }
-    }
+                    <label id="Localisation_Label" for="Localisation">Localité : </label>
+                    <input type="text" name="Localisation_Name" id="Localisation_Name" value="{{$dataUser['Localisation_Name']}}"/> <br>
 
-    document.onload = function()
-    {
-        if(UpUser_type = 0)
-        {
-            showStudentCreation();
-        }
-        elseif (UpUser_type = 1)
-        {
-            showPilotCreation();
-        }
-        elseif (UpUser_type = 2)
-        {
-            showAdminCreation();
-        }
-    }
+                    <label id="email_Label" for="Email">Email :  </label>
+                    <input type="text" name="email" id="Email" value="{{$dataUser['email']}}"/> <br>
 
-    /*function AJAXPOST(){
-        var xhr = new XMLHttpRequest();
-	    xhr.open("POST", "http://localhost/Public/Users_Create", true);
-        xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-        xhr.onload = function(){
-            if( xhr.status == 200)
-            {
-                document.getElementById("js_result").innerHTML = xhr.ResponseText;
-            }
-        }
-		xhr.send("UpUser_type="+UpUser_type+"&First_Name="+First_Name+"&Last_Name"+Last_Name+"&Localisation_Name="+Localisation_Name+"&Promotion="+Promotion+"&email="+email+"&password="+password+"&Representative="+Representative+"&Representative_Rights="+Representative_Rights)
-    }
 
-    document.getElementById("btn_Create").onclick = function(){
-        AJAXPOST();
-    }*/
+                    @if($UpUser_type == 0 || $UpUser_type == 1)
+                        <label id="Promotion_Label" for="Promotion">Promotion :  </label>
+                        <input type="text" name="Promotion" id="Promotion" value="{{$dataUser['Promotion']}}"/> <br>
 
-    </script>
+                        @if($UpUser_type == 0 && $UpUser_type != 1)
+                            <label id="Representative_Label" for="Representative">Délégué</label>
+                            <input type="checkbox" name="Representative" id="Representative" value="{{$dataUser['Representative']}}" required/> <br>
+            
+                            <label id="Representative_Rights_Label" for="Representative_Rights">Droits :  </label>
+                            <input type="text" name="Representative_Rights" id="Representative_Rights" value="{{$dataUser['Representative_Rights']}}" required/> 
+                        @endif
+                    @endif
+
+                </fieldset>
+                <button type="submit" id="btn_Modify" class="btn_Modify">MODIFIER</button>
+        
+            {!! Form::close() !!}
+        </div>
+    
         @include('footer')
-</body>
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    
+    </body>
 </html>

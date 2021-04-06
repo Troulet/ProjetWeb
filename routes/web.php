@@ -27,8 +27,7 @@ use App\Http\Controllers\InformController;
         return view('login/login');
     });
     
-
-    Route::get('/Logout', [AuthController::class, 'Logout']);
+    Route::post('/Home', [AuthController::class, 'Login']);
 
     Route::get('/Offer', [UsersController::class, 'GetOfferPage']);
 
@@ -36,16 +35,9 @@ use App\Http\Controllers\InformController;
 
     Route::get('/Postulate', [PostulateController::class, 'GetPostulatePage']);
 
-    Route::get('/Help', function() {
-        return view('Help');
-    });
-
     Route::get('/Users', [UsersController::class, 'GetUsersPage']);
 
-    Route::post('/Home', [AuthController::class, 'Login']);
-
     Route::get('/Home', [UsersController::class, 'GetHomePage']);
-
 
     //Chemin pour afficher la page de création d'un User
     Route::get('/Users_Create', [UsersController::class, 'GetCreationPage']);
@@ -160,6 +152,6 @@ use App\Http\Controllers\InformController;
 
 
 Route::fallback( function () {
-        return view('login');
+        return view('login/login');
     });
 

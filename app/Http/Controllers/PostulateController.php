@@ -22,7 +22,6 @@ class PostulateController extends Controller
         $this->postulate->Curiculum_Vitae = $request->Curiculum_Vitae;
         $this->postulate->Motivation_Letter = $request->Motivation_Letter;
         $this->postulate->Response_State = 0;
-        $this->postulate->Application_Date = Date ("y.m.d");
         $this->postulate->Mail_Content = $request->Mail_Content;
         $this->postulate->save();
     }
@@ -69,5 +68,15 @@ class PostulateController extends Controller
             }
 
 
+    }
+    public function ViewCV(Request $request)
+    {
+      $user = new UsersController;
+      switch ($user->Get_Table(Auth::id()))
+            {
+                case 0 :
+                    return View::make('postulate/show_pdf')->with('user_type', 0)->with('data', $request->PDF);
+                    break;
+            }
     }
 }

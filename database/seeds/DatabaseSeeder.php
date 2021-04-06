@@ -1,5 +1,7 @@
 <?php
 
+namespace Database\Seeders;
+
 use Illuminate\Database\Seeder;
 use Illuminate\Database\Eloquent\Model;
 
@@ -7,9 +9,8 @@ class DatabaseSeeder extends Seeder {
 
 	public function run()
 	{
-		Model::unguard();
 
-		$this->call('EnterpriseTableSeeder');
+		$this->call(EnterpriseTableSeeder::class);
 		$this->command->info('Enterprise table seeded!');
 
 		$this->call('LocalisationTableSeeder');
@@ -31,3 +32,4 @@ class DatabaseSeeder extends Seeder {
 		$this->command->info('Administrator table seeded!');
 	}
 }
+

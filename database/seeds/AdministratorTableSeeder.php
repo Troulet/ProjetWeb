@@ -11,11 +11,7 @@ class AdministratorTableSeeder extends Seeder {
 
 		// Administrator Profile
 		Administrator::create(array(
-				'Users_id' => 3,
-				'Mail' => administrator@viacesi.fr,
-				'Password' => administrator,
-				'First_Name' => Jean-Aymeric,
-				'Last_name' => Diet,
+				'Users_id' => 3,	
 				'Localisation_id' => 1
 			));
 	}

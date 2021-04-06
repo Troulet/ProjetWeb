@@ -10,7 +10,7 @@ class CreateUsersTable extends Migration {
 		Schema::create('Users', function(Blueprint $table) {
 			$table->increments('id', true);
 			$table->string('email', 50)->index();
-			$table->string('Password', 200);
+			$table->string('password', 200);
             $table->string('First_Name', 50);
 			$table->string('Last_name', 50);
 			$table->timestamps();

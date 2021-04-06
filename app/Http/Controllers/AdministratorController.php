@@ -12,62 +12,62 @@ use Illuminate\Support\Facades\View;
 
 class AdministratorController extends Controller 
 {
-  protected $user;
-  protected $localisation;
+    protected $user;
+    protected $localisation;
 
-  function __construct()
-  {
-    $this->user = new Administrator;
-    $this->localisation = new Localisation;
-  }
+    function __construct()
+    {
+        $this->user = new Administrator;
+        $this->localisation = new Localisation;
+    }
 
-  public function Get_Local($id)
-  {
+    public function Get_Local($id)
+    {
     
-    if(Administrator::find($id) !== null)
-    {
-        $user = Administrator::find($id);
-        return $user->Localisation_id;
+        if(Administrator::find($id) !== null)
+        {
+            $user = Administrator::find($id);
+            return $user->Localisation_id;
+        }
+        else
+        {
+            return null;
+        }
     }
-    else
+
+    public function tablereturn($localid)
     {
-        return null;
+        return ObjectController::objtoArray($this->user->tablereturn($localid));
     }
-  }
 
-   public function tablereturn($localid)
-  {
-      return ObjectController::objtoArray($this->user->tablereturn($localid));
-  }
-
-  public function GetById($id)
-  {
+    public function GetById($id)
+    {
         return $this->user->GetById($id);
-  }
+    }
 
-  public function Delete($id)
-  {
+    public function Delete($id)
+    {
 
-  //We delete the line on User's table, then on the Child table.
-    $this->user = Administrator::find($id);
-    $this->user->delete();
-    $deleted = new UsersController;
-    $deleted->Delete($id);
-  }
+        //We delete the line on User's table, then on the Child table.
+        $this->user = Administrator::find($id);
+        $this->user->delete();
+        $deleted = new UsersController;
+        $deleted->Delete($id);
+    }
 
-  public function Create(Request $request, $Users_id, $Localisation_id )
-  {
+    public function Create(Request $request, $Users_id, $Localisation_id )
+    {
         $this->user->Users_id = $Users_id[0];
         $this->user->Localisation_id = $Localisation_id[0];
         $this->user->save();
-  }
+    }
 
-  public function Update(Request $request, $Localisation_id)
-  {
+    public function Update(Request $request, $Localisation_id)
+    {
         $this->user = Administrator::find($request->Users_id);
         $this->user->Localisation_id = $Localisation_id[0];
         $this->user->save();
-  }
+    }
 
 }
 

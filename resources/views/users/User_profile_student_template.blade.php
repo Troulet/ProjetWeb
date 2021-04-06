@@ -5,16 +5,16 @@
         <h5>Profil : </h5>
             <p>
                 Elève
-                Email : {{$dataUser['email']}}
-                Prénom : {{$dataUser['First_Name']}}
-                Nom : {{$dataUser['Last_name']}}
-                Promotion : {{$dataUser['Promotion']}}
+                Email : {{$dataUser['email']}} </br>
+                Prénom : {{$dataUser['First_Name']}} </br>
+                Nom : {{$dataUser['Last_name']}} </br>
+                Promotion : {{$dataUser['Promotion']}} </br>
 
                 @if($dataUser['Representative']==true)
-                Délégué : oui
+                Délégué : oui </br>
                 Droits du délégué : {{$dataUser['Representative_Rights']}}
                 @else
-                Délégué : non
+                Délégué : non </br>
                 @endif
 
                 Nombre de candidatures : {{$PostulateCount}}

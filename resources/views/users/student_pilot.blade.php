@@ -13,48 +13,10 @@
     
     <body> 
       @include('header')
-            <!--<div class="filtre">
-            
-                <h3>Filtrer les résultats</h3>
-                <form class="d-flex">
-                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                {!! Form::open(['url' => '/Users_Search', 'method' => 'post']) !!}
+                    <input class="form-control me-2" type="search" name="research" placeholder="Search" aria-label="Search">
                     <button class="btn btn-outline-success" type="submit">Search</button>
-                </form>
-                
-                <div class="titres">
-                    <h3>Catégories</h3>
-                        <div>
-                            <input type="checkbox" id="student" name="student">
-                            <label for="student">Étudiant</label>
-                        </div>
-                        <div>
-                            <input type="checkbox" id="representative" name="representative">
-                            <label for="representative">Délégué</label>
-                        </div>
-                        
-                    <h3>Promotion</h3>
-                        <div>
-                            <input type="checkbox" id="info" name="info">
-                            <label for="info">A1 Informatique</label>
-                        </div>
-                        <!--insérer boucle qui affiche les promo assigné au pilote -->
-                        
-                    <!--<h3>Avancement dans la recherche de stage</h3>
-                        <div>
-                            <input type="checkbox" id="no_intership" name="no_intership">
-                            <label for="no_intership">Sans stage</label>
-                        </div>
-                        <div>
-                            <input type="checkbox" id="in_progress" name="in_progress">
-                            <label for="in_progress">En cours</label>
-                        </div>
-                        <div>
-                            <input type="checkbox" id="internship_found" name="internship_found">
-                            <label for="internship_found">Stage trouvé</label>
-                        </div>
-                </div>
-            </div>-->
-            
+                {!! Form::close() !!}
             <div class="profil_card">           
                 <h2>Profils des Élèves</h2>
                 <div class="card">
@@ -68,7 +30,10 @@
             {!! Form::close() !!}
         </div>
           @include('footer')
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    
     </body>
-
     
 </html>

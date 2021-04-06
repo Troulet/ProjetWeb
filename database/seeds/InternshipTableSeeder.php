@@ -11,14 +11,14 @@ class InternshipTableSeeder extends Seeder {
 
 		// Internship Thales
 		Internship::create(array(
-				'Description' => Stage chez Thales au post de sous-fifre du dieu JAD,
-				'Skills_researched' => Savoir coder en C++,
-				'Promotion_researched' => A2Informatique,
-				'Internship_Duration' => 4mois,
+				'Description' => 'Stage chez Thales au post de sous-fifre du dieu JAD',
+				'Skills_researched' => 'Savoir coder en C++',
+				'Promotion_researched' => 'A2 Informatique',
+				'Internship_Duration' => '4mois',
 				'Salary' => 500,
-				'Offer_Date' => 01/04/2021,
+				'Offer_Date' => 2021/01/04,
 				'Number_Of_Places' => 2,
-				'Contact' => contact@thales.fr,
+				'Contact' => 'contact@thales.fr',
 				'Enterprise_id' => 1,
 				'Localisation_id' => 1
 			));

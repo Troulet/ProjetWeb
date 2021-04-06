@@ -2,6 +2,8 @@
 
 use Illuminate\Database\Seeder;
 use \Users;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Hash;
 
 class UsersTableSeeder extends Seeder {
 
@@ -11,20 +13,26 @@ class UsersTableSeeder extends Seeder {
 
 		// Student
 		Users::create(array(
-				'Mail' => student@viacesi.fr,
-				'Password' => student
+				'email' => 'student@viacesi.fr',
+				'password' => Hash::make('student'),
+                'First_Name' => 'Tristan',
+				'Last_name' => 'Roulet'
 			));
 
 		// Pilot
 		Users::create(array(
-				'Mail' => pilot@viacesi.fr,
-				'Password' => pilot
+				'email' => 'pilot@viacesi.fr',
+				'password' => Hash::make('pilot'),
+                'First_Name' => 'Manu',
+				'Last_name' => 'Iacobellis'
 			));
 
 		// Administrator
 		Users::create(array(
-				'Mail' => administrator@viacesi.fr,
-				'Password' => administrator
+				'email' => 'administrator@viacesi.fr',
+				'password' => Hash::make('administrator'),
+                'First_Name' => 'Jean-Aymeric',
+				'Last_name' => 'Diet'
 			));
 	}
 }

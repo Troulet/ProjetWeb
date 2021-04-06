@@ -3,10 +3,10 @@
 @section('users_profile')
         <h5>Profil : </h5>
             <p>
-                Information Admin
-                Email : {{$dataUser['email']}}
-                Prénom : {{$dataUser['First_Name']}}
-                Nom : {{$dataUser['Last_name']}}
+                Information Admin </br>
+                Email : {{$dataUser['email']}} </br>
+                Prénom : {{$dataUser['First_Name']}} </br>
+                Nom : {{$dataUser['Last_name']}} </br>
             </p>
             @if($user_type == 1)
                 {!! Form::open(['url' => '/Inform_step4', 'method' => 'post']) !!}

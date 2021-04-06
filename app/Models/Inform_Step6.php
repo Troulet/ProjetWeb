@@ -35,11 +35,12 @@ class Inform_Step6 extends Model
     }
 
     public static function GetAll($id){
-        return $steps6 = DB::table('inform_step6')
-            ->select('pilot.First_Name as Pilot_First_Name', 'pilot.Last_name as Pilot_Last_Name', 'administrator.First_Name as Administrator_First_Name', 'administrator.Last_name as Administrator_Last_Name')
-            ->join('pilot', 'pilot.id', '=', 'inform_step6.Pilot_id')
-            ->join('administrator', 'administrator.id', '=', 'inform_step6.Administrator_id')
-            ->where('Student', '=', $id)
+        return $steps5 = DB::table('inform_step6')
+            ->select('Admin.First_Name', 'Admin.Last_name', 'Student.First_Name as Student_First_Name', 'Student.Last_name as Student_Last_name')
+            ->join('users as Admin', 'Admin.id', '=', 'inform_step6.Administrator_id')
+            ->join('users as Student', 'Student.id', '=', 'inform_step6.Student_id')
+            ->where('inform_step6.Student_id', '=', $id)
+            ->orwhere('inform_step6.Pilot_id', '=', $id)
             ->orderBy('inform_step6.created_at', 'DESC')
             ->get();
     }

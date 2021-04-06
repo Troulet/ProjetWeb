@@ -42,4 +42,5 @@ class Postulate extends Model
             ->get();
 
 	}
+
 }

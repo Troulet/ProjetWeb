@@ -19,13 +19,6 @@ h3 {
     border-top: 1px solid #5C88DA;
 }
 
-
-.navbar {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
 .profil_card {
     margin-top: 1%;
     padding: 1%;

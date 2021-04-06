@@ -28,7 +28,12 @@ class Inform_Step4 extends Model
         return $step4 = DB::table('inform_step4')->where('Pilot_id', '=', $pilotid)->where('Administrator_id', '=', $adminid)->first();
     }
 
-    public function GetAll(){
-        return $steps4 = DB::table('inform_step4')->get();
+    public static function GetAll($id){
+        return $steps5 = DB::table('inform_step4')
+            ->select('Pilot.First_Name as Pilot_First_Name', 'Pilot.Last_name as Pilot_Last_name')
+            ->join('users as Pilot', 'Pilot.id', '=', 'inform_step4.Pilot_id')
+            ->where('inform_step4.Administrator_id', '=', $id)
+            ->orderBy('inform_step4.created_at', 'DESC')
+            ->get();
     }
 }

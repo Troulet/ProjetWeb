@@ -28,9 +28,7 @@
                                     </li>
                                     <li class="nav-item">
                                         <a class="nav-link" href="http://cesijob.fr/Public/Contact">Contact</a>
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="http://cesijob.fr/Public/Help">Aide</a>
-                                    </li>
+                                    
                                 </ul>
                             </div>
                         </div>
@@ -60,9 +58,7 @@
                                         <li class="nav-item">
                                             <a class="nav-link" href="http://cesijob.fr/Public/Contact">Contact</a>
                                         </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="http://cesijob.fr/Public/Help">Aide</a>
-                                        </li>
+                                        
                                     </ul>
                                 </div>
                             </div>
@@ -91,14 +87,12 @@
                                                 <li class="nav-item">
                                                     <a class="nav-link" href="http://cesijob.fr/Public/Contact">Contact</a>
                                                 </li>
-                                                <li class="nav-item">
-                                                    <a class="nav-link" href="http://cesijob.fr/Public/Help">Aide</a>
-                                                </li>
+                                                
                                             </ul>
                                         </div>
                                     </div>
                                 </nav>
                             </div>';
-                }
+            }
         ?>
     </div>

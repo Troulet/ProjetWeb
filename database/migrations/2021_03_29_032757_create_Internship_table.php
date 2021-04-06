@@ -12,7 +12,7 @@ class CreateInternshipTable extends Migration {
 			$table->string('Description', 300);
 			$table->string('Skills_researched', 300);
 			$table->string('Promotion_researched', 30);
-			$table->date('Internship_Duration');
+			$table->string('Internship_Duration');
 			$table->decimal('Salary', 15,3);
 			$table->date('Offer_Date');
 			$table->integer('Number_Of_Places');

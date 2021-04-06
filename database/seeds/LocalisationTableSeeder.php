@@ -11,7 +11,7 @@ class LocalisationTableSeeder extends Seeder {
 
 		// Bordeaux
 		Localisation::create(array(
-				'Localisation' => Bordeaux
+				'Localisation' => 'Bordeaux'
 			));
 	}
 }
